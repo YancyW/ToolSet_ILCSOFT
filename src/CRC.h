@@ -76,7 +76,7 @@ namespace ToolSet{
 				return(180);
 			}
 
-			static bool                   Judge_Is_FromOverlay(ReconstructedParticle* in);
+			static bool                   Judge_Is_FromOverlay(ReconstructedParticle* in, LCRelationNavigator* nav);
 
 			static std::vector<ReconstructedParticle*> Get_POParticle(LCCollection* AllPOs) ;
 
