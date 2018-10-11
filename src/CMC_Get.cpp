@@ -1,7 +1,7 @@
 #include "CMC.h"
 
 
-std::vector<MCParticle*> Get_Particle(bool (*Judge)(MCParticle*), std::vector<MCParticle*> MCs){
+std::vector<MCParticle*> ToolSet::CMC::Get_Particle(bool (*Judge)(MCParticle*), std::vector<MCParticle*> MCs){
 	std::vector<MCParticle*> Parton;
 	int nMC = MCs.size();
 	for( int i = 0; i < nMC; i++ ){
@@ -10,7 +10,7 @@ std::vector<MCParticle*> Get_Particle(bool (*Judge)(MCParticle*), std::vector<MC
 		}
 		else 
 		{
-			break;
+			continue;
 		}
 	}
 	return(Parton);
@@ -51,6 +51,16 @@ std::vector<MCParticle*> ToolSet::CMC::Get_MC_HardScattering_FS(std::vector<MCPa
 
 
 
+std::vector<MCParticle*> ToolSet::CMC::Get_MC_OnlyPythiaShowering_FS(std::vector<MCParticle*> MCs) {
+	std::vector<MCParticle*> FS_PythiaLevel;
+	int nMC = MCs.size();
+	for( int i = 0; i < nMC; i++ ){
+		if(Judge_OnlyPythiaShowering_FS(MCs[i])){
+			FS_PythiaLevel.push_back(MCs[i]);
+		}
+	}
+	return(FS_PythiaLevel);
+}
 
 std::vector<MCParticle*> ToolSet::CMC::Get_MC_PythiaShowering_FS(std::vector<MCParticle*> MCs) {
 	std::vector<MCParticle*> FS_PythiaLevel;
@@ -64,6 +74,17 @@ std::vector<MCParticle*> ToolSet::CMC::Get_MC_PythiaShowering_FS(std::vector<MCP
 }
 
 
+std::vector<MCParticle*> ToolSet::CMC::Get_MC_OnlyDetectorSimulating_FS(std::vector<MCParticle*> MCs) {
+	std::vector<MCParticle*> FS_DetectorLevel;
+	int nMC = MCs.size();
+	for( int i = 0; i < nMC; i++ ){
+		if(Judge_OnlyDetectorSimulating_FS(MCs[i])){
+			FS_DetectorLevel.push_back(MCs[i]);
+		}
+	}
+	return(FS_DetectorLevel);
+}
+
 std::vector<MCParticle*> ToolSet::CMC::Get_MC_DetectorSimulating_FS(std::vector<MCParticle*> MCs) {
 	std::vector<MCParticle*> FS_DetectorLevel;
 	int nMC = MCs.size();
@@ -76,16 +97,65 @@ std::vector<MCParticle*> ToolSet::CMC::Get_MC_DetectorSimulating_FS(std::vector<
 }
 
 
+
+
+std::vector<MCParticle*> ToolSet::CMC::Get_MC_Overlay_FS(std::vector<MCParticle*> MCs) {
+	std::vector<MCParticle*> FS_Overlay;
+	int nMC = MCs.size();
+	for( int i = 0; i < nMC; i++ ){
+		if(Judge_Overlay_FS(MCs[i])){
+			FS_Overlay.push_back(MCs[i]);
+		}
+	}
+	return(FS_Overlay);
+}
+
 std::vector<MCParticle*> ToolSet::CMC::Get_MC_All_FS(std::vector<MCParticle*> MCs) {
 	std::vector<MCParticle*> FS;
 	int nMC = MCs.size();
 	for( int i = 0; i < nMC; i++ ){
-		if(Judge_Is_TFS(MCs[i])){
+		if(Judge_All_FS(MCs[i])){
 			FS.push_back(MCs[i]);
 		}
 	}
 	return(FS);
 }
+
+
+std::vector<MCParticle*> ToolSet::CMC::Get_MC_PythiaShowering_All(std::vector<MCParticle*> MCs) {
+	std::vector<MCParticle*> Vec;
+	int nMC = MCs.size();
+	for( int i = 0; i < nMC; i++ ){
+		if(Judge_PythiaShowering_All(MCs[i])){
+			Vec.push_back(MCs[i]);
+		}
+	}
+	return(Vec);
+}
+
+std::vector<MCParticle*> ToolSet::CMC::Get_MC_DetectorSimulating_All(std::vector<MCParticle*> MCs) {
+	std::vector<MCParticle*> Vec;
+	int nMC = MCs.size();
+	for( int i = 0; i < nMC; i++ ){
+		if(Status_Is_Detector_TFS(MCs[i])){
+			Vec.push_back(MCs[i]);
+		}
+	}
+	return(Vec);
+}
+
+
+std::vector<MCParticle*> ToolSet::CMC::Get_MC_Overlay_All(std::vector<MCParticle*> MCs) {
+	std::vector<MCParticle*> FS_Overlay;
+	int nMC = MCs.size();
+	for( int i = 0; i < nMC; i++ ){
+		if(Status_Is_Overlay(MCs[i])){
+			FS_Overlay.push_back(MCs[i]);
+		}
+	}
+	return(FS_Overlay);
+}
+
 
 
 std::vector<MCParticle*> ToolSet::CMC::Get_MC_ParticleType(std::vector<MCParticle*> MCs,signed int PDG) {
@@ -186,10 +256,10 @@ void ToolSet::CMC::Get_MC_HardScattering_Sort(std::vector<MCParticle*> MCs, std:
 		if(!Judge_HardScattering_FS(MCs[i])){
 			exit(0);
 		}
-		if(Judge_Is_Photon(MCs[i])){
+		if(Status_Is_Photon(MCs[i])){
 			ISRphoton.push_back(MCs[i]); 
 		}
-		else if(Judge_Is_Electron(MCs[i]) || Judge_Is_Muon(MCs[i])){
+		else if(Status_Is_Electron(MCs[i]) || Status_Is_Muon(MCs[i])){
 			ISRlepton.push_back(MCs[i]); 
 		}
 		else{
@@ -264,7 +334,7 @@ std::vector<MCParticle*> ToolSet::CMC::Get_MCParticleType(std::vector<MCParticle
 
 float ToolSet::CMC::Get_DecayChannel(MCParticle* input) {
 	std::vector<int> pdg;
-	pdg=Get_DaughtersPID(input);
+	pdg=Get_DaughtersPID(input->getDaughters()[0]);
 	//sort pdg from small to large
 	std::sort(pdg.begin(),pdg.end());
 	int channel=-1;
@@ -335,7 +405,7 @@ float ToolSet::CMC::Get_DecayChannel(MCParticle* input) {
 		channel 	= 45.0; //Z-gamma
 	}
 	// hadron
-	else if(CFlavor::Judge_Is_Hadron(pdg[0])&&CFlavor::Judge_Is_Hadron(pdg[1])){
+	else if(CFlavor::Status_Is_Hadron(pdg[0])&&CFlavor::Status_Is_Hadron(pdg[1])){
 		channel 	= 61.0; //hadron hadron
 	}
 	else{
@@ -360,3 +430,64 @@ std::vector<MCParticle*> ToolSet::CMC::Pass_DetectorAngle(std::vector<MCParticle
 	}
 	return(output);
 }
+
+
+MCParticle* ToolSet::CMC::Get_Visible(std::vector<MCParticle*> in){
+
+	int num=in.size();
+
+	MCParticle* visible;
+	if(num<=0){
+		visible=NewParticle(0,0,0,0,visible);
+		return(visible);
+	}
+
+	TLorentzVector VS(0,0,0,0);
+	for(int i=0;i<num;i++){
+		TLorentzVector Vnew(in[i]->getMomentum(),in[i]->getEnergy());
+		VS+=Vnew;
+	}
+
+	visible = NewParticle(VS[0],VS[1],VS[2],VS[3],visible);
+	return(visible);
+
+}
+
+
+
+MCParticle* ToolSet::CMC::Get_InVisible(std::vector<MCParticle*> in){
+	MCParticle* visible = Get_Visible(in);
+	MCParticle* RCCollider=NewParticle(BEAM_ENERGY*sin(BEAM_ANGLE),0,0,BEAM_ENERGY,in[0]);
+
+	MCParticle* invisible= Minus(RCCollider,visible);
+	delete RCCollider;
+	delete visible;
+	return(invisible);
+}
+
+TLorentzVector ToolSet::CMC::Get_Visible_To_Lorentz(std::vector<MCParticle*> in){
+
+	int num=in.size();
+
+	TLorentzVector visible;
+	visible=TLorentzVector(0,0,0,0);
+	if(num<=0){
+		return(visible);
+	}
+
+	for(int i=0;i<num;i++){
+		TLorentzVector Vnew(in[i]->getMomentum(),in[i]->getEnergy());
+		visible+=Vnew;
+	}
+
+	return(visible);
+
+}
+
+TLorentzVector ToolSet::CMC::Get_InVisible_To_Lorentz(std::vector<MCParticle*> in){
+	TLorentzVector visible = Get_Visible_To_Lorentz(in);
+	TLorentzVector RCCollider=TLorentzVector(BEAM_ENERGY*sin(BEAM_ANGLE),0,0,BEAM_ENERGY);
+	TLorentzVector invisible= RCCollider-visible;
+	return(invisible);
+}
+

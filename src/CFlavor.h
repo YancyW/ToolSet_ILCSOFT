@@ -4,7 +4,7 @@
 namespace ToolSet{
 	class CFlavor{
 		public:
-		static bool Judge_Is_Hadron(int pdg);
+		static bool Status_Is_Hadron(int pdg);
 	};
 }
 #endif

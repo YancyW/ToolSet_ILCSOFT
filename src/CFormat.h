@@ -5,6 +5,8 @@
 #include <string> 
 #include <iomanip> 
 #include "TStyle.h"
+#include "CPrint.h"
+using ToolSet::operator<<;
 
 namespace ToolSet{
 	template <typename TMess1, typename TMess2,typename TMess3, typename TMess4> 

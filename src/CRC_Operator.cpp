@@ -43,7 +43,7 @@ ReconstructedParticle*  ToolSet::CRC::Minus(const ReconstructedParticle* RC1, co
 	double fl0[3]={p0.Px(),p0.Py(),p0.Pz()};
 	RC->setMomentum(fl0);
 	RC->setMass    (mass);
-	RC->setEnergy(energy);
+	RC->setEnergy  (energy);
 	RC->setCharge  (RC1->getCharge());
 	RC->setType    (10000); 
 	ReconstructedParticle* RC0 = dynamic_cast<ReconstructedParticle*> (RC);

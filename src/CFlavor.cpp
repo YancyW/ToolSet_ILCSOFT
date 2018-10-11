@@ -1,6 +1,6 @@
 
 #include"CFlavor.h"
-bool ToolSet::CFlavor::Judge_Is_Hadron(int pdg){
+bool ToolSet::CFlavor::Status_Is_Hadron(int pdg){
 	if(pdg>100 && pdg <600){
 		return(true);
 	}

@@ -3,18 +3,34 @@
 
 
 void ToolSet::CChain_Single::Init(){
-	//_head = std::nullptr_t null;
 	_head = NULL;
 	_head_assist = NULL;
+	_next_head = NULL;
+	_next_next_head = NULL;
+	_has_trim_chain = false;
+	_has_set_rc = false;
+	_nav_from_mc_to_rc = NULL;
+	_nav_from_rc_to_mc = NULL;
 }
 
+void ToolSet::CChain_Single::Set_Nav_From_MC_To_RC(LCRelationNavigator* relation){
+	_nav_from_mc_to_rc = relation;
+}
 
-void ToolSet::CChain_Single::Get_RC(LCRelationNavigator* relation){
+void ToolSet::CChain_Single::Set_Nav_From_RC_To_MC(LCRelationNavigator* relation){
+	_nav_from_rc_to_mc = relation;
+}
+
+void ToolSet::CChain_Single::Set_RC(){
+	if(_nav_from_mc_to_rc==NULL){
+		ToolSet::ShowMessage(2,"in ToolSet::CChain_Single::Set_RC, rc_link is not set before using RC functions");
+		exit(0);
+	}
 	for(unsigned int i=0;i<_end.size();i++){
 		std::vector<std::pair<float, ReconstructedParticle*> > to_tmp;
 
-		LCObjectVec frompars = relation->getRelatedFromObjects(_end[i].first) ;
-		std::vector<float> weight = relation->getRelatedFromWeights(_end[i].first);
+		LCObjectVec frompars = _nav_from_mc_to_rc->getRelatedFromObjects(_end[i].first) ;
+		std::vector<float> weight = _nav_from_mc_to_rc->getRelatedFromWeights(_end[i].first);
 
 		for(unsigned int j=0;j<frompars.size();j++){
 			ReconstructedParticle* recpfo = dynamic_cast<ReconstructedParticle*>(frompars[j]);
@@ -22,6 +38,7 @@ void ToolSet::CChain_Single::Get_RC(LCRelationNavigator* relation){
 		}
 		_end[i].second=to_tmp;
 	}
+	_has_set_rc = true;
 	return;
 }
 
@@ -30,6 +47,12 @@ void ToolSet::CChain_Single::Get_RC(LCRelationNavigator* relation){
 void ToolSet::CChain_Single::Push_Back(MCParticle* input){
 	if(CMC::Judge_HardScattering_FS(input)){
 		_head = input;
+	}
+	if(CMC::Judge_HardScattering_Next_FS(input)){
+		_next_head = input;
+	}
+	if(CMC::Judge_HardScattering_Next_Next_FS(input)){
+		_next_next_head= input;
 	}
 	_chain.push_back(input);
 	if(CMC::Judge_PythiaShowering_FS(input)||CMC::Judge_DetectorSimulating_FS(input)){
@@ -55,9 +78,9 @@ void ToolSet::CChain_Single::Recurse_Chain(MCParticle* input){
 
 //give a final particle,  get where does it come from
 void ToolSet::CChain_Single::Push_Forward(MCParticle* input){
-//	std::cout<< "in Push_Forward::entering Push_Forward" << std::endl;
+	//	std::cout<< "in Push_Forward::entering Push_Forward" << std::endl;
 	if(CMC::Judge_HardScattering_FS(input)){
-//		std::cout<< "in Push_Forward::get a head" << std::endl;
+		//		std::cout<< "in Push_Forward::get a head" << std::endl;
 		if(_head!=NULL){
 			_head_assist  = input;
 		}
@@ -65,9 +88,15 @@ void ToolSet::CChain_Single::Push_Forward(MCParticle* input){
 			_head = input;
 		}
 	}
+	if(CMC::Judge_HardScattering_Next_FS(input)){
+		_next_head = input;
+	}
+	if(CMC::Judge_HardScattering_Next_Next_FS(input)){
+		_next_next_head= input;
+	}
 	_chain.push_back(input);
 	if(CMC::Judge_PythiaShowering_FS(input)||CMC::Judge_DetectorSimulating_FS(input)){
-//		std::cout<< "in Push_Forward::get an end" << std::endl;
+		//		std::cout<< "in Push_Forward::get an end" << std::endl;
 		std::vector<std::pair<float, ReconstructedParticle*> > rec_tmp;
 		rec_tmp.clear();
 		std::pair<MCParticle*,std::vector<std::pair<float, ReconstructedParticle*> > >input_pair=std::make_pair(input,rec_tmp);
@@ -76,17 +105,17 @@ void ToolSet::CChain_Single::Push_Forward(MCParticle* input){
 }
 
 void ToolSet::CChain_Single::TraceBack_Chain(MCParticle* input){
-//	std::cout<< "in TraceBack_Chain::entering TraceBack_Chain" << std::endl;
+	//	std::cout<< "in TraceBack_Chain::entering TraceBack_Chain" << std::endl;
 	Push_Forward(input);
-//	std::cout<< "in TraceBack_Chain::out of Push_Forward" << std::endl;
+	//	std::cout<< "in TraceBack_Chain::out of Push_Forward" << std::endl;
 	if(CMC::Judge_HardScattering_FS(input)){
-//		std::cout<< "in TraceBack_Chain::Is HardScattering_FS, return" << std::endl;
+		//		std::cout<< "in TraceBack_Chain::Is HardScattering_FS, return" << std::endl;
 		return;
 	}
 	for(int i=0;i<CMC::Get_Parents_Number(input);i++){
-//		std::cout<< "in TraceBack_Chain::recurse into parents' TraceBack_Chain, parent" << i << std::endl;
+		//		std::cout<< "in TraceBack_Chain::recurse into parents' TraceBack_Chain, parent" << i << std::endl;
 		TraceBack_Chain(input->getParents()[i]);
-//		std::cout<< "in TraceBack_Chain::out of parents' TraceBack_Chain, parent" << i << std::endl;
+		//		std::cout<< "in TraceBack_Chain::out of parents' TraceBack_Chain, parent" << i << std::endl;
 	}
 }
 
@@ -97,24 +126,130 @@ void ToolSet::CChain_Single::TraceBack_Chain(MCParticle* input){
 
 
 
-void ToolSet::CChain_Single::Get_Chain(MCParticle* input){
+void ToolSet::CChain_Single::Set_Chain(MCParticle* input){
+	Init();
 	if(!CMC::Judge_HardScattering_FS(input)){
 		return;
 	}
 	Recurse_Chain(input);
+	Set_Trim_Chain();
 }
 
 
-void ToolSet::CChain_Single::Get_Chain_FromMCFS(MCParticle* input){
-//	std::cout<< "in Get_Chain_FromMCFS:: make sure input is a FS" << std::endl;
+void ToolSet::CChain_Single::Set_Trim_Chain(){
+	//| ShowMessage(2,"Error, in CChain_Single:: _chain",_chain);
+	bool get_chain=false;
+	bool has_double_par=false;
+	std::vector<MCParticle*> _trim_chain_tmp;
+	for(unsigned int i=0;i<_chain.size()-1;i++){
+		if(CMC::Get_Parents_Number(_chain[i])==2){
+			_trim_chain.assign(_chain.begin(), _chain.begin()+i+1);
+			has_double_par = true;
+			//| |   ShowMessage(2,"Error, in CChain_Single::in for l",i);
+			for(unsigned int j=i+1;j<_chain.size();j++){
+				//| |   |   |   ShowMessage(2,"Error, in CChain_Single::in for",i,j);
+				if(_chain[i]->getParents()[1]->id()==_chain[j]->id()){
+					_trim_chain_tmp.assign(_chain.begin()+i, _chain.begin()+j);
+					//| |   |   |   |   ShowMessage(2,"Error, in CChain_Single:: _trim_chain_tmp",_trim_chain_tmp);
+					bool has_proton=false;
+					for(unsigned int k=0; k<_trim_chain_tmp.size(); k++){
+						if(CMC::Judge_Is_Beam(_trim_chain_tmp[k])){
+							has_proton = true;
+							break;
+						}
+					}
+					if(!has_proton){
+						get_chain = true;
+						_has_trim_chain = true;
+						for(unsigned int trim_index=0;trim_index<_trim_chain_tmp.size();trim_index++){
+							_trim_chain.push_back(_trim_chain_tmp[trim_index]);
+						}
+						//| |   |   |   |   ShowMessage(2,"inside trim", _trim_chain);
+						return;
+					}
+					else{
+						_trim_chain_tmp.clear();
+						_trim_chain_tmp.assign(_chain.begin()+j, _chain.end());
+						get_chain = true;
+						_has_trim_chain = true;
+						for(unsigned int trim_index=0;trim_index<_trim_chain_tmp.size();trim_index++){
+							_trim_chain.push_back(_trim_chain_tmp[trim_index]);
+
+						}
+						//| |   |   |   |   ShowMessage(2,"inside trim", _trim_chain);
+						return;
+					}
+				}
+			}
+		}
+	}
+	if(!has_double_par){
+		_trim_chain.assign(_chain.begin(), _chain.end());
+		_has_trim_chain = true;
+
+	}
+	//| ShowMessage(2,"Error, in CChain_Single::end ");
+
+}
+
+
+void ToolSet::CChain_Single::Minimize_Trim_Chain(){
+	if(_trim_chain.size()==0){return;}
+	std::vector<MCParticle*> new_vec;
+	new_vec.push_back(_trim_chain.back());
+	for(int i=_trim_chain.size()-2;i>0;--i){
+		if(_trim_chain[i]->getPDG()!=new_vec.back()->getPDG()){
+			new_vec.push_back(_trim_chain[i]);
+		}
+	}
+	MCParticle* last_one=_trim_chain.front();
+	_trim_chain.clear();
+
+	_trim_chain=new_vec;
+	_trim_chain.push_back(last_one);
+}
+
+
+
+void ToolSet::CChain_Single::Set_Chain_FromMCFS(MCParticle* input){
+	//	std::cout<< "in Get_Chain_FromMCFS:: make sure input is a FS" << std::endl;
 	if(!CMC::Judge_PythiaShowering_FS(input)&&!CMC::Judge_DetectorSimulating_FS(input)){
 		return;
 	}
-//	std::cout<< "begin Get_Chain_FromMCFS" << std::endl;
+	//	std::cout<< "begin Get_Chain_FromMCFS" << std::endl;
 	TraceBack_Chain(input);
+	Set_Trim_Chain();
+	Minimize_Trim_Chain();
 }
 
 
+void ToolSet::CChain_Single::Set_Chain_FromRCFS(ReconstructedParticle* input){
+	//	std::cout<< "in Get_Chain_FromMCFS:: make sure input is a FS" << std::endl;
+	if(_nav_from_rc_to_mc==NULL){
+		ToolSet::ShowMessage(2,"in ToolSet::CChain_Single::Set_Chain_FromRCFS, rc_link is not set before using RC functions");
+		exit(0);
+	}
+	
+	std::vector<MCParticle*> from_this_mc;
+	LCObjectVec mc_objects= _nav_from_rc_to_mc->getRelatedToObjects(input);
+	FloatVec mc_weight= _nav_from_rc_to_mc->getRelatedToWeights(input);
+	float min_weight=-10000;
+	int   min_pos=-1;
+	for( unsigned int j = 0; j < mc_weight.size(); j++ ){
+		if(min_weight<mc_weight[j]){
+			min_weight=mc_weight[j];
+			min_pos=j;
+		}
+	}
+	for( unsigned int j = 0; j < mc_objects.size(); j++ ){
+		MCParticle* recpfo = dynamic_cast< MCParticle* >( mc_objects[j] );
+		from_this_mc.push_back(recpfo);
+	}
+	if(from_this_mc.size()>0&&min_pos>=0){
+		ShowMessage(2,"input mc",from_this_mc[min_pos]);
+		Set_Chain_FromMCFS(from_this_mc[min_pos]);
+	}
+}
 
 void ToolSet::CChain_Single::Print(){
 	ShowMessage(2,"chain size",_chain.size());

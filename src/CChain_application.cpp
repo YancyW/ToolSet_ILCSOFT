@@ -1,25 +1,69 @@
 #include "CChain.h"
 #include "CMC.h"
 
-void ToolSet::CChain_Vec::Get_Nav(LCRelationNavigator* input){
-	_nav_from_pfo_to_mc = input; 
+void ToolSet::CChain_Vec::Set_Nav_From_RC_To_MC(LCRelationNavigator* input){
+	_nav_from_rc_to_mc = input; 
 }
 
-void ToolSet::CChain_Vec::Get_ChainVec(std::vector<MCParticle*> MCs, LCRelationNavigator* input) {
-	Get_Nav(input);
+void ToolSet::CChain_Vec::Set_Nav_From_MC_To_RC(LCRelationNavigator* input){
+	_nav_from_mc_to_rc = input; 
+}
+
+void ToolSet::CChain_Vec::Set_ChainVec(std::vector<MCParticle*> MCs) {
+	if(_nav_from_mc_to_rc==NULL){
+		ToolSet::ShowMessage(2,"in ToolSet::CChain_Vec::Set_ChainVec, mc_link is not set before using RC functions");
+		exit(0);
+	}
 	int num = MCs.size();
 	for( int i = 0; i < num; i++ ){
 		CChain_Single chain_tmp(MCs[i]);
-		chain_tmp.Get_RC(_nav_from_pfo_to_mc);
+		chain_tmp.Set_Nav_From_MC_To_RC(_nav_from_mc_to_rc);
+		chain_tmp.Set_RC();
 		_chain_vec.push_back(chain_tmp);
 	}
 }
 
-void ToolSet::CChain_Vec::Get_ChainVec_FromMCFS(std::vector<MCParticle*> MCs) {
+void ToolSet::CChain_Vec::Set_ChainVec(std::vector<MCParticle*> MCs, LCRelationNavigator* input) {
+	Set_Nav_From_MC_To_RC(input);
+	int num = MCs.size();
+	for( int i = 0; i < num; i++ ){
+		CChain_Single chain_tmp(MCs[i]);
+		chain_tmp.Set_Nav_From_MC_To_RC(_nav_from_mc_to_rc);
+		chain_tmp.Set_RC();
+		_chain_vec.push_back(chain_tmp);
+	}
+}
+
+void ToolSet::CChain_Vec::Set_ChainVec_FromMCFS(std::vector<MCParticle*> MCs) {
 	int num = MCs.size();
 	for( int i = 0; i < num; i++ ){
 		CChain_Single chain_tmp;
-		chain_tmp.Get_Chain_FromMCFS(MCs[i]);
+		chain_tmp.Set_Chain_FromMCFS(MCs[i]);
+		_chain_vec.push_back(chain_tmp);
+	}
+}
+
+void ToolSet::CChain_Vec::Set_ChainVec_FromRCFS(std::vector<ReconstructedParticle*> RCs) {
+	if(_nav_from_rc_to_mc==NULL){
+		ToolSet::ShowMessage(2,"in ToolSet::CChain_Vec::Set_ChainVec_FromRCFS, rc_link is not set before using RC functions");
+		exit(0);
+	}
+	int num = RCs.size();
+	for( int i = 0; i < num; i++ ){
+		CChain_Single chain_tmp;
+		chain_tmp.Set_Nav_From_RC_To_MC(_nav_from_rc_to_mc);
+		chain_tmp.Set_Chain_FromRCFS(RCs[i]);
+		_chain_vec.push_back(chain_tmp);
+	}
+}
+
+void ToolSet::CChain_Vec::Set_ChainVec_FromRCFS(std::vector<ReconstructedParticle*> RCs, LCRelationNavigator* input) {
+	Set_Nav_From_RC_To_MC(input);
+	int num = RCs.size();
+	for( int i = 0; i < num; i++ ){
+		CChain_Single chain_tmp;
+		chain_tmp.Set_Nav_From_RC_To_MC(_nav_from_rc_to_mc);
+		chain_tmp.Set_Chain_FromRCFS(RCs[i]);
 		_chain_vec.push_back(chain_tmp);
 	}
 }
@@ -35,7 +79,34 @@ std::vector<MCParticle*> ToolSet::CChain_Vec::Get_MCHead(){
 	std::vector<MCParticle*> head;
 	head.clear();
 	for(unsigned int i=0;i<_chain_vec.size();i++){
-		head.push_back(_chain_vec[i].Head());
+		MCParticle* head_tmp= _chain_vec[i].Head();
+		if(head_tmp!=NULL){
+			head.push_back(head_tmp);
+		}
+	}
+	return(head);
+}
+
+std::vector<MCParticle*> ToolSet::CChain_Vec::Get_MCNextHead(){
+	std::vector<MCParticle*> head;
+	head.clear();
+	for(unsigned int i=0;i<_chain_vec.size();i++){
+		MCParticle* head_tmp= _chain_vec[i].Next_Head();
+		if(head_tmp!=NULL){
+			head.push_back(head_tmp);
+		}
+	}
+	return(head);
+}
+
+std::vector<MCParticle*> ToolSet::CChain_Vec::Get_MCNextNextHead(){
+	std::vector<MCParticle*> head;
+	head.clear();
+	for(unsigned int i=0;i<_chain_vec.size();i++){
+		MCParticle* head_tmp= _chain_vec[i].Next_Next_Head();
+		if(head_tmp!=NULL){
+			head.push_back(head_tmp);
+		}
 	}
 	return(head);
 }
@@ -46,12 +117,42 @@ std::vector<std::vector<MCParticle*> > ToolSet::CChain_Vec::Get_MCEnd(){
 	for(unsigned int i=0;i<_chain_vec.size();i++){
 		std::vector<MCParticle*>  end_tmp;
 		for(unsigned int j=0;j<_chain_vec[i].End().size();j++){
-			end_tmp.push_back(_chain_vec[i].End()[j].first);
+			MCParticle* end_tmp_i=_chain_vec[i].End()[j].first;
+			if(end_tmp_i!=NULL){
+				end_tmp.push_back(end_tmp_i);
+			}
 		}
 		end.push_back(end_tmp);
 	}
 	return(end);
 }
+
+
+std::vector<std::vector<MCParticle*> > ToolSet::CChain_Vec::Get_Chain(){
+	std::vector<std::vector<MCParticle*> > chain;
+	chain.clear();
+
+	for(unsigned int i=0;i<_chain_vec.size();i++){
+		std::vector<MCParticle*> chain_tmp=_chain_vec[i].Chain();
+		chain.push_back(chain_tmp);
+	}
+	return(chain);
+}
+
+
+
+std::vector<std::vector<MCParticle*> > ToolSet::CChain_Vec::Get_Trim_Chain(){
+	std::vector<std::vector<MCParticle*> > chain;
+	chain.clear();
+	for(unsigned int i=0;i<_chain_vec.size();i++){
+	   std::vector<MCParticle*> chain_tmp=_chain_vec[i].Trim_Chain();
+	   chain.push_back(chain_tmp);                                                                                                                                                                                                                                           
+	
+	}
+	return(chain);
+}
+
+
 
 
 std::vector<ToolSet::Chain_End_Type_Vec > ToolSet::CChain_Vec::Get_RC(){
@@ -189,6 +290,6 @@ bool ToolSet::CChain_Vec::Compare_SpecialRC(int pdg){
 
 void ToolSet::CChain_Vec::Init() {
 	_chain_vec.clear();
-	_nav_from_pfo_to_mc = NULL;
- 	_nav_from_mc_to_pfo = NULL;
+	_nav_from_rc_to_mc = NULL;
+ 	_nav_from_mc_to_rc = NULL;
 }

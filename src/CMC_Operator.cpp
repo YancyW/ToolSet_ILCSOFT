@@ -105,3 +105,10 @@ MCParticle*  ToolSet::CMC::Minus(const MCParticle* MC1, const MCParticle* MC2) {
 
 
 
+TLorentzVector  ToolSet::CMC::Minus_To_Lorentz(const MCParticle* MC1, const MCParticle* MC2) {
+	TLorentzVector p1=TLorentzVector(MC1->getMomentum(),MC1->getEnergy());
+	TLorentzVector p2=TLorentzVector(MC2->getMomentum(),MC2->getEnergy());
+	TLorentzVector p0=p1-p2;
+	return(p0);
+}
+

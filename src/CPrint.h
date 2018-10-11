@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-#include "IMPL/MCParticleImpl.h"
+#include <IMPL/MCParticleImpl.h>
 #include <IMPL/ReconstructedParticleImpl.h>
 #include <EVENT/LCCollection.h>
 #include <EVENT/MCParticle.h>
@@ -15,8 +15,8 @@
 #include "UTIL/PIDHandler.h"
 #include "LCIOSTLTypes.h"
 #include "TLorentzVector.h"
-#include "CMC.h"
-#include "CRC.h"
+using namespace lcio;
+
 namespace ToolSet{
 	std::ostream & operator << (std::ostream & ostr, const LCEvent *in);
 

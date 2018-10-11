@@ -1,7 +1,7 @@
 #include "CMC.h"
 
 bool ToolSet::CMC::Judge_Is_Beam(MCParticle* input){
-	if((Judge_Is_MS(input))&&(Judge_Is_Electron(input))&&(!Judge_Has_Parent(input))&&(Judge_Beam_Energy(input))){
+	if((Status_Is_MS(input))&&(Status_Is_Electron(input))&&(!Status_Has_Parent(input))&&(Status_Beam_Energy(input))){
 		return(true);
 	}
 	return(false);
@@ -9,7 +9,7 @@ bool ToolSet::CMC::Judge_Is_Beam(MCParticle* input){
 
 bool ToolSet::CMC::Judge_Parents_Are_Beam(MCParticle* input){
 	bool no_par = false;
-	if(!Judge_Has_Parent(input)){
+	if(!Status_Has_Parent(input)){
 		return(false);
 	}
 	for(int i=0;i<Get_Parents_Number(input);i++){
@@ -27,7 +27,7 @@ bool ToolSet::CMC::Judge_Parents_Are_Beam(MCParticle* input){
 
 bool ToolSet::CMC::Judge_GrandParents_Are_Beam(MCParticle* input){
 	bool no_par = false;
-	if(!Judge_Has_Parent(input)){
+	if(!Status_Has_Parent(input)){
 		return(false);
 	}
 	for(int i=0;i<Get_Parents_Number(input);i++){
@@ -44,7 +44,7 @@ bool ToolSet::CMC::Judge_GrandParents_Are_Beam(MCParticle* input){
 }
 
 bool ToolSet::CMC::Judge_Is_IS_Electron(MCParticle* input){
-	if(!Judge_Is_MS(input)||!Judge_Is_Electron(input)){
+	if(!Status_Is_MS(input)||!Status_Is_Electron(input)){
 		return(false);
 	}
 
@@ -56,14 +56,14 @@ bool ToolSet::CMC::Judge_Is_IS_Electron(MCParticle* input){
 }
 
 bool ToolSet::CMC::Judge_Is_IS_Photon(MCParticle* input){
-	if(!Judge_Is_MS(input)||!Judge_Is_Photon(input)){
+	if(!Status_Is_MS(input)||!Status_Is_Photon(input)){
 		return(false);
 	}
 
 	if(Judge_Parents_Are_Beam(input)){
 		return(true);
 	}
-	else if(!Judge_Has_Parent(input)){
+	else if(!Status_Has_Parent(input)){
 		return(true);
 	}
 
@@ -80,37 +80,37 @@ bool ToolSet::CMC::Judge_Is_IS_Photon(MCParticle* input){
  * @Returns: particles in parton level
  *****************************************************************************************/
 bool ToolSet::CMC::Judge_HardScattering_FS(MCParticle* input){
-	if(Judge_Is_Overlay(input)){
+	if(Status_Is_Overlay(input)){
 		return(false);
 	}
 
-	if((Judge_Is_MS(input))&&(!Judge_Has_Parent(input))&&(Judge_Is_Beam(input))){
+	if((Status_Is_MS(input))&&(!Status_Has_Parent(input))&&(Judge_Is_Beam(input))){
 		return(false);
 	}		
-	else if((Judge_Is_MS(input))&&(!Judge_Has_Parent(input))&&(!Judge_Is_Beam(input))){
-		if(Judge_Is_Photon(input)){
-			if(!Judge_Beam_Energy(input)){
+	else if((Status_Is_MS(input))&&(!Status_Has_Parent(input))&&(!Judge_Is_Beam(input))){
+		if(Status_Is_Photon(input)){
+			if(!Status_Beam_Energy(input)){
 				return(true);
 			}
 			else{
 				return(false);
 			}
 		}
-		if(Judge_Is_NeutralHadron(input)||Judge_Is_ChargedHadron(input)){
+		if(Status_Is_NeutralHadron(input)||Status_Is_ChargedHadron(input)){
 			return(false);
 		}
-		else if(Judge_Is_Gluon(input)){
+		else if(Status_Is_Gluon(input)){
 			return(false);
 		}
 		else{
 			return(true);
 		}
 	}
-	else if((Judge_Is_MS(input))&&(Judge_Has_Parent(input))){
-		if(Judge_Parents_Are_Beam(input)&&Judge_Is_Photon(input)){
+	else if((Status_Is_MS(input))&&(Status_Has_Parent(input))){
+		if(Judge_Parents_Are_Beam(input)&&Status_Is_Photon(input)){
 			return(true);
 		}
-		if(Judge_GrandParents_Are_Beam(input)&&!Judge_Is_NeutralHadron(input)&&!Judge_Is_ChargedHadron(input)){
+		if(Judge_GrandParents_Are_Beam(input)&&!Status_Is_NeutralHadron(input)&&!Status_Is_ChargedHadron(input)){
 			return(true);
 		}
 	}
@@ -119,6 +119,33 @@ bool ToolSet::CMC::Judge_HardScattering_FS(MCParticle* input){
 
 }
 
+bool ToolSet::CMC::Judge_HardScattering_Next_FS(MCParticle* input){
+	if(Status_Is_Overlay(input)){
+		return(false);
+	}
+
+	if(!Status_Has_Parent(input)){return(false);}
+	if((Judge_HardScattering_FS(input->getParents()[0]))){
+		return(true);
+	}		
+
+	return(false);
+
+}
+
+bool ToolSet::CMC::Judge_HardScattering_Next_Next_FS(MCParticle* input){
+	if(Status_Is_Overlay(input)){
+		return(false);
+	}
+
+	if(!Status_Has_Parent(input)){return(false);}
+	if((Judge_HardScattering_Next_FS(input->getParents()[0]))){
+		return(true);
+	}		
+
+	return(false);
+
+}
 /*****************************************************************************************
  * @Name: Judge_PythiaShowering_FS
  *
@@ -127,7 +154,13 @@ bool ToolSet::CMC::Judge_HardScattering_FS(MCParticle* input){
  * @Returns: all final states in MCTruth
  *****************************************************************************************/
 bool ToolSet::CMC::Judge_OnlyPythiaShowering_FS(MCParticle* input){
-	if(!Judge_Has_Daughter(input)&&Judge_Is_Pythia_TFS(input)){
+	if(!Status_Is_Pythia_TFS(input)){
+		return(false);
+	}
+	if(!Status_Has_Daughter(input)){
+		return(true);
+	}
+	if(Status_Is_LeftDetector(input)){
 		return(true);
 	}
 
@@ -137,7 +170,16 @@ bool ToolSet::CMC::Judge_OnlyPythiaShowering_FS(MCParticle* input){
 
 
 bool ToolSet::CMC::Judge_PythiaShowering_FS(MCParticle* input){
-	if(Judge_Is_Pythia_TFS(input)){
+	if(Status_Is_Pythia_TFS(input)){
+		return(true);
+	}
+
+	return(false);
+
+}
+
+bool ToolSet::CMC::Judge_PythiaShowering_All(MCParticle* input){
+	if(Status_Is_Pythia(input)){
 		return(true);
 	}
 
@@ -152,7 +194,7 @@ bool ToolSet::CMC::Judge_PythiaShowering_FS(MCParticle* input){
  * @Returns: final status generated by the detector simulation, e.g. photon with material to 2 electrons 
  *****************************************************************************************/
 bool ToolSet::CMC::Judge_OnlyDetectorSimulating_FS(MCParticle* input){
-	if(!Judge_Has_Daughter(input)&&Judge_Is_Detector_TFS(input)){
+	if(!Status_Has_Daughter(input)&&Status_Is_Detector_TFS(input)){
 		return(true);
 	}
 
@@ -160,7 +202,7 @@ bool ToolSet::CMC::Judge_OnlyDetectorSimulating_FS(MCParticle* input){
 }
 
 bool ToolSet::CMC::Judge_DetectorSimulating_FS(MCParticle* input){
-	if(!Judge_Has_Daughter(input)&&(Judge_Is_Detector_TFS(input)||Judge_Is_Pythia_TFS(input))){
+	if(Judge_OnlyDetectorSimulating_FS(input)||Judge_OnlyPythiaShowering_FS(input)){
 		return(true);
 	}
 
@@ -168,10 +210,25 @@ bool ToolSet::CMC::Judge_DetectorSimulating_FS(MCParticle* input){
 }
 
 bool ToolSet::CMC::Judge_Overlay_FS(MCParticle* input){
-	if(!Judge_Has_Daughter(input)&&Judge_Is_Overlay_TFS(input)){
+	if(!Status_Has_Daughter(input)&&Status_Is_Overlay_DFS(input)){
 		return(true);
 	}
+	return(false);
+}
 
+bool ToolSet::CMC::Judge_Has_Overlay(std::vector<MCParticle*> input){
+	for(unsigned int i=0;i<input.size();i++){
+		if(Status_Is_Overlay_DFS(input[i])){
+			return(true);
+		}
+	}
+	return(false);
+}
+
+bool ToolSet::CMC::Judge_All_FS(MCParticle* input){
+	if(!Status_Has_Daughter(input)&&Status_Is_TFS(input)){
+		return(true);
+	}
 	return(false);
 }
 

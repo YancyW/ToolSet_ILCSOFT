@@ -15,7 +15,8 @@ ROOTLIBS := $(shell root-config --libs) -lXMLIO
 
 SRCS = src/CData_Type.cpp src/CFormat.cpp src/CChain.cpp src/CChain_application.cpp \
 	   src/CMC_Get.cpp src/CMC_Operator.cpp src/CMC_Status.cpp src/CMC_Judge.cpp src/CMC_Properties.cpp\
-	   src/CRC_Get.cpp src/CRC_Operator.cpp src/CSort.cpp src/CPrint.cpp src/CFlavor.cpp
+	   src/CRC_Get.cpp src/CRC_Operator.cpp src/CRC_Judge.cpp \
+	   src/CSort.cpp src/CPrint.cpp src/CFlavor.cpp src/CVector.cpp
 OBJS=$(patsubst %.cpp, %.o, $(SRCS))
 
 all: ${TARGET_LIB}

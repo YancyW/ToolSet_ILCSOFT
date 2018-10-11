@@ -1,6 +1,8 @@
 #pragma once
 #ifndef CMC_H
 #define CMC_H  
+#define BEAM_ENERGY 500
+#define BEAM_ANGLE  0.007
 #include <iostream>
 #include <fstream>
 #include <set>
@@ -42,6 +44,7 @@ namespace ToolSet{
 			static MCParticle* Add(const MCParticle* MC1,const MCParticle* MC2);
 			static MCParticle* Minus(const MCParticle* MC1,const MCParticle* MC2);
 			static MCParticle* Equal(const MCParticle* MC1) ;
+			static TLorentzVector  Minus_To_Lorentz(const MCParticle* MC1, const MCParticle* MC2) ;
 
 			static bool Compare_as_E(MCParticle* i, MCParticle* j){
 				return (i->getEnergy()>j->getEnergy());
@@ -200,51 +203,61 @@ namespace ToolSet{
 			   */
 
 			// functions for get basic particle properties 
-			static int  Get_Parents_Number(MCParticle* input)          ;
-			static int  Get_Daughters_Number(MCParticle* input)        ;
+			static int  Get_Parents_Number(MCParticle* input)               ;
+			static int  Get_Daughters_Number(MCParticle* input)             ;
 			// functions for Judge particle status 
-			static bool Judge_Beam_Energy(MCParticle* input)           ;
-			static bool Judge_Has_Parent(MCParticle* input)            ;
-			static bool Judge_Has_GrandParent(MCParticle* input)       ;
-			static bool Judge_Has_Daughter(MCParticle* input)          ;
-			static bool Judge_Has_GrandDaughter(MCParticle* input)     ;
-			static bool Judge_Is_MS(MCParticle* input)                 ;
-			static bool Judge_Is_TFS(MCParticle* input)                ;
-			static bool Judge_Is_Pythia_TFS(MCParticle* input)         ;
-			static bool Judge_Is_Detector_TFS(MCParticle* input)       ;
-			static bool Judge_Is_Overlay(MCParticle* input)            ;
-			static bool Judge_Is_Overlay_TFS(MCParticle* input)        ;
+			static bool Status_Beam_Energy(MCParticle* input)               ;
+			static bool Status_Has_Parent(MCParticle* input)                ;
+			static bool Status_Has_GrandParent(MCParticle* input)           ;
+			static bool Status_Has_Daughter(MCParticle* input)              ;
+			static bool Status_Has_GrandDaughter(MCParticle* input)         ;
+			static bool Status_Is_MS(MCParticle* input)                     ;
+			static bool Status_Is_TFS(MCParticle* input)                    ;
+			static bool Status_Is_Pythia_TFS(MCParticle* input)             ;
+			static bool Status_Is_Detector_TFS(MCParticle* input)           ;
+			static bool Status_Is_Pythia(MCParticle* input)                 ;
+			static bool Status_Is_Overlay(MCParticle* input)                ;
+			static bool Status_Is_Overlay_DFS(MCParticle* input)            ;
+			static bool Status_Is_Stopped(MCParticle* input)                ;
+			static bool Status_Is_DecayInTracker(MCParticle* input)         ;
+			static bool Status_Is_DecayInCalorimeter(MCParticle* input)     ;
+			static bool Status_Is_LeftDetector(MCParticle* input)     ;
 
 			// functions for get special particle 
-			static bool Judge_Is_Electron(MCParticle* input)           ;
-			static bool Judge_Is_Muon(MCParticle* input)               ;
-			static bool Judge_Is_Tau(MCParticle* input)                ;
-			static bool Judge_Is_Lepton(MCParticle* input)             ;
-			static bool Judge_Is_Neutrino(MCParticle* input)           ;
-			static bool Judge_Is_HeavyBoson(MCParticle* input)         ;
-			static bool Judge_Is_Photon(MCParticle* input)             ;
-			static bool Judge_Is_NeutralHadron(MCParticle* input)      ;
-			static bool Judge_Is_ChargedHadron(MCParticle* input)      ;
-			static bool Judge_Is_Gluon(MCParticle* input)              ;
-			static bool Judge_Is_Quark(MCParticle* input)              ;
-			static bool Judge_Is_LightQuark(MCParticle* input)         ;
-			static bool Judge_Is_TopQuark(MCParticle* input)           ;
-			static bool Judge_Is_BottomQuark(MCParticle* input)        ;
-			static bool Judge_Is_CharmQuark(MCParticle* input)         ;
+			static bool Status_Is_Electron(MCParticle* input)               ;
+			static bool Status_Is_Muon(MCParticle* input)                   ;
+			static bool Status_Is_Tau(MCParticle* input)                    ;
+			static bool Status_Is_Lepton(MCParticle* input)                 ;
+			static bool Status_Is_Neutrino(MCParticle* input)               ;
+			static bool Status_Is_HeavyBoson(MCParticle* input)             ;
+			static bool Status_Is_Photon(MCParticle* input)                 ;
+			static bool Status_Is_NeutralHadron(MCParticle* input)          ;
+			static bool Status_Is_ChargedHadron(MCParticle* input)          ;
+			static bool Status_Is_Gluon(MCParticle* input)                  ;
+			static bool Status_Is_Quark(MCParticle* input)                  ;
+			static bool Status_Is_LightQuark(MCParticle* input)             ;
+			static bool Status_Is_TopQuark(MCParticle* input)               ;
+			static bool Status_Is_BottomQuark(MCParticle* input)            ;
+			static bool Status_Is_CharmQuark(MCParticle* input)             ;
 
 			// functions for Judge particle type 
-			static bool Judge_Is_Beam(MCParticle* input)               ;
-			static bool Judge_Parents_Are_Beam(MCParticle* input)      ;
-			static bool Judge_GrandParents_Are_Beam(MCParticle* input) ;
-			static bool Judge_Is_IS_Electron(MCParticle* input)        ;
-			static bool Judge_Is_IS_Photon(MCParticle* input)          ;
+			static bool Judge_Is_Beam(MCParticle* input)                    ;
+			static bool Judge_Parents_Are_Beam(MCParticle* input)           ;
+			static bool Judge_GrandParents_Are_Beam(MCParticle* input)      ;
+			static bool Judge_Is_IS_Electron(MCParticle* input)             ;
+			static bool Judge_Is_IS_Photon(MCParticle* input)               ;
 
-			static bool Judge_HardScattering_FS(MCParticle* input)     ;
-			static bool Judge_OnlyPythiaShowering_FS(MCParticle* input);
-			static bool Judge_PythiaShowering_FS(MCParticle* input)    ;
-			static bool Judge_OnlyDetectorSimulating_FS(MCParticle* input);
-			static bool Judge_DetectorSimulating_FS(MCParticle* input) ;
-			static bool Judge_Overlay_FS(MCParticle* input)            ;
+			static bool Judge_HardScattering_FS(MCParticle* input)          ;
+			static bool Judge_HardScattering_Next_FS(MCParticle* input)     ;
+			static bool Judge_HardScattering_Next_Next_FS(MCParticle* input);
+			static bool Judge_OnlyPythiaShowering_FS(MCParticle* input)     ;
+			static bool Judge_PythiaShowering_FS(MCParticle* input)         ;
+			static bool Judge_PythiaShowering_All(MCParticle* input)        ;
+			static bool Judge_OnlyDetectorSimulating_FS(MCParticle* input)  ;
+			static bool Judge_DetectorSimulating_FS(MCParticle* input)      ;
+			static bool Judge_Overlay_FS(MCParticle* input)                 ;
+			static bool Judge_Has_Overlay(std::vector<MCParticle*> input)   ;
+			static bool Judge_All_FS(MCParticle* input)                     ;
 
 
 			// functions for get special particle vector 
@@ -253,20 +266,36 @@ namespace ToolSet{
 
 			static std::vector<MCParticle*> Get_MCParticle(LCCollection* AllMC) ;
 
+			// for the final states 
 			static std::vector<MCParticle*> Get_MC_HardScattering_FS(std::vector<MCParticle*> MCs) ;
 
 			static std::vector<MCParticle*> Get_MC_PythiaShowering_FS(std::vector<MCParticle*> MCs) ;
 
+			static std::vector<MCParticle*> Get_MC_OnlyPythiaShowering_FS(std::vector<MCParticle*> MCs) ;
+
 			static std::vector<MCParticle*> Get_MC_DetectorSimulating_FS(std::vector<MCParticle*> MCs) ;
+
+			static std::vector<MCParticle*> Get_MC_OnlyDetectorSimulating_FS(std::vector<MCParticle*> MCs) ;
+
+			static std::vector<MCParticle*> Get_MC_Overlay_FS(std::vector<MCParticle*> MCs) ;
 
 			static std::vector<MCParticle*> Get_MC_All_FS(std::vector<MCParticle*> MCs) ;
 
+			// for all related particle
+			static std::vector<MCParticle*> Get_MC_PythiaShowering_All(std::vector<MCParticle*> MCs) ;
+
+			static std::vector<MCParticle*> Get_MC_DetectorSimulating_All(std::vector<MCParticle*> MCs) ;
+
+			static std::vector<MCParticle*> Get_MC_Overlay_All(std::vector<MCParticle*> MCs) ;
+
+			// for ID 
 			static std::vector<MCParticle*> Get_MC_ParticleType(std::vector<MCParticle*> MCs,signed int PDG) ;
 
 			static std::vector<int>         Get_ParentsPID(MCParticle* MC) ;
 
 			static std::vector<int>         Get_DaughtersPID(MCParticle* MC) ;
 
+			// for chain 
 			static std::vector<MCParticle*> MCToPythiaShowering(MCParticle* input);
 
 			static std::vector<MCParticle*> MCToHardScattering(MCParticle* input);
@@ -282,6 +311,10 @@ namespace ToolSet{
 			static void                     Remove_Duplication(std::vector<MCParticle*> &MCs) ;
 
 			static std::vector<MCParticle*> Pass_DetectorAngle(std::vector<MCParticle*> &MCs) ;
+			static MCParticle*              Get_Visible(std::vector<MCParticle*> in);
+			static MCParticle*              Get_InVisible(std::vector<MCParticle*> in);
+			static TLorentzVector           Get_Visible_To_Lorentz(std::vector<MCParticle*> in);
+			static TLorentzVector           Get_InVisible_To_Lorentz(std::vector<MCParticle*> in);
 	};
 }
 
