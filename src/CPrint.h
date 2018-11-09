@@ -27,8 +27,12 @@ namespace ToolSet{
 	std::ostream & operator << (std::ostream & ostr, const std::vector<MCParticle*> &invec);
 	std::ostream & operator << (std::ostream & ostr, const std::vector<ReconstructedParticle*> &invec);
 	std::ostream & operator << (std::ostream & ostr, const std::vector<Track*> &invec);
-	std::ostream & operator << (std::ostream & ostr, const std::vector<int> &in);
+
 	std::ostream & operator << (std::ostream & ostr, const TLorentzVector &invec);
 	std::ostream & operator << (std::ostream & ostr, const std::vector<TLorentzVector> &invec);
+
+	std::ostream & operator << (std::ostream & ostr, const std::vector<int> &in);
+	std::ostream & operator << (std::ostream & ostr, const std::vector<float> &in);
+
 }
 #endif

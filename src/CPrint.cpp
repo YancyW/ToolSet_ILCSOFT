@@ -180,3 +180,22 @@ std::ostream & ToolSet::operator << (std::ostream & ostr, const std::vector<TLor
 	return ostr;
 }
 
+
+std::ostream & ToolSet::operator << (std::ostream & ostr, const std::vector<int> &in){
+	if (in.size() == 0) return ostr;
+	for (unsigned int i = 0; i < in.size(); i++) {
+		std::cout << in[i] << ", "; 
+	}
+	std::cout << std::endl;
+	return ostr;
+
+}
+
+std::ostream & ToolSet::operator << (std::ostream & ostr, const std::vector<float> &in){
+	if (in.size() == 0) return ostr;
+	for (unsigned int i = 0; i < in.size(); i++) {
+		std::cout << in[i] << ", " ;
+	}
+	std::cout << std::endl;
+	return ostr;
+}

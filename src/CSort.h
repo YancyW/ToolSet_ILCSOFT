@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <stack>
+#include <cmath>
 
 //LCIO
 #include <EVENT/LCCollection.h>

@@ -226,7 +226,10 @@ bool ToolSet::CMC::Judge_Has_Overlay(std::vector<MCParticle*> input){
 }
 
 bool ToolSet::CMC::Judge_All_FS(MCParticle* input){
-	if(!Status_Has_Daughter(input)&&Status_Is_TFS(input)){
+	if(Judge_DetectorSimulating_FS(input)){
+		return(true);
+	}
+	if(Judge_Overlay_FS(input)){
 		return(true);
 	}
 	return(false);

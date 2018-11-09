@@ -9,6 +9,7 @@
 
 #include <vector>
 #include <stack>
+#include <cmath>
 
 //LCIO
 #include <EVENT/LCCollection.h>
@@ -236,6 +237,7 @@ namespace ToolSet{
 			static bool Status_Is_Gluon(MCParticle* input)                  ;
 			static bool Status_Is_Quark(MCParticle* input)                  ;
 			static bool Status_Is_LightQuark(MCParticle* input)             ;
+			static bool Status_Is_HeavyQuark(MCParticle* input)             ;
 			static bool Status_Is_TopQuark(MCParticle* input)               ;
 			static bool Status_Is_BottomQuark(MCParticle* input)            ;
 			static bool Status_Is_CharmQuark(MCParticle* input)             ;
@@ -288,8 +290,6 @@ namespace ToolSet{
 
 			static std::vector<MCParticle*> Get_MC_Overlay_All(std::vector<MCParticle*> MCs) ;
 
-			// for ID 
-			static std::vector<MCParticle*> Get_MC_ParticleType(std::vector<MCParticle*> MCs,signed int PDG) ;
 
 			static std::vector<int>         Get_ParentsPID(MCParticle* MC) ;
 
@@ -302,6 +302,7 @@ namespace ToolSet{
 
 			static void                     Get_MC_HardScattering_Sort(std::vector<MCParticle*> MCs, std::vector<MCParticle*> &ISRlepton , std::vector<MCParticle*> &ISRphoton, std::vector<MCParticle*> &ObjetctParticle) ;
 
+			// for ID 
 			static std::vector<MCParticle*> Get_MCParticleType(std::vector<MCParticle*> MCs,signed int PDG) ;
 			static std::vector<MCParticle*> Get_MCParticleType_Abs(std::vector<MCParticle*> MCs,signed int PDG) ;
 			static std::vector<MCParticle*> Get_MCParticleType(std::vector<MCParticle*> MCs,std::string PDG) ;
@@ -315,9 +316,10 @@ namespace ToolSet{
 			static MCParticle*              Get_InVisible(std::vector<MCParticle*> in);
 			static TLorentzVector           Get_Visible_To_Lorentz(std::vector<MCParticle*> in);
 			static TLorentzVector           Get_InVisible_To_Lorentz(std::vector<MCParticle*> in);
+			static std::vector<MCParticle*> Get_Isolated(std::vector<MCParticle*> input,std::vector<MCParticle*> all, std::vector<MCParticle*> left) ;
+			static bool                     IsInCone( MCParticle* lep, MCParticle* pfo, float angle_cut) ;
 	};
+
 }
-
-
 #endif
 

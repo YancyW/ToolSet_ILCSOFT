@@ -13,7 +13,7 @@ MARLINPath=/cvmfs/ilc.desy.de/sw/x86_64_gcc49_sl6/v02-00-01/Marlin/v01-16/includ
 INCLUDE = -I. -I..  -I$(RootPath)/include -I${LCIOPath} 
 ROOTLIBS := $(shell root-config --libs) -lXMLIO 
 
-SRCS = src/CData_Type.cpp src/CFormat.cpp src/CChain.cpp src/CChain_application.cpp \
+SRCS = src/CData_Type.cpp src/CFormat.cpp src/CChain.cpp src/CChain_Single.cpp \
 	   src/CMC_Get.cpp src/CMC_Operator.cpp src/CMC_Status.cpp src/CMC_Judge.cpp src/CMC_Properties.cpp\
 	   src/CRC_Get.cpp src/CRC_Operator.cpp src/CRC_Judge.cpp \
 	   src/CSort.cpp src/CPrint.cpp src/CFlavor.cpp src/CVector.cpp

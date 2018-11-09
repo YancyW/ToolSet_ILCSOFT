@@ -158,18 +158,6 @@ std::vector<MCParticle*> ToolSet::CMC::Get_MC_Overlay_All(std::vector<MCParticle
 
 
 
-std::vector<MCParticle*> ToolSet::CMC::Get_MC_ParticleType(std::vector<MCParticle*> MCs,signed int PDG) {
-	std::vector<MCParticle*> output;
-	int num = MCs.size();
-	for( int i = 0; i < num; i++ ){
-		if(MCs[i]->getPDG()==PDG){
-			output.push_back(MCs[i]);
-		}
-	}
-	return(output);
-}
-
-
 std::vector<int> ToolSet::CMC::Get_ParentsPID(MCParticle* MC) {
 	std::vector<int> ids;
 
@@ -302,29 +290,29 @@ std::vector<MCParticle*> ToolSet::CMC::Get_MCParticleType(std::vector<MCParticle
 	std::vector<MCParticle*> output;
 	for( int i = 0; i < num; i++ ){
 		MCParticle* MC = MCs[i];
-		int pdg = std::abs(MC->getPDG());
+		int pdg = MC->getPDG();
 		if(PDG=="quark"){
-			if(pdg>=1 && pdg<=6){
+			if(CFlavor::Status_Is_Quark(pdg)){
 				output.push_back(MC);
 			}
 		}
 		else if(PDG=="light_quark"){
-			if(pdg>=1 && pdg<=3){
+			if(CFlavor::Status_Is_LightQuark(pdg)){
 				output.push_back(MC);
 			}
 		}
 		else if(PDG=="heavy_quark"){
-			if(pdg>=4 && pdg<=6){
+			if(CFlavor::Status_Is_HeavyQuark(pdg)){
 				output.push_back(MC);
 			}
 		}
 		else if(PDG=="lepton"){
-			if(pdg==11 || pdg<=13){
+			if(CFlavor::Status_Is_Lepton(pdg)){
 				output.push_back(MC);
 			}
 		}
 		else if(PDG=="neutrino"){
-			if(pdg==12 || pdg==14 ||pdg==16){
+			if(CFlavor::Status_Is_Neutrino(pdg)){
 				output.push_back(MC);
 			}
 		}
@@ -341,13 +329,13 @@ float ToolSet::CMC::Get_DecayChannel(MCParticle* input) {
 
 	// there is no standard pdg code larger than 40 and smaller than 90. so we define them by ours
 	// q-qbar 
-	if(pdg[0]==-5&&pdg[1]==5){
+	if(CFlavor::Status_Are_BottomPair(pdg[0],pdg[1])){
 		channel = 5.0;
 	}
-	else if(pdg[0]==-4&&pdg[1]==4){
+	else if(CFlavor::Status_Are_CharmPair(pdg[0],pdg[1])){
 		channel = 4.0;
 	}
-	else if(pdg[0]==-6&&pdg[1]==6){
+	else if(CFlavor::Status_Are_TopPair(pdg[0],pdg[1])){
 		channel = 6.0;
 	}
 	else if(pdg[0]==-1&&pdg[1]==1){
@@ -360,13 +348,13 @@ float ToolSet::CMC::Get_DecayChannel(MCParticle* input) {
 		channel = 3.0;
 	}
 	// l-l+
-	else if(pdg[0]==-11&&pdg[1]==11){
+	else if(CFlavor::Status_Are_ElectronPair(pdg[0],pdg[1])){
 		channel 	= 11.0;
 	}
-	else if(pdg[0]==-13&&pdg[1]==13){
+	else if(CFlavor::Status_Are_MuonPair(pdg[0],pdg[1])){
 		channel 	= 13.0;
 	}
-	else if(pdg[0]==-15&&pdg[1]==15){
+	else if(CFlavor::Status_Are_TauPair(pdg[0],pdg[1])){
 		channel 	= 15.0;
 	}
 	// l-vl
@@ -389,10 +377,10 @@ float ToolSet::CMC::Get_DecayChannel(MCParticle* input) {
 		channel 	= 56.0;//e- - ve
 	}
 	// boson 
-	else if(pdg[0]==21&&pdg[1]==21){
+	else if(CFlavor::Status_Are_GluonPair(pdg[0],pdg[1])){
 		channel 	= 21.0;//gluon-gluon
 	}
-	else if(pdg[0]==22&&pdg[1]==22){
+	else if(CFlavor::Status_Are_PhotonPair(pdg[0],pdg[1])){
 		channel 	= 22.0; //gamma-gamma
 	}
 	else if(pdg[0]==-24&&pdg[1]==24){
@@ -489,5 +477,72 @@ TLorentzVector ToolSet::CMC::Get_InVisible_To_Lorentz(std::vector<MCParticle*> i
 	TLorentzVector RCCollider=TLorentzVector(BEAM_ENERGY*sin(BEAM_ANGLE),0,0,BEAM_ENERGY);
 	TLorentzVector invisible= RCCollider-visible;
 	return(invisible);
+}
+
+std::vector<MCParticle*> ToolSet::CMC::Get_Isolated(std::vector<MCParticle*> input,std::vector<MCParticle*> all, std::vector<MCParticle*> left) {
+
+	std::vector<MCParticle*> output;
+	int nlep = input.size();
+	if(nlep<1) {
+		return output;
+	}
+	left = all;
+	for( int i = 0; i < nlep; i++ )
+	{
+		MCParticleImpl* NewLep = new MCParticleImpl; 
+		double charge  = input[i]->getCharge();
+		double pid     = input[i]->getPDG();
+		double Pnew[3] = {input[i]->getMomentum()[0],input[i]->getMomentum()[1],input[i]->getMomentum()[2]} ;
+		double Enew    = input[i]->getEnergy() ;
+		std::vector<MCParticle*>::iterator it = left.begin();
+		while (it!=left.end())
+		{
+			if (IsInCone( input[i], *it, 0.98)) 
+			{
+				double  Ppfo[3] = {(*it)->getMomentum()[0],(*it)->getMomentum()[1],(*it)->getMomentum()[2]};
+				double  Epfo = (*it)->getEnergy();
+				Pnew[0] = Pnew[0] + Ppfo[0];
+				Pnew[1] = Pnew[1] + Ppfo[1];
+				Pnew[2] = Pnew[2] + Ppfo[2];
+				Enew    = Enew    + Epfo   ;
+				left.erase(it);
+			}
+			else{
+				it++;
+			}
+		}
+		double Mass2=Enew*Enew-Pnew[0]*Pnew[0]-Pnew[1]*Pnew[1]-Pnew[2]*Pnew[2];
+		double Mass;
+		if(Mass2>=0){
+			Mass=sqrt(Mass2);
+		}
+		else{
+			Mass=-sqrt(-Mass2);
+		}
+		NewLep->setMomentum(Pnew);
+		NewLep->setMass    (Mass);
+		NewLep->setPDG     (pid);
+		NewLep->setCharge  (charge);
+		output.push_back(dynamic_cast<MCParticle*> (NewLep));
+	}
+	return output;
+}
+
+
+bool ToolSet::CMC::IsInCone( MCParticle* lep, MCParticle* pfo , float angle_cut) {
+	if(pfo->getPDG()!=22){
+		return(false);
+	}
+
+	TVector3 P_pfo( pfo->getMomentum() );
+
+	TVector3 P_lep( lep->getMomentum() );
+
+	float cosTheta = P_lep.Dot( P_pfo )/(P_lep.Mag()*P_pfo.Mag());
+	if ( cosTheta >= angle_cut)
+	{
+		return true;
+	}
+	return false;
 }
 

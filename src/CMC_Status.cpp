@@ -20,10 +20,10 @@
  *****************************************************************************************/
 bool ToolSet::CMC::Status_Beam_Energy(MCParticle* input){
 	//if(Data_Type::Equal_Float(input->getEnergy(),125.003063)){
-	if(!(BEAM_ENERGY>120&&BEAM_ENERGY<130)&& !(BEAM_ENERGY>240&&BEAM_ENERGY<260)){
-		ToolSet::ShowMessage(2,"Error: not initialize beam energy or, initialize with a wrong number, please be 250/2 or 500/2 GeV in the CMC.h macro definition");
+	if(!(BEAM_ENERGY/2>120&&BEAM_ENERGY/2<130)&& !(BEAM_ENERGY/2>240&&BEAM_ENERGY/2<260)){
+		ToolSet::ShowMessage(2,"Error: not initialize beam energy or, initialize with a wrong number, please be 250/2 or 500/2 GeV in the Toolset::CMC.h macro definition, current beam energy is", BEAM_ENERGY);
 	}
-	if(Data_Type::Equal_Float(input->getEnergy(),BEAM_ENERGY)){
+	if(Data_Type::Equal_Float(input->getEnergy(),BEAM_ENERGY/2)){
 		return(true);
 	}
 	return(false);
@@ -113,6 +113,7 @@ bool ToolSet::CMC::Status_Is_Pythia(MCParticle* input){
 	if(input->getGeneratorStatus()==1){
 		return(true);
 	}
+	return(false);
 }
 
 bool ToolSet::CMC::Status_Is_Overlay(MCParticle* input){
@@ -174,7 +175,7 @@ bool ToolSet::CMC::Status_Is_LeftDetector(MCParticle* input){
 
 bool ToolSet::CMC::Status_Is_Electron(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
-	if(pdg==11){
+	if(CFlavor::Status_Is_Electron(pdg)){
 		return(true);
 	}
 	return(false);
@@ -183,7 +184,7 @@ bool ToolSet::CMC::Status_Is_Electron(MCParticle* input){
 
 bool ToolSet::CMC::Status_Is_Muon(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
-	if(pdg==13){
+	if(CFlavor::Status_Is_Muon(pdg)){
 		return(true);
 	}
 	return(false);
@@ -191,14 +192,15 @@ bool ToolSet::CMC::Status_Is_Muon(MCParticle* input){
 
 bool ToolSet::CMC::Status_Is_Tau(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
-	if(pdg==13){
+	if(CFlavor::Status_Is_Tau(pdg)){
 		return(true);
 	}
 	return(false);
 }
 
 bool ToolSet::CMC::Status_Is_Lepton(MCParticle* input){
-	if(Status_Is_Electron(input)||Status_Is_Muon(input)){
+	int pdg=std::abs(input->getPDG());
+	if(CFlavor::Status_Is_Lepton(pdg)){
 		return(true);
 	}
 	return(false);
@@ -206,15 +208,16 @@ bool ToolSet::CMC::Status_Is_Lepton(MCParticle* input){
 
 bool ToolSet::CMC::Status_Is_Neutrino(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
-	if(pdg==12||pdg==14||pdg==16){
+	if(CFlavor::Status_Is_Neutrino(pdg)){
 		return(true);
 	}
+
 	return(false);
 }
 
 bool ToolSet::CMC::Status_Is_HeavyBoson(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
-	if(pdg==23||pdg==24||pdg==25){
+	if(CFlavor::Status_Is_HeavyBoson(pdg)){
 		return(true);
 	}
 	return(false);
@@ -222,7 +225,7 @@ bool ToolSet::CMC::Status_Is_HeavyBoson(MCParticle* input){
 
 bool ToolSet::CMC::Status_Is_Photon(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
-	if(pdg==22){
+	if(CFlavor::Status_Is_Photon(pdg)){
 		return(true);
 	}
 	return(false);
@@ -231,11 +234,8 @@ bool ToolSet::CMC::Status_Is_Photon(MCParticle* input){
 bool ToolSet::CMC::Status_Is_NeutralHadron(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
 	float charge=std::abs(input->getCharge());
-	if(charge!=0){
-		return(false);
-	}
 
-	if(CFlavor::Status_Is_Hadron(pdg)){
+	if(CFlavor::Status_Is_NeutralHadron(pdg,charge)){
 		return(true);
 	}
 
@@ -245,11 +245,8 @@ bool ToolSet::CMC::Status_Is_NeutralHadron(MCParticle* input){
 bool ToolSet::CMC::Status_Is_ChargedHadron(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
 	float charge=std::abs(input->getCharge());
-	if(charge==0){
-		return(false);
-	}
 
-	if(CFlavor::Status_Is_Hadron(pdg)){
+	if(CFlavor::Status_Is_NeutralHadron(pdg,charge)){
 		return(true);
 	}
 
@@ -258,7 +255,7 @@ bool ToolSet::CMC::Status_Is_ChargedHadron(MCParticle* input){
 
 bool ToolSet::CMC::Status_Is_Gluon(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
-	if(pdg==21){
+	if(CFlavor::Status_Is_Gluon(pdg)){
 		return(true);
 	}
 	return(false);
@@ -266,23 +263,34 @@ bool ToolSet::CMC::Status_Is_Gluon(MCParticle* input){
 
 bool ToolSet::CMC::Status_Is_Quark(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
-	if(pdg>=1&&pdg<=6){
+	if(CFlavor::Status_Is_Quark(pdg)){
 		return(true);
 	}
+
 	return(false);
 }
 
 bool ToolSet::CMC::Status_Is_LightQuark(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
-	if(pdg>=1&&pdg<=3){
+	if(CFlavor::Status_Is_LightQuark(pdg)){
 		return(true);
 	}
+
+	return(false);
+}
+
+bool ToolSet::CMC::Status_Is_HeavyQuark(MCParticle* input){
+	int pdg=std::abs(input->getPDG());
+	if(CFlavor::Status_Is_HeavyBoson(pdg)){
+		return(true);
+	}
+
 	return(false);
 }
 
 bool ToolSet::CMC::Status_Is_TopQuark(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
-	if(pdg==6){
+	if(CFlavor::Status_Is_TopQuark(pdg)){
 		return(true);
 	}
 	return(false);
@@ -290,7 +298,7 @@ bool ToolSet::CMC::Status_Is_TopQuark(MCParticle* input){
 
 bool ToolSet::CMC::Status_Is_BottomQuark(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
-	if(pdg==5){
+	if(CFlavor::Status_Is_BottomQuark(pdg)){
 		return(true);
 	}
 	return(false);
@@ -298,7 +306,7 @@ bool ToolSet::CMC::Status_Is_BottomQuark(MCParticle* input){
 
 bool ToolSet::CMC::Status_Is_CharmQuark(MCParticle* input){
 	int pdg=std::abs(input->getPDG());
-	if(pdg==4){
+	if(CFlavor::Status_Is_CharmQuark(pdg)){
 		return(true);
 	}
 	return(false);

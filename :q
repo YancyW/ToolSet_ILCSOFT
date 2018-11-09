@@ -97,7 +97,6 @@ namespace ToolSet{
 			if(V1.size()==0){return(V2);}
 			else{V2=V1;}
 
-			sort( V2.begin(), V2.end()  );
 			V2.erase( unique( V2.begin(), V2.end()  ), V2.end()  );
 			return(V2);
 		}
@@ -109,7 +108,6 @@ namespace ToolSet{
 			if(V1.size()==0){return(V2);}
 			else{V2=Vec_Flat(V1);}
 
-			sort( V2.begin(), V2.end()  );
 			V2.erase( unique( V2.begin(), V2.end()  ), V2.end()  );
 			return(V2);
 		}

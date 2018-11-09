@@ -6,6 +6,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <cmath>
 
 #include "CFormat.h" 
 
@@ -32,6 +33,8 @@ namespace ToolSet{
 			static void CountNumber(Int_t variable, Int_t tot_num, Int_t slot,TString  Message);
 
 			static bool Equal_Float(float f1, float f2);
+
+			static int Get_Pos(std::vector<float> input, std::string label);
 	};
 }
 #endif

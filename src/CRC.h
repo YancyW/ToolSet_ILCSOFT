@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <stack>
+#include <cmath>
 
 //LCIO
 #include <EVENT/LCCollection.h>
@@ -27,6 +28,7 @@
 #include "TRandom.h"
 #include "CFormat.h"
 #include "CMC.h"
+#include "CData_Type.h"
 
 using namespace lcio;
 
@@ -76,22 +78,40 @@ namespace ToolSet{
 				return(180);
 			}
 
+			//get status
 			static bool                   Judge_Is_FromOverlay(ReconstructedParticle* in, LCRelationNavigator* nav);
 
+			//get special particle into a vector 
 			static std::vector<ReconstructedParticle*> Get_POParticle(LCCollection* AllPOs) ;
 
 			static std::vector<ReconstructedParticle*> Get_POParticleType(std::vector<ReconstructedParticle*> POs,int PDG) ;
+			static std::vector<ReconstructedParticle*> Get_POParticleType_Abs(std::vector<ReconstructedParticle*> POs,int PDG) ;
+			static std::vector<ReconstructedParticle*> Get_POParticleType(std::vector<ReconstructedParticle*> POs,std::string PDG) ;
 
 			static std::vector<ReconstructedParticle*> Get_POParticlePairType( std::vector<ReconstructedParticle*> PFOs,int PDG, int counter_minus, int counter_plus, int counter_pair) ;
 
-			static void   Get_MC_From_PFO(ReconstructedParticle* &source, std::vector<MCParticle*>  &to, LCRelationNavigator* &relation);
-			static void   Get_MC_From_PFO_Vec(std::vector<ReconstructedParticle*> &source, std::vector<std::vector<MCParticle*> >  &to, LCRelationNavigator* &relation);
-			static void   Get_PFO_From_MC(MCParticle* &source, std::vector<ReconstructedParticle*> &to, LCRelationNavigator* &relation);
-			static void   Get_PFO_From_MC_Vec(std::vector<MCParticle*> &source, std::vector<std::vector<ReconstructedParticle*> >  &to, LCRelationNavigator* &relation);
+			// get particle from Link
+			static std::vector<MCParticle*>   Get_MC_From_PFO(ReconstructedParticle* &source, LCRelationNavigator* &relation);
+			static std::vector<std::vector<MCParticle*> > Get_MC_From_PFO_Vec(std::vector<ReconstructedParticle*> &source, LCRelationNavigator* &relation);
+			static std::vector<MCParticle*>            Get_A_MC_From_PFO_Vec(std::vector<ReconstructedParticle*> &source, LCRelationNavigator* &relation);
+			static std::vector<ReconstructedParticle*>               Get_PFO_From_MC(MCParticle* &source, LCRelationNavigator* &relation);
+			static std::vector<std::vector<ReconstructedParticle*> > Get_PFO_From_MC_Vec(std::vector<MCParticle*> &source, LCRelationNavigator* &relation);
+			static std::vector<ReconstructedParticle*>               Get_A_PFO_From_MC_Vec(std::vector<MCParticle*> &sourc, LCRelationNavigator* &relation);
+
+			// get weight from Link
+			static std::vector<float>               Get_MC_Weight_From_PFO(ReconstructedParticle* &source, LCRelationNavigator* &relation);
+			static std::vector<std::vector<float> > Get_MC_Weight_From_PFO_Vec(std::vector<ReconstructedParticle*> &source, LCRelationNavigator* &relation);
+			static std::vector<float>               Get_PFO_Weight_From_MC(MCParticle* &source, LCRelationNavigator* &relation);
+			static std::vector<std::vector<float> > Get_PFO_Weight_From_MC_Vec(std::vector<MCParticle*> &source, LCRelationNavigator* &relation);
+
+			// get visible/in visible
 			static ReconstructedParticle* Get_Visible(std::vector<ReconstructedParticle*> in);
 			static ReconstructedParticle* Get_InVisible(std::vector<ReconstructedParticle*> in);
 			static TLorentzVector         Get_Visible_To_Lorentz(std::vector<ReconstructedParticle*> in);
 			static TLorentzVector         Get_InVisible_To_Lorentz(std::vector<ReconstructedParticle*> in);
+
+
+	        static std::vector<ReconstructedParticle*> Get_PO_Overlay(std::vector<ReconstructedParticle*> input, LCRelationNavigator* &nav);
 
 	};
 }
