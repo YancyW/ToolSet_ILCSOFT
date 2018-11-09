@@ -18,6 +18,25 @@ MCParticle* ToolSet::CMC::NewParticle(float px, float py, float pz,float E,MCPar
 	return(new_particle);
 }
 
+MCParticle* ToolSet::CMC::NewParticle(TLorentzVector &p, MCParticle* test){
+	MCParticleImpl* tmp= new MCParticleImpl;
+	double Pnew[3] = {p.Px(),p.Py(),p.Pz()};
+    tmp->setMomentum(Pnew);
+	double mass2= std::pow(p.E(),2)-std::pow(p.Px(),2)-std::pow(p.Py(),2)-std::pow(p.Pz(),2);
+	double mass;
+	if(mass2>=0){
+		mass= std::sqrt(mass2);
+	}
+	else{
+		mass=-std::sqrt(-mass2);
+	}
+    tmp->setMass(mass);
+	MCParticle* new_particle=dynamic_cast<MCParticle*>(tmp);
+	return(new_particle);
+}
+
+
+
 MCParticle&  ToolSet::operator +(const MCParticle &MC1, const MCParticle & MC2) {
 	MCParticleImpl* MC = new MCParticleImpl ;
 	TVector3  p1=MC1.getMomentum();

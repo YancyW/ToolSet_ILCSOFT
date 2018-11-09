@@ -74,6 +74,15 @@ ReconstructedParticle* ToolSet::CRC::NewParticle(double px, double py, double pz
 	return(new_particle);
 }
 
+ReconstructedParticle* ToolSet::CRC::NewParticle(TLorentzVector &p, ReconstructedParticle* test){
+	ReconstructedParticleImpl* tmp= new ReconstructedParticleImpl;
+	double Pnew[3] = {p.Px(),p.Py(),p.Pz()};
+	tmp->setMomentum(Pnew);
+	tmp->setEnergy(p.E());
+	ReconstructedParticle* new_particle=dynamic_cast<ReconstructedParticle*>(tmp);
+	return(new_particle);
+}
+
 ReconstructedParticle&  ToolSet::operator +(const ReconstructedParticle &RC1, const ReconstructedParticle &RC2) {
 	ReconstructedParticleImpl* RC = new ReconstructedParticleImpl;
 	TVector3  p1=RC1.getMomentum();

@@ -41,6 +41,7 @@ namespace ToolSet{
 		public:
 			// functions for normal calculation
 			static MCParticle* NewParticle(float px, float py, float pz,float E,MCParticle* test);
+			static MCParticle* NewParticle(TLorentzVector &p, MCParticle* test);
 
 			static MCParticle* Add(const MCParticle* MC1,const MCParticle* MC2);
 			static MCParticle* Minus(const MCParticle* MC1,const MCParticle* MC2);

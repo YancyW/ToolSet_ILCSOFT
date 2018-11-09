@@ -436,7 +436,7 @@ MCParticle* ToolSet::CMC::Get_Visible(std::vector<MCParticle*> in){
 		VS+=Vnew;
 	}
 
-	visible = NewParticle(VS[0],VS[1],VS[2],VS[3],visible);
+	visible = NewParticle(VS,visible);
 	return(visible);
 
 }

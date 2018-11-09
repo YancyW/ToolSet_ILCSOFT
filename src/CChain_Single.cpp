@@ -140,6 +140,7 @@ void ToolSet::CChain_Single::Set_RC(){
 	Set_Flat_RC();
 	Set_MC_From_Flat_RC();
 	Set_Extra_MC();
+	Set_Combined_RC();
 
 	return;
 }

@@ -46,6 +46,8 @@ namespace ToolSet{
 
 			static ReconstructedParticle* NewParticle(double px, double py, double pz, double E, ReconstructedParticle* test);
 
+			static ReconstructedParticle* NewParticle(TLorentzVector &p, ReconstructedParticle* test);
+
 			static ReconstructedParticle* Add(const ReconstructedParticle* MC1,const ReconstructedParticle* MC2);
 
 			static ReconstructedParticle* Minus(const ReconstructedParticle* MC1,const ReconstructedParticle* MC2);
@@ -111,7 +113,7 @@ namespace ToolSet{
 			static TLorentzVector         Get_InVisible_To_Lorentz(std::vector<ReconstructedParticle*> in);
 
 
-	        static std::vector<ReconstructedParticle*> Get_PO_Overlay(std::vector<ReconstructedParticle*> input, LCRelationNavigator* &nav);
+			static std::vector<ReconstructedParticle*> Get_PO_Overlay(std::vector<ReconstructedParticle*> input, LCRelationNavigator* &nav);
 
 	};
 }

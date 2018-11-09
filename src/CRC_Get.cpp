@@ -113,7 +113,7 @@ std::vector<MCParticle*> ToolSet::CRC::Get_A_MC_From_PFO_Vec(std::vector<Reconst
 		mc_vec.push_back(mc_tmp[i][pos]);
 	}
 	return(mc_vec);
-	
+
 }
 
 std::vector<float> ToolSet::CRC::Get_MC_Weight_From_PFO(ReconstructedParticle* &source, LCRelationNavigator* &relation){
@@ -152,7 +152,7 @@ std::vector<ReconstructedParticle*> ToolSet::CRC::Get_PFO_From_MC(MCParticle* &s
 
 std::vector<std::vector<ReconstructedParticle*> > ToolSet::CRC::Get_PFO_From_MC_Vec(std::vector<MCParticle*> &source, LCRelationNavigator* &relation)
 {
-   	std::vector<std::vector<ReconstructedParticle*> >  to;
+	std::vector<std::vector<ReconstructedParticle*> >  to;
 	for( unsigned int i = 0; i < source.size(); i++ ){
 		std::vector<ReconstructedParticle*> to_tmp;
 
@@ -184,7 +184,7 @@ std::vector<ReconstructedParticle*> ToolSet::CRC::Get_A_PFO_From_MC_Vec(std::vec
 		}
 	}
 	return(mc_vec);
-	
+
 }
 
 std::vector<float> ToolSet::CRC::Get_PFO_Weight_From_MC(MCParticle* &source, LCRelationNavigator* &relation)
@@ -213,21 +213,18 @@ ReconstructedParticle* ToolSet::CRC::Get_Visible(std::vector<ReconstructedPartic
 	int num=in.size();
 
 	ReconstructedParticle* visible;
-	ReconstructedParticle* tmp;
-	ReconstructedParticle* tmp1;
 	if(num<=0){
 		visible=NewParticle(0,0,0,0,visible);
 		return(visible);
 	}
 
-	tmp1=Equal(in[0]);
+	TLorentzVector tmp1(in[0]->getMomentum(),in[0]->getEnergy());
 	for(int i=1;i<num;i++){
-		tmp     = Add(tmp1,in[i]); 
-		delete tmp1;
-		tmp1    = tmp;
+		TLorentzVector tmp2(in[i]->getMomentum(),in[i]->getEnergy());
+		tmp1     += tmp2; 
 	}
 
-	visible = tmp1;
+	visible = NewParticle(tmp1,visible);
 	return(visible);
 
 }
@@ -280,5 +277,5 @@ std::vector<ReconstructedParticle*> ToolSet::CRC::Get_PO_Overlay(std::vector<Rec
 		}
 	}
 	return(out_pfo);
-	
+
 }
