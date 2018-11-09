@@ -91,12 +91,6 @@ void ToolSet::CChain_Single::Clear(){
 	if(_combined_RC!=NULL){
 		delete _combined_RC;
 	}
-	if(_input!=NULL){
-		delete _input;
-	}
-	if(_input_rc!=NULL){
-		delete _input_rc;
-	}
 }
 
 
