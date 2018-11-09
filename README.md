@@ -4,15 +4,19 @@ This package includes many basic functions for making ILCSOFT easier to use.
 
 - How to load this library
 
-    in any Processor's CMakeList.txt, add these two commands.
+	- First download the code, cd the folder and compile with
+	```
+	make -j8
+	```
+	a library "libtoolset.so" will generate in this folder.
 
+    - in any Processor's CMakeList.txt, add these two commands to link the library to your processor.
 	```
 		INCLUDE_DIRECTORIES( "/the/absolute/path/for/Tool_Set/src" )
 		 LINK_LIBRARIES     ( "/the/absolute/path/for/Tool_Set/libtoolset.so" )
-
    	```
 
-    Then you can use the functions in this ToolSet library as others.
+    - Then you can use the functions in this ToolSet library as others.
 
 - How to use functions in this library
 

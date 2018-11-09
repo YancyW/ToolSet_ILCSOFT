@@ -157,6 +157,16 @@ std::vector<std::vector<ReconstructedParticle*> >     ToolSet::CChain_Vec::Get_F
 	return(rc);
 }
 
+std::vector<ReconstructedParticle*>      ToolSet::CChain_Vec::Get_Combined_RC(){
+	std::vector<ReconstructedParticle* > rc;
+	for(int i=0;i<_chain_num;i++){
+		rc.push_back(_chain_vec[i].Combined_RC());
+	}
+	return(rc);
+}
+
+
+
 std::vector<std::vector<MCParticle*> >     ToolSet::CChain_Vec::Get_FromRC_MC(){
 	std::vector<std::vector<MCParticle* > > mc;
 	for(int i=0;i<_chain_num;i++){

@@ -51,6 +51,7 @@ namespace ToolSet{
 			std::vector<std::vector<std::vector<float> > >                  Get_RC_Weight();
 			std::vector<std::vector<MCParticle*> >                          Get_Extra_MC();
 			std::vector<std::vector<ReconstructedParticle*> >               Get_Flat_RC();
+			std::vector<ReconstructedParticle*>								Get_Combined_RC();
 			std::vector<std::vector<MCParticle*> >                          Get_FromRC_MC();
 
 			bool                                                            Get_SpecialRC(int pdg,std::string marker,std::vector<std::vector<ReconstructedParticle*> > & output);
