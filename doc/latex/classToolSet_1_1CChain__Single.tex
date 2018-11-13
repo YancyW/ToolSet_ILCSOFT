@@ -1,0 +1,504 @@
+\hypertarget{classToolSet_1_1CChain__Single}{
+\section{ToolSet::CChain\_\-Single Class Reference}
+\label{classToolSet_1_1CChain__Single}\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}}
+}
+
+
+: in this class, it contains two part: MCParticle part and ReconstructedParticle part.  
+
+
+{\ttfamily \#include $<$CChain\_\-Single.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classToolSet_1_1CChain__Single_acfe5a82da8d9f4e0d5339b19b0aaca55}{
+\hyperlink{classToolSet_1_1CChain__Single_acfe5a82da8d9f4e0d5339b19b0aaca55}{CChain\_\-Single} ()}
+\label{classToolSet_1_1CChain__Single_acfe5a82da8d9f4e0d5339b19b0aaca55}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classToolSet_1_1CChain__Single}{CChain\_\-Single} : normal constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classToolSet_1_1CChain__Single_a8e1e1a544c3fb42165a90e265205c614}{CChain\_\-Single} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classToolSet_1_1CChain__Single}{CChain\_\-Single} : constructor, directly build the chain of the MC part. \item\end{DoxyCompactList}\item 
+\hyperlink{classToolSet_1_1CChain__Single_a2d0b72a468147b80466db9d5e61d6e70}{CChain\_\-Single} (ReconstructedParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classToolSet_1_1CChain__Single}{CChain\_\-Single} : constructor, build the chain of the ReconstructedParticle part. \item\end{DoxyCompactList}\item 
+MCParticle $\ast$ \hyperlink{classToolSet_1_1CChain__Single_a083e8042cf9d2ede88f69037a318cbae}{Input} ()
+\begin{DoxyCompactList}\small\item\em Input : get all input MC particles. \item\end{DoxyCompactList}\item 
+ReconstructedParticle $\ast$ \hyperlink{classToolSet_1_1CChain__Single_a9c9c897ea89b3d8adf3b71d119a66324}{Input\_\-RC} ()
+\begin{DoxyCompactList}\small\item\em Input\_\-RC : get all input RC particles. \item\end{DoxyCompactList}\item 
+std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CChain__Single_a583818358adab4a442ebe74a1ed7d5fd}{Head} ()
+\begin{DoxyCompactList}\small\item\em Head : get the hard-\/scattering particles for the chain. \item\end{DoxyCompactList}\item 
+std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CChain__Single_af29a34bb8e658fd38590b7914ad4929f}{Next\_\-Head} ()
+\begin{DoxyCompactList}\small\item\em Next\_\-Head : get first decay products from the hard-\/scattering particles in the chains. \item\end{DoxyCompactList}\item 
+std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CChain__Single_a1a7ec13ce17b0ae4ec7562f4c32578d5}{Next\_\-Next\_\-Head} ()
+\begin{DoxyCompactList}\small\item\em Next\_\-Next\_\-Head : get first decay products from the hard-\/scattering particles in the chains. \item\end{DoxyCompactList}\item 
+std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CChain__Single_a4dfbe3f7c8f2b7b3c98918db0bdf0e35}{Chain} ()
+\begin{DoxyCompactList}\small\item\em Chain: get all MC particles in each chains (from hard-\/scattering to final simulated particle, has duplicated ones). \item\end{DoxyCompactList}\item 
+std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CChain__Single_a8323cc6a1a9f5dd2ef0527324e9140c9}{Trim\_\-Chain} ()
+\begin{DoxyCompactList}\small\item\em Trim\_\-Chain : get trimed MC particles in the chain (from hard-\/scattering to final simulated particle). \item\end{DoxyCompactList}\item 
+Chain\_\-Type \hyperlink{classToolSet_1_1CChain__Single_a9dc8f3c99668806d5bbe276758a1fc00}{End} ()
+\begin{DoxyCompactList}\small\item\em End : get all final states including MCParticles and the corresponding ReconstructedParticle (as well as their weights) in the chain. \item\end{DoxyCompactList}\item 
+std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CChain__Single_a9762b2584dc5f7eef1036fda5dfb98b5}{MCEnd} ()
+\begin{DoxyCompactList}\small\item\em MCEnd : get final states in the MC part in the chain. \item\end{DoxyCompactList}\item 
+std::vector$<$ Chain\_\-End\_\-Type $>$ \hyperlink{classToolSet_1_1CChain__Single_a3783b04dfa98bee280070fa443afa878}{RC} ()
+\begin{DoxyCompactList}\small\item\em RC : get ReconstructedParticle in the chain, it organizes as for each particle in the MCEnd, it has a MCparticle-\/-\/-\/vector of $<$(weight, ReconstructedParticle)$>$. \item\end{DoxyCompactList}\item 
+std::vector$<$ std::vector$<$ ReconstructedParticle $\ast$ $>$ $>$ \hyperlink{classToolSet_1_1CChain__Single_af928f52ff7640aeef93083b9fbe98b65}{RC\_\-Particle} ()
+\begin{DoxyCompactList}\small\item\em RC\_\-Particle : get ReconstructedParticle in the chain， it organizes as for each particle in the MCEnd, it has a MCParticle -\/-\/ vector of $<$ReconstructedParticles$>$. \item\end{DoxyCompactList}\item 
+std::vector$<$ std::vector$<$ float $>$ $>$ \hyperlink{classToolSet_1_1CChain__Single_ae1e9f5156d4f65888c0262284518601c}{RC\_\-Weight} ()
+\begin{DoxyCompactList}\small\item\em RC\_\-Weight : get ReconstructedParticle's weight in the chain， it organizes as for each particle in the MCEnd, it has a MCParticle -\/-\/ vector of $<$weight$>$. \item\end{DoxyCompactList}\item 
+std::vector$<$ ReconstructedParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CChain__Single_aeead66cb0db211712f4bb5422b706209}{Flat\_\-RC} ()
+\begin{DoxyCompactList}\small\item\em Flat\_\-RC : get all posible ReconstructedParticle in the chain, comparing Get\_\-RC(), it removes duplicated ones. \item\end{DoxyCompactList}\item 
+ReconstructedParticle $\ast$ \hyperlink{classToolSet_1_1CChain__Single_acb6bc9bfa361f12472fc6ccfe899ede0}{Combined\_\-RC} ()
+\begin{DoxyCompactList}\small\item\em Combined\_\-RC : sum all ReconstructedParticle into a new particle in the chain, so that you can compare the energy/momentum loss between original MC particle and ReconstructedParticles. \item\end{DoxyCompactList}\item 
+std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CChain__Single_a377dc8f0e7ec185636c3e7c6f3c23164}{FromRC\_\-MC} ()
+\begin{DoxyCompactList}\small\item\em FromRC\_\-MC : get MCParticles from ReconstructedParticles with other direction linker in the chain. \item\end{DoxyCompactList}\item 
+std::vector$<$ float $>$ \hyperlink{classToolSet_1_1CChain__Single_ae52db47ff11ecb7553f38adeaf44ca79}{FromRC\_\-Weight} ()
+\begin{DoxyCompactList}\small\item\em FromRC\_\-Weight : get MCParticles weight from ReconstructedParticles with other direction linker in the chain. \item\end{DoxyCompactList}\item 
+std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CChain__Single_a35481afff23b06832e9987e8caaf7e14}{Extra\_\-MC} ()
+\begin{DoxyCompactList}\small\item\em Extra\_\-MC : show the extra contributions for the ReconstructedParticle from other particles that not in the chain. \item\end{DoxyCompactList}\item 
+LCRelationNavigator $\ast$ \hyperlink{classToolSet_1_1CChain__Single_a366ba84d1f485f8b5aa62b6540568774}{Nav\_\-From\_\-MC\_\-to\_\-RC} ()
+\begin{DoxyCompactList}\small\item\em Nav\_\-From\_\-MC\_\-to\_\-RC : Nav, input is MC, return the related ReconstructedParticle. \item\end{DoxyCompactList}\item 
+LCRelationNavigator $\ast$ \hyperlink{classToolSet_1_1CChain__Single_a32a9327c08d4aa218d2510b1288045de}{Nav\_\-from\_\-RC\_\-to\_\-MC} ()
+\begin{DoxyCompactList}\small\item\em Nav\_\-from\_\-RC\_\-to\_\-MC : Nav, input is ReconstructedParticle, return the related MCParticle. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classToolSet_1_1CChain__Single_a237f2bcfb3006f37363ae6e4e39bbb44}{Has\_\-Trim\_\-Chain} ()
+\begin{DoxyCompactList}\small\item\em Has\_\-Trim\_\-Chain : return flag for trim duplicated particles in the chain. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classToolSet_1_1CChain__Single_ac908ef21df959857275fe1de00c76e2c}{Has\_\-Set\_\-RC} ()
+\begin{DoxyCompactList}\small\item\em Has\_\-Set\_\-RC : return flag for set Reconstructed part. \item\end{DoxyCompactList}\item 
+bool \hyperlink{classToolSet_1_1CChain__Single_aa6b5eb85cc8d0505234cc6da2391fbbd}{Has\_\-Set\_\-MC} ()
+\begin{DoxyCompactList}\small\item\em Has\_\-Set\_\-MC : return flag for set MC part. \item\end{DoxyCompactList}\item 
+\hypertarget{classToolSet_1_1CChain__Single_ae9e486b24886dded2566ab5624a540d5}{
+void {\bfseries Init} ()}
+\label{classToolSet_1_1CChain__Single_ae9e486b24886dded2566ab5624a540d5}
+
+\item 
+\hypertarget{classToolSet_1_1CChain__Single_aa793de1adde25ecd45259b2a858d6e68}{
+void {\bfseries Print} ()}
+\label{classToolSet_1_1CChain__Single_aa793de1adde25ecd45259b2a858d6e68}
+
+\item 
+void \hyperlink{classToolSet_1_1CChain__Single_ae991aff7b553d31f4073eb5aaf0e0440}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Clear : Notice: Remember to Clear the chain after use it. \item\end{DoxyCompactList}\item 
+void \hyperlink{classToolSet_1_1CChain__Single_ad0af64f3a95dea5a7205a03a0b5c6b2d}{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC} (LCRelationNavigator $\ast$relation)
+\begin{DoxyCompactList}\small\item\em Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC : set Nav. \item\end{DoxyCompactList}\item 
+void \hyperlink{classToolSet_1_1CChain__Single_ad2311e70909778460c342a2b93387db6}{Set\_\-Nav\_\-From\_\-RC\_\-To\_\-MC} (LCRelationNavigator $\ast$relation)
+\begin{DoxyCompactList}\small\item\em Set\_\-Nav\_\-From\_\-RC\_\-To\_\-MC : set Nav. \item\end{DoxyCompactList}\item 
+\hypertarget{classToolSet_1_1CChain__Single_aa19e64ca690f5c83ad53e2b55497bbe9}{
+void \hyperlink{classToolSet_1_1CChain__Single_aa19e64ca690f5c83ad53e2b55497bbe9}{Set\_\-RC} ()}
+\label{classToolSet_1_1CChain__Single_aa19e64ca690f5c83ad53e2b55497bbe9}
+
+\begin{DoxyCompactList}\small\item\em Set\_\-RC : if having the MC part, with this command, it can first get all corresponding ReconstructedParticles from the final states in the MC parts, then set all RC part structure, it also includes \hyperlink{classToolSet_1_1CChain__Single_a2c537f2ce11c54ec4483efc11e3205f8}{Set\_\-End\_\-Type()}, \hyperlink{classToolSet_1_1CChain__Single_af389892522f28cc771383e264463eb93}{Set\_\-Flat\_\-RC()}, \hyperlink{classToolSet_1_1CChain__Single_a1773179b963d71ba48df8060b4916a27}{Set\_\-MC\_\-From\_\-Flat\_\-RC()}, \hyperlink{classToolSet_1_1CChain__Single_a020fb2a7b3b6f65890f45b5bde4c7050}{Set\_\-Extra\_\-MC()}, \hyperlink{classToolSet_1_1CChain__Single_a7474584ac9cbcaf32f0b046bd733756d}{Set\_\-Combined\_\-RC()}. \item\end{DoxyCompactList}\item 
+\hypertarget{classToolSet_1_1CChain__Single_af389892522f28cc771383e264463eb93}{
+void \hyperlink{classToolSet_1_1CChain__Single_af389892522f28cc771383e264463eb93}{Set\_\-Flat\_\-RC} ()}
+\label{classToolSet_1_1CChain__Single_af389892522f28cc771383e264463eb93}
+
+\begin{DoxyCompactList}\small\item\em Set\_\-Flat\_\-RC : get all posible ReconstructedParticle , it collects all ReconstructedParticles in the chain and removes duplicated ones. \item\end{DoxyCompactList}\item 
+void \hyperlink{classToolSet_1_1CChain__Single_a7474584ac9cbcaf32f0b046bd733756d}{Set\_\-Combined\_\-RC} ()
+\begin{DoxyCompactList}\small\item\em Set\_\-Combined\_\-RC : sum all ReconstructedParticle into a new particle in each chains, so that you can compare the energy/momentum loss between original MC particle and ReconstructedParticles. \item\end{DoxyCompactList}\item 
+\hypertarget{classToolSet_1_1CChain__Single_a1773179b963d71ba48df8060b4916a27}{
+void \hyperlink{classToolSet_1_1CChain__Single_a1773179b963d71ba48df8060b4916a27}{Set\_\-MC\_\-From\_\-Flat\_\-RC} ()}
+\label{classToolSet_1_1CChain__Single_a1773179b963d71ba48df8060b4916a27}
+
+\begin{DoxyCompactList}\small\item\em Set\_\-MC\_\-From\_\-Flat\_\-RC : after having ReconstructedParticles, using this to get corresponding MCParticles. \item\end{DoxyCompactList}\item 
+\hypertarget{classToolSet_1_1CChain__Single_a020fb2a7b3b6f65890f45b5bde4c7050}{
+void \hyperlink{classToolSet_1_1CChain__Single_a020fb2a7b3b6f65890f45b5bde4c7050}{Set\_\-Extra\_\-MC} ()}
+\label{classToolSet_1_1CChain__Single_a020fb2a7b3b6f65890f45b5bde4c7050}
+
+\begin{DoxyCompactList}\small\item\em Set\_\-Extra\_\-MC : set the extra contributions for the ReconstructedParticle from other particles that not in this chain. \item\end{DoxyCompactList}\item 
+\hypertarget{classToolSet_1_1CChain__Single_a0df29463b16a93b9c87226ce530519f5}{
+void \hyperlink{classToolSet_1_1CChain__Single_a0df29463b16a93b9c87226ce530519f5}{Set\_\-Trim\_\-Chain} ()}
+\label{classToolSet_1_1CChain__Single_a0df29463b16a93b9c87226ce530519f5}
+
+\begin{DoxyCompactList}\small\item\em Set\_\-Trim\_\-Chain : trim duplicated particles in the decay chain, this is more useful in the Hadron Collider. \item\end{DoxyCompactList}\item 
+\hypertarget{classToolSet_1_1CChain__Single_add44d6c51ec0df9947f1ccd4688b4fa9}{
+void \hyperlink{classToolSet_1_1CChain__Single_add44d6c51ec0df9947f1ccd4688b4fa9}{Minimize\_\-Trim\_\-Chain} ()}
+\label{classToolSet_1_1CChain__Single_add44d6c51ec0df9947f1ccd4688b4fa9}
+
+\begin{DoxyCompactList}\small\item\em Minimize\_\-Trim\_\-Chain : minimize the trim chain. \item\end{DoxyCompactList}\item 
+\hypertarget{classToolSet_1_1CChain__Single_a36ebac02418fd7bca0386d8b7c589533}{
+void \hyperlink{classToolSet_1_1CChain__Single_a36ebac02418fd7bca0386d8b7c589533}{Set\_\-MC\_\-End} ()}
+\label{classToolSet_1_1CChain__Single_a36ebac02418fd7bca0386d8b7c589533}
+
+\begin{DoxyCompactList}\small\item\em Set\_\-MC\_\-End : remove duplicated MC final states (). \item\end{DoxyCompactList}\item 
+\hypertarget{classToolSet_1_1CChain__Single_a2c537f2ce11c54ec4483efc11e3205f8}{
+void \hyperlink{classToolSet_1_1CChain__Single_a2c537f2ce11c54ec4483efc11e3205f8}{Set\_\-End\_\-Type} ()}
+\label{classToolSet_1_1CChain__Single_a2c537f2ce11c54ec4483efc11e3205f8}
+
+\begin{DoxyCompactList}\small\item\em Set\_\-End\_\-Type : build relation between MC final states and ReconstructedParticles. \item\end{DoxyCompactList}\item 
+\hypertarget{classToolSet_1_1CChain__Single_a98703d8507bb31e619bca8436920c8a8}{
+void \hyperlink{classToolSet_1_1CChain__Single_a98703d8507bb31e619bca8436920c8a8}{Set\_\-MC} ()}
+\label{classToolSet_1_1CChain__Single_a98703d8507bb31e619bca8436920c8a8}
+
+\begin{DoxyCompactList}\small\item\em Set\_\-MC : using ReconstructedParticle to set MCParticle part. \item\end{DoxyCompactList}\item 
+void \hyperlink{classToolSet_1_1CChain__Single_a8c4a654be35090013cb5923de100b1bf}{Build\_\-Chain} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Build\_\-Chain : build MC parts structure. \item\end{DoxyCompactList}\item 
+void \hyperlink{classToolSet_1_1CChain__Single_a6e24f84cd12c38d28f4e154f547d4170}{Recurse\_\-Chain} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Recurse\_\-Chain : get decay particles from the input. \item\end{DoxyCompactList}\item 
+void \hyperlink{classToolSet_1_1CChain__Single_a5aa8017f2147e06c959f3a296bc3af3b}{Push\_\-Back} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Push\_\-Back : recurse function in the \hyperlink{classToolSet_1_1CChain__Single_a6e24f84cd12c38d28f4e154f547d4170}{Recurse\_\-Chain()}. \item\end{DoxyCompactList}\item 
+void \hyperlink{classToolSet_1_1CChain__Single_a8f0623cb1122dc17a82f3b86289b9681}{TraceBack\_\-Chain} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em TraceBack\_\-Chain : get particles where the input is decayed from, it is in the opposite direction of the \hyperlink{classToolSet_1_1CChain__Single_a6e24f84cd12c38d28f4e154f547d4170}{Recurse\_\-Chain()}. \item\end{DoxyCompactList}\item 
+void \hyperlink{classToolSet_1_1CChain__Single_ad261fc82205fec60d46ccda275256fe3}{Push\_\-Forward} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Push\_\-Forward : recurse function in the \hyperlink{classToolSet_1_1CChain__Single_a8f0623cb1122dc17a82f3b86289b9681}{TraceBack\_\-Chain()}. \item\end{DoxyCompactList}\item 
+void \hyperlink{classToolSet_1_1CChain__Single_ac351cca0dcac892111f0110a7be65eac}{Build\_\-Chain\_\-FromRCFS} (ReconstructedParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Build\_\-Chain\_\-FromRCFS : bulid Reconstructed part structure. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+: in this class, it contains two part: MCParticle part and ReconstructedParticle part. for MCParticle, its stucture is head-\/$>$decay products -\/$>$ ... -\/$>$ many pythia final states -\/$>$ ... -\/$>$ many detector simulation final states. then all final states will get their corresponding ReconstructedParticles with the MCTruthRecoLink these MCParticle final states as well as their corresponding ReconstructedParticles and weights are stored as pairs together in the Chain\_\-Type Finally, the ReconstructedParticles also can find their corresponding MCParticles, these MCParticles can be different from the original MC final states, because some ReconstructedParticles have the contribution from other source. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classToolSet_1_1CChain__Single_a8e1e1a544c3fb42165a90e265205c614}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!CChain\_\-Single@{CChain\_\-Single}}
+\index{CChain\_\-Single@{CChain\_\-Single}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{CChain\_\-Single}]{\setlength{\rightskip}{0pt plus 5cm}ToolSet::CChain\_\-Single::CChain\_\-Single (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a8e1e1a544c3fb42165a90e265205c614}
+
+
+\hyperlink{classToolSet_1_1CChain__Single}{CChain\_\-Single} : constructor, directly build the chain of the MC part. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+
+
+References Build\_\-Chain().\hypertarget{classToolSet_1_1CChain__Single_a2d0b72a468147b80466db9d5e61d6e70}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!CChain\_\-Single@{CChain\_\-Single}}
+\index{CChain\_\-Single@{CChain\_\-Single}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{CChain\_\-Single}]{\setlength{\rightskip}{0pt plus 5cm}ToolSet::CChain\_\-Single::CChain\_\-Single (ReconstructedParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a2d0b72a468147b80466db9d5e61d6e70}
+
+
+\hyperlink{classToolSet_1_1CChain__Single}{CChain\_\-Single} : constructor, build the chain of the ReconstructedParticle part. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+
+
+References Build\_\-Chain\_\-FromRCFS().
+
+\subsection{Member Function Documentation}
+\hypertarget{classToolSet_1_1CChain__Single_a8c4a654be35090013cb5923de100b1bf}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Build\_\-Chain@{Build\_\-Chain}}
+\index{Build\_\-Chain@{Build\_\-Chain}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Build\_\-Chain}]{\setlength{\rightskip}{0pt plus 5cm}void ToolSet::CChain\_\-Single::Build\_\-Chain (MCParticle $\ast$ {\em input})}}
+\label{classToolSet_1_1CChain__Single_a8c4a654be35090013cb5923de100b1bf}
+
+
+Build\_\-Chain : build MC parts structure. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+
+
+Referenced by CChain\_\-Single().\hypertarget{classToolSet_1_1CChain__Single_ac351cca0dcac892111f0110a7be65eac}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Build\_\-Chain\_\-FromRCFS@{Build\_\-Chain\_\-FromRCFS}}
+\index{Build\_\-Chain\_\-FromRCFS@{Build\_\-Chain\_\-FromRCFS}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Build\_\-Chain\_\-FromRCFS}]{\setlength{\rightskip}{0pt plus 5cm}void ToolSet::CChain\_\-Single::Build\_\-Chain\_\-FromRCFS (ReconstructedParticle $\ast$ {\em input})}}
+\label{classToolSet_1_1CChain__Single_ac351cca0dcac892111f0110a7be65eac}
+
+
+Build\_\-Chain\_\-FromRCFS : bulid Reconstructed part structure. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+
+
+Referenced by CChain\_\-Single().\hypertarget{classToolSet_1_1CChain__Single_a4dfbe3f7c8f2b7b3c98918db0bdf0e35}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Chain@{Chain}}
+\index{Chain@{Chain}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Chain}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$MCParticle$\ast$$>$ ToolSet::CChain\_\-Single::Chain ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a4dfbe3f7c8f2b7b3c98918db0bdf0e35}
+
+
+Chain: get all MC particles in each chains (from hard-\/scattering to final simulated particle, has duplicated ones). \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_ae991aff7b553d31f4073eb5aaf0e0440}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Clear@{Clear}}
+\index{Clear@{Clear}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}void ToolSet::CChain\_\-Single::Clear ()}}
+\label{classToolSet_1_1CChain__Single_ae991aff7b553d31f4073eb5aaf0e0440}
+
+
+Clear : Notice: Remember to Clear the chain after use it. If you use combined\_\-RC command, it will build a \char`\"{}new\char`\"{} Particle. So you need to delete this point with \hyperlink{classToolSet_1_1CChain__Single_ae991aff7b553d31f4073eb5aaf0e0440}{Clear()} function. I didn't write \hyperlink{classToolSet_1_1CChain__Single_ae991aff7b553d31f4073eb5aaf0e0440}{Clear()} into deconstructor because it may cause some trouble when transfer the chain to other functions. \hypertarget{classToolSet_1_1CChain__Single_acb6bc9bfa361f12472fc6ccfe899ede0}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Combined\_\-RC@{Combined\_\-RC}}
+\index{Combined\_\-RC@{Combined\_\-RC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Combined\_\-RC}]{\setlength{\rightskip}{0pt plus 5cm}ReconstructedParticle$\ast$ ToolSet::CChain\_\-Single::Combined\_\-RC ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_acb6bc9bfa361f12472fc6ccfe899ede0}
+
+
+Combined\_\-RC : sum all ReconstructedParticle into a new particle in the chain, so that you can compare the energy/momentum loss between original MC particle and ReconstructedParticles. This will generate a new ReconstructedParticle in the heap, so remember to use \hyperlink{classToolSet_1_1CChain__Single_ae991aff7b553d31f4073eb5aaf0e0440}{Clear()} function after using \hyperlink{classToolSet_1_1CChain__Vec}{CChain\_\-Vec}
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a9dc8f3c99668806d5bbe276758a1fc00}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!End@{End}}
+\index{End@{End}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{End}]{\setlength{\rightskip}{0pt plus 5cm}Chain\_\-Type ToolSet::CChain\_\-Single::End ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a9dc8f3c99668806d5bbe276758a1fc00}
+
+
+End : get all final states including MCParticles and the corresponding ReconstructedParticle (as well as their weights) in the chain. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a35481afff23b06832e9987e8caaf7e14}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Extra\_\-MC@{Extra\_\-MC}}
+\index{Extra\_\-MC@{Extra\_\-MC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Extra\_\-MC}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$MCParticle$\ast$$>$ ToolSet::CChain\_\-Single::Extra\_\-MC ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a35481afff23b06832e9987e8caaf7e14}
+
+
+Extra\_\-MC : show the extra contributions for the ReconstructedParticle from other particles that not in the chain. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_aeead66cb0db211712f4bb5422b706209}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Flat\_\-RC@{Flat\_\-RC}}
+\index{Flat\_\-RC@{Flat\_\-RC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Flat\_\-RC}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ReconstructedParticle$\ast$$>$ ToolSet::CChain\_\-Single::Flat\_\-RC ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_aeead66cb0db211712f4bb5422b706209}
+
+
+Flat\_\-RC : get all posible ReconstructedParticle in the chain, comparing Get\_\-RC(), it removes duplicated ones. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a377dc8f0e7ec185636c3e7c6f3c23164}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!FromRC\_\-MC@{FromRC\_\-MC}}
+\index{FromRC\_\-MC@{FromRC\_\-MC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{FromRC\_\-MC}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$MCParticle$\ast$$>$ ToolSet::CChain\_\-Single::FromRC\_\-MC ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a377dc8f0e7ec185636c3e7c6f3c23164}
+
+
+FromRC\_\-MC : get MCParticles from ReconstructedParticles with other direction linker in the chain. It's important for cross check particle reconstruction.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_ae52db47ff11ecb7553f38adeaf44ca79}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!FromRC\_\-Weight@{FromRC\_\-Weight}}
+\index{FromRC\_\-Weight@{FromRC\_\-Weight}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{FromRC\_\-Weight}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$float$>$ ToolSet::CChain\_\-Single::FromRC\_\-Weight ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_ae52db47ff11ecb7553f38adeaf44ca79}
+
+
+FromRC\_\-Weight : get MCParticles weight from ReconstructedParticles with other direction linker in the chain. It's important for cross check particle reconstruction.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_aa6b5eb85cc8d0505234cc6da2391fbbd}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Has\_\-Set\_\-MC@{Has\_\-Set\_\-MC}}
+\index{Has\_\-Set\_\-MC@{Has\_\-Set\_\-MC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Has\_\-Set\_\-MC}]{\setlength{\rightskip}{0pt plus 5cm}bool ToolSet::CChain\_\-Single::Has\_\-Set\_\-MC ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_aa6b5eb85cc8d0505234cc6da2391fbbd}
+
+
+Has\_\-Set\_\-MC : return flag for set MC part. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_ac908ef21df959857275fe1de00c76e2c}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Has\_\-Set\_\-RC@{Has\_\-Set\_\-RC}}
+\index{Has\_\-Set\_\-RC@{Has\_\-Set\_\-RC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Has\_\-Set\_\-RC}]{\setlength{\rightskip}{0pt plus 5cm}bool ToolSet::CChain\_\-Single::Has\_\-Set\_\-RC ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_ac908ef21df959857275fe1de00c76e2c}
+
+
+Has\_\-Set\_\-RC : return flag for set Reconstructed part. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a237f2bcfb3006f37363ae6e4e39bbb44}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Has\_\-Trim\_\-Chain@{Has\_\-Trim\_\-Chain}}
+\index{Has\_\-Trim\_\-Chain@{Has\_\-Trim\_\-Chain}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Has\_\-Trim\_\-Chain}]{\setlength{\rightskip}{0pt plus 5cm}bool ToolSet::CChain\_\-Single::Has\_\-Trim\_\-Chain ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a237f2bcfb3006f37363ae6e4e39bbb44}
+
+
+Has\_\-Trim\_\-Chain : return flag for trim duplicated particles in the chain. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a583818358adab4a442ebe74a1ed7d5fd}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Head@{Head}}
+\index{Head@{Head}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Head}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$MCParticle$\ast$$>$ ToolSet::CChain\_\-Single::Head ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a583818358adab4a442ebe74a1ed7d5fd}
+
+
+Head : get the hard-\/scattering particles for the chain. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a083e8042cf9d2ede88f69037a318cbae}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Input@{Input}}
+\index{Input@{Input}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Input}]{\setlength{\rightskip}{0pt plus 5cm}MCParticle$\ast$ ToolSet::CChain\_\-Single::Input ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a083e8042cf9d2ede88f69037a318cbae}
+
+
+Input : get all input MC particles. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a9c9c897ea89b3d8adf3b71d119a66324}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Input\_\-RC@{Input\_\-RC}}
+\index{Input\_\-RC@{Input\_\-RC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Input\_\-RC}]{\setlength{\rightskip}{0pt plus 5cm}ReconstructedParticle$\ast$ ToolSet::CChain\_\-Single::Input\_\-RC ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a9c9c897ea89b3d8adf3b71d119a66324}
+
+
+Input\_\-RC : get all input RC particles. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a9762b2584dc5f7eef1036fda5dfb98b5}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!MCEnd@{MCEnd}}
+\index{MCEnd@{MCEnd}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{MCEnd}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$MCParticle$\ast$$>$ ToolSet::CChain\_\-Single::MCEnd ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a9762b2584dc5f7eef1036fda5dfb98b5}
+
+
+MCEnd : get final states in the MC part in the chain. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a366ba84d1f485f8b5aa62b6540568774}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Nav\_\-From\_\-MC\_\-to\_\-RC@{Nav\_\-From\_\-MC\_\-to\_\-RC}}
+\index{Nav\_\-From\_\-MC\_\-to\_\-RC@{Nav\_\-From\_\-MC\_\-to\_\-RC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Nav\_\-From\_\-MC\_\-to\_\-RC}]{\setlength{\rightskip}{0pt plus 5cm}LCRelationNavigator$\ast$ ToolSet::CChain\_\-Single::Nav\_\-From\_\-MC\_\-to\_\-RC ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a366ba84d1f485f8b5aa62b6540568774}
+
+
+Nav\_\-From\_\-MC\_\-to\_\-RC : Nav, input is MC, return the related ReconstructedParticle. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a32a9327c08d4aa218d2510b1288045de}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Nav\_\-from\_\-RC\_\-to\_\-MC@{Nav\_\-from\_\-RC\_\-to\_\-MC}}
+\index{Nav\_\-from\_\-RC\_\-to\_\-MC@{Nav\_\-from\_\-RC\_\-to\_\-MC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Nav\_\-from\_\-RC\_\-to\_\-MC}]{\setlength{\rightskip}{0pt plus 5cm}LCRelationNavigator$\ast$ ToolSet::CChain\_\-Single::Nav\_\-from\_\-RC\_\-to\_\-MC ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a32a9327c08d4aa218d2510b1288045de}
+
+
+Nav\_\-from\_\-RC\_\-to\_\-MC : Nav, input is ReconstructedParticle, return the related MCParticle. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_af29a34bb8e658fd38590b7914ad4929f}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Next\_\-Head@{Next\_\-Head}}
+\index{Next\_\-Head@{Next\_\-Head}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Next\_\-Head}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$MCParticle$\ast$$>$ ToolSet::CChain\_\-Single::Next\_\-Head ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_af29a34bb8e658fd38590b7914ad4929f}
+
+
+Next\_\-Head : get first decay products from the hard-\/scattering particles in the chains. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a1a7ec13ce17b0ae4ec7562f4c32578d5}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Next\_\-Next\_\-Head@{Next\_\-Next\_\-Head}}
+\index{Next\_\-Next\_\-Head@{Next\_\-Next\_\-Head}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Next\_\-Next\_\-Head}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$MCParticle$\ast$$>$ ToolSet::CChain\_\-Single::Next\_\-Next\_\-Head ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a1a7ec13ce17b0ae4ec7562f4c32578d5}
+
+
+Next\_\-Next\_\-Head : get first decay products from the hard-\/scattering particles in the chains. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a5aa8017f2147e06c959f3a296bc3af3b}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Push\_\-Back@{Push\_\-Back}}
+\index{Push\_\-Back@{Push\_\-Back}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Push\_\-Back}]{\setlength{\rightskip}{0pt plus 5cm}void ToolSet::CChain\_\-Single::Push\_\-Back (MCParticle $\ast$ {\em input})}}
+\label{classToolSet_1_1CChain__Single_a5aa8017f2147e06c959f3a296bc3af3b}
+
+
+Push\_\-Back : recurse function in the \hyperlink{classToolSet_1_1CChain__Single_a6e24f84cd12c38d28f4e154f547d4170}{Recurse\_\-Chain()}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\hypertarget{classToolSet_1_1CChain__Single_ad261fc82205fec60d46ccda275256fe3}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Push\_\-Forward@{Push\_\-Forward}}
+\index{Push\_\-Forward@{Push\_\-Forward}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Push\_\-Forward}]{\setlength{\rightskip}{0pt plus 5cm}void ToolSet::CChain\_\-Single::Push\_\-Forward (MCParticle $\ast$ {\em input})}}
+\label{classToolSet_1_1CChain__Single_ad261fc82205fec60d46ccda275256fe3}
+
+
+Push\_\-Forward : recurse function in the \hyperlink{classToolSet_1_1CChain__Single_a8f0623cb1122dc17a82f3b86289b9681}{TraceBack\_\-Chain()}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\hypertarget{classToolSet_1_1CChain__Single_a3783b04dfa98bee280070fa443afa878}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!RC@{RC}}
+\index{RC@{RC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{RC}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$Chain\_\-End\_\-Type$>$ ToolSet::CChain\_\-Single::RC ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a3783b04dfa98bee280070fa443afa878}
+
+
+RC : get ReconstructedParticle in the chain, it organizes as for each particle in the MCEnd, it has a MCparticle-\/-\/-\/vector of $<$(weight, ReconstructedParticle)$>$. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_af928f52ff7640aeef93083b9fbe98b65}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!RC\_\-Particle@{RC\_\-Particle}}
+\index{RC\_\-Particle@{RC\_\-Particle}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{RC\_\-Particle}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::vector$<$ReconstructedParticle$\ast$$>$ $>$ ToolSet::CChain\_\-Single::RC\_\-Particle ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_af928f52ff7640aeef93083b9fbe98b65}
+
+
+RC\_\-Particle : get ReconstructedParticle in the chain， it organizes as for each particle in the MCEnd, it has a MCParticle -\/-\/ vector of $<$ReconstructedParticles$>$. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_ae1e9f5156d4f65888c0262284518601c}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!RC\_\-Weight@{RC\_\-Weight}}
+\index{RC\_\-Weight@{RC\_\-Weight}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{RC\_\-Weight}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::vector$<$float$>$ $>$ ToolSet::CChain\_\-Single::RC\_\-Weight ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_ae1e9f5156d4f65888c0262284518601c}
+
+
+RC\_\-Weight : get ReconstructedParticle's weight in the chain， it organizes as for each particle in the MCEnd, it has a MCParticle -\/-\/ vector of $<$weight$>$. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CChain__Single_a6e24f84cd12c38d28f4e154f547d4170}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Recurse\_\-Chain@{Recurse\_\-Chain}}
+\index{Recurse\_\-Chain@{Recurse\_\-Chain}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Recurse\_\-Chain}]{\setlength{\rightskip}{0pt plus 5cm}void ToolSet::CChain\_\-Single::Recurse\_\-Chain (MCParticle $\ast$ {\em input})}}
+\label{classToolSet_1_1CChain__Single_a6e24f84cd12c38d28f4e154f547d4170}
+
+
+Recurse\_\-Chain : get decay particles from the input. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\hypertarget{classToolSet_1_1CChain__Single_a7474584ac9cbcaf32f0b046bd733756d}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Set\_\-Combined\_\-RC@{Set\_\-Combined\_\-RC}}
+\index{Set\_\-Combined\_\-RC@{Set\_\-Combined\_\-RC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Set\_\-Combined\_\-RC}]{\setlength{\rightskip}{0pt plus 5cm}void ToolSet::CChain\_\-Single::Set\_\-Combined\_\-RC ()}}
+\label{classToolSet_1_1CChain__Single_a7474584ac9cbcaf32f0b046bd733756d}
+
+
+Set\_\-Combined\_\-RC : sum all ReconstructedParticle into a new particle in each chains, so that you can compare the energy/momentum loss between original MC particle and ReconstructedParticles. This will generate a new ReconstructedParticle in the heap, so remember to use \hyperlink{classToolSet_1_1CChain__Single_ae991aff7b553d31f4073eb5aaf0e0440}{Clear()} \hypertarget{classToolSet_1_1CChain__Single_ad0af64f3a95dea5a7205a03a0b5c6b2d}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC@{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC}}
+\index{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC@{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC}]{\setlength{\rightskip}{0pt plus 5cm}void ToolSet::CChain\_\-Single::Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC (LCRelationNavigator $\ast$ {\em relation})}}
+\label{classToolSet_1_1CChain__Single_ad0af64f3a95dea5a7205a03a0b5c6b2d}
+
+
+Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC : set Nav. 
+\begin{DoxyParams}{Parameters}
+\item[{\em relation}]\end{DoxyParams}
+\hypertarget{classToolSet_1_1CChain__Single_ad2311e70909778460c342a2b93387db6}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Set\_\-Nav\_\-From\_\-RC\_\-To\_\-MC@{Set\_\-Nav\_\-From\_\-RC\_\-To\_\-MC}}
+\index{Set\_\-Nav\_\-From\_\-RC\_\-To\_\-MC@{Set\_\-Nav\_\-From\_\-RC\_\-To\_\-MC}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Set\_\-Nav\_\-From\_\-RC\_\-To\_\-MC}]{\setlength{\rightskip}{0pt plus 5cm}void ToolSet::CChain\_\-Single::Set\_\-Nav\_\-From\_\-RC\_\-To\_\-MC (LCRelationNavigator $\ast$ {\em relation})}}
+\label{classToolSet_1_1CChain__Single_ad2311e70909778460c342a2b93387db6}
+
+
+Set\_\-Nav\_\-From\_\-RC\_\-To\_\-MC : set Nav. 
+\begin{DoxyParams}{Parameters}
+\item[{\em relation}]\end{DoxyParams}
+\hypertarget{classToolSet_1_1CChain__Single_a8f0623cb1122dc17a82f3b86289b9681}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!TraceBack\_\-Chain@{TraceBack\_\-Chain}}
+\index{TraceBack\_\-Chain@{TraceBack\_\-Chain}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{TraceBack\_\-Chain}]{\setlength{\rightskip}{0pt plus 5cm}void ToolSet::CChain\_\-Single::TraceBack\_\-Chain (MCParticle $\ast$ {\em input})}}
+\label{classToolSet_1_1CChain__Single_a8f0623cb1122dc17a82f3b86289b9681}
+
+
+TraceBack\_\-Chain : get particles where the input is decayed from, it is in the opposite direction of the \hyperlink{classToolSet_1_1CChain__Single_a6e24f84cd12c38d28f4e154f547d4170}{Recurse\_\-Chain()}. So if the input particle is in the middle position, use Recurse\_\-Chain, will get what this input decays, using TraceBack\_\-Chain will get where does this input coming from. combining two functions will get a complete decay chain from the hard-\/scattering to detector simulation.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\hypertarget{classToolSet_1_1CChain__Single_a8323cc6a1a9f5dd2ef0527324e9140c9}{
+\index{ToolSet::CChain\_\-Single@{ToolSet::CChain\_\-Single}!Trim\_\-Chain@{Trim\_\-Chain}}
+\index{Trim\_\-Chain@{Trim\_\-Chain}!ToolSet::CChain_Single@{ToolSet::CChain\_\-Single}}
+\subsubsection[{Trim\_\-Chain}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$MCParticle$\ast$$>$ ToolSet::CChain\_\-Single::Trim\_\-Chain ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classToolSet_1_1CChain__Single_a8323cc6a1a9f5dd2ef0527324e9140c9}
+
+
+Trim\_\-Chain : get trimed MC particles in the chain (from hard-\/scattering to final simulated particle). \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+CChain\_\-Single.h\end{DoxyCompactItemize}

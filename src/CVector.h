@@ -113,6 +113,31 @@ namespace ToolSet{
 			V2.erase( unique( V2.begin(), V2.end()  ), V2.end()  );
 			return(V2);
 		}
+
+
+	template<typename VEC_DIFFERENCE>
+		static std::vector<VEC_DIFFERENCE> Vec_Difference(std::vector<VEC_DIFFERENCE> &V1, std::vector<VEC_DIFFERENCE> &V2){
+			std::vector<VEC_DIFFERENCE> result;
+			typename std::vector<VEC_DIFFERENCE>::iterator it;
+
+			std::sort (V1.begin(),V1.end());     
+			std::sort (V2.begin(),V2.end());   
+			it=std::set_difference (V1.begin(), V1.end(), V2.begin(), V2.end(), result.begin());
+			result.resize(it-result.begin());
+			return(V2);
+		}
+}
+	template<typename VEC_SDIFFERENCE>
+		static std::vector<VEC_SDIFFERENCE> Vec_Symmetry_Difference(std::vector<VEC_SDIFFERENCE> &V1, std::vector<VEC_SDIFFERENCE> &V2){
+			std::vector<VEC_SDIFFERENCE> result;
+			typename std::vector<VEC_SDIFFERENCE>::iterator it;
+
+			std::sort (V1.begin(),V1.end());     
+			std::sort (V2.begin(),V2.end());   
+			it=std::set_symmetric_difference (V1.begin(), V1.end(), V2.begin(), V2.end(), result.begin());
+			result.resize(it-result.begin());
+			return(V2);
+		}
 }
 
 #endif

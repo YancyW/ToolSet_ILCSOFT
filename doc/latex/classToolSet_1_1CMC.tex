@@ -1,0 +1,512 @@
+\hypertarget{classToolSet_1_1CMC}{
+\section{ToolSet::CMC Class Reference}
+\label{classToolSet_1_1CMC}\index{ToolSet::CMC@{ToolSet::CMC}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classToolSet_1_1CMC_ab30c29f999f2b3dd1c85ed68636f2281}{
+static MCParticle $\ast$ {\bfseries NewParticle} (float px, float py, float pz, float E, MCParticle $\ast$test)}
+\label{classToolSet_1_1CMC_ab30c29f999f2b3dd1c85ed68636f2281}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a5bd1a7515135570ef348bd77d1d26933}{
+static MCParticle $\ast$ {\bfseries NewParticle} (TLorentzVector \&p, MCParticle $\ast$test)}
+\label{classToolSet_1_1CMC_a5bd1a7515135570ef348bd77d1d26933}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ad1b2172aaacc40d4f5971492a5d1a0f5}{
+static MCParticle $\ast$ {\bfseries Add} (const MCParticle $\ast$MC1, const MCParticle $\ast$MC2)}
+\label{classToolSet_1_1CMC_ad1b2172aaacc40d4f5971492a5d1a0f5}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_aa597db31bacbc37cbc16da5bfe2b1d9a}{
+static MCParticle $\ast$ {\bfseries Minus} (const MCParticle $\ast$MC1, const MCParticle $\ast$MC2)}
+\label{classToolSet_1_1CMC_aa597db31bacbc37cbc16da5bfe2b1d9a}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a29838e430204b6f0d6e5cdf8a669f615}{
+static MCParticle $\ast$ {\bfseries Equal} (const MCParticle $\ast$MC1)}
+\label{classToolSet_1_1CMC_a29838e430204b6f0d6e5cdf8a669f615}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_acd7ded5c44d40de05109435f43ca5ae3}{
+static TLorentzVector {\bfseries Minus\_\-To\_\-Lorentz} (const MCParticle $\ast$MC1, const MCParticle $\ast$MC2)}
+\label{classToolSet_1_1CMC_acd7ded5c44d40de05109435f43ca5ae3}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a709d30e4a5670f116128a1602a6b25c0}{
+static bool {\bfseries Compare\_\-as\_\-E} (MCParticle $\ast$i, MCParticle $\ast$j)}
+\label{classToolSet_1_1CMC_a709d30e4a5670f116128a1602a6b25c0}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_abdd82fcdf6cba89df00c9af0b1f77df6}{
+static bool {\bfseries Compare\_\-as\_\-Angle} (const std::pair$<$ float, MCParticle $\ast$ $>$ \&i, const std::pair$<$ float, MCParticle $\ast$ $>$ \&j)}
+\label{classToolSet_1_1CMC_abdd82fcdf6cba89df00c9af0b1f77df6}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_acbada53a8416ca460d7aa07453610dc2}{
+{\footnotesize template$<$typename TMag $>$ }\\static float {\bfseries Cal\_\-Mag} (TMag MC)}
+\label{classToolSet_1_1CMC_acbada53a8416ca460d7aa07453610dc2}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ae7f67f1180165cedcc4cbeb4e114e5d1}{
+{\footnotesize template$<$typename TP $>$ }\\static float {\bfseries Cal\_\-P} (TP MC)}
+\label{classToolSet_1_1CMC_ae7f67f1180165cedcc4cbeb4e114e5d1}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a679d9af4f1004560f178ed10f1a3028c}{
+{\footnotesize template$<$typename TVect $>$ }\\static TVector3 {\bfseries Cal\_\-Vect} (TVect MC)}
+\label{classToolSet_1_1CMC_a679d9af4f1004560f178ed10f1a3028c}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ac479ce63e1328c284ef104449b30d465}{
+{\footnotesize template$<$typename TPT $>$ }\\static float {\bfseries Cal\_\-PT} (TPT MC)}
+\label{classToolSet_1_1CMC_ac479ce63e1328c284ef104449b30d465}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a8c4c04395c95a6c513f049029c157a7d}{
+{\footnotesize template$<$typename TPT $>$ }\\static float {\bfseries Cal\_\-PT} (TPT MC, TPT Ref)}
+\label{classToolSet_1_1CMC_a8c4c04395c95a6c513f049029c157a7d}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a7142700aa3c1b586b976e9d71301c7bc}{
+{\footnotesize template$<$typename TTheta $>$ }\\static float {\bfseries Cal\_\-CosTheta} (TTheta MC)}
+\label{classToolSet_1_1CMC_a7142700aa3c1b586b976e9d71301c7bc}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a91c74f61d1c9656e68f4b1037976a51b}{
+{\footnotesize template$<$typename TTheta $>$ }\\static float {\bfseries Cal\_\-CosTheta} (TTheta MC, TTheta Ref)}
+\label{classToolSet_1_1CMC_a91c74f61d1c9656e68f4b1037976a51b}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a0637a061bf4ecd9084b794023cc11816}{
+{\footnotesize template$<$typename TAngle $>$ }\\static float {\bfseries Cal\_\-Angle} (TAngle MC, TAngle Ref)}
+\label{classToolSet_1_1CMC_a0637a061bf4ecd9084b794023cc11816}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a58389b8e6c06afb39377d6d078e5616f}{
+{\footnotesize template$<$typename TAngle $>$ }\\static float {\bfseries Cal\_\-Angle\_\-Deg} (TAngle MC, TAngle Ref)}
+\label{classToolSet_1_1CMC_a58389b8e6c06afb39377d6d078e5616f}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a3c8cfd47eac44d6e39a38598bb9158f1}{
+{\footnotesize template$<$typename TPhi $>$ }\\static float {\bfseries Cal\_\-Azimuth} (TPhi MC)}
+\label{classToolSet_1_1CMC_a3c8cfd47eac44d6e39a38598bb9158f1}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ab77fa5dd46a12ac8887776724261f72b}{
+{\footnotesize template$<$typename TPhi $>$ }\\static float {\bfseries Cal\_\-Azimuth} (TPhi MC, TPhi Ref)}
+\label{classToolSet_1_1CMC_ab77fa5dd46a12ac8887776724261f72b}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_aa1667ca515e4b26ca43755fd8d2e30bd}{
+{\footnotesize template$<$typename TPhi $>$ }\\static float {\bfseries Cal\_\-Acoplanarity} (TPhi MC, TPhi Ref)}
+\label{classToolSet_1_1CMC_aa1667ca515e4b26ca43755fd8d2e30bd}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_add27d6c12067e096d96d45af53d5c6aa}{
+static float {\bfseries Cal\_\-IsolationAngle} (MCParticle $\ast$MC, std::vector$<$ MCParticle $\ast$ $>$ Ref)}
+\label{classToolSet_1_1CMC_add27d6c12067e096d96d45af53d5c6aa}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a67ab1d51b7fd0f98cfa19be5381e961a}{
+static int {\bfseries Get\_\-Parents\_\-Number} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a67ab1d51b7fd0f98cfa19be5381e961a}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a44a3b5e5df7effa4ed170151cd63b706}{
+static int {\bfseries Get\_\-Daughters\_\-Number} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a44a3b5e5df7effa4ed170151cd63b706}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a3ebc24c0c160ba37054b294059f09d96}{
+static bool {\bfseries Status\_\-Beam\_\-Energy} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a3ebc24c0c160ba37054b294059f09d96}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_acd1cf4b7527b2e2bd194ad688b29b132}{
+static bool {\bfseries Status\_\-Has\_\-Parent} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_acd1cf4b7527b2e2bd194ad688b29b132}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a88ff52dd7c66369b43eb8619a1383e7d}{
+static bool {\bfseries Status\_\-Has\_\-GrandParent} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a88ff52dd7c66369b43eb8619a1383e7d}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a1771a4a8936446f9dfe5f9d22b5d9322}{
+static bool {\bfseries Status\_\-Has\_\-Daughter} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a1771a4a8936446f9dfe5f9d22b5d9322}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a79d54fb4529c17a59ab21a51b3f6889c}{
+static bool {\bfseries Status\_\-Has\_\-GrandDaughter} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a79d54fb4529c17a59ab21a51b3f6889c}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ae0ceba81f34f1a164b1d8ce719c92e05}{
+static bool {\bfseries Status\_\-Is\_\-MS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_ae0ceba81f34f1a164b1d8ce719c92e05}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a662c5f9d64c7916f988e4ff15598d4ed}{
+static bool {\bfseries Status\_\-Is\_\-TFS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a662c5f9d64c7916f988e4ff15598d4ed}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_aef5a206838a69936e98ea22a1c36e143}{
+static bool {\bfseries Status\_\-Is\_\-Pythia\_\-TFS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_aef5a206838a69936e98ea22a1c36e143}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a23a38c3094037dd6660223494c8a5827}{
+static bool {\bfseries Status\_\-Is\_\-Detector\_\-TFS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a23a38c3094037dd6660223494c8a5827}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a3fbb915477cbbdca4193b8b2ff8cd356}{
+static bool {\bfseries Status\_\-Is\_\-Pythia} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a3fbb915477cbbdca4193b8b2ff8cd356}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a9d3659a1fd4bad33a54c08769902e998}{
+static bool {\bfseries Status\_\-Is\_\-Overlay} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a9d3659a1fd4bad33a54c08769902e998}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_acb83c834c9e5e1c33f8c2514e4c40d93}{
+static bool {\bfseries Status\_\-Is\_\-Overlay\_\-DFS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_acb83c834c9e5e1c33f8c2514e4c40d93}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_aac0eed5c22431cfc5e9c32d9bc48b0d7}{
+static bool {\bfseries Status\_\-Is\_\-Stopped} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_aac0eed5c22431cfc5e9c32d9bc48b0d7}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a2b903f56e1a2c0635e722a47d5e3e87f}{
+static bool {\bfseries Status\_\-Is\_\-DecayInTracker} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a2b903f56e1a2c0635e722a47d5e3e87f}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ad59fb18ae62349bf343ad165950f776a}{
+static bool {\bfseries Status\_\-Is\_\-DecayInCalorimeter} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_ad59fb18ae62349bf343ad165950f776a}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ac893a50b848486f2ebfcdc877c148491}{
+static bool {\bfseries Status\_\-Is\_\-LeftDetector} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_ac893a50b848486f2ebfcdc877c148491}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a3d78b61ff25d63169a4bb76f2b3b1268}{
+static bool {\bfseries Status\_\-Is\_\-Electron} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a3d78b61ff25d63169a4bb76f2b3b1268}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_aa3543a71f0c9b7822dc45df8d7820e1b}{
+static bool {\bfseries Status\_\-Is\_\-Muon} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_aa3543a71f0c9b7822dc45df8d7820e1b}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_afa2d4c47b2fe8348eb11fdd5956cdaa0}{
+static bool {\bfseries Status\_\-Is\_\-Tau} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_afa2d4c47b2fe8348eb11fdd5956cdaa0}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a23d5636609d812ec8ca6b0d10e69a885}{
+static bool {\bfseries Status\_\-Is\_\-Lepton} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a23d5636609d812ec8ca6b0d10e69a885}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ae11398c05dd404fae775c49b0b2a5339}{
+static bool {\bfseries Status\_\-Is\_\-Neutrino} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_ae11398c05dd404fae775c49b0b2a5339}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_aed24e1c551c05989497eca209494b4b7}{
+static bool {\bfseries Status\_\-Is\_\-HeavyBoson} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_aed24e1c551c05989497eca209494b4b7}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a6d949652a7db0e7e21d88a30174321ba}{
+static bool {\bfseries Status\_\-Is\_\-Photon} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a6d949652a7db0e7e21d88a30174321ba}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ac8c420d5b46995cd4c11d10cb70be958}{
+static bool {\bfseries Status\_\-Is\_\-NeutralHadron} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_ac8c420d5b46995cd4c11d10cb70be958}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a5df6b8b9f816ff8f89c3430ffbcb00ae}{
+static bool {\bfseries Status\_\-Is\_\-ChargedHadron} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a5df6b8b9f816ff8f89c3430ffbcb00ae}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a30de4d54169d99c8119e789b4b01d59e}{
+static bool {\bfseries Status\_\-Is\_\-Gluon} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a30de4d54169d99c8119e789b4b01d59e}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a86999adb3aa3b4d16de7b0819739b233}{
+static bool {\bfseries Status\_\-Is\_\-Quark} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a86999adb3aa3b4d16de7b0819739b233}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ad5954c48a7cf4cb2ed2a139350266c61}{
+static bool {\bfseries Status\_\-Is\_\-LightQuark} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_ad5954c48a7cf4cb2ed2a139350266c61}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a0e32fa7bb651d3d471da504770ff39d3}{
+static bool {\bfseries Status\_\-Is\_\-HeavyQuark} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a0e32fa7bb651d3d471da504770ff39d3}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a0f4beffb9924b6696075b59c1d8770c4}{
+static bool {\bfseries Status\_\-Is\_\-TopQuark} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a0f4beffb9924b6696075b59c1d8770c4}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_aa67cd425c28243078c8dfac594bdc71f}{
+static bool {\bfseries Status\_\-Is\_\-BottomQuark} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_aa67cd425c28243078c8dfac594bdc71f}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ab0b28b170ae3a6ee15ffa53138c75f58}{
+static bool {\bfseries Status\_\-Is\_\-CharmQuark} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_ab0b28b170ae3a6ee15ffa53138c75f58}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_aa63f12865d46af350674c7dca3eb5437}{
+static bool {\bfseries Judge\_\-Is\_\-Beam} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_aa63f12865d46af350674c7dca3eb5437}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a5ccf3aedd3c942ac6644748abaaf70fe}{
+static bool {\bfseries Judge\_\-Parents\_\-Are\_\-Beam} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a5ccf3aedd3c942ac6644748abaaf70fe}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ad09856f709fff7320c382efd26a408e9}{
+static bool {\bfseries Judge\_\-GrandParents\_\-Are\_\-Beam} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_ad09856f709fff7320c382efd26a408e9}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a0630c44bcd0eaf761f4b34e106f2b9d9}{
+static bool {\bfseries Judge\_\-Is\_\-IS\_\-Electron} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a0630c44bcd0eaf761f4b34e106f2b9d9}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a688d2854fa645f4c3adad5013f4c9ba2}{
+static bool {\bfseries Judge\_\-Is\_\-IS\_\-Photon} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a688d2854fa645f4c3adad5013f4c9ba2}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a85fbb7bf0ef846c3ae1dcfeb27853911}{
+static bool {\bfseries Judge\_\-HardScattering\_\-FS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a85fbb7bf0ef846c3ae1dcfeb27853911}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_af28ed4c00c5b936aa0660253bd4af35b}{
+static bool {\bfseries Judge\_\-HardScattering\_\-Next\_\-FS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_af28ed4c00c5b936aa0660253bd4af35b}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a20029373a30ff4642dfbe5ac879ee0ff}{
+static bool {\bfseries Judge\_\-HardScattering\_\-Next\_\-Next\_\-FS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a20029373a30ff4642dfbe5ac879ee0ff}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ae473609376148631113dbf301f800de7}{
+static bool {\bfseries Judge\_\-OnlyPythiaShowering\_\-FS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_ae473609376148631113dbf301f800de7}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a47f5a5aff7196a77a729c703ffed1ce7}{
+static bool {\bfseries Judge\_\-PythiaShowering\_\-FS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a47f5a5aff7196a77a729c703ffed1ce7}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a6c340bf257a238e9f68cd251b50599cd}{
+static bool {\bfseries Judge\_\-PythiaShowering\_\-All} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a6c340bf257a238e9f68cd251b50599cd}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ab6067e1275a79341e2342906105e16f2}{
+static bool {\bfseries Judge\_\-OnlyDetectorSimulating\_\-FS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_ab6067e1275a79341e2342906105e16f2}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_afee9479237283cf64d769fb1b1a361ae}{
+static bool {\bfseries Judge\_\-DetectorSimulating\_\-FS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_afee9479237283cf64d769fb1b1a361ae}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_af61adfde1923ee0bd54f91e88c806c94}{
+static bool {\bfseries Judge\_\-Overlay\_\-FS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_af61adfde1923ee0bd54f91e88c806c94}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a257af2810ec961f3e1a71f29bc12154f}{
+static bool {\bfseries Judge\_\-Has\_\-Overlay} (std::vector$<$ MCParticle $\ast$ $>$ input)}
+\label{classToolSet_1_1CMC_a257af2810ec961f3e1a71f29bc12154f}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a0cdd75e73a26f294c140f9cf2ed196ea}{
+static bool {\bfseries Judge\_\-All\_\-FS} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a0cdd75e73a26f294c140f9cf2ed196ea}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ae5e3cc992d63d6efb8030bdb170b87d1}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-Particle} (bool($\ast$Judge)(MCParticle $\ast$), std::vector$<$ MCParticle $\ast$ $>$ AllMC)}
+\label{classToolSet_1_1CMC_ae5e3cc992d63d6efb8030bdb170b87d1}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_aec3000cf58c5ef65b62938decced8303}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MCParticle} (LCCollection $\ast$AllMC)}
+\label{classToolSet_1_1CMC_aec3000cf58c5ef65b62938decced8303}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a899d324f086d12abb75db9d87798ed91}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-HardScattering\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
+\label{classToolSet_1_1CMC_a899d324f086d12abb75db9d87798ed91}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a321f55fa02ad6ed18931bc906b2e19ee}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-PythiaShowering\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
+\label{classToolSet_1_1CMC_a321f55fa02ad6ed18931bc906b2e19ee}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_aea4e69e23c45ca6ac4674ee90d56fc1c}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-OnlyPythiaShowering\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
+\label{classToolSet_1_1CMC_aea4e69e23c45ca6ac4674ee90d56fc1c}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_af0a81c6e40cc44cecfe9947be99783d4}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-DetectorSimulating\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
+\label{classToolSet_1_1CMC_af0a81c6e40cc44cecfe9947be99783d4}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a766e7761a6db662243c7490a615c380e}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-OnlyDetectorSimulating\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
+\label{classToolSet_1_1CMC_a766e7761a6db662243c7490a615c380e}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a0174dfbf7511f9fa827d9fff33aabc8b}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-Overlay\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
+\label{classToolSet_1_1CMC_a0174dfbf7511f9fa827d9fff33aabc8b}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a826b4fcc4ae58b18ceec544fb5abf563}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-All\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
+\label{classToolSet_1_1CMC_a826b4fcc4ae58b18ceec544fb5abf563}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a96c8f9998df8b19c84b0f45271195ef9}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-PythiaShowering\_\-All} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
+\label{classToolSet_1_1CMC_a96c8f9998df8b19c84b0f45271195ef9}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a8581240b2a8d474e851c3c1ed256fada}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-DetectorSimulating\_\-All} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
+\label{classToolSet_1_1CMC_a8581240b2a8d474e851c3c1ed256fada}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a4bf55a4d64eeec4762f87ee7de91f585}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-Overlay\_\-All} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
+\label{classToolSet_1_1CMC_a4bf55a4d64eeec4762f87ee7de91f585}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_aa98186321fc75d5f476bc97511e1d91b}{
+static std::vector$<$ int $>$ {\bfseries Get\_\-ParentsPID} (MCParticle $\ast$MC)}
+\label{classToolSet_1_1CMC_aa98186321fc75d5f476bc97511e1d91b}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ae0aeb5054574c5c8ffd3f24e86d662a6}{
+static std::vector$<$ int $>$ {\bfseries Get\_\-DaughtersPID} (MCParticle $\ast$MC)}
+\label{classToolSet_1_1CMC_ae0aeb5054574c5c8ffd3f24e86d662a6}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a38ef7e0f75f14714d4636ca70c1b717c}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries MCToPythiaShowering} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_a38ef7e0f75f14714d4636ca70c1b717c}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_adfd54e8274a8994f4cc0a531a028cd01}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries MCToHardScattering} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_adfd54e8274a8994f4cc0a531a028cd01}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_abf41aa5efde937a3e21fa3b24323d570}{
+static void {\bfseries Get\_\-MC\_\-HardScattering\_\-Sort} (std::vector$<$ MCParticle $\ast$ $>$ MCs, std::vector$<$ MCParticle $\ast$ $>$ \&ISRlepton, std::vector$<$ MCParticle $\ast$ $>$ \&ISRphoton, std::vector$<$ MCParticle $\ast$ $>$ \&ObjetctParticle)}
+\label{classToolSet_1_1CMC_abf41aa5efde937a3e21fa3b24323d570}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a0595ad7853b51cfc631547665a3cb63e}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MCParticleType} (std::vector$<$ MCParticle $\ast$ $>$ MCs, signed int PDG)}
+\label{classToolSet_1_1CMC_a0595ad7853b51cfc631547665a3cb63e}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a8a83c548d4fa19b657194f055f5084db}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MCParticleType\_\-Abs} (std::vector$<$ MCParticle $\ast$ $>$ MCs, signed int PDG)}
+\label{classToolSet_1_1CMC_a8a83c548d4fa19b657194f055f5084db}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a186078318b357a23930ab6b61c8d9494}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MCParticleType} (std::vector$<$ MCParticle $\ast$ $>$ MCs, std::string PDG)}
+\label{classToolSet_1_1CMC_a186078318b357a23930ab6b61c8d9494}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_aa16a7d3c1cbd3e1d25cf885b25d561ec}{
+static float {\bfseries Get\_\-DecayChannel} (MCParticle $\ast$input)}
+\label{classToolSet_1_1CMC_aa16a7d3c1cbd3e1d25cf885b25d561ec}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_acd7611ff7cc945f5d198c0c0ba0b50c2}{
+static void {\bfseries Remove\_\-Duplication} (std::vector$<$ MCParticle $\ast$ $>$ \&MCs)}
+\label{classToolSet_1_1CMC_acd7611ff7cc945f5d198c0c0ba0b50c2}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ac483834b1710a1c4797f3b55f8f2336b}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Pass\_\-DetectorAngle} (std::vector$<$ MCParticle $\ast$ $>$ \&MCs)}
+\label{classToolSet_1_1CMC_ac483834b1710a1c4797f3b55f8f2336b}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a37d3453a48a49082beb6f65827fc94b4}{
+static MCParticle $\ast$ {\bfseries Get\_\-Visible} (std::vector$<$ MCParticle $\ast$ $>$ in)}
+\label{classToolSet_1_1CMC_a37d3453a48a49082beb6f65827fc94b4}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a89441427db18fc75e777966d5ac169b7}{
+static MCParticle $\ast$ {\bfseries Get\_\-InVisible} (std::vector$<$ MCParticle $\ast$ $>$ in)}
+\label{classToolSet_1_1CMC_a89441427db18fc75e777966d5ac169b7}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a0754f20765709b34841b3c3aec8c7e51}{
+static TLorentzVector {\bfseries Get\_\-Visible\_\-To\_\-Lorentz} (std::vector$<$ MCParticle $\ast$ $>$ in)}
+\label{classToolSet_1_1CMC_a0754f20765709b34841b3c3aec8c7e51}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_ab44cceb872950622551735a97a23bd4d}{
+static TLorentzVector {\bfseries Get\_\-InVisible\_\-To\_\-Lorentz} (std::vector$<$ MCParticle $\ast$ $>$ in)}
+\label{classToolSet_1_1CMC_ab44cceb872950622551735a97a23bd4d}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_af7da55fa17ab746930f3a04eeb3014ef}{
+static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-Isolated} (std::vector$<$ MCParticle $\ast$ $>$ input, std::vector$<$ MCParticle $\ast$ $>$ all, std::vector$<$ MCParticle $\ast$ $>$ left)}
+\label{classToolSet_1_1CMC_af7da55fa17ab746930f3a04eeb3014ef}
+
+\item 
+\hypertarget{classToolSet_1_1CMC_a4594f7a35f5db952f142626100ced91f}{
+static bool {\bfseries IsInCone} (MCParticle $\ast$lep, MCParticle $\ast$pfo, float angle\_\-cut)}
+\label{classToolSet_1_1CMC_a4594f7a35f5db952f142626100ced91f}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+CMC.h\end{DoxyCompactItemize}
