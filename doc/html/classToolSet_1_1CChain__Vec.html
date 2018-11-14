@@ -46,12 +46,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <h1>ToolSet::CChain_Vec Class Reference</h1><!-- doxytag: class="ToolSet::CChain_Vec" -->
+<p>This is the vector of <a class="el" href="classToolSet_1_1CChain__Single.html" title=": Getting the decay chain It contains two part: MC and Reconstructed part in this...">CChain_Single</a> This class is the vector of <a class="el" href="classToolSet_1_1CChain__Single.html" title=": Getting the decay chain It contains two part: MC and Reconstructed part in this...">CChain_Single</a>, for one input particle will generate one <a class="el" href="classToolSet_1_1CChain__Single.html" title=": Getting the decay chain It contains two part: MC and Reconstructed part in this...">CChain_Single</a> Functions are provided to make the vector operation more easily.  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="CChain_8h_source.html">CChain.h</a>&gt;</code></p>
+
 <p><a href="classToolSet_1_1CChain__Vec-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aacdadd594aff8dcf8e5f7634aec76c7d"></a><!-- doxytag: member="ToolSet::CChain_Vec::CChain_Vec" ref="aacdadd594aff8dcf8e5f7634aec76c7d" args="()" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CChain__Vec.html#aacdadd594aff8dcf8e5f7634aec76c7d">CChain_Vec</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classToolSet_1_1CChain__Vec.html">CChain_Vec</a> ： Constructor. <br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classToolSet_1_1CChain__Vec.html" title="This is the vector of CChain_Single This class is the vector of CChain_Single, for...">CChain_Vec</a> ： Constructor. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CChain__Vec.html#ad1ba5109d2db818706de4e96f485f72c">Num</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Num : number of the chain in this vector.  <a href="#ad1ba5109d2db818706de4e96f485f72c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classToolSet_1_1CChain__Single.html">CChain_Single</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CChain__Vec.html#ace17e3ec32dca382602d0ccc9f2d377e">Chain_Vec</a> ()</td></tr>
@@ -108,9 +113,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 &lt; MCParticle * &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CChain__Vec.html#ab8d0093a6613c407e546d988ef5d8e0a">Get_FromRC_MC</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_FromRC_MC : get MCParticles from ReconstructedParticles with other direction linker in each chains.  <a href="#ab8d0093a6613c407e546d988ef5d8e0a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector<br class="typebreak"/>
-&lt; ReconstructedParticle * &gt;<br class="typebreak"/>
- &gt; output&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CChain__Vec.html#a6c296f6a145769c5a8d9fd7ab6d1c5be">Get_SpecialRC</a> (int pdg, std::string label)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_SpecialRC : get a special ReconstructedParticle with parameters.  <a href="#a6c296f6a145769c5a8d9fd7ab6d1c5be"></a><br/></td></tr>
+&lt; ReconstructedParticle * &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CChain__Vec.html#a3cc0cdb7a3ed1b11da160fb5f709694f">Get_SpecialRC</a> (int pdg, std::string label)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_SpecialRC : get a special ReconstructedParticle with parameters.  <a href="#a3cc0cdb7a3ed1b11da160fb5f709694f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector<br class="typebreak"/>
 &lt; ReconstructedParticle * &gt; &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CChain__Vec.html#a820a5e8d1bde159334145996758d085e">Get_EnergeticRC</a> (int pdg)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_EnergeticRC : use Get_SpecialRC to get most energetic ReconstructedParticle.  <a href="#a820a5e8d1bde159334145996758d085e"></a><br/></td></tr>
@@ -155,6 +159,8 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CChain__Vec.html#ab706092b55510c69a2154b2a69c78e55">Set_MC</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set_MC : using ReconstructedParticle to set MCParticle part. <br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>This is the vector of <a class="el" href="classToolSet_1_1CChain__Single.html" title=": Getting the decay chain It contains two part: MC and Reconstructed part in this...">CChain_Single</a> This class is the vector of <a class="el" href="classToolSet_1_1CChain__Single.html" title=": Getting the decay chain It contains two part: MC and Reconstructed part in this...">CChain_Single</a>, for one input particle will generate one <a class="el" href="classToolSet_1_1CChain__Single.html" title=": Getting the decay chain It contains two part: MC and Reconstructed part in this...">CChain_Single</a> Functions are provided to make the vector operation more easily. </p>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ace17e3ec32dca382602d0ccc9f2d377e"></a><!-- doxytag: member="ToolSet::CChain_Vec::Chain_Vec" ref="ace17e3ec32dca382602d0ccc9f2d377e" args="()" -->
 <div class="memitem">
@@ -232,7 +238,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="memdoc">
 
 <p>Get_Combined_RC : sum all ReconstructedParticle into a new particle in each chains, so that you can compare the energy/momentum loss between original MC particle and ReconstructedParticles. </p>
-<p>This will generate a new ReconstructedParticle in the heap, so remember to use <a class="el" href="classToolSet_1_1CChain__Vec.html#a3068461a3bd0fe085f522e6bb2d24f07" title="Clear Notice: Remember to Clear the chain after use it.">Clear()</a> function after using <a class="el" href="classToolSet_1_1CChain__Vec.html">CChain_Vec</a></p>
+<p>This will generate a new ReconstructedParticle in the heap, so remember to use <a class="el" href="classToolSet_1_1CChain__Vec.html#a3068461a3bd0fe085f522e6bb2d24f07" title="Clear Notice: Remember to Clear the chain after use it.">Clear()</a> function after using <a class="el" href="classToolSet_1_1CChain__Vec.html" title="This is the vector of CChain_Single This class is the vector of CChain_Single, for...">CChain_Vec</a></p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>
@@ -552,12 +558,12 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a class="anchor" id="a6c296f6a145769c5a8d9fd7ab6d1c5be"></a><!-- doxytag: member="ToolSet::CChain_Vec::Get_SpecialRC" ref="a6c296f6a145769c5a8d9fd7ab6d1c5be" args="(int pdg, std::string label)" -->
+<a class="anchor" id="a3cc0cdb7a3ed1b11da160fb5f709694f"></a><!-- doxytag: member="ToolSet::CChain_Vec::Get_SpecialRC" ref="a3cc0cdb7a3ed1b11da160fb5f709694f" args="(int pdg, std::string label)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;ReconstructedParticle*&gt; &gt; output ToolSet::CChain_Vec::Get_SpecialRC </td>
+          <td class="memname">std::vector&lt;std::vector&lt;ReconstructedParticle*&gt; &gt; ToolSet::CChain_Vec::Get_SpecialRC </td>
           <td>(</td>
           <td class="paramtype">int&nbsp;</td>
           <td class="paramname"> <em>pdg</em>, </td>
@@ -1046,7 +1052,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on 13 Nov 2018 for ToolSet_ILCSOFT by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on 14 Nov 2018 for ToolSet_ILCSOFT by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

@@ -38,9 +38,12 @@ namespace ToolSet{
 
 	ReconstructedParticle& operator-(const ReconstructedParticle& MC1,const ReconstructedParticle& MC2);
 
+	/**
+	 * @brief : functions for ReconstructedParticle
+	 */
 	class CRC{
 		public :
-			static bool Compare_as_Angle_RC(const std::pair<float,ReconstructedParticle*> &i, const std::pair<float,ReconstructedParticle*> &j){
+			static bool Compare_as_Pair(const std::pair<float,ReconstructedParticle*> &i, const std::pair<float,ReconstructedParticle*> &j){
 				return ((i.first) < (j.first));
 			}
 
@@ -64,7 +67,7 @@ namespace ToolSet{
 					std::pair<float,ReconstructedParticle*> pair_tmp = std::make_pair(CMC::Cal_Angle_Deg(MC,Ref[i]),Ref[i]);
 					Ref_angle.push_back(pair_tmp);
 				}
-				std::sort(Ref_angle.begin(),Ref_angle.end(),Compare_as_Angle_RC);
+				std::sort(Ref_angle.begin(),Ref_angle.end(),Compare_as_Pair);
 
 				float sum_energy=0;
 				float angle=0;
@@ -93,9 +96,9 @@ namespace ToolSet{
 			static std::vector<ReconstructedParticle*> Get_POParticlePairType( std::vector<ReconstructedParticle*> PFOs,int PDG, int counter_minus, int counter_plus, int counter_pair) ;
 
 			// get particle from Link
-			static std::vector<MCParticle*>   Get_MC_From_PFO(ReconstructedParticle* &source, LCRelationNavigator* &relation);
-			static std::vector<std::vector<MCParticle*> > Get_MC_From_PFO_Vec(std::vector<ReconstructedParticle*> &source, LCRelationNavigator* &relation);
-			static std::vector<MCParticle*>            Get_A_MC_From_PFO_Vec(std::vector<ReconstructedParticle*> &source, LCRelationNavigator* &relation);
+			static std::vector<MCParticle*>                          Get_MC_From_PFO(ReconstructedParticle* &source, LCRelationNavigator* &relation);
+			static std::vector<std::vector<MCParticle*> >            Get_MC_From_PFO_Vec(std::vector<ReconstructedParticle*> &source, LCRelationNavigator* &relation);
+			static std::vector<MCParticle*>                          Get_A_MC_From_PFO_Vec(std::vector<ReconstructedParticle*> &source, LCRelationNavigator* &relation);
 			static std::vector<ReconstructedParticle*>               Get_PFO_From_MC(MCParticle* &source, LCRelationNavigator* &relation);
 			static std::vector<std::vector<ReconstructedParticle*> > Get_PFO_From_MC_Vec(std::vector<MCParticle*> &source, LCRelationNavigator* &relation);
 			static std::vector<ReconstructedParticle*>               Get_A_PFO_From_MC_Vec(std::vector<MCParticle*> &sourc, LCRelationNavigator* &relation);

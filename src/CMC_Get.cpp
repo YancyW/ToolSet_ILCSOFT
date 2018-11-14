@@ -158,48 +158,6 @@ std::vector<MCParticle*> ToolSet::CMC::Get_MC_Overlay_All(std::vector<MCParticle
 
 
 
-std::vector<int> ToolSet::CMC::Get_ParentsPID(MCParticle* MC) {
-	std::vector<int> ids;
-
-	if(Get_Parents_Number(MC)!=0){
-		for(int i=0;i<Get_Parents_Number(MC);i++){
-			ids.push_back(MC->getParents()[i]->getPDG());
-		}
-	}
-	else{
-		ids.push_back(-1);
-		ids.push_back(-1);
-	}
-
-	// always make sure ids has at least two elements, if not use -1 to instead.
-	if(ids.size()==1){
-		ids.push_back(-1);
-	}
-	return(ids);
-}
-
-std::vector<int> ToolSet::CMC::Get_DaughtersPID(MCParticle* MC) {
-	std::vector<int> ids;
-
-	if(Get_Daughters_Number(MC)!=0){
-		for(int i=0;i<Get_Daughters_Number(MC);i++){
-			ids.push_back(MC->getDaughters()[i]->getPDG());
-		}
-	}
-	else{
-		ids.push_back(-1);
-		ids.push_back(-1);
-	}
-
-	// always make sure ids has at least two elements, if not use -1 to instead.
-	if(ids.size()==1){
-		ids.push_back(-1);
-	}
-
-
-	return(ids);
-}
-
 
 std::vector<MCParticle*> ToolSet::CMC::MCToPythiaShowering(MCParticle* input){
 	std::vector<MCParticle*> output;
@@ -444,8 +402,9 @@ MCParticle* ToolSet::CMC::Get_Visible(std::vector<MCParticle*> in){
 
 
 MCParticle* ToolSet::CMC::Get_InVisible(std::vector<MCParticle*> in){
+	float beam_px= _collider_energy*tan(_beam_cross_angle);
 	MCParticle* visible = Get_Visible(in);
-	MCParticle* RCCollider=NewParticle(BEAM_ENERGY*sin(BEAM_ANGLE),0,0,BEAM_ENERGY,in[0]);
+	MCParticle* RCCollider=NewParticle(beam_px,0,0,_beam_energy*2,visible);
 
 	MCParticle* invisible= Minus(RCCollider,visible);
 	delete RCCollider;
@@ -473,8 +432,9 @@ TLorentzVector ToolSet::CMC::Get_Visible_To_Lorentz(std::vector<MCParticle*> in)
 }
 
 TLorentzVector ToolSet::CMC::Get_InVisible_To_Lorentz(std::vector<MCParticle*> in){
+	float beam_px= _collider_energy*tan(_beam_cross_angle);
 	TLorentzVector visible = Get_Visible_To_Lorentz(in);
-	TLorentzVector RCCollider=TLorentzVector(BEAM_ENERGY*sin(BEAM_ANGLE),0,0,BEAM_ENERGY);
+	TLorentzVector RCCollider=TLorentzVector(beam_px,0,0,_beam_energy*2);
 	TLorentzVector invisible= RCCollider-visible;
 	return(invisible);
 }

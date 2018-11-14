@@ -3,6 +3,9 @@
 #define CFLAVOR_H  
 #include <cmath>
 namespace ToolSet{
+	/**
+	 * @brief : give criterion for particle type
+	 */
 	class CFlavor{
 		public:
 		static bool Status_Is_Hadron(int pdg);

@@ -9,6 +9,19 @@
 using ToolSet::operator<<;
 
 namespace ToolSet{
+	/**
+	 * @brief ShowMessage : print out with special format, make the output looks concisely
+	 *
+	 * @tparam TMess1
+	 * @tparam TMess2
+	 * @tparam TMess3
+	 * @tparam TMess4
+	 * @param level
+	 * @param mess
+	 * @param ddata
+	 * @param ddata_comm
+	 * @param ddata_comm1
+	 */
 	template <typename TMess1, typename TMess2,typename TMess3, typename TMess4> 
 		void ShowMessage(Int_t level, TMess1 mess, TMess2 ddata, TMess3 ddata_comm, TMess4 ddata_comm1){
 			std::cout.setf(std::ios::left);

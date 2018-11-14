@@ -2,43 +2,14 @@
 
 std::ostream & ToolSet::operator << (std::ostream & ostr, const LCEvent *in){
 	if(in==NULL){return ostr;}
-	LCCollection* BCALClusters=in->getCollection("BCALClusters");
-	LCCollection* BCALParticles=in->getCollection("BCALParticles");
-	LCCollection* BuildUpVertex=in->getCollection("BuildUpVertex");
-	LCCollection* BuildUpVertex_RP=in->getCollection("BuildUpVertex_RP");
-	LCCollection* BuildUpVertex_V0=in->getCollection("BuildUpVertex_V0");
-	LCCollection* BuildUpVertex_V0_RP=in->getCollection("BuildUpVertex_V0_RP");
-	LCCollection* MCParticlesSkimmed=in->getCollection("MCParticlesSkimmed");
-	LCCollection* MCTruthMarlinTrkTracksLink=in->getCollection("MCTruthMarlinTrkTracksLink");
-	LCCollection* PandoraClusters=in->getCollection("PandoraClusters");
-	LCCollection* PandoraPFANewReclusterMonitoring=in->getCollection("PandoraPFANewReclusterMonitoring");
-	LCCollection* PandoraPFOs=in->getCollection("PandoraPFOs");
-	LCCollection* PrimaryVertex=in->getCollection("PrimaryVertex");
-	LCCollection* PrimaryVertex_RP=in->getCollection("PrimaryVertex_RP");
-	LCCollection* RecoMCTruthLink=in->getCollection("RecoMCTruthLink");
-	LCCollection* V0RecoParticles=in->getCollection("V0RecoParticles");
-	LCCollection* V0Vertices=in->getCollection("V0Vertices");
-	LCCollection* Isoleps=in->getCollection("Isoleps");
-	LCCollection* PFOsWithoutIsoleps=in->getCollection("PFOsWithoutIsoleps");
-	printf("\n");
-	printf("%30s %20i \n","BCALClusters number :                    " , BCALClusters->getNumberOfElements()                     ); 
-	printf("%30s %20i \n","BCALParticles number :                   " , BCALParticles->getNumberOfElements()                    ); 
-	printf("%30s %20i \n","BuildUpVertex number :                   " , BuildUpVertex->getNumberOfElements()                    ); 
-	printf("%30s %20i \n","BuildUpVertex_RP number :                " , BuildUpVertex_RP ->getNumberOfElements()                );
-	printf("%30s %20i \n","BuildUpVertex_V0 number :                " , BuildUpVertex_V0->getNumberOfElements()                 ); 
-	printf("%30s %20i \n","BuildUpVertex_V0_RP number :             " , BuildUpVertex_V0_RP ->getNumberOfElements()             ); 
-	printf("%30s %20i \n","MCParticlesSkimmed number :              " , MCParticlesSkimmed->getNumberOfElements()               ); 
-	printf("%30s %20i \n","MCTruthMarlinTrkTracksLink number :      " , MCTruthMarlinTrkTracksLink ->getNumberOfElements()      ); 
-	printf("%30s %20i \n","PandoraClusters number :                 " , PandoraClusters->getNumberOfElements()                  ); 
-	printf("%30s %20i \n","PandoraPFANewReclusterMonitoring number :" , PandoraPFANewReclusterMonitoring ->getNumberOfElements()); 
-	printf("%30s %20i \n","PandoraPFOs number :                     " , PandoraPFOs->getNumberOfElements()                      ); 
-	printf("%30s %20i \n","PrimaryVertex number :                   " , PrimaryVertex->getNumberOfElements()                    ); 
-	printf("%30s %20i \n","PrimaryVertex_RP number :                " , PrimaryVertex_RP->getNumberOfElements()                 ); 
-	printf("%30s %20i \n","RecoMCTruthLink number :                 " , RecoMCTruthLink->getNumberOfElements()                  ); 
-	printf("%30s %20i \n","V0RecoParticles number :                 " , V0RecoParticles->getNumberOfElements()                  ); 
-	printf("%30s %20i \n","V0Vertices number :                      " , V0Vertices->getNumberOfElements()                       ); 
-	printf("%30s %20i \n","Isoleps number :                         " , Isoleps->getNumberOfElements()                       ); 
-	printf("%30s %20i \n","PFOsWithoutIsoleps number :              " , PFOsWithoutIsoleps->getNumberOfElements()                       ); 
+	const std::vector<std::string>* colname=in->getCollectionNames();
+	std::cout << "event information: "<< std::endl;
+	std::cout << "event number"<< in->getEventNumber()<< std::endl;
+    std::cout << "run number"<< in->getRunNumber() << std::endl;
+	for(unsigned int i=0;i<colname->size();i++){
+		LCCollection* col=in->getCollection(colname->at(i));
+		std::cout<< colname->at(i)<<" :  "<< col->getNumberOfElements()<< std::endl;
+	}
 	return ostr;
 }
 

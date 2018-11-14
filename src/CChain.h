@@ -29,6 +29,11 @@
 namespace ToolSet{
 	typedef std::vector<Chain_Type>  Chain_Type_Vec; 
 
+	/**
+	 * @brief This is the vector of CChain_Single
+	 * This class is the vector of CChain_Single, for one input particle will generate one CChain_Single
+	 * Functions are provided to make the vector operation more easily. 
+	 */
 	class CChain_Vec{
 		private:
 			int                        _chain_num;
@@ -193,7 +198,7 @@ namespace ToolSet{
 			 *
 			 * @return 
 			 */
-			std::vector<std::vector<ReconstructedParticle*> > output        Get_SpecialRC(int pdg,std::string label);
+			std::vector<std::vector<ReconstructedParticle*> >              Get_SpecialRC(int pdg,std::string label);
 			/**
 			 * @brief Get_EnergeticRC : use Get_SpecialRC to get most energetic ReconstructedParticle
 			 *

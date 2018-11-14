@@ -38,7 +38,8 @@ namespace ToolSet{
 	typedef std::vector<std::pair<MCParticle*, Chain_End_Type > >    Chain_Type; 
 
 	/**
-	 * @brief : in this class, it contains two part: MCParticle part and ReconstructedParticle part.
+	 * @brief : Getting the decay chain
+	 * It contains two part: MC and Reconstructed part in this class.
 	 * for MCParticle, its stucture is head->decay products -> ... -> many pythia final states -> ... -> many detector simulation final states.
 	 * then all final states will get their corresponding ReconstructedParticles with the MCTruthRecoLink
 	 * these MCParticle final states as well as their corresponding ReconstructedParticles and weights are stored as pairs together in the Chain_Type

@@ -2,184 +2,100 @@
 \section{ToolSet::CMC Class Reference}
 \label{classToolSet_1_1CMC}\index{ToolSet::CMC@{ToolSet::CMC}}
 }
-\subsection*{Static Public Member Functions}
+
+
+: functions for MCParticles  
+
+
+{\ttfamily \#include $<$CMC.h$>$}\subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classToolSet_1_1CMC_ab30c29f999f2b3dd1c85ed68636f2281}{
-static MCParticle $\ast$ {\bfseries NewParticle} (float px, float py, float pz, float E, MCParticle $\ast$test)}
-\label{classToolSet_1_1CMC_ab30c29f999f2b3dd1c85ed68636f2281}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a5bd1a7515135570ef348bd77d1d26933}{
-static MCParticle $\ast$ {\bfseries NewParticle} (TLorentzVector \&p, MCParticle $\ast$test)}
-\label{classToolSet_1_1CMC_a5bd1a7515135570ef348bd77d1d26933}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_ad1b2172aaacc40d4f5971492a5d1a0f5}{
-static MCParticle $\ast$ {\bfseries Add} (const MCParticle $\ast$MC1, const MCParticle $\ast$MC2)}
-\label{classToolSet_1_1CMC_ad1b2172aaacc40d4f5971492a5d1a0f5}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_aa597db31bacbc37cbc16da5bfe2b1d9a}{
-static MCParticle $\ast$ {\bfseries Minus} (const MCParticle $\ast$MC1, const MCParticle $\ast$MC2)}
-\label{classToolSet_1_1CMC_aa597db31bacbc37cbc16da5bfe2b1d9a}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a29838e430204b6f0d6e5cdf8a669f615}{
-static MCParticle $\ast$ {\bfseries Equal} (const MCParticle $\ast$MC1)}
-\label{classToolSet_1_1CMC_a29838e430204b6f0d6e5cdf8a669f615}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_acd7ded5c44d40de05109435f43ca5ae3}{
-static TLorentzVector {\bfseries Minus\_\-To\_\-Lorentz} (const MCParticle $\ast$MC1, const MCParticle $\ast$MC2)}
-\label{classToolSet_1_1CMC_acd7ded5c44d40de05109435f43ca5ae3}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a709d30e4a5670f116128a1602a6b25c0}{
-static bool {\bfseries Compare\_\-as\_\-E} (MCParticle $\ast$i, MCParticle $\ast$j)}
-\label{classToolSet_1_1CMC_a709d30e4a5670f116128a1602a6b25c0}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_abdd82fcdf6cba89df00c9af0b1f77df6}{
-static bool {\bfseries Compare\_\-as\_\-Angle} (const std::pair$<$ float, MCParticle $\ast$ $>$ \&i, const std::pair$<$ float, MCParticle $\ast$ $>$ \&j)}
-\label{classToolSet_1_1CMC_abdd82fcdf6cba89df00c9af0b1f77df6}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_acbada53a8416ca460d7aa07453610dc2}{
-{\footnotesize template$<$typename TMag $>$ }\\static float {\bfseries Cal\_\-Mag} (TMag MC)}
-\label{classToolSet_1_1CMC_acbada53a8416ca460d7aa07453610dc2}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_ae7f67f1180165cedcc4cbeb4e114e5d1}{
-{\footnotesize template$<$typename TP $>$ }\\static float {\bfseries Cal\_\-P} (TP MC)}
-\label{classToolSet_1_1CMC_ae7f67f1180165cedcc4cbeb4e114e5d1}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a679d9af4f1004560f178ed10f1a3028c}{
-{\footnotesize template$<$typename TVect $>$ }\\static TVector3 {\bfseries Cal\_\-Vect} (TVect MC)}
-\label{classToolSet_1_1CMC_a679d9af4f1004560f178ed10f1a3028c}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_ac479ce63e1328c284ef104449b30d465}{
-{\footnotesize template$<$typename TPT $>$ }\\static float {\bfseries Cal\_\-PT} (TPT MC)}
-\label{classToolSet_1_1CMC_ac479ce63e1328c284ef104449b30d465}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a8c4c04395c95a6c513f049029c157a7d}{
-{\footnotesize template$<$typename TPT $>$ }\\static float {\bfseries Cal\_\-PT} (TPT MC, TPT Ref)}
-\label{classToolSet_1_1CMC_a8c4c04395c95a6c513f049029c157a7d}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a7142700aa3c1b586b976e9d71301c7bc}{
-{\footnotesize template$<$typename TTheta $>$ }\\static float {\bfseries Cal\_\-CosTheta} (TTheta MC)}
-\label{classToolSet_1_1CMC_a7142700aa3c1b586b976e9d71301c7bc}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a91c74f61d1c9656e68f4b1037976a51b}{
-{\footnotesize template$<$typename TTheta $>$ }\\static float {\bfseries Cal\_\-CosTheta} (TTheta MC, TTheta Ref)}
-\label{classToolSet_1_1CMC_a91c74f61d1c9656e68f4b1037976a51b}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a0637a061bf4ecd9084b794023cc11816}{
-{\footnotesize template$<$typename TAngle $>$ }\\static float {\bfseries Cal\_\-Angle} (TAngle MC, TAngle Ref)}
-\label{classToolSet_1_1CMC_a0637a061bf4ecd9084b794023cc11816}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a58389b8e6c06afb39377d6d078e5616f}{
-{\footnotesize template$<$typename TAngle $>$ }\\static float {\bfseries Cal\_\-Angle\_\-Deg} (TAngle MC, TAngle Ref)}
-\label{classToolSet_1_1CMC_a58389b8e6c06afb39377d6d078e5616f}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a3c8cfd47eac44d6e39a38598bb9158f1}{
-{\footnotesize template$<$typename TPhi $>$ }\\static float {\bfseries Cal\_\-Azimuth} (TPhi MC)}
-\label{classToolSet_1_1CMC_a3c8cfd47eac44d6e39a38598bb9158f1}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_ab77fa5dd46a12ac8887776724261f72b}{
-{\footnotesize template$<$typename TPhi $>$ }\\static float {\bfseries Cal\_\-Azimuth} (TPhi MC, TPhi Ref)}
-\label{classToolSet_1_1CMC_ab77fa5dd46a12ac8887776724261f72b}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_aa1667ca515e4b26ca43755fd8d2e30bd}{
-{\footnotesize template$<$typename TPhi $>$ }\\static float {\bfseries Cal\_\-Acoplanarity} (TPhi MC, TPhi Ref)}
-\label{classToolSet_1_1CMC_aa1667ca515e4b26ca43755fd8d2e30bd}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_add27d6c12067e096d96d45af53d5c6aa}{
-static float {\bfseries Cal\_\-IsolationAngle} (MCParticle $\ast$MC, std::vector$<$ MCParticle $\ast$ $>$ Ref)}
-\label{classToolSet_1_1CMC_add27d6c12067e096d96d45af53d5c6aa}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a67ab1d51b7fd0f98cfa19be5381e961a}{
-static int {\bfseries Get\_\-Parents\_\-Number} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a67ab1d51b7fd0f98cfa19be5381e961a}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a44a3b5e5df7effa4ed170151cd63b706}{
-static int {\bfseries Get\_\-Daughters\_\-Number} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a44a3b5e5df7effa4ed170151cd63b706}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a3ebc24c0c160ba37054b294059f09d96}{
-static bool {\bfseries Status\_\-Beam\_\-Energy} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a3ebc24c0c160ba37054b294059f09d96}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_acd1cf4b7527b2e2bd194ad688b29b132}{
-static bool {\bfseries Status\_\-Has\_\-Parent} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_acd1cf4b7527b2e2bd194ad688b29b132}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a88ff52dd7c66369b43eb8619a1383e7d}{
-static bool {\bfseries Status\_\-Has\_\-GrandParent} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a88ff52dd7c66369b43eb8619a1383e7d}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a1771a4a8936446f9dfe5f9d22b5d9322}{
-static bool {\bfseries Status\_\-Has\_\-Daughter} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a1771a4a8936446f9dfe5f9d22b5d9322}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a79d54fb4529c17a59ab21a51b3f6889c}{
-static bool {\bfseries Status\_\-Has\_\-GrandDaughter} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a79d54fb4529c17a59ab21a51b3f6889c}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_ae0ceba81f34f1a164b1d8ce719c92e05}{
-static bool {\bfseries Status\_\-Is\_\-MS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_ae0ceba81f34f1a164b1d8ce719c92e05}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a662c5f9d64c7916f988e4ff15598d4ed}{
-static bool {\bfseries Status\_\-Is\_\-TFS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a662c5f9d64c7916f988e4ff15598d4ed}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_aef5a206838a69936e98ea22a1c36e143}{
-static bool {\bfseries Status\_\-Is\_\-Pythia\_\-TFS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_aef5a206838a69936e98ea22a1c36e143}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a23a38c3094037dd6660223494c8a5827}{
-static bool {\bfseries Status\_\-Is\_\-Detector\_\-TFS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a23a38c3094037dd6660223494c8a5827}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a3fbb915477cbbdca4193b8b2ff8cd356}{
-static bool {\bfseries Status\_\-Is\_\-Pythia} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a3fbb915477cbbdca4193b8b2ff8cd356}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a9d3659a1fd4bad33a54c08769902e998}{
-static bool {\bfseries Status\_\-Is\_\-Overlay} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a9d3659a1fd4bad33a54c08769902e998}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_acb83c834c9e5e1c33f8c2514e4c40d93}{
-static bool {\bfseries Status\_\-Is\_\-Overlay\_\-DFS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_acb83c834c9e5e1c33f8c2514e4c40d93}
-
-\item 
+static void \hyperlink{classToolSet_1_1CMC_a2b939b1fd1e396eb5764c512903fe229}{Set\_\-Collider\_\-Energy} (float input)
+\begin{DoxyCompactList}\small\item\em Get\_\-Collider\_\-Energy : changing the collider energy, default is 500 GeV Notice: when using the CRC::InVisible(), it also will load the value from here. \item\end{DoxyCompactList}\item 
+static void \hyperlink{classToolSet_1_1CMC_a6d72918adb583b9dcaee3c0c9166f6cb}{Set\_\-Beam\_\-Cross\_\-Angle} (float input)
+\begin{DoxyCompactList}\small\item\em Set\_\-Beam\_\-Cross\_\-Angle : changing beam crossing angle, default is 0.007 Notice: when using the CRC::InVisible(), it also will load the value from here. \item\end{DoxyCompactList}\item 
+static float \hyperlink{classToolSet_1_1CMC_a7143149e3db8c1e5055498c8aba88182}{Get\_\-Collider\_\-Energy} ()
+\begin{DoxyCompactList}\small\item\em Get\_\-Collider\_\-Energy : show the collider energy when generating. \item\end{DoxyCompactList}\item 
+static float \hyperlink{classToolSet_1_1CMC_afaf6f983eee33318bcaf7923cde7266e}{Get\_\-Beam\_\-Energy} ()
+\begin{DoxyCompactList}\small\item\em Get\_\-Beam\_\-Energy : show the energy for initial beam after having the detector simulation. \item\end{DoxyCompactList}\item 
+static float \hyperlink{classToolSet_1_1CMC_aab8dca236c78fffe1b63bac50583090a}{Get\_\-Beam\_\-Cross\_\-Angle} ()
+\begin{DoxyCompactList}\small\item\em Get\_\-Beam\_\-Cross\_\-Angle : get the collider crossing angle. \item\end{DoxyCompactList}\item 
+static MCParticle $\ast$ \hyperlink{classToolSet_1_1CMC_ab30c29f999f2b3dd1c85ed68636f2281}{NewParticle} (float px, float py, float pz, float E, MCParticle $\ast$test)
+\begin{DoxyCompactList}\small\item\em NewParticle : generate a new MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
+static MCParticle $\ast$ \hyperlink{classToolSet_1_1CMC_a5bd1a7515135570ef348bd77d1d26933}{NewParticle} (TLorentzVector \&p, MCParticle $\ast$test)
+\begin{DoxyCompactList}\small\item\em NewParticle : generate a new MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
+static MCParticle $\ast$ \hyperlink{classToolSet_1_1CMC_ad1b2172aaacc40d4f5971492a5d1a0f5}{Add} (const MCParticle $\ast$MC1, const MCParticle $\ast$MC2)
+\begin{DoxyCompactList}\small\item\em Add : add four momentum of two MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
+static MCParticle $\ast$ \hyperlink{classToolSet_1_1CMC_aa597db31bacbc37cbc16da5bfe2b1d9a}{Minus} (const MCParticle $\ast$MC1, const MCParticle $\ast$MC2)
+\begin{DoxyCompactList}\small\item\em Minus : minus four momentum of two MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
+static MCParticle $\ast$ \hyperlink{classToolSet_1_1CMC_a29838e430204b6f0d6e5cdf8a669f615}{Equal} (const MCParticle $\ast$MC1)
+\begin{DoxyCompactList}\small\item\em Equal : generate a new MCParticle equal to the input one This is different from use \char`\"{}=\char`\"{}, \char`\"{}=\char`\"{} will give the pointer address to the new pointer, they are still pointing to the same particle. \item\end{DoxyCompactList}\item 
+static TLorentzVector \hyperlink{classToolSet_1_1CMC_a5883ceda367cc5e32cbacdabdc119a4a}{Minus\_\-By\_\-Lorentz} (const MCParticle $\ast$MC1, const MCParticle $\ast$MC2)
+\begin{DoxyCompactList}\small\item\em Minus\_\-To\_\-Lorentz : minus four momentum of two MCParticle, return a TLorentzVector of the four momentum. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a74a827b8a208cbf1ef83ee66b2a9dc04}{Compare\_\-as\_\-E} (const MCParticle $\ast$i, const MCParticle $\ast$j)
+\begin{DoxyCompactList}\small\item\em Compare\_\-as\_\-E : compare funcion by the energy for MCParticle, equals to $<$ operator. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a4043b9e78a5178c2d8fba7f6543a7e65}{Compare\_\-as\_\-Angle} (const MCParticle $\ast$i, const MCParticle $\ast$j)
+\begin{DoxyCompactList}\small\item\em Compare\_\-as\_\-Angle : compare funcion by the costheta for MCParticle, equals to $<$ operator. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a9840196a2fd81836dfc4118e68d7be38}{Compare\_\-as\_\-Pair} (const std::pair$<$ float, MCParticle $\ast$ $>$ \&i, const std::pair$<$ float, MCParticle $\ast$ $>$ \&j)
+\begin{DoxyCompactList}\small\item\em Compare\_\-as\_\-Pair : compare function by any value paired to MCParticle$\ast$. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TMag $>$ }\\static float \hyperlink{classToolSet_1_1CMC_acbada53a8416ca460d7aa07453610dc2}{Cal\_\-Mag} (TMag MC)
+\begin{DoxyCompactList}\small\item\em : calculate Magnitude of the four momentum \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TP $>$ }\\static float \hyperlink{classToolSet_1_1CMC_ae7f67f1180165cedcc4cbeb4e114e5d1}{Cal\_\-P} (TP MC)
+\begin{DoxyCompactList}\small\item\em Cal\_\-P : calculate the magnitude of the three momentum, $|$vect\{P\}$|$. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TVect $>$ }\\static TVector3 \hyperlink{classToolSet_1_1CMC_a679d9af4f1004560f178ed10f1a3028c}{Cal\_\-Vect} (TVect MC)
+\begin{DoxyCompactList}\small\item\em Cal\_\-Vect : get three momentum. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TPT $>$ }\\static float \hyperlink{classToolSet_1_1CMC_ac479ce63e1328c284ef104449b30d465}{Cal\_\-PT} (TPT MC)
+\begin{DoxyCompactList}\small\item\em Cal\_\-PT : calculate pt to the lab frame. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TPT $>$ }\\static float \hyperlink{classToolSet_1_1CMC_a8c4c04395c95a6c513f049029c157a7d}{Cal\_\-PT} (TPT MC, TPT Ref)
+\begin{DoxyCompactList}\small\item\em : calculate pt to the reference axis \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TTheta $>$ }\\static float \hyperlink{classToolSet_1_1CMC_a7142700aa3c1b586b976e9d71301c7bc}{Cal\_\-CosTheta} (TTheta MC)
+\begin{DoxyCompactList}\small\item\em Cal\_\-CosTheta : calculate costheta. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TTheta $>$ }\\static float \hyperlink{classToolSet_1_1CMC_a91c74f61d1c9656e68f4b1037976a51b}{Cal\_\-CosTheta} (TTheta MC, TTheta Ref)
+\begin{DoxyCompactList}\small\item\em Cal\_\-CosTheta : calculate costheta to the reference axis. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TAngle $>$ }\\static float \hyperlink{classToolSet_1_1CMC_a0637a061bf4ecd9084b794023cc11816}{Cal\_\-Angle} (TAngle MC, TAngle Ref)
+\begin{DoxyCompactList}\small\item\em Cal\_\-Angle : calculate the angle of radian with acos to the reference axis. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TAngle $>$ }\\static float \hyperlink{classToolSet_1_1CMC_a58389b8e6c06afb39377d6d078e5616f}{Cal\_\-Angle\_\-Deg} (TAngle MC, TAngle Ref)
+\begin{DoxyCompactList}\small\item\em Cal\_\-Angle\_\-Deg : calculate the angle of degree with acos to the reference axis. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TPhi $>$ }\\static float \hyperlink{classToolSet_1_1CMC_a3c8cfd47eac44d6e39a38598bb9158f1}{Cal\_\-Azimuth} (TPhi MC)
+\begin{DoxyCompactList}\small\item\em Cal\_\-Azimuth : calculate azimuth angle in the lab frame. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TPhi $>$ }\\static float \hyperlink{classToolSet_1_1CMC_ab77fa5dd46a12ac8887776724261f72b}{Cal\_\-Azimuth} (TPhi MC, TPhi Ref)
+\begin{DoxyCompactList}\small\item\em Cal\_\-Azimuth : calculate aximuth anlge to the reference axis. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TPhi $>$ }\\static float \hyperlink{classToolSet_1_1CMC_aa1667ca515e4b26ca43755fd8d2e30bd}{Cal\_\-Acoplanarity} (TPhi MC, TPhi Ref)
+\begin{DoxyCompactList}\small\item\em Cal\_\-Acoplanarity : calculate acoplanarity acoplan = pi -\/ $|$phi$|$. \item\end{DoxyCompactList}\item 
+static float \hyperlink{classToolSet_1_1CMC_a3d0ff5af967b32efbc5907174b64348f}{Cal\_\-IsolationAngle} (MCParticle $\ast$MC, std::vector$<$ MCParticle $\ast$ $>$ Ref, float minimal\_\-energy\_\-in\_\-the\_\-cone=1, float minimal\_\-angle\_\-from\_\-input=2)
+\begin{DoxyCompactList}\small\item\em Cal\_\-IsolationAngle : calculate minimal isolation angle. \item\end{DoxyCompactList}\item 
+static int \hyperlink{classToolSet_1_1CMC_a67ab1d51b7fd0f98cfa19be5381e961a}{Get\_\-Parents\_\-Number} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em functions for get basic particle properties \item\end{DoxyCompactList}\item 
+static int \hyperlink{classToolSet_1_1CMC_a44a3b5e5df7effa4ed170151cd63b706}{Get\_\-Daughters\_\-Number} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Get\_\-Daughters\_\-Number : daughter number. \item\end{DoxyCompactList}\item 
+static std::vector$<$ int $>$ \hyperlink{classToolSet_1_1CMC_aa98186321fc75d5f476bc97511e1d91b}{Get\_\-ParentsPID} (MCParticle $\ast$MC)
+\begin{DoxyCompactList}\small\item\em Get\_\-ParentsPID : parents PDG code. \item\end{DoxyCompactList}\item 
+static std::vector$<$ int $>$ \hyperlink{classToolSet_1_1CMC_ae0aeb5054574c5c8ffd3f24e86d662a6}{Get\_\-DaughtersPID} (MCParticle $\ast$MC)
+\begin{DoxyCompactList}\small\item\em Get\_\-DaughtersPID : daughter's PDG code. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a3ebc24c0c160ba37054b294059f09d96}{Status\_\-Beam\_\-Energy} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Status\_\-Beam\_\-Energy : whether the input energy equals to the beam energy. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_acd1cf4b7527b2e2bd194ad688b29b132}{Status\_\-Has\_\-Parent} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Status\_\-Has\_\-Parent : whether has the parents Notice: for current ILD event generation, if no parents -\/$>$ initial beam have parents, but no grand parents -\/$>$ beam after ISR and ISR photons have grand parents, no parents of grand parents -\/$>$ hard scattering particle generated in the Whizard. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a88ff52dd7c66369b43eb8619a1383e7d}{Status\_\-Has\_\-GrandParent} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Status\_\-Has\_\-GrandParent : whether has the grand parents. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a1771a4a8936446f9dfe5f9d22b5d9322}{Status\_\-Has\_\-Daughter} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Status\_\-Has\_\-Daughter : whether has the daughter. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a79d54fb4529c17a59ab21a51b3f6889c}{Status\_\-Has\_\-GrandDaughter} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Status\_\-Has\_\-GrandDaughter : whether has the grand daughter. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_ae0ceba81f34f1a164b1d8ce719c92e05}{Status\_\-Is\_\-MS} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Status\_\-Is\_\-MS : whether is a intermediate particle, (generator status==2). \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a662c5f9d64c7916f988e4ff15598d4ed}{Status\_\-Is\_\-TFS} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Status\_\-Is\_\-TFS : whether is a final state, (Pythia final states or simulation final states). \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_aef5a206838a69936e98ea22a1c36e143}{Status\_\-Is\_\-Pythia\_\-TFS} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Status\_\-Is\_\-Pythia\_\-TFS :whether is a Pythia stable particle. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a23a38c3094037dd6660223494c8a5827}{Status\_\-Is\_\-Detector\_\-TFS} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Status\_\-Is\_\-Detector\_\-TFS : whether is a possible detector simulated final state. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a3fbb915477cbbdca4193b8b2ff8cd356}{Status\_\-Is\_\-Pythia} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Status\_\-Is\_\-Pythia : whether a possible final state generated from Pythia. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a9d3659a1fd4bad33a54c08769902e998}{Status\_\-Is\_\-Overlay} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Status\_\-Is\_\-Overlay : Whether generated from Overlay. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_acb83c834c9e5e1c33f8c2514e4c40d93}{Status\_\-Is\_\-Overlay\_\-DFS} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Status\_\-Is\_\-Overlay\_\-DFS : whether a possible Overlay final states. \item\end{DoxyCompactList}\item 
 \hypertarget{classToolSet_1_1CMC_aac0eed5c22431cfc5e9c32d9bc48b0d7}{
 static bool {\bfseries Status\_\-Is\_\-Stopped} (MCParticle $\ast$input)}
 \label{classToolSet_1_1CMC_aac0eed5c22431cfc5e9c32d9bc48b0d7}
@@ -280,36 +196,18 @@ static bool {\bfseries Status\_\-Is\_\-CharmQuark} (MCParticle $\ast$input)}
 \label{classToolSet_1_1CMC_ab0b28b170ae3a6ee15ffa53138c75f58}
 
 \item 
-\hypertarget{classToolSet_1_1CMC_aa63f12865d46af350674c7dca3eb5437}{
-static bool {\bfseries Judge\_\-Is\_\-Beam} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_aa63f12865d46af350674c7dca3eb5437}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a5ccf3aedd3c942ac6644748abaaf70fe}{
-static bool {\bfseries Judge\_\-Parents\_\-Are\_\-Beam} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a5ccf3aedd3c942ac6644748abaaf70fe}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_ad09856f709fff7320c382efd26a408e9}{
-static bool {\bfseries Judge\_\-GrandParents\_\-Are\_\-Beam} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_ad09856f709fff7320c382efd26a408e9}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a0630c44bcd0eaf761f4b34e106f2b9d9}{
-static bool {\bfseries Judge\_\-Is\_\-IS\_\-Electron} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a0630c44bcd0eaf761f4b34e106f2b9d9}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a688d2854fa645f4c3adad5013f4c9ba2}{
-static bool {\bfseries Judge\_\-Is\_\-IS\_\-Photon} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a688d2854fa645f4c3adad5013f4c9ba2}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a85fbb7bf0ef846c3ae1dcfeb27853911}{
-static bool {\bfseries Judge\_\-HardScattering\_\-FS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a85fbb7bf0ef846c3ae1dcfeb27853911}
-
-\item 
+static bool \hyperlink{classToolSet_1_1CMC_aa63f12865d46af350674c7dca3eb5437}{Judge\_\-Is\_\-Beam} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Judge\_\-Is\_\-Beam : whether it is the beam initial electron/positron. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a5ccf3aedd3c942ac6644748abaaf70fe}{Judge\_\-Parents\_\-Are\_\-Beam} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Judge\_\-Parents\_\-Are\_\-Beam : whether its parents are initial beam (i.e. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_ad09856f709fff7320c382efd26a408e9}{Judge\_\-GrandParents\_\-Are\_\-Beam} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Judge\_\-GrandParents\_\-Are\_\-Beam : whether its grand parents are initial beam (i.e. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a0630c44bcd0eaf761f4b34e106f2b9d9}{Judge\_\-Is\_\-IS\_\-Electron} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Judge\_\-Is\_\-IS\_\-Electron : is the electron/positron after the ISR. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a688d2854fa645f4c3adad5013f4c9ba2}{Judge\_\-Is\_\-IS\_\-Photon} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Judge\_\-Is\_\-IS\_\-Photon : is the ISR photon. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a85fbb7bf0ef846c3ae1dcfeb27853911}{Judge\_\-HardScattering\_\-FS} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Judge\_\-HardScattering\_\-FS : is the hard-\/scattering states (including ISR photon). \item\end{DoxyCompactList}\item 
 \hypertarget{classToolSet_1_1CMC_af28ed4c00c5b936aa0660253bd4af35b}{
 static bool {\bfseries Judge\_\-HardScattering\_\-Next\_\-FS} (MCParticle $\ast$input)}
 \label{classToolSet_1_1CMC_af28ed4c00c5b936aa0660253bd4af35b}
@@ -420,16 +318,6 @@ static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-Overlay\_\-A
 \label{classToolSet_1_1CMC_a4bf55a4d64eeec4762f87ee7de91f585}
 
 \item 
-\hypertarget{classToolSet_1_1CMC_aa98186321fc75d5f476bc97511e1d91b}{
-static std::vector$<$ int $>$ {\bfseries Get\_\-ParentsPID} (MCParticle $\ast$MC)}
-\label{classToolSet_1_1CMC_aa98186321fc75d5f476bc97511e1d91b}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_ae0aeb5054574c5c8ffd3f24e86d662a6}{
-static std::vector$<$ int $>$ {\bfseries Get\_\-DaughtersPID} (MCParticle $\ast$MC)}
-\label{classToolSet_1_1CMC_ae0aeb5054574c5c8ffd3f24e86d662a6}
-
-\item 
 \hypertarget{classToolSet_1_1CMC_a38ef7e0f75f14714d4636ca70c1b717c}{
 static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries MCToPythiaShowering} (MCParticle $\ast$input)}
 \label{classToolSet_1_1CMC_a38ef7e0f75f14714d4636ca70c1b717c}
@@ -505,6 +393,688 @@ static bool {\bfseries IsInCone} (MCParticle $\ast$lep, MCParticle $\ast$pfo, fl
 \label{classToolSet_1_1CMC_a4594f7a35f5db952f142626100ced91f}
 
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+: functions for MCParticles 
+
+\subsection{Member Function Documentation}
+\hypertarget{classToolSet_1_1CMC_ad1b2172aaacc40d4f5971492a5d1a0f5}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Add@{Add}}
+\index{Add@{Add}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}static MCParticle$\ast$ ToolSet::CMC::Add (const MCParticle $\ast$ {\em MC1}, \/  const MCParticle $\ast$ {\em MC2})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ad1b2172aaacc40d4f5971492a5d1a0f5}
+
+
+Add : add four momentum of two MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MC1}]\item[{\em MC2}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_aa1667ca515e4b26ca43755fd8d2e30bd}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-Acoplanarity@{Cal\_\-Acoplanarity}}
+\index{Cal\_\-Acoplanarity@{Cal\_\-Acoplanarity}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-Acoplanarity}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TPhi $>$ static float ToolSet::CMC::Cal\_\-Acoplanarity (TPhi {\em MC}, \/  TPhi {\em Ref})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_aa1667ca515e4b26ca43755fd8d2e30bd}
+
+
+Cal\_\-Acoplanarity : calculate acoplanarity acoplan = pi -\/ $|$phi$|$. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em TPhi}]\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\item[{\em Ref}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a0637a061bf4ecd9084b794023cc11816}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-Angle@{Cal\_\-Angle}}
+\index{Cal\_\-Angle@{Cal\_\-Angle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TAngle $>$ static float ToolSet::CMC::Cal\_\-Angle (TAngle {\em MC}, \/  TAngle {\em Ref})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a0637a061bf4ecd9084b794023cc11816}
+
+
+Cal\_\-Angle : calculate the angle of radian with acos to the reference axis. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em TAngle}]\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\item[{\em Ref}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a58389b8e6c06afb39377d6d078e5616f}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-Angle\_\-Deg@{Cal\_\-Angle\_\-Deg}}
+\index{Cal\_\-Angle\_\-Deg@{Cal\_\-Angle\_\-Deg}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-Angle\_\-Deg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TAngle $>$ static float ToolSet::CMC::Cal\_\-Angle\_\-Deg (TAngle {\em MC}, \/  TAngle {\em Ref})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a58389b8e6c06afb39377d6d078e5616f}
+
+
+Cal\_\-Angle\_\-Deg : calculate the angle of degree with acos to the reference axis. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em TAngle}]\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\item[{\em Ref}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Referenced by Cal\_\-IsolationAngle().\hypertarget{classToolSet_1_1CMC_ab77fa5dd46a12ac8887776724261f72b}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-Azimuth@{Cal\_\-Azimuth}}
+\index{Cal\_\-Azimuth@{Cal\_\-Azimuth}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-Azimuth}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TPhi $>$ static float ToolSet::CMC::Cal\_\-Azimuth (TPhi {\em MC}, \/  TPhi {\em Ref})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ab77fa5dd46a12ac8887776724261f72b}
+
+
+Cal\_\-Azimuth : calculate aximuth anlge to the reference axis. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em TPhi}]\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\item[{\em Ref}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a3c8cfd47eac44d6e39a38598bb9158f1}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-Azimuth@{Cal\_\-Azimuth}}
+\index{Cal\_\-Azimuth@{Cal\_\-Azimuth}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-Azimuth}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TPhi $>$ static float ToolSet::CMC::Cal\_\-Azimuth (TPhi {\em MC})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a3c8cfd47eac44d6e39a38598bb9158f1}
+
+
+Cal\_\-Azimuth : calculate azimuth angle in the lab frame. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em TPhi}]\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a91c74f61d1c9656e68f4b1037976a51b}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-CosTheta@{Cal\_\-CosTheta}}
+\index{Cal\_\-CosTheta@{Cal\_\-CosTheta}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-CosTheta}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TTheta $>$ static float ToolSet::CMC::Cal\_\-CosTheta (TTheta {\em MC}, \/  TTheta {\em Ref})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a91c74f61d1c9656e68f4b1037976a51b}
+
+
+Cal\_\-CosTheta : calculate costheta to the reference axis. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em TTheta}]\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\item[{\em Ref}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a7142700aa3c1b586b976e9d71301c7bc}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-CosTheta@{Cal\_\-CosTheta}}
+\index{Cal\_\-CosTheta@{Cal\_\-CosTheta}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-CosTheta}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TTheta $>$ static float ToolSet::CMC::Cal\_\-CosTheta (TTheta {\em MC})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a7142700aa3c1b586b976e9d71301c7bc}
+
+
+Cal\_\-CosTheta : calculate costheta. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em TTheta}]\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Referenced by Compare\_\-as\_\-Angle().\hypertarget{classToolSet_1_1CMC_a3d0ff5af967b32efbc5907174b64348f}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-IsolationAngle@{Cal\_\-IsolationAngle}}
+\index{Cal\_\-IsolationAngle@{Cal\_\-IsolationAngle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-IsolationAngle}]{\setlength{\rightskip}{0pt plus 5cm}static float ToolSet::CMC::Cal\_\-IsolationAngle (MCParticle $\ast$ {\em MC}, \/  std::vector$<$ MCParticle $\ast$ $>$ {\em Ref}, \/  float {\em minimal\_\-energy\_\-in\_\-the\_\-cone} = {\ttfamily 1}, \/  float {\em minimal\_\-angle\_\-from\_\-input} = {\ttfamily 2})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a3d0ff5af967b32efbc5907174b64348f}
+
+
+Cal\_\-IsolationAngle : calculate minimal isolation angle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\item[{\em Ref}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References Cal\_\-Angle\_\-Deg(), and Compare\_\-as\_\-Pair().\hypertarget{classToolSet_1_1CMC_acbada53a8416ca460d7aa07453610dc2}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-Mag@{Cal\_\-Mag}}
+\index{Cal\_\-Mag@{Cal\_\-Mag}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-Mag}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TMag $>$ static float ToolSet::CMC::Cal\_\-Mag (TMag {\em MC})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_acbada53a8416ca460d7aa07453610dc2}
+
+
+: calculate Magnitude of the four momentum 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em TMag}]\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_ae7f67f1180165cedcc4cbeb4e114e5d1}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-P@{Cal\_\-P}}
+\index{Cal\_\-P@{Cal\_\-P}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-P}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TP $>$ static float ToolSet::CMC::Cal\_\-P (TP {\em MC})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ae7f67f1180165cedcc4cbeb4e114e5d1}
+
+
+Cal\_\-P : calculate the magnitude of the three momentum, $|$vect\{P\}$|$. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em TP}]\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a8c4c04395c95a6c513f049029c157a7d}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-PT@{Cal\_\-PT}}
+\index{Cal\_\-PT@{Cal\_\-PT}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-PT}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TPT $>$ static float ToolSet::CMC::Cal\_\-PT (TPT {\em MC}, \/  TPT {\em Ref})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a8c4c04395c95a6c513f049029c157a7d}
+
+
+: calculate pt to the reference axis 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em TPT}]\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em @param}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_ac479ce63e1328c284ef104449b30d465}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-PT@{Cal\_\-PT}}
+\index{Cal\_\-PT@{Cal\_\-PT}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-PT}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TPT $>$ static float ToolSet::CMC::Cal\_\-PT (TPT {\em MC})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ac479ce63e1328c284ef104449b30d465}
+
+
+Cal\_\-PT : calculate pt to the lab frame. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em TPT}]\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a679d9af4f1004560f178ed10f1a3028c}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-Vect@{Cal\_\-Vect}}
+\index{Cal\_\-Vect@{Cal\_\-Vect}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Cal\_\-Vect}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TVect $>$ static TVector3 ToolSet::CMC::Cal\_\-Vect (TVect {\em MC})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a679d9af4f1004560f178ed10f1a3028c}
+
+
+Cal\_\-Vect : get three momentum. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em TVect}]\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a4043b9e78a5178c2d8fba7f6543a7e65}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Compare\_\-as\_\-Angle@{Compare\_\-as\_\-Angle}}
+\index{Compare\_\-as\_\-Angle@{Compare\_\-as\_\-Angle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Compare\_\-as\_\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Compare\_\-as\_\-Angle (const MCParticle $\ast$ {\em i}, \/  const MCParticle $\ast$ {\em j})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a4043b9e78a5178c2d8fba7f6543a7e65}
+
+
+Compare\_\-as\_\-Angle : compare funcion by the costheta for MCParticle, equals to $<$ operator. 
+\begin{DoxyParams}{Parameters}
+\item[{\em i}]\item[{\em j}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References Cal\_\-CosTheta().\hypertarget{classToolSet_1_1CMC_a74a827b8a208cbf1ef83ee66b2a9dc04}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Compare\_\-as\_\-E@{Compare\_\-as\_\-E}}
+\index{Compare\_\-as\_\-E@{Compare\_\-as\_\-E}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Compare\_\-as\_\-E}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Compare\_\-as\_\-E (const MCParticle $\ast$ {\em i}, \/  const MCParticle $\ast$ {\em j})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a74a827b8a208cbf1ef83ee66b2a9dc04}
+
+
+Compare\_\-as\_\-E : compare funcion by the energy for MCParticle, equals to $<$ operator. 
+\begin{DoxyParams}{Parameters}
+\item[{\em i}]\item[{\em j}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a9840196a2fd81836dfc4118e68d7be38}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Compare\_\-as\_\-Pair@{Compare\_\-as\_\-Pair}}
+\index{Compare\_\-as\_\-Pair@{Compare\_\-as\_\-Pair}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Compare\_\-as\_\-Pair}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Compare\_\-as\_\-Pair (const std::pair$<$ float, MCParticle $\ast$ $>$ \& {\em i}, \/  const std::pair$<$ float, MCParticle $\ast$ $>$ \& {\em j})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a9840196a2fd81836dfc4118e68d7be38}
+
+
+Compare\_\-as\_\-Pair : compare function by any value paired to MCParticle$\ast$. 
+\begin{DoxyParams}{Parameters}
+\item[{\em i}]\item[{\em j}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Referenced by Cal\_\-IsolationAngle().\hypertarget{classToolSet_1_1CMC_a29838e430204b6f0d6e5cdf8a669f615}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Equal@{Equal}}
+\index{Equal@{Equal}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Equal}]{\setlength{\rightskip}{0pt plus 5cm}static MCParticle$\ast$ ToolSet::CMC::Equal (const MCParticle $\ast$ {\em MC1})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a29838e430204b6f0d6e5cdf8a669f615}
+
+
+Equal : generate a new MCParticle equal to the input one This is different from use \char`\"{}=\char`\"{}, \char`\"{}=\char`\"{} will give the pointer address to the new pointer, they are still pointing to the same particle. But \char`\"{}equal\char`\"{} will generate a new MCParticle, whose property is the same with the old one. Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC1}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_aab8dca236c78fffe1b63bac50583090a}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-Beam\_\-Cross\_\-Angle@{Get\_\-Beam\_\-Cross\_\-Angle}}
+\index{Get\_\-Beam\_\-Cross\_\-Angle@{Get\_\-Beam\_\-Cross\_\-Angle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-Beam\_\-Cross\_\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}static float ToolSet::CMC::Get\_\-Beam\_\-Cross\_\-Angle ()\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_aab8dca236c78fffe1b63bac50583090a}
+
+
+Get\_\-Beam\_\-Cross\_\-Angle : get the collider crossing angle. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_afaf6f983eee33318bcaf7923cde7266e}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-Beam\_\-Energy@{Get\_\-Beam\_\-Energy}}
+\index{Get\_\-Beam\_\-Energy@{Get\_\-Beam\_\-Energy}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-Beam\_\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}static float ToolSet::CMC::Get\_\-Beam\_\-Energy ()\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_afaf6f983eee33318bcaf7923cde7266e}
+
+
+Get\_\-Beam\_\-Energy : show the energy for initial beam after having the detector simulation. Notice: for ILC, there will be a x-\/direction boost, so the beam energy is not collider\_\-energy/2 any more, but a little larger.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a7143149e3db8c1e5055498c8aba88182}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-Collider\_\-Energy@{Get\_\-Collider\_\-Energy}}
+\index{Get\_\-Collider\_\-Energy@{Get\_\-Collider\_\-Energy}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-Collider\_\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}static float ToolSet::CMC::Get\_\-Collider\_\-Energy ()\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a7143149e3db8c1e5055498c8aba88182}
+
+
+Get\_\-Collider\_\-Energy : show the collider energy when generating. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a44a3b5e5df7effa4ed170151cd63b706}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-Daughters\_\-Number@{Get\_\-Daughters\_\-Number}}
+\index{Get\_\-Daughters\_\-Number@{Get\_\-Daughters\_\-Number}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-Daughters\_\-Number}]{\setlength{\rightskip}{0pt plus 5cm}static int ToolSet::CMC::Get\_\-Daughters\_\-Number (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a44a3b5e5df7effa4ed170151cd63b706}
+
+
+Get\_\-Daughters\_\-Number : daughter number. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_ae0aeb5054574c5c8ffd3f24e86d662a6}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-DaughtersPID@{Get\_\-DaughtersPID}}
+\index{Get\_\-DaughtersPID@{Get\_\-DaughtersPID}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-DaughtersPID}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$int$>$ ToolSet::CMC::Get\_\-DaughtersPID (MCParticle $\ast$ {\em MC})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ae0aeb5054574c5c8ffd3f24e86d662a6}
+
+
+Get\_\-DaughtersPID : daughter's PDG code. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a67ab1d51b7fd0f98cfa19be5381e961a}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-Parents\_\-Number@{Get\_\-Parents\_\-Number}}
+\index{Get\_\-Parents\_\-Number@{Get\_\-Parents\_\-Number}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-Parents\_\-Number}]{\setlength{\rightskip}{0pt plus 5cm}static int ToolSet::CMC::Get\_\-Parents\_\-Number (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a67ab1d51b7fd0f98cfa19be5381e961a}
+
+
+functions for get basic particle properties Get\_\-Parents\_\-Number : parents number 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_aa98186321fc75d5f476bc97511e1d91b}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-ParentsPID@{Get\_\-ParentsPID}}
+\index{Get\_\-ParentsPID@{Get\_\-ParentsPID}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-ParentsPID}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$int$>$ ToolSet::CMC::Get\_\-ParentsPID (MCParticle $\ast$ {\em MC})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_aa98186321fc75d5f476bc97511e1d91b}
+
+
+Get\_\-ParentsPID : parents PDG code. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_ad09856f709fff7320c382efd26a408e9}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-GrandParents\_\-Are\_\-Beam@{Judge\_\-GrandParents\_\-Are\_\-Beam}}
+\index{Judge\_\-GrandParents\_\-Are\_\-Beam@{Judge\_\-GrandParents\_\-Are\_\-Beam}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-GrandParents\_\-Are\_\-Beam}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-GrandParents\_\-Are\_\-Beam (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ad09856f709fff7320c382efd26a408e9}
+
+
+Judge\_\-GrandParents\_\-Are\_\-Beam : whether its grand parents are initial beam (i.e. input is the hard-\/scattering states)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a85fbb7bf0ef846c3ae1dcfeb27853911}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-HardScattering\_\-FS@{Judge\_\-HardScattering\_\-FS}}
+\index{Judge\_\-HardScattering\_\-FS@{Judge\_\-HardScattering\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-HardScattering\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-HardScattering\_\-FS (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a85fbb7bf0ef846c3ae1dcfeb27853911}
+
+
+Judge\_\-HardScattering\_\-FS : is the hard-\/scattering states (including ISR photon). 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_aa63f12865d46af350674c7dca3eb5437}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-Is\_\-Beam@{Judge\_\-Is\_\-Beam}}
+\index{Judge\_\-Is\_\-Beam@{Judge\_\-Is\_\-Beam}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-Is\_\-Beam}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-Is\_\-Beam (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_aa63f12865d46af350674c7dca3eb5437}
+
+
+Judge\_\-Is\_\-Beam : whether it is the beam initial electron/positron. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a0630c44bcd0eaf761f4b34e106f2b9d9}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-Is\_\-IS\_\-Electron@{Judge\_\-Is\_\-IS\_\-Electron}}
+\index{Judge\_\-Is\_\-IS\_\-Electron@{Judge\_\-Is\_\-IS\_\-Electron}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-Is\_\-IS\_\-Electron}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-Is\_\-IS\_\-Electron (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a0630c44bcd0eaf761f4b34e106f2b9d9}
+
+
+Judge\_\-Is\_\-IS\_\-Electron : is the electron/positron after the ISR. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a688d2854fa645f4c3adad5013f4c9ba2}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-Is\_\-IS\_\-Photon@{Judge\_\-Is\_\-IS\_\-Photon}}
+\index{Judge\_\-Is\_\-IS\_\-Photon@{Judge\_\-Is\_\-IS\_\-Photon}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-Is\_\-IS\_\-Photon}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-Is\_\-IS\_\-Photon (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a688d2854fa645f4c3adad5013f4c9ba2}
+
+
+Judge\_\-Is\_\-IS\_\-Photon : is the ISR photon. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a5ccf3aedd3c942ac6644748abaaf70fe}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-Parents\_\-Are\_\-Beam@{Judge\_\-Parents\_\-Are\_\-Beam}}
+\index{Judge\_\-Parents\_\-Are\_\-Beam@{Judge\_\-Parents\_\-Are\_\-Beam}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-Parents\_\-Are\_\-Beam}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-Parents\_\-Are\_\-Beam (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a5ccf3aedd3c942ac6644748abaaf70fe}
+
+
+Judge\_\-Parents\_\-Are\_\-Beam : whether its parents are initial beam (i.e. the input is the ISR or the beam after ISR)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_aa597db31bacbc37cbc16da5bfe2b1d9a}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Minus@{Minus}}
+\index{Minus@{Minus}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Minus}]{\setlength{\rightskip}{0pt plus 5cm}static MCParticle$\ast$ ToolSet::CMC::Minus (const MCParticle $\ast$ {\em MC1}, \/  const MCParticle $\ast$ {\em MC2})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_aa597db31bacbc37cbc16da5bfe2b1d9a}
+
+
+Minus : minus four momentum of two MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MC1}]\item[{\em MC2}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a5883ceda367cc5e32cbacdabdc119a4a}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Minus\_\-By\_\-Lorentz@{Minus\_\-By\_\-Lorentz}}
+\index{Minus\_\-By\_\-Lorentz@{Minus\_\-By\_\-Lorentz}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Minus\_\-By\_\-Lorentz}]{\setlength{\rightskip}{0pt plus 5cm}static TLorentzVector ToolSet::CMC::Minus\_\-By\_\-Lorentz (const MCParticle $\ast$ {\em MC1}, \/  const MCParticle $\ast$ {\em MC2})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a5883ceda367cc5e32cbacdabdc119a4a}
+
+
+Minus\_\-To\_\-Lorentz : minus four momentum of two MCParticle, return a TLorentzVector of the four momentum. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MC1}]\item[{\em MC2}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a5bd1a7515135570ef348bd77d1d26933}{
+\index{ToolSet::CMC@{ToolSet::CMC}!NewParticle@{NewParticle}}
+\index{NewParticle@{NewParticle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{NewParticle}]{\setlength{\rightskip}{0pt plus 5cm}static MCParticle$\ast$ ToolSet::CMC::NewParticle (TLorentzVector \& {\em p}, \/  MCParticle $\ast$ {\em test})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a5bd1a7515135570ef348bd77d1d26933}
+
+
+NewParticle : generate a new MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em p}]\item[{\em test}]: this is only for function overload, it doesn't have really usage, so you can provide any MCParticle$\ast$ type pointer\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_ab30c29f999f2b3dd1c85ed68636f2281}{
+\index{ToolSet::CMC@{ToolSet::CMC}!NewParticle@{NewParticle}}
+\index{NewParticle@{NewParticle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{NewParticle}]{\setlength{\rightskip}{0pt plus 5cm}static MCParticle$\ast$ ToolSet::CMC::NewParticle (float {\em px}, \/  float {\em py}, \/  float {\em pz}, \/  float {\em E}, \/  MCParticle $\ast$ {\em test})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ab30c29f999f2b3dd1c85ed68636f2281}
+
+
+NewParticle : generate a new MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em px}]\item[{\em py}]\item[{\em pz}]\item[{\em E}]\item[{\em test}]: this is only for function overload, it doesn't have really usage, so you can provide any MCParticle$\ast$ type pointer\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a6d72918adb583b9dcaee3c0c9166f6cb}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Set\_\-Beam\_\-Cross\_\-Angle@{Set\_\-Beam\_\-Cross\_\-Angle}}
+\index{Set\_\-Beam\_\-Cross\_\-Angle@{Set\_\-Beam\_\-Cross\_\-Angle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Set\_\-Beam\_\-Cross\_\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}static void ToolSet::CMC::Set\_\-Beam\_\-Cross\_\-Angle (float {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a6d72918adb583b9dcaee3c0c9166f6cb}
+
+
+Set\_\-Beam\_\-Cross\_\-Angle : changing beam crossing angle, default is 0.007 Notice: when using the CRC::InVisible(), it also will load the value from here. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\hypertarget{classToolSet_1_1CMC_a2b939b1fd1e396eb5764c512903fe229}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Set\_\-Collider\_\-Energy@{Set\_\-Collider\_\-Energy}}
+\index{Set\_\-Collider\_\-Energy@{Set\_\-Collider\_\-Energy}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Set\_\-Collider\_\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}static void ToolSet::CMC::Set\_\-Collider\_\-Energy (float {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a2b939b1fd1e396eb5764c512903fe229}
+
+
+Get\_\-Collider\_\-Energy : changing the collider energy, default is 500 GeV Notice: when using the CRC::InVisible(), it also will load the value from here. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a3ebc24c0c160ba37054b294059f09d96}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Beam\_\-Energy@{Status\_\-Beam\_\-Energy}}
+\index{Status\_\-Beam\_\-Energy@{Status\_\-Beam\_\-Energy}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Status\_\-Beam\_\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Status\_\-Beam\_\-Energy (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a3ebc24c0c160ba37054b294059f09d96}
+
+
+Status\_\-Beam\_\-Energy : whether the input energy equals to the beam energy. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a1771a4a8936446f9dfe5f9d22b5d9322}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Has\_\-Daughter@{Status\_\-Has\_\-Daughter}}
+\index{Status\_\-Has\_\-Daughter@{Status\_\-Has\_\-Daughter}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Status\_\-Has\_\-Daughter}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Status\_\-Has\_\-Daughter (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a1771a4a8936446f9dfe5f9d22b5d9322}
+
+
+Status\_\-Has\_\-Daughter : whether has the daughter. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a79d54fb4529c17a59ab21a51b3f6889c}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Has\_\-GrandDaughter@{Status\_\-Has\_\-GrandDaughter}}
+\index{Status\_\-Has\_\-GrandDaughter@{Status\_\-Has\_\-GrandDaughter}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Status\_\-Has\_\-GrandDaughter}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Status\_\-Has\_\-GrandDaughter (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a79d54fb4529c17a59ab21a51b3f6889c}
+
+
+Status\_\-Has\_\-GrandDaughter : whether has the grand daughter. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a88ff52dd7c66369b43eb8619a1383e7d}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Has\_\-GrandParent@{Status\_\-Has\_\-GrandParent}}
+\index{Status\_\-Has\_\-GrandParent@{Status\_\-Has\_\-GrandParent}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Status\_\-Has\_\-GrandParent}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Status\_\-Has\_\-GrandParent (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a88ff52dd7c66369b43eb8619a1383e7d}
+
+
+Status\_\-Has\_\-GrandParent : whether has the grand parents. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_acd1cf4b7527b2e2bd194ad688b29b132}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Has\_\-Parent@{Status\_\-Has\_\-Parent}}
+\index{Status\_\-Has\_\-Parent@{Status\_\-Has\_\-Parent}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Status\_\-Has\_\-Parent}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Status\_\-Has\_\-Parent (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_acd1cf4b7527b2e2bd194ad688b29b132}
+
+
+Status\_\-Has\_\-Parent : whether has the parents Notice: for current ILD event generation, if no parents -\/$>$ initial beam have parents, but no grand parents -\/$>$ beam after ISR and ISR photons have grand parents, no parents of grand parents -\/$>$ hard scattering particle generated in the Whizard. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a23a38c3094037dd6660223494c8a5827}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Is\_\-Detector\_\-TFS@{Status\_\-Is\_\-Detector\_\-TFS}}
+\index{Status\_\-Is\_\-Detector\_\-TFS@{Status\_\-Is\_\-Detector\_\-TFS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Status\_\-Is\_\-Detector\_\-TFS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Status\_\-Is\_\-Detector\_\-TFS (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a23a38c3094037dd6660223494c8a5827}
+
+
+Status\_\-Is\_\-Detector\_\-TFS : whether is a possible detector simulated final state. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_ae0ceba81f34f1a164b1d8ce719c92e05}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Is\_\-MS@{Status\_\-Is\_\-MS}}
+\index{Status\_\-Is\_\-MS@{Status\_\-Is\_\-MS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Status\_\-Is\_\-MS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Status\_\-Is\_\-MS (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ae0ceba81f34f1a164b1d8ce719c92e05}
+
+
+Status\_\-Is\_\-MS : whether is a intermediate particle, (generator status==2). 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a9d3659a1fd4bad33a54c08769902e998}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Is\_\-Overlay@{Status\_\-Is\_\-Overlay}}
+\index{Status\_\-Is\_\-Overlay@{Status\_\-Is\_\-Overlay}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Status\_\-Is\_\-Overlay}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Status\_\-Is\_\-Overlay (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a9d3659a1fd4bad33a54c08769902e998}
+
+
+Status\_\-Is\_\-Overlay : Whether generated from Overlay. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_acb83c834c9e5e1c33f8c2514e4c40d93}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Is\_\-Overlay\_\-DFS@{Status\_\-Is\_\-Overlay\_\-DFS}}
+\index{Status\_\-Is\_\-Overlay\_\-DFS@{Status\_\-Is\_\-Overlay\_\-DFS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Status\_\-Is\_\-Overlay\_\-DFS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Status\_\-Is\_\-Overlay\_\-DFS (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_acb83c834c9e5e1c33f8c2514e4c40d93}
+
+
+Status\_\-Is\_\-Overlay\_\-DFS : whether a possible Overlay final states. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a3fbb915477cbbdca4193b8b2ff8cd356}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Is\_\-Pythia@{Status\_\-Is\_\-Pythia}}
+\index{Status\_\-Is\_\-Pythia@{Status\_\-Is\_\-Pythia}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Status\_\-Is\_\-Pythia}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Status\_\-Is\_\-Pythia (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a3fbb915477cbbdca4193b8b2ff8cd356}
+
+
+Status\_\-Is\_\-Pythia : whether a possible final state generated from Pythia. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_aef5a206838a69936e98ea22a1c36e143}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Is\_\-Pythia\_\-TFS@{Status\_\-Is\_\-Pythia\_\-TFS}}
+\index{Status\_\-Is\_\-Pythia\_\-TFS@{Status\_\-Is\_\-Pythia\_\-TFS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Status\_\-Is\_\-Pythia\_\-TFS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Status\_\-Is\_\-Pythia\_\-TFS (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_aef5a206838a69936e98ea22a1c36e143}
+
+
+Status\_\-Is\_\-Pythia\_\-TFS :whether is a Pythia stable particle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a662c5f9d64c7916f988e4ff15598d4ed}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Is\_\-TFS@{Status\_\-Is\_\-TFS}}
+\index{Status\_\-Is\_\-TFS@{Status\_\-Is\_\-TFS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Status\_\-Is\_\-TFS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Status\_\-Is\_\-TFS (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a662c5f9d64c7916f988e4ff15598d4ed}
+
+
+Status\_\-Is\_\-TFS : whether is a final state, (Pythia final states or simulation final states). 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}

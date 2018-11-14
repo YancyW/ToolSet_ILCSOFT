@@ -46,91 +46,112 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <h1>ToolSet::CMC Class Reference</h1><!-- doxytag: class="ToolSet::CMC" -->
+<p>: functions for MCParticles  
+<a href="#_details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="CMC_8h_source.html">CMC.h</a>&gt;</code></p>
+
 <p><a href="classToolSet_1_1CMC-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab30c29f999f2b3dd1c85ed68636f2281"></a><!-- doxytag: member="ToolSet::CMC::NewParticle" ref="ab30c29f999f2b3dd1c85ed68636f2281" args="(float px, float py, float pz, float E, MCParticle *test)" -->
-static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><b>NewParticle</b> (float px, float py, float pz, float E, MCParticle *test)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5bd1a7515135570ef348bd77d1d26933"></a><!-- doxytag: member="ToolSet::CMC::NewParticle" ref="a5bd1a7515135570ef348bd77d1d26933" args="(TLorentzVector &amp;p, MCParticle *test)" -->
-static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><b>NewParticle</b> (TLorentzVector &amp;p, MCParticle *test)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1b2172aaacc40d4f5971492a5d1a0f5"></a><!-- doxytag: member="ToolSet::CMC::Add" ref="ad1b2172aaacc40d4f5971492a5d1a0f5" args="(const MCParticle *MC1, const MCParticle *MC2)" -->
-static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><b>Add</b> (const MCParticle *MC1, const MCParticle *MC2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa597db31bacbc37cbc16da5bfe2b1d9a"></a><!-- doxytag: member="ToolSet::CMC::Minus" ref="aa597db31bacbc37cbc16da5bfe2b1d9a" args="(const MCParticle *MC1, const MCParticle *MC2)" -->
-static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><b>Minus</b> (const MCParticle *MC1, const MCParticle *MC2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29838e430204b6f0d6e5cdf8a669f615"></a><!-- doxytag: member="ToolSet::CMC::Equal" ref="a29838e430204b6f0d6e5cdf8a669f615" args="(const MCParticle *MC1)" -->
-static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><b>Equal</b> (const MCParticle *MC1)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd7ded5c44d40de05109435f43ca5ae3"></a><!-- doxytag: member="ToolSet::CMC::Minus_To_Lorentz" ref="acd7ded5c44d40de05109435f43ca5ae3" args="(const MCParticle *MC1, const MCParticle *MC2)" -->
-static TLorentzVector&nbsp;</td><td class="memItemRight" valign="bottom"><b>Minus_To_Lorentz</b> (const MCParticle *MC1, const MCParticle *MC2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a709d30e4a5670f116128a1602a6b25c0"></a><!-- doxytag: member="ToolSet::CMC::Compare_as_E" ref="a709d30e4a5670f116128a1602a6b25c0" args="(MCParticle *i, MCParticle *j)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Compare_as_E</b> (MCParticle *i, MCParticle *j)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abdd82fcdf6cba89df00c9af0b1f77df6"></a><!-- doxytag: member="ToolSet::CMC::Compare_as_Angle" ref="abdd82fcdf6cba89df00c9af0b1f77df6" args="(const std::pair&lt; float, MCParticle * &gt; &amp;i, const std::pair&lt; float, MCParticle * &gt; &amp;j)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Compare_as_Angle</b> (const std::pair&lt; float, MCParticle * &gt; &amp;i, const std::pair&lt; float, MCParticle * &gt; &amp;j)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="acbada53a8416ca460d7aa07453610dc2"></a><!-- doxytag: member="ToolSet::CMC::Cal_Mag" ref="acbada53a8416ca460d7aa07453610dc2" args="(TMag MC)" -->
-template&lt;typename TMag &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>Cal_Mag</b> (TMag MC)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="ae7f67f1180165cedcc4cbeb4e114e5d1"></a><!-- doxytag: member="ToolSet::CMC::Cal_P" ref="ae7f67f1180165cedcc4cbeb4e114e5d1" args="(TP MC)" -->
-template&lt;typename TP &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>Cal_P</b> (TP MC)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a679d9af4f1004560f178ed10f1a3028c"></a><!-- doxytag: member="ToolSet::CMC::Cal_Vect" ref="a679d9af4f1004560f178ed10f1a3028c" args="(TVect MC)" -->
-template&lt;typename TVect &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">static TVector3&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>Cal_Vect</b> (TVect MC)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="ac479ce63e1328c284ef104449b30d465"></a><!-- doxytag: member="ToolSet::CMC::Cal_PT" ref="ac479ce63e1328c284ef104449b30d465" args="(TPT MC)" -->
-template&lt;typename TPT &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>Cal_PT</b> (TPT MC)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a8c4c04395c95a6c513f049029c157a7d"></a><!-- doxytag: member="ToolSet::CMC::Cal_PT" ref="a8c4c04395c95a6c513f049029c157a7d" args="(TPT MC, TPT Ref)" -->
-template&lt;typename TPT &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>Cal_PT</b> (TPT MC, TPT Ref)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a7142700aa3c1b586b976e9d71301c7bc"></a><!-- doxytag: member="ToolSet::CMC::Cal_CosTheta" ref="a7142700aa3c1b586b976e9d71301c7bc" args="(TTheta MC)" -->
-template&lt;typename TTheta &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>Cal_CosTheta</b> (TTheta MC)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a91c74f61d1c9656e68f4b1037976a51b"></a><!-- doxytag: member="ToolSet::CMC::Cal_CosTheta" ref="a91c74f61d1c9656e68f4b1037976a51b" args="(TTheta MC, TTheta Ref)" -->
-template&lt;typename TTheta &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>Cal_CosTheta</b> (TTheta MC, TTheta Ref)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a0637a061bf4ecd9084b794023cc11816"></a><!-- doxytag: member="ToolSet::CMC::Cal_Angle" ref="a0637a061bf4ecd9084b794023cc11816" args="(TAngle MC, TAngle Ref)" -->
-template&lt;typename TAngle &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>Cal_Angle</b> (TAngle MC, TAngle Ref)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a58389b8e6c06afb39377d6d078e5616f"></a><!-- doxytag: member="ToolSet::CMC::Cal_Angle_Deg" ref="a58389b8e6c06afb39377d6d078e5616f" args="(TAngle MC, TAngle Ref)" -->
-template&lt;typename TAngle &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>Cal_Angle_Deg</b> (TAngle MC, TAngle Ref)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="a3c8cfd47eac44d6e39a38598bb9158f1"></a><!-- doxytag: member="ToolSet::CMC::Cal_Azimuth" ref="a3c8cfd47eac44d6e39a38598bb9158f1" args="(TPhi MC)" -->
-template&lt;typename TPhi &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>Cal_Azimuth</b> (TPhi MC)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="ab77fa5dd46a12ac8887776724261f72b"></a><!-- doxytag: member="ToolSet::CMC::Cal_Azimuth" ref="ab77fa5dd46a12ac8887776724261f72b" args="(TPhi MC, TPhi Ref)" -->
-template&lt;typename TPhi &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>Cal_Azimuth</b> (TPhi MC, TPhi Ref)</td></tr>
-<tr><td class="memTemplParams" colspan="2"><a class="anchor" id="aa1667ca515e4b26ca43755fd8d2e30bd"></a><!-- doxytag: member="ToolSet::CMC::Cal_Acoplanarity" ref="aa1667ca515e4b26ca43755fd8d2e30bd" args="(TPhi MC, TPhi Ref)" -->
-template&lt;typename TPhi &gt; </td></tr>
-<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><b>Cal_Acoplanarity</b> (TPhi MC, TPhi Ref)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add27d6c12067e096d96d45af53d5c6aa"></a><!-- doxytag: member="ToolSet::CMC::Cal_IsolationAngle" ref="add27d6c12067e096d96d45af53d5c6aa" args="(MCParticle *MC, std::vector&lt; MCParticle * &gt; Ref)" -->
-static float&nbsp;</td><td class="memItemRight" valign="bottom"><b>Cal_IsolationAngle</b> (MCParticle *MC, std::vector&lt; MCParticle * &gt; Ref)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a67ab1d51b7fd0f98cfa19be5381e961a"></a><!-- doxytag: member="ToolSet::CMC::Get_Parents_Number" ref="a67ab1d51b7fd0f98cfa19be5381e961a" args="(MCParticle *input)" -->
-static int&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_Parents_Number</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a44a3b5e5df7effa4ed170151cd63b706"></a><!-- doxytag: member="ToolSet::CMC::Get_Daughters_Number" ref="a44a3b5e5df7effa4ed170151cd63b706" args="(MCParticle *input)" -->
-static int&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_Daughters_Number</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ebc24c0c160ba37054b294059f09d96"></a><!-- doxytag: member="ToolSet::CMC::Status_Beam_Energy" ref="a3ebc24c0c160ba37054b294059f09d96" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Beam_Energy</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd1cf4b7527b2e2bd194ad688b29b132"></a><!-- doxytag: member="ToolSet::CMC::Status_Has_Parent" ref="acd1cf4b7527b2e2bd194ad688b29b132" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Has_Parent</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88ff52dd7c66369b43eb8619a1383e7d"></a><!-- doxytag: member="ToolSet::CMC::Status_Has_GrandParent" ref="a88ff52dd7c66369b43eb8619a1383e7d" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Has_GrandParent</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1771a4a8936446f9dfe5f9d22b5d9322"></a><!-- doxytag: member="ToolSet::CMC::Status_Has_Daughter" ref="a1771a4a8936446f9dfe5f9d22b5d9322" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Has_Daughter</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79d54fb4529c17a59ab21a51b3f6889c"></a><!-- doxytag: member="ToolSet::CMC::Status_Has_GrandDaughter" ref="a79d54fb4529c17a59ab21a51b3f6889c" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Has_GrandDaughter</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0ceba81f34f1a164b1d8ce719c92e05"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_MS" ref="ae0ceba81f34f1a164b1d8ce719c92e05" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_MS</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a662c5f9d64c7916f988e4ff15598d4ed"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_TFS" ref="a662c5f9d64c7916f988e4ff15598d4ed" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_TFS</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aef5a206838a69936e98ea22a1c36e143"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_Pythia_TFS" ref="aef5a206838a69936e98ea22a1c36e143" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_Pythia_TFS</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23a38c3094037dd6660223494c8a5827"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_Detector_TFS" ref="a23a38c3094037dd6660223494c8a5827" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_Detector_TFS</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fbb915477cbbdca4193b8b2ff8cd356"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_Pythia" ref="a3fbb915477cbbdca4193b8b2ff8cd356" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_Pythia</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d3659a1fd4bad33a54c08769902e998"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_Overlay" ref="a9d3659a1fd4bad33a54c08769902e998" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_Overlay</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb83c834c9e5e1c33f8c2514e4c40d93"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_Overlay_DFS" ref="acb83c834c9e5e1c33f8c2514e4c40d93" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_Overlay_DFS</b> (MCParticle *input)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a2b939b1fd1e396eb5764c512903fe229">Set_Collider_Energy</a> (float input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Collider_Energy : changing the collider energy, default is 500 GeV Notice: when using the CRC::InVisible(), it also will load the value from here.  <a href="#a2b939b1fd1e396eb5764c512903fe229"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a6d72918adb583b9dcaee3c0c9166f6cb">Set_Beam_Cross_Angle</a> (float input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set_Beam_Cross_Angle : changing beam crossing angle, default is 0.007 Notice: when using the CRC::InVisible(), it also will load the value from here.  <a href="#a6d72918adb583b9dcaee3c0c9166f6cb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a7143149e3db8c1e5055498c8aba88182">Get_Collider_Energy</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Collider_Energy : show the collider energy when generating.  <a href="#a7143149e3db8c1e5055498c8aba88182"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#afaf6f983eee33318bcaf7923cde7266e">Get_Beam_Energy</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Beam_Energy : show the energy for initial beam after having the detector simulation.  <a href="#afaf6f983eee33318bcaf7923cde7266e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aab8dca236c78fffe1b63bac50583090a">Get_Beam_Cross_Angle</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Beam_Cross_Angle : get the collider crossing angle.  <a href="#aab8dca236c78fffe1b63bac50583090a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ab30c29f999f2b3dd1c85ed68636f2281">NewParticle</a> (float px, float py, float pz, float E, MCParticle *test)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NewParticle : generate a new MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer.  <a href="#ab30c29f999f2b3dd1c85ed68636f2281"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a5bd1a7515135570ef348bd77d1d26933">NewParticle</a> (TLorentzVector &amp;p, MCParticle *test)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NewParticle : generate a new MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer.  <a href="#a5bd1a7515135570ef348bd77d1d26933"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ad1b2172aaacc40d4f5971492a5d1a0f5">Add</a> (const MCParticle *MC1, const MCParticle *MC2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Add : add four momentum of two MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer.  <a href="#ad1b2172aaacc40d4f5971492a5d1a0f5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aa597db31bacbc37cbc16da5bfe2b1d9a">Minus</a> (const MCParticle *MC1, const MCParticle *MC2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Minus : minus four momentum of two MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer.  <a href="#aa597db31bacbc37cbc16da5bfe2b1d9a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a29838e430204b6f0d6e5cdf8a669f615">Equal</a> (const MCParticle *MC1)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Equal : generate a new MCParticle equal to the input one This is different from use "=", "=" will give the pointer address to the new pointer, they are still pointing to the same particle.  <a href="#a29838e430204b6f0d6e5cdf8a669f615"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static TLorentzVector&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a5883ceda367cc5e32cbacdabdc119a4a">Minus_By_Lorentz</a> (const MCParticle *MC1, const MCParticle *MC2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Minus_To_Lorentz : minus four momentum of two MCParticle, return a TLorentzVector of the four momentum.  <a href="#a5883ceda367cc5e32cbacdabdc119a4a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a74a827b8a208cbf1ef83ee66b2a9dc04">Compare_as_E</a> (const MCParticle *i, const MCParticle *j)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compare_as_E : compare funcion by the energy for MCParticle, equals to &lt; operator.  <a href="#a74a827b8a208cbf1ef83ee66b2a9dc04"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a4043b9e78a5178c2d8fba7f6543a7e65">Compare_as_Angle</a> (const MCParticle *i, const MCParticle *j)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compare_as_Angle : compare funcion by the costheta for MCParticle, equals to &lt; operator.  <a href="#a4043b9e78a5178c2d8fba7f6543a7e65"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a9840196a2fd81836dfc4118e68d7be38">Compare_as_Pair</a> (const std::pair&lt; float, MCParticle * &gt; &amp;i, const std::pair&lt; float, MCParticle * &gt; &amp;j)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compare_as_Pair : compare function by any value paired to MCParticle*.  <a href="#a9840196a2fd81836dfc4118e68d7be38"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename TMag &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#acbada53a8416ca460d7aa07453610dc2">Cal_Mag</a> (TMag MC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">: calculate Magnitude of the four momentum  <a href="#acbada53a8416ca460d7aa07453610dc2"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename TP &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ae7f67f1180165cedcc4cbeb4e114e5d1">Cal_P</a> (TP MC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_P : calculate the magnitude of the three momentum, |vect{P}|.  <a href="#ae7f67f1180165cedcc4cbeb4e114e5d1"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename TVect &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">static TVector3&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a679d9af4f1004560f178ed10f1a3028c">Cal_Vect</a> (TVect MC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_Vect : get three momentum.  <a href="#a679d9af4f1004560f178ed10f1a3028c"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename TPT &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ac479ce63e1328c284ef104449b30d465">Cal_PT</a> (TPT MC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_PT : calculate pt to the lab frame.  <a href="#ac479ce63e1328c284ef104449b30d465"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename TPT &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a8c4c04395c95a6c513f049029c157a7d">Cal_PT</a> (TPT MC, TPT Ref)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">: calculate pt to the reference axis  <a href="#a8c4c04395c95a6c513f049029c157a7d"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename TTheta &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a7142700aa3c1b586b976e9d71301c7bc">Cal_CosTheta</a> (TTheta MC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_CosTheta : calculate costheta.  <a href="#a7142700aa3c1b586b976e9d71301c7bc"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename TTheta &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a91c74f61d1c9656e68f4b1037976a51b">Cal_CosTheta</a> (TTheta MC, TTheta Ref)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_CosTheta : calculate costheta to the reference axis.  <a href="#a91c74f61d1c9656e68f4b1037976a51b"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename TAngle &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a0637a061bf4ecd9084b794023cc11816">Cal_Angle</a> (TAngle MC, TAngle Ref)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_Angle : calculate the angle of radian with acos to the reference axis.  <a href="#a0637a061bf4ecd9084b794023cc11816"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename TAngle &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a58389b8e6c06afb39377d6d078e5616f">Cal_Angle_Deg</a> (TAngle MC, TAngle Ref)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_Angle_Deg : calculate the angle of degree with acos to the reference axis.  <a href="#a58389b8e6c06afb39377d6d078e5616f"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename TPhi &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a3c8cfd47eac44d6e39a38598bb9158f1">Cal_Azimuth</a> (TPhi MC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_Azimuth : calculate azimuth angle in the lab frame.  <a href="#a3c8cfd47eac44d6e39a38598bb9158f1"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename TPhi &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ab77fa5dd46a12ac8887776724261f72b">Cal_Azimuth</a> (TPhi MC, TPhi Ref)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_Azimuth : calculate aximuth anlge to the reference axis.  <a href="#ab77fa5dd46a12ac8887776724261f72b"></a><br/></td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename TPhi &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aa1667ca515e4b26ca43755fd8d2e30bd">Cal_Acoplanarity</a> (TPhi MC, TPhi Ref)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_Acoplanarity : calculate acoplanarity acoplan = pi - |phi|.  <a href="#aa1667ca515e4b26ca43755fd8d2e30bd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a3d0ff5af967b32efbc5907174b64348f">Cal_IsolationAngle</a> (MCParticle *MC, std::vector&lt; MCParticle * &gt; Ref, float minimal_energy_in_the_cone=1, float minimal_angle_from_input=2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_IsolationAngle : calculate minimal isolation angle.  <a href="#a3d0ff5af967b32efbc5907174b64348f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a67ab1d51b7fd0f98cfa19be5381e961a">Get_Parents_Number</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">functions for get basic particle properties  <a href="#a67ab1d51b7fd0f98cfa19be5381e961a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a44a3b5e5df7effa4ed170151cd63b706">Get_Daughters_Number</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Daughters_Number : daughter number.  <a href="#a44a3b5e5df7effa4ed170151cd63b706"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aa98186321fc75d5f476bc97511e1d91b">Get_ParentsPID</a> (MCParticle *MC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_ParentsPID : parents PDG code.  <a href="#aa98186321fc75d5f476bc97511e1d91b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ae0aeb5054574c5c8ffd3f24e86d662a6">Get_DaughtersPID</a> (MCParticle *MC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_DaughtersPID : daughter's PDG code.  <a href="#ae0aeb5054574c5c8ffd3f24e86d662a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a3ebc24c0c160ba37054b294059f09d96">Status_Beam_Energy</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Status_Beam_Energy : whether the input energy equals to the beam energy.  <a href="#a3ebc24c0c160ba37054b294059f09d96"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#acd1cf4b7527b2e2bd194ad688b29b132">Status_Has_Parent</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Status_Has_Parent : whether has the parents Notice: for current ILD event generation, if no parents -&gt; initial beam have parents, but no grand parents -&gt; beam after ISR and ISR photons have grand parents, no parents of grand parents -&gt; hard scattering particle generated in the Whizard.  <a href="#acd1cf4b7527b2e2bd194ad688b29b132"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a88ff52dd7c66369b43eb8619a1383e7d">Status_Has_GrandParent</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Status_Has_GrandParent : whether has the grand parents.  <a href="#a88ff52dd7c66369b43eb8619a1383e7d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a1771a4a8936446f9dfe5f9d22b5d9322">Status_Has_Daughter</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Status_Has_Daughter : whether has the daughter.  <a href="#a1771a4a8936446f9dfe5f9d22b5d9322"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a79d54fb4529c17a59ab21a51b3f6889c">Status_Has_GrandDaughter</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Status_Has_GrandDaughter : whether has the grand daughter.  <a href="#a79d54fb4529c17a59ab21a51b3f6889c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ae0ceba81f34f1a164b1d8ce719c92e05">Status_Is_MS</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Status_Is_MS : whether is a intermediate particle, (generator status==2).  <a href="#ae0ceba81f34f1a164b1d8ce719c92e05"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a662c5f9d64c7916f988e4ff15598d4ed">Status_Is_TFS</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Status_Is_TFS : whether is a final state, (Pythia final states or simulation final states).  <a href="#a662c5f9d64c7916f988e4ff15598d4ed"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aef5a206838a69936e98ea22a1c36e143">Status_Is_Pythia_TFS</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Status_Is_Pythia_TFS :whether is a Pythia stable particle.  <a href="#aef5a206838a69936e98ea22a1c36e143"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a23a38c3094037dd6660223494c8a5827">Status_Is_Detector_TFS</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Status_Is_Detector_TFS : whether is a possible detector simulated final state.  <a href="#a23a38c3094037dd6660223494c8a5827"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a3fbb915477cbbdca4193b8b2ff8cd356">Status_Is_Pythia</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Status_Is_Pythia : whether a possible final state generated from Pythia.  <a href="#a3fbb915477cbbdca4193b8b2ff8cd356"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a9d3659a1fd4bad33a54c08769902e998">Status_Is_Overlay</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Status_Is_Overlay : Whether generated from Overlay.  <a href="#a9d3659a1fd4bad33a54c08769902e998"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#acb83c834c9e5e1c33f8c2514e4c40d93">Status_Is_Overlay_DFS</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Status_Is_Overlay_DFS : whether a possible Overlay final states.  <a href="#acb83c834c9e5e1c33f8c2514e4c40d93"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac0eed5c22431cfc5e9c32d9bc48b0d7"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_Stopped" ref="aac0eed5c22431cfc5e9c32d9bc48b0d7" args="(MCParticle *input)" -->
 static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_Stopped</b> (MCParticle *input)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b903f56e1a2c0635e722a47d5e3e87f"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_DecayInTracker" ref="a2b903f56e1a2c0635e722a47d5e3e87f" args="(MCParticle *input)" -->
@@ -171,18 +192,18 @@ static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_TopQ
 static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_BottomQuark</b> (MCParticle *input)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0b28b170ae3a6ee15ffa53138c75f58"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_CharmQuark" ref="ab0b28b170ae3a6ee15ffa53138c75f58" args="(MCParticle *input)" -->
 static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_CharmQuark</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa63f12865d46af350674c7dca3eb5437"></a><!-- doxytag: member="ToolSet::CMC::Judge_Is_Beam" ref="aa63f12865d46af350674c7dca3eb5437" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_Is_Beam</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ccf3aedd3c942ac6644748abaaf70fe"></a><!-- doxytag: member="ToolSet::CMC::Judge_Parents_Are_Beam" ref="a5ccf3aedd3c942ac6644748abaaf70fe" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_Parents_Are_Beam</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad09856f709fff7320c382efd26a408e9"></a><!-- doxytag: member="ToolSet::CMC::Judge_GrandParents_Are_Beam" ref="ad09856f709fff7320c382efd26a408e9" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_GrandParents_Are_Beam</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0630c44bcd0eaf761f4b34e106f2b9d9"></a><!-- doxytag: member="ToolSet::CMC::Judge_Is_IS_Electron" ref="a0630c44bcd0eaf761f4b34e106f2b9d9" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_Is_IS_Electron</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a688d2854fa645f4c3adad5013f4c9ba2"></a><!-- doxytag: member="ToolSet::CMC::Judge_Is_IS_Photon" ref="a688d2854fa645f4c3adad5013f4c9ba2" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_Is_IS_Photon</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85fbb7bf0ef846c3ae1dcfeb27853911"></a><!-- doxytag: member="ToolSet::CMC::Judge_HardScattering_FS" ref="a85fbb7bf0ef846c3ae1dcfeb27853911" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_HardScattering_FS</b> (MCParticle *input)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aa63f12865d46af350674c7dca3eb5437">Judge_Is_Beam</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_Is_Beam : whether it is the beam initial electron/positron.  <a href="#aa63f12865d46af350674c7dca3eb5437"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a5ccf3aedd3c942ac6644748abaaf70fe">Judge_Parents_Are_Beam</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_Parents_Are_Beam : whether its parents are initial beam (i.e.  <a href="#a5ccf3aedd3c942ac6644748abaaf70fe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ad09856f709fff7320c382efd26a408e9">Judge_GrandParents_Are_Beam</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_GrandParents_Are_Beam : whether its grand parents are initial beam (i.e.  <a href="#ad09856f709fff7320c382efd26a408e9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a0630c44bcd0eaf761f4b34e106f2b9d9">Judge_Is_IS_Electron</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_Is_IS_Electron : is the electron/positron after the ISR.  <a href="#a0630c44bcd0eaf761f4b34e106f2b9d9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a688d2854fa645f4c3adad5013f4c9ba2">Judge_Is_IS_Photon</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_Is_IS_Photon : is the ISR photon.  <a href="#a688d2854fa645f4c3adad5013f4c9ba2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a85fbb7bf0ef846c3ae1dcfeb27853911">Judge_HardScattering_FS</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_HardScattering_FS : is the hard-scattering states (including ISR photon).  <a href="#a85fbb7bf0ef846c3ae1dcfeb27853911"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af28ed4c00c5b936aa0660253bd4af35b"></a><!-- doxytag: member="ToolSet::CMC::Judge_HardScattering_Next_FS" ref="af28ed4c00c5b936aa0660253bd4af35b" args="(MCParticle *input)" -->
 static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_HardScattering_Next_FS</b> (MCParticle *input)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20029373a30ff4642dfbe5ac879ee0ff"></a><!-- doxytag: member="ToolSet::CMC::Judge_HardScattering_Next_Next_FS" ref="a20029373a30ff4642dfbe5ac879ee0ff" args="(MCParticle *input)" -->
@@ -227,10 +248,6 @@ static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" vali
 static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_DetectorSimulating_All</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4bf55a4d64eeec4762f87ee7de91f585"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_Overlay_All" ref="a4bf55a4d64eeec4762f87ee7de91f585" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
 static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_Overlay_All</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa98186321fc75d5f476bc97511e1d91b"></a><!-- doxytag: member="ToolSet::CMC::Get_ParentsPID" ref="aa98186321fc75d5f476bc97511e1d91b" args="(MCParticle *MC)" -->
-static std::vector&lt; int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_ParentsPID</b> (MCParticle *MC)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0aeb5054574c5c8ffd3f24e86d662a6"></a><!-- doxytag: member="ToolSet::CMC::Get_DaughtersPID" ref="ae0aeb5054574c5c8ffd3f24e86d662a6" args="(MCParticle *MC)" -->
-static std::vector&lt; int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_DaughtersPID</b> (MCParticle *MC)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a38ef7e0f75f14714d4636ca70c1b717c"></a><!-- doxytag: member="ToolSet::CMC::MCToPythiaShowering" ref="a38ef7e0f75f14714d4636ca70c1b717c" args="(MCParticle *input)" -->
 static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>MCToPythiaShowering</b> (MCParticle *input)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfd54e8274a8994f4cc0a531a028cd01"></a><!-- doxytag: member="ToolSet::CMC::MCToHardScattering" ref="adfd54e8274a8994f4cc0a531a028cd01" args="(MCParticle *input)" -->
@@ -262,6 +279,1597 @@ static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" vali
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4594f7a35f5db952f142626100ced91f"></a><!-- doxytag: member="ToolSet::CMC::IsInCone" ref="a4594f7a35f5db952f142626100ced91f" args="(MCParticle *lep, MCParticle *pfo, float angle_cut)" -->
 static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>IsInCone</b> (MCParticle *lep, MCParticle *pfo, float angle_cut)</td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>: functions for MCParticles </p>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ad1b2172aaacc40d4f5971492a5d1a0f5"></a><!-- doxytag: member="ToolSet::CMC::Add" ref="ad1b2172aaacc40d4f5971492a5d1a0f5" args="(const MCParticle *MC1, const MCParticle *MC2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static MCParticle* ToolSet::CMC::Add </td>
+          <td>(</td>
+          <td class="paramtype">const MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>MC1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>MC2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add : add four momentum of two MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC1</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>MC2</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa1667ca515e4b26ca43755fd8d2e30bd"></a><!-- doxytag: member="ToolSet::CMC::Cal_Acoplanarity" ref="aa1667ca515e4b26ca43755fd8d2e30bd" args="(TPhi MC, TPhi Ref)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TPhi &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Cal_Acoplanarity </td>
+          <td>(</td>
+          <td class="paramtype">TPhi&nbsp;</td>
+          <td class="paramname"> <em>MC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TPhi&nbsp;</td>
+          <td class="paramname"> <em>Ref</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cal_Acoplanarity : calculate acoplanarity acoplan = pi - |phi|. </p>
+<dl><dt><b>Template Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TPhi</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Ref</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0637a061bf4ecd9084b794023cc11816"></a><!-- doxytag: member="ToolSet::CMC::Cal_Angle" ref="a0637a061bf4ecd9084b794023cc11816" args="(TAngle MC, TAngle Ref)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TAngle &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Cal_Angle </td>
+          <td>(</td>
+          <td class="paramtype">TAngle&nbsp;</td>
+          <td class="paramname"> <em>MC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TAngle&nbsp;</td>
+          <td class="paramname"> <em>Ref</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cal_Angle : calculate the angle of radian with acos to the reference axis. </p>
+<dl><dt><b>Template Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TAngle</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Ref</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a58389b8e6c06afb39377d6d078e5616f"></a><!-- doxytag: member="ToolSet::CMC::Cal_Angle_Deg" ref="a58389b8e6c06afb39377d6d078e5616f" args="(TAngle MC, TAngle Ref)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TAngle &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Cal_Angle_Deg </td>
+          <td>(</td>
+          <td class="paramtype">TAngle&nbsp;</td>
+          <td class="paramname"> <em>MC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TAngle&nbsp;</td>
+          <td class="paramname"> <em>Ref</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cal_Angle_Deg : calculate the angle of degree with acos to the reference axis. </p>
+<dl><dt><b>Template Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TAngle</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Ref</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Referenced by <a class="el" href="CMC_8h_source.html#l00419">Cal_IsolationAngle()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab77fa5dd46a12ac8887776724261f72b"></a><!-- doxytag: member="ToolSet::CMC::Cal_Azimuth" ref="ab77fa5dd46a12ac8887776724261f72b" args="(TPhi MC, TPhi Ref)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TPhi &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Cal_Azimuth </td>
+          <td>(</td>
+          <td class="paramtype">TPhi&nbsp;</td>
+          <td class="paramname"> <em>MC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TPhi&nbsp;</td>
+          <td class="paramname"> <em>Ref</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cal_Azimuth : calculate aximuth anlge to the reference axis. </p>
+<dl><dt><b>Template Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TPhi</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Ref</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3c8cfd47eac44d6e39a38598bb9158f1"></a><!-- doxytag: member="ToolSet::CMC::Cal_Azimuth" ref="a3c8cfd47eac44d6e39a38598bb9158f1" args="(TPhi MC)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TPhi &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Cal_Azimuth </td>
+          <td>(</td>
+          <td class="paramtype">TPhi&nbsp;</td>
+          <td class="paramname"> <em>MC</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cal_Azimuth : calculate azimuth angle in the lab frame. </p>
+<dl><dt><b>Template Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TPhi</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a91c74f61d1c9656e68f4b1037976a51b"></a><!-- doxytag: member="ToolSet::CMC::Cal_CosTheta" ref="a91c74f61d1c9656e68f4b1037976a51b" args="(TTheta MC, TTheta Ref)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TTheta &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Cal_CosTheta </td>
+          <td>(</td>
+          <td class="paramtype">TTheta&nbsp;</td>
+          <td class="paramname"> <em>MC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TTheta&nbsp;</td>
+          <td class="paramname"> <em>Ref</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cal_CosTheta : calculate costheta to the reference axis. </p>
+<dl><dt><b>Template Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TTheta</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Ref</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7142700aa3c1b586b976e9d71301c7bc"></a><!-- doxytag: member="ToolSet::CMC::Cal_CosTheta" ref="a7142700aa3c1b586b976e9d71301c7bc" args="(TTheta MC)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TTheta &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Cal_CosTheta </td>
+          <td>(</td>
+          <td class="paramtype">TTheta&nbsp;</td>
+          <td class="paramname"> <em>MC</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cal_CosTheta : calculate costheta. </p>
+<dl><dt><b>Template Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TTheta</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Referenced by <a class="el" href="CMC_8h_source.html#l00201">Compare_as_Angle()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d0ff5af967b32efbc5907174b64348f"></a><!-- doxytag: member="ToolSet::CMC::Cal_IsolationAngle" ref="a3d0ff5af967b32efbc5907174b64348f" args="(MCParticle *MC, std::vector&lt; MCParticle * &gt; Ref, float minimal_energy_in_the_cone=1, float minimal_angle_from_input=2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Cal_IsolationAngle </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>MC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>Ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>minimal_energy_in_the_cone</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>minimal_angle_from_input</em> = <code>2</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cal_IsolationAngle : calculate minimal isolation angle. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Ref</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>References <a class="el" href="CMC_8h_source.html#l00351">Cal_Angle_Deg()</a>, and <a class="el" href="CMC_8h_source.html#l00215">Compare_as_Pair()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acbada53a8416ca460d7aa07453610dc2"></a><!-- doxytag: member="ToolSet::CMC::Cal_Mag" ref="acbada53a8416ca460d7aa07453610dc2" args="(TMag MC)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TMag &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Cal_Mag </td>
+          <td>(</td>
+          <td class="paramtype">TMag&nbsp;</td>
+          <td class="paramname"> <em>MC</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>: calculate Magnitude of the four momentum </p>
+<dl><dt><b>Template Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TMag</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae7f67f1180165cedcc4cbeb4e114e5d1"></a><!-- doxytag: member="ToolSet::CMC::Cal_P" ref="ae7f67f1180165cedcc4cbeb4e114e5d1" args="(TP MC)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TP &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Cal_P </td>
+          <td>(</td>
+          <td class="paramtype">TP&nbsp;</td>
+          <td class="paramname"> <em>MC</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cal_P : calculate the magnitude of the three momentum, |vect{P}|. </p>
+<dl><dt><b>Template Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TP</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8c4c04395c95a6c513f049029c157a7d"></a><!-- doxytag: member="ToolSet::CMC::Cal_PT" ref="a8c4c04395c95a6c513f049029c157a7d" args="(TPT MC, TPT Ref)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TPT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Cal_PT </td>
+          <td>(</td>
+          <td class="paramtype">TPT&nbsp;</td>
+          <td class="paramname"> <em>MC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TPT&nbsp;</td>
+          <td class="paramname"> <em>Ref</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>: calculate pt to the reference axis </p>
+<dl><dt><b>Template Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TPT</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>@param</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac479ce63e1328c284ef104449b30d465"></a><!-- doxytag: member="ToolSet::CMC::Cal_PT" ref="ac479ce63e1328c284ef104449b30d465" args="(TPT MC)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TPT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Cal_PT </td>
+          <td>(</td>
+          <td class="paramtype">TPT&nbsp;</td>
+          <td class="paramname"> <em>MC</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cal_PT : calculate pt to the lab frame. </p>
+<dl><dt><b>Template Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TPT</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a679d9af4f1004560f178ed10f1a3028c"></a><!-- doxytag: member="ToolSet::CMC::Cal_Vect" ref="a679d9af4f1004560f178ed10f1a3028c" args="(TVect MC)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TVect &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">static TVector3 ToolSet::CMC::Cal_Vect </td>
+          <td>(</td>
+          <td class="paramtype">TVect&nbsp;</td>
+          <td class="paramname"> <em>MC</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cal_Vect : get three momentum. </p>
+<dl><dt><b>Template Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TVect</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4043b9e78a5178c2d8fba7f6543a7e65"></a><!-- doxytag: member="ToolSet::CMC::Compare_as_Angle" ref="a4043b9e78a5178c2d8fba7f6543a7e65" args="(const MCParticle *i, const MCParticle *j)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Compare_as_Angle </td>
+          <td>(</td>
+          <td class="paramtype">const MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>j</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compare_as_Angle : compare funcion by the costheta for MCParticle, equals to &lt; operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>j</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>References <a class="el" href="CMC_8h_source.html#l00302">Cal_CosTheta()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a74a827b8a208cbf1ef83ee66b2a9dc04"></a><!-- doxytag: member="ToolSet::CMC::Compare_as_E" ref="a74a827b8a208cbf1ef83ee66b2a9dc04" args="(const MCParticle *i, const MCParticle *j)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Compare_as_E </td>
+          <td>(</td>
+          <td class="paramtype">const MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>j</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compare_as_E : compare funcion by the energy for MCParticle, equals to &lt; operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>j</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9840196a2fd81836dfc4118e68d7be38"></a><!-- doxytag: member="ToolSet::CMC::Compare_as_Pair" ref="a9840196a2fd81836dfc4118e68d7be38" args="(const std::pair&lt; float, MCParticle * &gt; &amp;i, const std::pair&lt; float, MCParticle * &gt; &amp;j)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Compare_as_Pair </td>
+          <td>(</td>
+          <td class="paramtype">const std::pair&lt; float, MCParticle * &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::pair&lt; float, MCParticle * &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>j</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Compare_as_Pair : compare function by any value paired to MCParticle*. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>j</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Referenced by <a class="el" href="CMC_8h_source.html#l00419">Cal_IsolationAngle()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a29838e430204b6f0d6e5cdf8a669f615"></a><!-- doxytag: member="ToolSet::CMC::Equal" ref="a29838e430204b6f0d6e5cdf8a669f615" args="(const MCParticle *MC1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static MCParticle* ToolSet::CMC::Equal </td>
+          <td>(</td>
+          <td class="paramtype">const MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>MC1</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Equal : generate a new MCParticle equal to the input one This is different from use "=", "=" will give the pointer address to the new pointer, they are still pointing to the same particle. </p>
+<p>But "equal" will generate a new MCParticle, whose property is the same with the old one. Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC1</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aab8dca236c78fffe1b63bac50583090a"></a><!-- doxytag: member="ToolSet::CMC::Get_Beam_Cross_Angle" ref="aab8dca236c78fffe1b63bac50583090a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Get_Beam_Cross_Angle </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_Beam_Cross_Angle : get the collider crossing angle. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afaf6f983eee33318bcaf7923cde7266e"></a><!-- doxytag: member="ToolSet::CMC::Get_Beam_Energy" ref="afaf6f983eee33318bcaf7923cde7266e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Get_Beam_Energy </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_Beam_Energy : show the energy for initial beam after having the detector simulation. </p>
+<p>Notice: for ILC, there will be a x-direction boost, so the beam energy is not collider_energy/2 any more, but a little larger.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7143149e3db8c1e5055498c8aba88182"></a><!-- doxytag: member="ToolSet::CMC::Get_Collider_Energy" ref="a7143149e3db8c1e5055498c8aba88182" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Get_Collider_Energy </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_Collider_Energy : show the collider energy when generating. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a44a3b5e5df7effa4ed170151cd63b706"></a><!-- doxytag: member="ToolSet::CMC::Get_Daughters_Number" ref="a44a3b5e5df7effa4ed170151cd63b706" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int ToolSet::CMC::Get_Daughters_Number </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_Daughters_Number : daughter number. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae0aeb5054574c5c8ffd3f24e86d662a6"></a><!-- doxytag: member="ToolSet::CMC::Get_DaughtersPID" ref="ae0aeb5054574c5c8ffd3f24e86d662a6" args="(MCParticle *MC)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;int&gt; ToolSet::CMC::Get_DaughtersPID </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>MC</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_DaughtersPID : daughter's PDG code. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a67ab1d51b7fd0f98cfa19be5381e961a"></a><!-- doxytag: member="ToolSet::CMC::Get_Parents_Number" ref="a67ab1d51b7fd0f98cfa19be5381e961a" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int ToolSet::CMC::Get_Parents_Number </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>functions for get basic particle properties </p>
+<p>Get_Parents_Number : parents number </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa98186321fc75d5f476bc97511e1d91b"></a><!-- doxytag: member="ToolSet::CMC::Get_ParentsPID" ref="aa98186321fc75d5f476bc97511e1d91b" args="(MCParticle *MC)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;int&gt; ToolSet::CMC::Get_ParentsPID </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>MC</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_ParentsPID : parents PDG code. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad09856f709fff7320c382efd26a408e9"></a><!-- doxytag: member="ToolSet::CMC::Judge_GrandParents_Are_Beam" ref="ad09856f709fff7320c382efd26a408e9" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_GrandParents_Are_Beam </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_GrandParents_Are_Beam : whether its grand parents are initial beam (i.e. </p>
+<p>input is the hard-scattering states)</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a85fbb7bf0ef846c3ae1dcfeb27853911"></a><!-- doxytag: member="ToolSet::CMC::Judge_HardScattering_FS" ref="a85fbb7bf0ef846c3ae1dcfeb27853911" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_HardScattering_FS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_HardScattering_FS : is the hard-scattering states (including ISR photon). </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa63f12865d46af350674c7dca3eb5437"></a><!-- doxytag: member="ToolSet::CMC::Judge_Is_Beam" ref="aa63f12865d46af350674c7dca3eb5437" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_Is_Beam </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_Is_Beam : whether it is the beam initial electron/positron. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0630c44bcd0eaf761f4b34e106f2b9d9"></a><!-- doxytag: member="ToolSet::CMC::Judge_Is_IS_Electron" ref="a0630c44bcd0eaf761f4b34e106f2b9d9" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_Is_IS_Electron </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_Is_IS_Electron : is the electron/positron after the ISR. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a688d2854fa645f4c3adad5013f4c9ba2"></a><!-- doxytag: member="ToolSet::CMC::Judge_Is_IS_Photon" ref="a688d2854fa645f4c3adad5013f4c9ba2" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_Is_IS_Photon </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_Is_IS_Photon : is the ISR photon. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5ccf3aedd3c942ac6644748abaaf70fe"></a><!-- doxytag: member="ToolSet::CMC::Judge_Parents_Are_Beam" ref="a5ccf3aedd3c942ac6644748abaaf70fe" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_Parents_Are_Beam </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_Parents_Are_Beam : whether its parents are initial beam (i.e. </p>
+<p>the input is the ISR or the beam after ISR)</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa597db31bacbc37cbc16da5bfe2b1d9a"></a><!-- doxytag: member="ToolSet::CMC::Minus" ref="aa597db31bacbc37cbc16da5bfe2b1d9a" args="(const MCParticle *MC1, const MCParticle *MC2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static MCParticle* ToolSet::CMC::Minus </td>
+          <td>(</td>
+          <td class="paramtype">const MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>MC1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>MC2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Minus : minus four momentum of two MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC1</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>MC2</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5883ceda367cc5e32cbacdabdc119a4a"></a><!-- doxytag: member="ToolSet::CMC::Minus_By_Lorentz" ref="a5883ceda367cc5e32cbacdabdc119a4a" args="(const MCParticle *MC1, const MCParticle *MC2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static TLorentzVector ToolSet::CMC::Minus_By_Lorentz </td>
+          <td>(</td>
+          <td class="paramtype">const MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>MC1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>MC2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Minus_To_Lorentz : minus four momentum of two MCParticle, return a TLorentzVector of the four momentum. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC1</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>MC2</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5bd1a7515135570ef348bd77d1d26933"></a><!-- doxytag: member="ToolSet::CMC::NewParticle" ref="a5bd1a7515135570ef348bd77d1d26933" args="(TLorentzVector &amp;p, MCParticle *test)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static MCParticle* ToolSet::CMC::NewParticle </td>
+          <td>(</td>
+          <td class="paramtype">TLorentzVector &amp;&nbsp;</td>
+          <td class="paramname"> <em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>test</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>NewParticle : generate a new MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>test</em>&nbsp;</td><td>: this is only for function overload, it doesn't have really usage, so you can provide any MCParticle* type pointer</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab30c29f999f2b3dd1c85ed68636f2281"></a><!-- doxytag: member="ToolSet::CMC::NewParticle" ref="ab30c29f999f2b3dd1c85ed68636f2281" args="(float px, float py, float pz, float E, MCParticle *test)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static MCParticle* ToolSet::CMC::NewParticle </td>
+          <td>(</td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>px</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>py</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>pz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>E</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>test</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>NewParticle : generate a new MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>px</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>py</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pz</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>E</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>test</em>&nbsp;</td><td>: this is only for function overload, it doesn't have really usage, so you can provide any MCParticle* type pointer</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6d72918adb583b9dcaee3c0c9166f6cb"></a><!-- doxytag: member="ToolSet::CMC::Set_Beam_Cross_Angle" ref="a6d72918adb583b9dcaee3c0c9166f6cb" args="(float input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ToolSet::CMC::Set_Beam_Cross_Angle </td>
+          <td>(</td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set_Beam_Cross_Angle : changing beam crossing angle, default is 0.007 Notice: when using the CRC::InVisible(), it also will load the value from here. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2b939b1fd1e396eb5764c512903fe229"></a><!-- doxytag: member="ToolSet::CMC::Set_Collider_Energy" ref="a2b939b1fd1e396eb5764c512903fe229" args="(float input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ToolSet::CMC::Set_Collider_Energy </td>
+          <td>(</td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_Collider_Energy : changing the collider energy, default is 500 GeV Notice: when using the CRC::InVisible(), it also will load the value from here. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3ebc24c0c160ba37054b294059f09d96"></a><!-- doxytag: member="ToolSet::CMC::Status_Beam_Energy" ref="a3ebc24c0c160ba37054b294059f09d96" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Status_Beam_Energy </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Status_Beam_Energy : whether the input energy equals to the beam energy. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1771a4a8936446f9dfe5f9d22b5d9322"></a><!-- doxytag: member="ToolSet::CMC::Status_Has_Daughter" ref="a1771a4a8936446f9dfe5f9d22b5d9322" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Status_Has_Daughter </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Status_Has_Daughter : whether has the daughter. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a79d54fb4529c17a59ab21a51b3f6889c"></a><!-- doxytag: member="ToolSet::CMC::Status_Has_GrandDaughter" ref="a79d54fb4529c17a59ab21a51b3f6889c" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Status_Has_GrandDaughter </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Status_Has_GrandDaughter : whether has the grand daughter. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a88ff52dd7c66369b43eb8619a1383e7d"></a><!-- doxytag: member="ToolSet::CMC::Status_Has_GrandParent" ref="a88ff52dd7c66369b43eb8619a1383e7d" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Status_Has_GrandParent </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Status_Has_GrandParent : whether has the grand parents. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acd1cf4b7527b2e2bd194ad688b29b132"></a><!-- doxytag: member="ToolSet::CMC::Status_Has_Parent" ref="acd1cf4b7527b2e2bd194ad688b29b132" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Status_Has_Parent </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Status_Has_Parent : whether has the parents Notice: for current ILD event generation, if no parents -&gt; initial beam have parents, but no grand parents -&gt; beam after ISR and ISR photons have grand parents, no parents of grand parents -&gt; hard scattering particle generated in the Whizard. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a23a38c3094037dd6660223494c8a5827"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_Detector_TFS" ref="a23a38c3094037dd6660223494c8a5827" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Status_Is_Detector_TFS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Status_Is_Detector_TFS : whether is a possible detector simulated final state. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae0ceba81f34f1a164b1d8ce719c92e05"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_MS" ref="ae0ceba81f34f1a164b1d8ce719c92e05" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Status_Is_MS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Status_Is_MS : whether is a intermediate particle, (generator status==2). </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9d3659a1fd4bad33a54c08769902e998"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_Overlay" ref="a9d3659a1fd4bad33a54c08769902e998" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Status_Is_Overlay </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Status_Is_Overlay : Whether generated from Overlay. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acb83c834c9e5e1c33f8c2514e4c40d93"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_Overlay_DFS" ref="acb83c834c9e5e1c33f8c2514e4c40d93" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Status_Is_Overlay_DFS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Status_Is_Overlay_DFS : whether a possible Overlay final states. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3fbb915477cbbdca4193b8b2ff8cd356"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_Pythia" ref="a3fbb915477cbbdca4193b8b2ff8cd356" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Status_Is_Pythia </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Status_Is_Pythia : whether a possible final state generated from Pythia. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aef5a206838a69936e98ea22a1c36e143"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_Pythia_TFS" ref="aef5a206838a69936e98ea22a1c36e143" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Status_Is_Pythia_TFS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Status_Is_Pythia_TFS :whether is a Pythia stable particle. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a662c5f9d64c7916f988e4ff15598d4ed"></a><!-- doxytag: member="ToolSet::CMC::Status_Is_TFS" ref="a662c5f9d64c7916f988e4ff15598d4ed" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Status_Is_TFS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Status_Is_TFS : whether is a final state, (Pythia final states or simulation final states). </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="CMC_8h_source.html">CMC.h</a></li>
 </ul>
@@ -280,7 +1888,7 @@ static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>IsInCone</b> (
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on 13 Nov 2018 for ToolSet_ILCSOFT by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on 14 Nov 2018 for ToolSet_ILCSOFT by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

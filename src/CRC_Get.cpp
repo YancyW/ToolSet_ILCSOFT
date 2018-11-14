@@ -233,7 +233,11 @@ ReconstructedParticle* ToolSet::CRC::Get_Visible(std::vector<ReconstructedPartic
 
 ReconstructedParticle* ToolSet::CRC::Get_InVisible(std::vector<ReconstructedParticle*> in){
 	ReconstructedParticle* visible = Get_Visible(in);
-	ReconstructedParticle* RCCollider=NewParticle(BEAM_ENERGY*sin(BEAM_ANGLE),0,0,BEAM_ENERGY,in[0]);
+	float collider_energy=CMC::Get_Collider_Energy();
+	float beam_energy    =CMC::Get_Beam_Energy();
+	float beam_cross_angle=CMC::Get_Beam_Cross_Angle();
+	float beam_px=collider_energy*tan(beam_cross_angle);
+	ReconstructedParticle* RCCollider=NewParticle(beam_px,0,0,beam_energy*2,visible);
 	ReconstructedParticle* invisible= Minus(RCCollider,visible);
 	delete RCCollider;
 	delete visible;
@@ -261,8 +265,12 @@ TLorentzVector ToolSet::CRC::Get_Visible_To_Lorentz(std::vector<ReconstructedPar
 }
 
 TLorentzVector ToolSet::CRC::Get_InVisible_To_Lorentz(std::vector<ReconstructedParticle*> in){
+	float collider_energy =CMC::Get_Collider_Energy();
+	float beam_energy     =CMC::Get_Beam_Energy();
+	float beam_cross_angle=CMC::Get_Beam_Cross_Angle();
+	float beam_px=collider_energy*tan(beam_cross_angle);
 	TLorentzVector visible = Get_Visible_To_Lorentz(in);
-	TLorentzVector RCCollider=TLorentzVector(BEAM_ENERGY*sin(BEAM_ANGLE),0,0,BEAM_ENERGY);
+	TLorentzVector RCCollider=TLorentzVector(beam_px,0,0,beam_energy*2);
 	TLorentzVector invisible= RCCollider-visible;
 	return(invisible);
 }

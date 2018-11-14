@@ -110,8 +110,8 @@ std::vector<std::vector<MCParticle*> > ToolSet::CChain_Vec::Get_Trim_Chain(){
 
 
 
-Chain_Type_Vec ToolSet::CChain_Vec::Get_End(){
-	Chain_Type_Vec rc_end;
+ToolSet::Chain_Type_Vec ToolSet::CChain_Vec::Get_End(){
+	ToolSet::Chain_Type_Vec rc_end;
 	for(int i=0;i<_chain_num;i++){
 		rc_end.push_back(_chain_vec[i].End());
 	}
@@ -248,7 +248,7 @@ std::vector<std::vector<ReconstructedParticle*> >ToolSet::CChain_Vec::Get_Specia
 
 	for(int i=0;i<_chain_num;i++){
 		if(input1[i]!=input2[i]){
-			output.push_back(Vec_Symmetry_Difference(input1[i],input2[i]);
+			output.push_back(Vec_Symmetry_Difference(input1[i],input2[i]));
 		}
 	}
 	return(output);

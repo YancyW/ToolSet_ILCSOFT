@@ -84,37 +84,45 @@ bool ToolSet::CMC::Judge_HardScattering_FS(MCParticle* input){
 		return(false);
 	}
 
-	if((Status_Is_MS(input))&&(!Status_Has_Parent(input))&&(Judge_Is_Beam(input))){
+	if(!Status_Is_MS(input)){
+		return(false);
+	}
+
+	if(Judge_Is_Beam(input)){
+		//beam is electron/positron
 		return(false);
 	}		
-	else if((Status_Is_MS(input))&&(!Status_Has_Parent(input))&&(!Judge_Is_Beam(input))){
-		if(Status_Is_Photon(input)){
-			if(!Status_Beam_Energy(input)){
-				return(true);
-			}
-			else{
-				return(false);
-			}
-		}
-		if(Status_Is_NeutralHadron(input)||Status_Is_ChargedHadron(input)){
-			return(false);
-		}
-		else if(Status_Is_Gluon(input)){
-			return(false);
-		}
-		else{
-			return(true);
-		}
-	}
-	else if((Status_Is_MS(input))&&(Status_Has_Parent(input))){
+
+	if(Status_Has_Parent(input)){
 		if(Judge_Parents_Are_Beam(input)&&Status_Is_Photon(input)){
+			//beacause ISR photon only can be get before hard-scattering, so its decay chain is one level smaller than others
 			return(true);
 		}
 		if(Judge_GrandParents_Are_Beam(input)&&!Status_Is_NeutralHadron(input)&&!Status_Is_ChargedHadron(input)){
 			return(true);
 		}
 	}
-
+	else{
+		// finding overlay hard-scattering part
+		// ??? need further discussing
+//      if(Status_Is_Photon(input)){
+//      	if(!Status_Beam_Energy(input)){
+//      		return(true);
+//      	}
+//      	else{
+//      		return(false);
+//      	}
+//      }
+//      if(Status_Is_NeutralHadron(input)||Status_Is_ChargedHadron(input)){
+//      	return(false);
+//      }
+//      else if(Status_Is_Gluon(input)){
+//      	return(false);
+//      }
+//      else{
+//      	return(true);
+//      }
+	}
 	return(false);
 
 }

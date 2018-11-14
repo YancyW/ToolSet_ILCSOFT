@@ -2,7 +2,12 @@
 \section{ToolSet::CChain\_\-Vec Class Reference}
 \label{classToolSet_1_1CChain__Vec}\index{ToolSet::CChain\_\-Vec@{ToolSet::CChain\_\-Vec}}
 }
-\subsection*{Public Member Functions}
+
+
+This is the vector of \hyperlink{classToolSet_1_1CChain__Single}{CChain\_\-Single} This class is the vector of \hyperlink{classToolSet_1_1CChain__Single}{CChain\_\-Single}, for one input particle will generate one \hyperlink{classToolSet_1_1CChain__Single}{CChain\_\-Single} Functions are provided to make the vector operation more easily.  
+
+
+{\ttfamily \#include $<$CChain.h$>$}\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{classToolSet_1_1CChain__Vec_aacdadd594aff8dcf8e5f7634aec76c7d}{
@@ -50,7 +55,7 @@ std::vector$<$ ReconstructedParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CChai
 \begin{DoxyCompactList}\small\item\em Get\_\-Combined\_\-RC : sum all ReconstructedParticle into a new particle in each chains, so that you can compare the energy/momentum loss between original MC particle and ReconstructedParticles. \item\end{DoxyCompactList}\item 
 std::vector$<$ std::vector$<$ MCParticle $\ast$ $>$ $>$ \hyperlink{classToolSet_1_1CChain__Vec_ab8d0093a6613c407e546d988ef5d8e0a}{Get\_\-FromRC\_\-MC} ()
 \begin{DoxyCompactList}\small\item\em Get\_\-FromRC\_\-MC : get MCParticles from ReconstructedParticles with other direction linker in each chains. \item\end{DoxyCompactList}\item 
-std::vector$<$ std::vector$<$ ReconstructedParticle $\ast$ $>$ $>$ output \hyperlink{classToolSet_1_1CChain__Vec_a6c296f6a145769c5a8d9fd7ab6d1c5be}{Get\_\-SpecialRC} (int pdg, std::string label)
+std::vector$<$ std::vector$<$ ReconstructedParticle $\ast$ $>$ $>$ \hyperlink{classToolSet_1_1CChain__Vec_a3cc0cdb7a3ed1b11da160fb5f709694f}{Get\_\-SpecialRC} (int pdg, std::string label)
 \begin{DoxyCompactList}\small\item\em Get\_\-SpecialRC : get a special ReconstructedParticle with parameters. \item\end{DoxyCompactList}\item 
 std::vector$<$ std::vector$<$ ReconstructedParticle $\ast$ $>$ $>$ \hyperlink{classToolSet_1_1CChain__Vec_a820a5e8d1bde159334145996758d085e}{Get\_\-EnergeticRC} (int pdg)
 \begin{DoxyCompactList}\small\item\em Get\_\-EnergeticRC : use Get\_\-SpecialRC to get most energetic ReconstructedParticle. \item\end{DoxyCompactList}\item 
@@ -101,6 +106,9 @@ void \hyperlink{classToolSet_1_1CChain__Vec_ab706092b55510c69a2154b2a69c78e55}{S
 
 \begin{DoxyCompactList}\small\item\em Set\_\-MC : using ReconstructedParticle to set MCParticle part. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+This is the vector of \hyperlink{classToolSet_1_1CChain__Single}{CChain\_\-Single} This class is the vector of \hyperlink{classToolSet_1_1CChain__Single}{CChain\_\-Single}, for one input particle will generate one \hyperlink{classToolSet_1_1CChain__Single}{CChain\_\-Single} Functions are provided to make the vector operation more easily. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classToolSet_1_1CChain__Vec_ace17e3ec32dca382602d0ccc9f2d377e}{
@@ -300,11 +308,11 @@ Get\_\-RC\_\-Weight : get ReconstructedParticle's weight in each chains， it or
 Get\_\-RCInput : get all input RC particles in all chains. \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\hypertarget{classToolSet_1_1CChain__Vec_a6c296f6a145769c5a8d9fd7ab6d1c5be}{
+\hypertarget{classToolSet_1_1CChain__Vec_a3cc0cdb7a3ed1b11da160fb5f709694f}{
 \index{ToolSet::CChain\_\-Vec@{ToolSet::CChain\_\-Vec}!Get\_\-SpecialRC@{Get\_\-SpecialRC}}
 \index{Get\_\-SpecialRC@{Get\_\-SpecialRC}!ToolSet::CChain_Vec@{ToolSet::CChain\_\-Vec}}
-\subsubsection[{Get\_\-SpecialRC}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::vector$<$ReconstructedParticle$\ast$$>$ $>$ output ToolSet::CChain\_\-Vec::Get\_\-SpecialRC (int {\em pdg}, \/  std::string {\em label})}}
-\label{classToolSet_1_1CChain__Vec_a6c296f6a145769c5a8d9fd7ab6d1c5be}
+\subsubsection[{Get\_\-SpecialRC}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::vector$<$ReconstructedParticle$\ast$$>$ $>$ ToolSet::CChain\_\-Vec::Get\_\-SpecialRC (int {\em pdg}, \/  std::string {\em label})}}
+\label{classToolSet_1_1CChain__Vec_a3cc0cdb7a3ed1b11da160fb5f709694f}
 
 
 Get\_\-SpecialRC : get a special ReconstructedParticle with parameters. 
