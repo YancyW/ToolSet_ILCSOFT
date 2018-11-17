@@ -52,7 +52,7 @@ namespace ToolSet{
 	 * @return 
 	 */
 	template <typename TVector_minus>
-		static std::vector<TVector_minus> operator - (std::vector<TVector_minus> V1, std::vector<TVector_minus> V2){
+		static std::vector<TVector_minus> operator - (std::vector<TVector_minus> &V1, std::vector<TVector_minus> &V2){
 			std::vector <TVector_minus> Vnew;
 			if(V2.size()==0){
 				return(V1);
@@ -74,8 +74,8 @@ namespace ToolSet{
 			}
 
 			// remove the intersection from V1
-			bool	isminused=false;
 			for(unsigned int i=0;i<V1.size();i++){
+				bool	isminused=false;
 				for(unsigned int j=0;j<remove1.size();j++){
 					if(i==remove1[j]){
 						isminused=true;
@@ -85,11 +85,53 @@ namespace ToolSet{
 				if(!isminused){
 					Vnew.push_back(V1[i]);
 				}
-				isminused=false;
 			}
 			return(Vnew);
 		}
 
+
+	/**
+	 * @brief - : get elements from V1 that different from V2
+	 * not use std::set_difference, because that will sort the vector, but in this function, the order of the elements will be preserved
+	 *
+	 * @tparam VEC_REMOVE
+	 * @param V1
+	 * @param V2
+	 *
+	 * @return 
+	 */
+	template<typename TVector_minus>
+		static std::vector<TVector_minus> operator - (std::vector<TVector_minus> &V1, TVector_minus &V2){
+			std::vector<TVector_minus> Vnew;
+			if(V1.size()==0){return;}
+
+			for(unsigned int i=0;i<V1.size();i++){
+				if(V1[i]==V2){
+					continue;
+				}
+				Vnew.push_back(V1[i]);
+			}
+			return(Vnew);
+		}
+
+	/**
+	 * @brief Vec_Remove_Element : remove a element from the vector
+	 *
+	 * @tparam TVector_minus
+	 * @param V1
+	 * @param V2
+	 */
+	template<typename TVector_minus>
+		static void Vec_Remove_Element (std::vector<TVector_minus> &V1, TVector_minus &V2){
+			if(V1.size()==0){return;}
+
+			for(unsigned int i=0;i<V1.size();i++){
+				if(V1[i]==V2){
+					V1.erase(V1.begin()+i-1);
+					break;
+				}
+			}
+		}
 
 	/**
 	 * @brief Vec_Flat : flat vector of vector into one level vector
@@ -172,6 +214,7 @@ namespace ToolSet{
 			V2.erase( unique( V2.begin(), V2.end()  ), V2.end()  );
 			return(V2);
 		}
+
 
 
 	/**

@@ -83,6 +83,18 @@ ReconstructedParticle* ToolSet::CRC::NewParticle(TLorentzVector &p, Reconstructe
 	return(new_particle);
 }
 
+ReconstructedParticle* ToolSet::CRC::NewParticle(TLorentzVector &p, int pdg, float charge, ReconstructedParticle* test){
+	ReconstructedParticleImpl* tmp= new ReconstructedParticleImpl;
+	double Pnew[3] = {p.Px(),p.Py(),p.Pz()};
+	tmp->setMomentum(Pnew);
+	tmp->setEnergy(p.E());
+	tmp->setType(pdg);
+	tmp->setCharge(charge);
+	ReconstructedParticle* new_particle=dynamic_cast<ReconstructedParticle*>(tmp);
+	return(new_particle);
+}
+
+
 ReconstructedParticle&  ToolSet::operator +(const ReconstructedParticle &RC1, const ReconstructedParticle &RC2) {
 	ReconstructedParticleImpl* RC = new ReconstructedParticleImpl;
 	TVector3  p1=RC1.getMomentum();
@@ -132,6 +144,12 @@ ReconstructedParticle&  ToolSet::operator -(const ReconstructedParticle &RC1, co
 }
 
 
+static TLorentzVector  Minus_By_Lorentz(const ReconstructedParticle* MC1, const ReconstructedParticle* MC2){
+	TLorentzVector p1=TLorentzVector(MC1->getMomentum(),MC1->getEnergy());
+	TLorentzVector p2=TLorentzVector(MC2->getMomentum(),MC2->getEnergy());
+	TLorentzVector p0=p1-p2;
+	return(p0);
+}
 
 bool ToolSet::CRC::Same_Particle(const ReconstructedParticle* MC1,const ReconstructedParticle* MC2){
 	if(std::abs(MC1->getEnergy()-MC2->getEnergy())<0.00000001){

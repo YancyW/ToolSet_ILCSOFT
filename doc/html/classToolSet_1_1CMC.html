@@ -46,7 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <h1>ToolSet::CMC Class Reference</h1><!-- doxytag: class="ToolSet::CMC" -->
-<p>: functions for MCParticles  
+<p>: functions for MCParticles in this class, FS -&gt; final states, means 1 the particle will contribute to the ReconstructedParticle or 2 not decay any more (not reach the detector or not detectable  
 <a href="#_details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="CMC_8h_source.html">CMC.h</a>&gt;</code></p>
@@ -58,6 +58,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Collider_Energy : changing the collider energy, default is 500 GeV Notice: when using the CRC::InVisible(), it also will load the value from here.  <a href="#a2b939b1fd1e396eb5764c512903fe229"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a6d72918adb583b9dcaee3c0c9166f6cb">Set_Beam_Cross_Angle</a> (float input)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set_Beam_Cross_Angle : changing beam crossing angle, default is 0.007 Notice: when using the CRC::InVisible(), it also will load the value from here.  <a href="#a6d72918adb583b9dcaee3c0c9166f6cb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ab933f8f5cbebde554dcce60f086bf480">Set_Nav_From_MC_To_RC</a> (LCRelationNavigator *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set_Nav_MC_to_RC : set default Navigator for MC to ReconstructedParticle, important for particle classification.  <a href="#ab933f8f5cbebde554dcce60f086bf480"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a7143149e3db8c1e5055498c8aba88182">Get_Collider_Energy</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Collider_Energy : show the collider energy when generating.  <a href="#a7143149e3db8c1e5055498c8aba88182"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#afaf6f983eee33318bcaf7923cde7266e">Get_Beam_Energy</a> ()</td></tr>
@@ -204,32 +206,32 @@ static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_Char
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_Is_IS_Photon : is the ISR photon.  <a href="#a688d2854fa645f4c3adad5013f4c9ba2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a85fbb7bf0ef846c3ae1dcfeb27853911">Judge_HardScattering_FS</a> (MCParticle *input)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_HardScattering_FS : is the hard-scattering states (including ISR photon).  <a href="#a85fbb7bf0ef846c3ae1dcfeb27853911"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af28ed4c00c5b936aa0660253bd4af35b"></a><!-- doxytag: member="ToolSet::CMC::Judge_HardScattering_Next_FS" ref="af28ed4c00c5b936aa0660253bd4af35b" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_HardScattering_Next_FS</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20029373a30ff4642dfbe5ac879ee0ff"></a><!-- doxytag: member="ToolSet::CMC::Judge_HardScattering_Next_Next_FS" ref="a20029373a30ff4642dfbe5ac879ee0ff" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_HardScattering_Next_Next_FS</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae473609376148631113dbf301f800de7"></a><!-- doxytag: member="ToolSet::CMC::Judge_OnlyPythiaShowering_FS" ref="ae473609376148631113dbf301f800de7" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_OnlyPythiaShowering_FS</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a47f5a5aff7196a77a729c703ffed1ce7"></a><!-- doxytag: member="ToolSet::CMC::Judge_PythiaShowering_FS" ref="a47f5a5aff7196a77a729c703ffed1ce7" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_PythiaShowering_FS</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c340bf257a238e9f68cd251b50599cd"></a><!-- doxytag: member="ToolSet::CMC::Judge_PythiaShowering_All" ref="a6c340bf257a238e9f68cd251b50599cd" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_PythiaShowering_All</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6067e1275a79341e2342906105e16f2"></a><!-- doxytag: member="ToolSet::CMC::Judge_OnlyDetectorSimulating_FS" ref="ab6067e1275a79341e2342906105e16f2" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_OnlyDetectorSimulating_FS</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afee9479237283cf64d769fb1b1a361ae"></a><!-- doxytag: member="ToolSet::CMC::Judge_DetectorSimulating_FS" ref="afee9479237283cf64d769fb1b1a361ae" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_DetectorSimulating_FS</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af61adfde1923ee0bd54f91e88c806c94"></a><!-- doxytag: member="ToolSet::CMC::Judge_Overlay_FS" ref="af61adfde1923ee0bd54f91e88c806c94" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_Overlay_FS</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a257af2810ec961f3e1a71f29bc12154f"></a><!-- doxytag: member="ToolSet::CMC::Judge_Has_Overlay" ref="a257af2810ec961f3e1a71f29bc12154f" args="(std::vector&lt; MCParticle * &gt; input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_Has_Overlay</b> (std::vector&lt; MCParticle * &gt; input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cdd75e73a26f294c140f9cf2ed196ea"></a><!-- doxytag: member="ToolSet::CMC::Judge_All_FS" ref="a0cdd75e73a26f294c140f9cf2ed196ea" args="(MCParticle *input)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Judge_All_FS</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5e3cc992d63d6efb8030bdb170b87d1"></a><!-- doxytag: member="ToolSet::CMC::Get_Particle" ref="ae5e3cc992d63d6efb8030bdb170b87d1" args="(bool(*Judge)(MCParticle *), std::vector&lt; MCParticle * &gt; AllMC)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_Particle</b> (bool(*Judge)(MCParticle *), std::vector&lt; MCParticle * &gt; AllMC)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec3000cf58c5ef65b62938decced8303"></a><!-- doxytag: member="ToolSet::CMC::Get_MCParticle" ref="aec3000cf58c5ef65b62938decced8303" args="(LCCollection *AllMC)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MCParticle</b> (LCCollection *AllMC)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a899d324f086d12abb75db9d87798ed91"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_HardScattering_FS" ref="a899d324f086d12abb75db9d87798ed91" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_HardScattering_FS</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#af28ed4c00c5b936aa0660253bd4af35b">Judge_HardScattering_Next_FS</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_HardScattering_Next_FS : is the first level decay of the hard-scattering states.  <a href="#af28ed4c00c5b936aa0660253bd4af35b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a20029373a30ff4642dfbe5ac879ee0ff">Judge_HardScattering_Next_Next_FS</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_HardScattering_Next_Next_FS : is the second level decay of the hard-scattering states.  <a href="#a20029373a30ff4642dfbe5ac879ee0ff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a839156529c555e8d0484286295288604">Judge_OnlyPythiaShowering_FS</a> (MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_OnlyPythiaShowering_FS : is the pythia stable final states, but directly contribute to ReconstructedParticle.  <a href="#a839156529c555e8d0484286295288604"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a47f5a5aff7196a77a729c703ffed1ce7">Judge_PythiaShowering_FS</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_PythiaShowering_FS : is the pythia statble final states.  <a href="#a47f5a5aff7196a77a729c703ffed1ce7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a6c340bf257a238e9f68cd251b50599cd">Judge_PythiaShowering_All</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_PythiaShowering_All : is generated by Pythia.  <a href="#a6c340bf257a238e9f68cd251b50599cd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a158579bb5adfcfa9e0b4bbaba7ee3229">Judge_OnlyDetectorSimulating_FS</a> (MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_OnlyDetectorSimulating_FS : is generated in simulation and don't have daughter.  <a href="#a158579bb5adfcfa9e0b4bbaba7ee3229"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#afee9479237283cf64d769fb1b1a361ae">Judge_DetectorSimulating_FS</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_DetectorSimulating_FS : is the final states which will contribute to the ReconstructedParticle, not including the overlay.  <a href="#afee9479237283cf64d769fb1b1a361ae"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a7230e73142fa3a3a5b2952f11556022c">Judge_Overlay_FS</a> (MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_Overlay_FS : is overlay and don't have daughter.  <a href="#a7230e73142fa3a3a5b2952f11556022c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a257af2810ec961f3e1a71f29bc12154f">Judge_Has_Overlay</a> (std::vector&lt; MCParticle * &gt; input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_Has_Overlay : has overlay particle in this vector.  <a href="#a257af2810ec961f3e1a71f29bc12154f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ad5ee7a4ddd73dca280d23d5656ac106d">Judge_All_FS</a> (MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_All_FS : all the final states which will contribute to the ReconstructedParticle, including the overlay.  <a href="#ad5ee7a4ddd73dca280d23d5656ac106d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ae5e3cc992d63d6efb8030bdb170b87d1">Get_Particle</a> (bool(*Judge)(MCParticle *), std::vector&lt; MCParticle * &gt; AllMC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Particle : get a special kind of MCParticle, depending on the input function.  <a href="#ae5e3cc992d63d6efb8030bdb170b87d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aec3000cf58c5ef65b62938decced8303">Get_MCParticle</a> (LCCollection *AllMC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MCParticle : get all MCParticles into a vector from the LCCollection MCParticle.  <a href="#aec3000cf58c5ef65b62938decced8303"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a899d324f086d12abb75db9d87798ed91">Get_MC_HardScattering_FS</a> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_HardScattering_FS.  <a href="#a899d324f086d12abb75db9d87798ed91"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a321f55fa02ad6ed18931bc906b2e19ee"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_PythiaShowering_FS" ref="a321f55fa02ad6ed18931bc906b2e19ee" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
 static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_PythiaShowering_FS</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea4e69e23c45ca6ac4674ee90d56fc1c"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_OnlyPythiaShowering_FS" ref="aea4e69e23c45ca6ac4674ee90d56fc1c" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
@@ -280,7 +282,8 @@ static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" vali
 static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>IsInCone</b> (MCParticle *lep, MCParticle *pfo, float angle_cut)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>: functions for MCParticles </p>
+<p>: functions for MCParticles in this class, FS -&gt; final states, means 1 the particle will contribute to the ReconstructedParticle or 2 not decay any more (not reach the detector or not detectable </p>
+<p>PythiaShowering -&gt; the parton shower generated by the pythia (or maybe other generator e.g. Herwig.) DetectorSimulating -&gt; the particle generated in the detector simulation </p>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ad1b2172aaacc40d4f5971492a5d1a0f5"></a><!-- doxytag: member="ToolSet::CMC::Add" ref="ad1b2172aaacc40d4f5971492a5d1a0f5" args="(const MCParticle *MC1, const MCParticle *MC2)" -->
 <div class="memitem">
@@ -452,7 +455,7 @@ template&lt;typename TAngle &gt; </div>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Referenced by <a class="el" href="CMC_8h_source.html#l00419">Cal_IsolationAngle()</a>.</p>
+<p>Referenced by <a class="el" href="CMC_8h_source.html#l00433">Cal_IsolationAngle()</a>.</p>
 
 </div>
 </div>
@@ -614,7 +617,7 @@ template&lt;typename TTheta &gt; </div>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Referenced by <a class="el" href="CMC_8h_source.html#l00201">Compare_as_Angle()</a>.</p>
+<p>Referenced by <a class="el" href="CMC_8h_source.html#l00215">Compare_as_Angle()</a>.</p>
 
 </div>
 </div>
@@ -665,7 +668,7 @@ template&lt;typename TTheta &gt; </div>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>References <a class="el" href="CMC_8h_source.html#l00351">Cal_Angle_Deg()</a>, and <a class="el" href="CMC_8h_source.html#l00215">Compare_as_Pair()</a>.</p>
+<p>References <a class="el" href="CMC_8h_source.html#l00365">Cal_Angle_Deg()</a>, and <a class="el" href="CMC_8h_source.html#l00229">Compare_as_Pair()</a>.</p>
 
 </div>
 </div>
@@ -888,7 +891,7 @@ template&lt;typename TVect &gt; </div>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>References <a class="el" href="CMC_8h_source.html#l00302">Cal_CosTheta()</a>.</p>
+<p>References <a class="el" href="CMC_8h_source.html#l00316">Cal_CosTheta()</a>.</p>
 
 </div>
 </div>
@@ -964,7 +967,7 @@ template&lt;typename TVect &gt; </div>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Referenced by <a class="el" href="CMC_8h_source.html#l00419">Cal_IsolationAngle()</a>.</p>
+<p>Referenced by <a class="el" href="CMC_8h_source.html#l00433">Cal_IsolationAngle()</a>.</p>
 
 </div>
 </div>
@@ -1111,6 +1114,60 @@ template&lt;typename TVect &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a899d324f086d12abb75db9d87798ed91"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_HardScattering_FS" ref="a899d324f086d12abb75db9d87798ed91" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MC_HardScattering_FS </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_HardScattering_FS. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aec3000cf58c5ef65b62938decced8303"></a><!-- doxytag: member="ToolSet::CMC::Get_MCParticle" ref="aec3000cf58c5ef65b62938decced8303" args="(LCCollection *AllMC)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MCParticle </td>
+          <td>(</td>
+          <td class="paramtype">LCCollection *&nbsp;</td>
+          <td class="paramname"> <em>AllMC</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MCParticle : get all MCParticles into a vector from the LCCollection MCParticle. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>AllMC</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a67ab1d51b7fd0f98cfa19be5381e961a"></a><!-- doxytag: member="ToolSet::CMC::Get_Parents_Number" ref="a67ab1d51b7fd0f98cfa19be5381e961a" args="(MCParticle *input)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1166,6 +1223,107 @@ template&lt;typename TVect &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="ae5e3cc992d63d6efb8030bdb170b87d1"></a><!-- doxytag: member="ToolSet::CMC::Get_Particle" ref="ae5e3cc992d63d6efb8030bdb170b87d1" args="(bool(*Judge)(MCParticle *), std::vector&lt; MCParticle * &gt; AllMC)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_Particle </td>
+          <td>(</td>
+          <td class="paramtype">bool(*)(MCParticle *)&nbsp;</td>
+          <td class="paramname"> <em>Judge</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>AllMC</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_Particle : get a special kind of MCParticle, depending on the input function. </p>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>functions for get special particle vector</dd></dl>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>Judge</em>&nbsp;</td><td>: a judge function that provided before, in order to use all functions, you have to set default Navigator first. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>AllMC</em>&nbsp;</td><td>: a vector of MCParticle*</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad5ee7a4ddd73dca280d23d5656ac106d"></a><!-- doxytag: member="ToolSet::CMC::Judge_All_FS" ref="ad5ee7a4ddd73dca280d23d5656ac106d" args="(MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_All_FS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LCRelationNavigator *&amp;&nbsp;</td>
+          <td class="paramname"> <em>relation</em> = <code>_nav_MC_to_RC</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_All_FS : all the final states which will contribute to the ReconstructedParticle, including the overlay. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afee9479237283cf64d769fb1b1a361ae"></a><!-- doxytag: member="ToolSet::CMC::Judge_DetectorSimulating_FS" ref="afee9479237283cf64d769fb1b1a361ae" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_DetectorSimulating_FS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_DetectorSimulating_FS : is the final states which will contribute to the ReconstructedParticle, not including the overlay. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ad09856f709fff7320c382efd26a408e9"></a><!-- doxytag: member="ToolSet::CMC::Judge_GrandParents_Are_Beam" ref="ad09856f709fff7320c382efd26a408e9" args="(MCParticle *input)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1211,6 +1369,87 @@ template&lt;typename TVect &gt; </div>
 <div class="memdoc">
 
 <p>Judge_HardScattering_FS : is the hard-scattering states (including ISR photon). </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af28ed4c00c5b936aa0660253bd4af35b"></a><!-- doxytag: member="ToolSet::CMC::Judge_HardScattering_Next_FS" ref="af28ed4c00c5b936aa0660253bd4af35b" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_HardScattering_Next_FS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_HardScattering_Next_FS : is the first level decay of the hard-scattering states. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a20029373a30ff4642dfbe5ac879ee0ff"></a><!-- doxytag: member="ToolSet::CMC::Judge_HardScattering_Next_Next_FS" ref="a20029373a30ff4642dfbe5ac879ee0ff" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_HardScattering_Next_Next_FS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_HardScattering_Next_Next_FS : is the second level decay of the hard-scattering states. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a257af2810ec961f3e1a71f29bc12154f"></a><!-- doxytag: member="ToolSet::CMC::Judge_Has_Overlay" ref="a257af2810ec961f3e1a71f29bc12154f" args="(std::vector&lt; MCParticle * &gt; input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_Has_Overlay </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_Has_Overlay : has overlay particle in this vector. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
@@ -1302,6 +1541,114 @@ template&lt;typename TVect &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a158579bb5adfcfa9e0b4bbaba7ee3229"></a><!-- doxytag: member="ToolSet::CMC::Judge_OnlyDetectorSimulating_FS" ref="a158579bb5adfcfa9e0b4bbaba7ee3229" args="(MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_OnlyDetectorSimulating_FS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LCRelationNavigator *&amp;&nbsp;</td>
+          <td class="paramname"> <em>relation</em> = <code>_nav_MC_to_RC</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_OnlyDetectorSimulating_FS : is generated in simulation and don't have daughter. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a839156529c555e8d0484286295288604"></a><!-- doxytag: member="ToolSet::CMC::Judge_OnlyPythiaShowering_FS" ref="a839156529c555e8d0484286295288604" args="(MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_OnlyPythiaShowering_FS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LCRelationNavigator *&amp;&nbsp;</td>
+          <td class="paramname"> <em>relation</em> = <code>_nav_MC_to_RC</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_OnlyPythiaShowering_FS : is the pythia stable final states, but directly contribute to ReconstructedParticle. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7230e73142fa3a3a5b2952f11556022c"></a><!-- doxytag: member="ToolSet::CMC::Judge_Overlay_FS" ref="a7230e73142fa3a3a5b2952f11556022c" args="(MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_Overlay_FS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LCRelationNavigator *&amp;&nbsp;</td>
+          <td class="paramname"> <em>relation</em> = <code>_nav_MC_to_RC</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_Overlay_FS : is overlay and don't have daughter. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a5ccf3aedd3c942ac6644748abaaf70fe"></a><!-- doxytag: member="ToolSet::CMC::Judge_Parents_Are_Beam" ref="a5ccf3aedd3c942ac6644748abaaf70fe" args="(MCParticle *input)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1320,6 +1667,60 @@ template&lt;typename TVect &gt; </div>
 
 <p>Judge_Parents_Are_Beam : whether its parents are initial beam (i.e. </p>
 <p>the input is the ISR or the beam after ISR)</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6c340bf257a238e9f68cd251b50599cd"></a><!-- doxytag: member="ToolSet::CMC::Judge_PythiaShowering_All" ref="a6c340bf257a238e9f68cd251b50599cd" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_PythiaShowering_All </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_PythiaShowering_All : is generated by Pythia. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a47f5a5aff7196a77a729c703ffed1ce7"></a><!-- doxytag: member="ToolSet::CMC::Judge_PythiaShowering_FS" ref="a47f5a5aff7196a77a729c703ffed1ce7" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_PythiaShowering_FS </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Judge_PythiaShowering_FS : is the pythia statble final states. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
@@ -1543,6 +1944,32 @@ template&lt;typename TVect &gt; </div>
 
 <p>Get_Collider_Energy : changing the collider energy, default is 500 GeV Notice: when using the CRC::InVisible(), it also will load the value from here. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab933f8f5cbebde554dcce60f086bf480"></a><!-- doxytag: member="ToolSet::CMC::Set_Nav_From_MC_To_RC" ref="ab933f8f5cbebde554dcce60f086bf480" args="(LCRelationNavigator *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ToolSet::CMC::Set_Nav_From_MC_To_RC </td>
+          <td>(</td>
+          <td class="paramtype">LCRelationNavigator *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set_Nav_MC_to_RC : set default Navigator for MC to ReconstructedParticle, important for particle classification. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1888,7 +2315,7 @@ template&lt;typename TVect &gt; </div>
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on 14 Nov 2018 for ToolSet_ILCSOFT by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on 15 Nov 2018 for ToolSet_ILCSOFT by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

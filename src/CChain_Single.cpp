@@ -146,7 +146,7 @@ void ToolSet::CChain_Single::Set_Flat_RC(){
 }
 
 void ToolSet::CChain_Single::Set_Combined_RC(){
-	_combined_RC= ToolSet::CRC::Get_Visible(_flat_RC);
+	_combined_RC= ToolSet::CRC::Get_Sum(_flat_RC);
 }
 
 

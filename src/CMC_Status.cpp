@@ -1,8 +1,11 @@
 #include "CMC.h"
 
-float ToolSet::CMC::_collider_energy=500;
+float ToolSet::CMC::_collider_energy =500;
 float ToolSet::CMC::_beam_cross_angle=0.007;
-float ToolSet::CMC::_beam_energy    =_collider_energy/2*std::sqrt(1+std::pow(tan(_beam_cross_angle),2));
+float ToolSet::CMC::_beam_energy     =_collider_energy/2*std::sqrt(1+std::pow(tan(_beam_cross_angle),2));
+float ToolSet::CMC::_detectable_angle=0.996;
+std::vector<MCParticle*> _new_particles;
+LCRelationNavigator* ToolSet::CMC::_nav_MC_to_RC    =NULL;
 
 float ToolSet::CMC::Get_Collider_Energy(){
 	return(_collider_energy);
@@ -36,6 +39,18 @@ void ToolSet::CMC::Set_Beam_Cross_Angle(float input){
 }
 
 
+void ToolSet::CMC::Set_Detectable_Angle(float input){
+	if(input>=-1&&input<1){
+		_detectable_angle=input;
+	}
+	else{
+		ShowMessage(2,"Error: in ToolSet::CMC::Set_Detectable_Angle, the input angle is out of range",input);
+	}
+}
+
+void ToolSet::CMC::Set_Nav_From_MC_To_RC(LCRelationNavigator* input){
+	_nav_MC_to_RC = input;
+}
 
 
 

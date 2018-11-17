@@ -159,7 +159,7 @@ std::vector<MCParticle*> ToolSet::CMC::Get_MC_Overlay_All(std::vector<MCParticle
 
 
 
-std::vector<MCParticle*> ToolSet::CMC::MCToPythiaShowering(MCParticle* input){
+std::vector<MCParticle*> ToolSet::CMC::Get_MC_To_PythiaShowering(MCParticle* input){
 	std::vector<MCParticle*> output;
 	if(Judge_PythiaShowering_FS(input)){
 		output.push_back(input);
@@ -167,7 +167,7 @@ std::vector<MCParticle*> ToolSet::CMC::MCToPythiaShowering(MCParticle* input){
 	}
 	for(int i=0;i< Get_Parents_Number(input);i++){
 		std::vector<MCParticle*> output_tmp;
-		output_tmp=MCToPythiaShowering(input->getParents()[i]);
+		output_tmp=Get_MC_To_PythiaShowering(input->getParents()[i]);
 		for(unsigned int j=0;j< output_tmp.size();j++){
 			output.push_back(output_tmp[j]);
 		}
@@ -176,7 +176,7 @@ std::vector<MCParticle*> ToolSet::CMC::MCToPythiaShowering(MCParticle* input){
 }
 
 
-std::vector<MCParticle*> ToolSet::CMC::MCToHardScattering(MCParticle* input){
+std::vector<MCParticle*> ToolSet::CMC::Get_MC_To_HardScattering(MCParticle* input){
 	std::vector<MCParticle*> output;
 	if(Judge_HardScattering_FS(input)){
 		output.push_back(input);
@@ -184,7 +184,7 @@ std::vector<MCParticle*> ToolSet::CMC::MCToHardScattering(MCParticle* input){
 	}
 	for(int i=0;i< Get_Parents_Number(input);i++){
 		std::vector<MCParticle*> output_tmp;
-		output_tmp=MCToHardScattering(input->getParents()[i]);
+		output_tmp=Get_MC_To_HardScattering(input->getParents()[i]);
 		for(unsigned int j=0;j< output_tmp.size();j++){
 			output.push_back(output_tmp[j]);
 		}
@@ -278,6 +278,43 @@ std::vector<MCParticle*> ToolSet::CMC::Get_MCParticleType(std::vector<MCParticle
 	return(output);
 }
 
+std::vector<MCParticle*> ToolSet::CMC::Get_MCParticle_Without_Type(std::vector<MCParticle*> MCs,std::string PDG) {
+	int num = MCs.size();
+	std::vector<MCParticle*> output;
+	for( int i = 0; i < num; i++ ){
+		MCParticle* MC = MCs[i];
+		int pdg = MC->getPDG();
+		if(PDG=="quark"){
+			if(CFlavor::Status_Is_Quark(pdg)){
+				continue;
+			}
+		}
+		else if(PDG=="light_quark"){
+			if(CFlavor::Status_Is_LightQuark(pdg)){
+				continue;
+			}
+		}
+		else if(PDG=="heavy_quark"){
+			if(CFlavor::Status_Is_HeavyQuark(pdg)){
+				continue;
+			}
+		}
+		else if(PDG=="lepton"){
+			if(CFlavor::Status_Is_Lepton(pdg)){
+				continue;
+			}
+		}
+		else if(PDG=="neutrino"){
+			if(CFlavor::Status_Is_Neutrino(pdg)){
+				continue;
+			}
+		}
+		output.push_back(MC);
+	}
+	return(output);
+}
+
+
 float ToolSet::CMC::Get_DecayChannel(MCParticle* input) {
 	std::vector<int> pdg;
 	pdg=Get_DaughtersPID(input->getDaughters()[0]);
@@ -360,17 +397,12 @@ float ToolSet::CMC::Get_DecayChannel(MCParticle* input) {
 	return(channel);
 }
 
-void ToolSet::CMC::Remove_Duplication(std::vector<MCParticle*> &MCs) {
-	sort( MCs.begin(), MCs.end()  );
-	MCs.erase( unique( MCs.begin(), MCs.end()  ), MCs.end()  );
-}
-
-std::vector<MCParticle*> ToolSet::CMC::Pass_DetectorAngle(std::vector<MCParticle*> &MCs) {
+std::vector<MCParticle*> ToolSet::CMC::Get_In_DetectorAngle(std::vector<MCParticle*> &MCs) {
 	int num = MCs.size();
 	std::vector<MCParticle*> output;
 	for( int i = 0; i < num; i++ ){
 		MCParticle* MC = MCs[i];
-		if(std::abs(Cal_CosTheta(MC))<0.996){
+		if(std::abs(Cal_CosTheta(MC))<_detectable_angle){
 			output.push_back(MC);
 		}
 	}
@@ -378,13 +410,14 @@ std::vector<MCParticle*> ToolSet::CMC::Pass_DetectorAngle(std::vector<MCParticle
 }
 
 
-MCParticle* ToolSet::CMC::Get_Visible(std::vector<MCParticle*> in){
+MCParticle* ToolSet::CMC::Get_Sum(std::vector<MCParticle*> in){
 
 	int num=in.size();
 
 	MCParticle* visible;
 	if(num<=0){
 		visible=NewParticle(0,0,0,0,visible);
+		_new_particles.push_back(visible);
 		return(visible);
 	}
 
@@ -394,25 +427,30 @@ MCParticle* ToolSet::CMC::Get_Visible(std::vector<MCParticle*> in){
 		VS+=Vnew;
 	}
 
-	visible = NewParticle(VS,visible);
+	visible = NewParticle(VS,in[0]->getPDG(), in[0]->getCharge(),visible);
+	_new_particles.push_back(visible);
 	return(visible);
 
 }
 
 
+std::vector<MCParticle*> ToolSet::CMC::Get_Visible(std::vector<MCParticle*> in){
+	std::vector<MCParticle*> visible_1=Get_In_DetectorAngle(in);
+	std::vector<MCParticle*> visible_2=Get_MCParticle_Without_Type(visible_1,"neutrino");
+	return(visible_2);
+}
 
 MCParticle* ToolSet::CMC::Get_InVisible(std::vector<MCParticle*> in){
 	float beam_px= _collider_energy*tan(_beam_cross_angle);
-	MCParticle* visible = Get_Visible(in);
+	MCParticle* visible = Get_Sum(in);
 	MCParticle* RCCollider=NewParticle(beam_px,0,0,_beam_energy*2,visible);
-
 	MCParticle* invisible= Minus(RCCollider,visible);
 	delete RCCollider;
 	delete visible;
 	return(invisible);
 }
 
-TLorentzVector ToolSet::CMC::Get_Visible_To_Lorentz(std::vector<MCParticle*> in){
+TLorentzVector ToolSet::CMC::Get_Sum_To_Lorentz(std::vector<MCParticle*> in){
 
 	int num=in.size();
 
@@ -433,76 +471,74 @@ TLorentzVector ToolSet::CMC::Get_Visible_To_Lorentz(std::vector<MCParticle*> in)
 
 TLorentzVector ToolSet::CMC::Get_InVisible_To_Lorentz(std::vector<MCParticle*> in){
 	float beam_px= _collider_energy*tan(_beam_cross_angle);
-	TLorentzVector visible = Get_Visible_To_Lorentz(in);
+	TLorentzVector visible = Get_Sum_To_Lorentz(in);
 	TLorentzVector RCCollider=TLorentzVector(beam_px,0,0,_beam_energy*2);
 	TLorentzVector invisible= RCCollider-visible;
 	return(invisible);
 }
 
-std::vector<MCParticle*> ToolSet::CMC::Get_Isolated(std::vector<MCParticle*> input,std::vector<MCParticle*> all, std::vector<MCParticle*> left) {
+std::vector<MCParticle*> ToolSet::CMC::Get_InCone(MCParticle* input,std::vector<MCParticle*> &all, float cone_size) {
+	// the first output is the input
+	// other outputs are the particles that in the input cone
+	// all will be changed to remove the particle in the input cone
+	std::vector<MCParticle*> output;
+	output.push_back(input);
+
+	for(unsigned int i=0;i<all.size();i++){
+		if (Judge_IsInCone( input, all[i], cone_size)) {
+			output.push_back(all[i]);
+		}
+	}
+
+	all=all-output;
+	return(output);
+}
+
+
+std::vector<MCParticle*> ToolSet::CMC::Get_Isolated(std::vector<MCParticle*> input,std::vector<MCParticle*> all, std::vector<MCParticle*> outside_cone, float cone_size) {
 
 	std::vector<MCParticle*> output;
-	int nlep = input.size();
-	if(nlep<1) {
+	int num= input.size();
+	if(num<1) {
 		return output;
 	}
-	left = all;
-	for( int i = 0; i < nlep; i++ )
+	outside_cone = all;
+	for( int i = 0; i < num; i++ )
 	{
-		MCParticleImpl* NewLep = new MCParticleImpl; 
-		double charge  = input[i]->getCharge();
-		double pid     = input[i]->getPDG();
-		double Pnew[3] = {input[i]->getMomentum()[0],input[i]->getMomentum()[1],input[i]->getMomentum()[2]} ;
-		double Enew    = input[i]->getEnergy() ;
-		std::vector<MCParticle*>::iterator it = left.begin();
-		while (it!=left.end())
-		{
-			if (IsInCone( input[i], *it, 0.98)) 
-			{
-				double  Ppfo[3] = {(*it)->getMomentum()[0],(*it)->getMomentum()[1],(*it)->getMomentum()[2]};
-				double  Epfo = (*it)->getEnergy();
-				Pnew[0] = Pnew[0] + Ppfo[0];
-				Pnew[1] = Pnew[1] + Ppfo[1];
-				Pnew[2] = Pnew[2] + Ppfo[2];
-				Enew    = Enew    + Epfo   ;
-				left.erase(it);
-			}
-			else{
-				it++;
-			}
-		}
-		double Mass2=Enew*Enew-Pnew[0]*Pnew[0]-Pnew[1]*Pnew[1]-Pnew[2]*Pnew[2];
-		double Mass;
-		if(Mass2>=0){
-			Mass=sqrt(Mass2);
-		}
-		else{
-			Mass=-sqrt(-Mass2);
-		}
-		NewLep->setMomentum(Pnew);
-		NewLep->setMass    (Mass);
-		NewLep->setPDG     (pid);
-		NewLep->setCharge  (charge);
-		output.push_back(dynamic_cast<MCParticle*> (NewLep));
+		std::vector<MCParticle*> in_cone=Get_InCone(input[i],outside_cone, cone_size) ;
+		MCParticle* New = Get_Sum(in_cone); 
+		output.push_back(New);
 	}
 	return output;
 }
 
 
-bool ToolSet::CMC::IsInCone( MCParticle* lep, MCParticle* pfo , float angle_cut) {
-	if(pfo->getPDG()!=22){
-		return(false);
+
+float ToolSet::CMC::Get_IsolationAngle(MCParticle* MC, std::vector<MCParticle*> Ref, float minimal_energy_in_the_cone, float minimal_angle_from_input){
+	// get the angle between MC and other particle, then rank the angle from small to large
+	std::vector<std::pair<float,MCParticle*> >Ref_angle;
+	for(unsigned int i=0;i<Ref.size();i++){
+		if(MC==Ref[i]){continue;}
+		std::pair<float,MCParticle*> pair_tmp = std::make_pair(Cal_Angle_Deg(MC,Ref[i]),Ref[i]);
+		Ref_angle.push_back(pair_tmp);
 	}
+	std::sort(Ref_angle.begin(),Ref_angle.end(),Compare_as_Pair);
 
-	TVector3 P_pfo( pfo->getMomentum() );
-
-	TVector3 P_lep( lep->getMomentum() );
-
-	float cosTheta = P_lep.Dot( P_pfo )/(P_lep.Mag()*P_pfo.Mag());
-	if ( cosTheta >= angle_cut)
-	{
-		return true;
+	// make a cone around the input MC, if the sum of the energies inside the cone is larger than the minimal_energy_in_the_cone, give the angle value
+	float sum_energy=0;
+	float angle=0;
+	for(unsigned int i=0;i<Ref_angle.size();i++){
+		sum_energy = sum_energy + Ref_angle[i].second->getEnergy();
+		angle=Ref_angle[i].first;
+		if(sum_energy>minimal_energy_in_the_cone){
+			if(angle>minimal_angle_from_input){
+				return(angle-0.01);
+			}
+			else{
+				return(angle);
+			}
+		}
 	}
-	return false;
+	return(180);
 }
 

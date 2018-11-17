@@ -4,7 +4,7 @@
 }
 
 
-: functions for MCParticles  
+: functions for MCParticles in this class, FS -\/$>$ final states, means 1 the particle will contribute to the ReconstructedParticle or 2 not decay any more (not reach the detector or not detectable  
 
 
 {\ttfamily \#include $<$CMC.h$>$}\subsection*{Static Public Member Functions}
@@ -14,6 +14,8 @@ static void \hyperlink{classToolSet_1_1CMC_a2b939b1fd1e396eb5764c512903fe229}{Se
 \begin{DoxyCompactList}\small\item\em Get\_\-Collider\_\-Energy : changing the collider energy, default is 500 GeV Notice: when using the CRC::InVisible(), it also will load the value from here. \item\end{DoxyCompactList}\item 
 static void \hyperlink{classToolSet_1_1CMC_a6d72918adb583b9dcaee3c0c9166f6cb}{Set\_\-Beam\_\-Cross\_\-Angle} (float input)
 \begin{DoxyCompactList}\small\item\em Set\_\-Beam\_\-Cross\_\-Angle : changing beam crossing angle, default is 0.007 Notice: when using the CRC::InVisible(), it also will load the value from here. \item\end{DoxyCompactList}\item 
+static void \hyperlink{classToolSet_1_1CMC_ab933f8f5cbebde554dcce60f086bf480}{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC} (LCRelationNavigator $\ast$input)
+\begin{DoxyCompactList}\small\item\em Set\_\-Nav\_\-MC\_\-to\_\-RC : set default Navigator for MC to ReconstructedParticle, important for particle classification. \item\end{DoxyCompactList}\item 
 static float \hyperlink{classToolSet_1_1CMC_a7143149e3db8c1e5055498c8aba88182}{Get\_\-Collider\_\-Energy} ()
 \begin{DoxyCompactList}\small\item\em Get\_\-Collider\_\-Energy : show the collider energy when generating. \item\end{DoxyCompactList}\item 
 static float \hyperlink{classToolSet_1_1CMC_afaf6f983eee33318bcaf7923cde7266e}{Get\_\-Beam\_\-Energy} ()
@@ -208,71 +210,32 @@ static bool \hyperlink{classToolSet_1_1CMC_a688d2854fa645f4c3adad5013f4c9ba2}{Ju
 \begin{DoxyCompactList}\small\item\em Judge\_\-Is\_\-IS\_\-Photon : is the ISR photon. \item\end{DoxyCompactList}\item 
 static bool \hyperlink{classToolSet_1_1CMC_a85fbb7bf0ef846c3ae1dcfeb27853911}{Judge\_\-HardScattering\_\-FS} (MCParticle $\ast$input)
 \begin{DoxyCompactList}\small\item\em Judge\_\-HardScattering\_\-FS : is the hard-\/scattering states (including ISR photon). \item\end{DoxyCompactList}\item 
-\hypertarget{classToolSet_1_1CMC_af28ed4c00c5b936aa0660253bd4af35b}{
-static bool {\bfseries Judge\_\-HardScattering\_\-Next\_\-FS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_af28ed4c00c5b936aa0660253bd4af35b}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a20029373a30ff4642dfbe5ac879ee0ff}{
-static bool {\bfseries Judge\_\-HardScattering\_\-Next\_\-Next\_\-FS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a20029373a30ff4642dfbe5ac879ee0ff}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_ae473609376148631113dbf301f800de7}{
-static bool {\bfseries Judge\_\-OnlyPythiaShowering\_\-FS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_ae473609376148631113dbf301f800de7}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a47f5a5aff7196a77a729c703ffed1ce7}{
-static bool {\bfseries Judge\_\-PythiaShowering\_\-FS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a47f5a5aff7196a77a729c703ffed1ce7}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a6c340bf257a238e9f68cd251b50599cd}{
-static bool {\bfseries Judge\_\-PythiaShowering\_\-All} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a6c340bf257a238e9f68cd251b50599cd}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_ab6067e1275a79341e2342906105e16f2}{
-static bool {\bfseries Judge\_\-OnlyDetectorSimulating\_\-FS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_ab6067e1275a79341e2342906105e16f2}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_afee9479237283cf64d769fb1b1a361ae}{
-static bool {\bfseries Judge\_\-DetectorSimulating\_\-FS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_afee9479237283cf64d769fb1b1a361ae}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_af61adfde1923ee0bd54f91e88c806c94}{
-static bool {\bfseries Judge\_\-Overlay\_\-FS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_af61adfde1923ee0bd54f91e88c806c94}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a257af2810ec961f3e1a71f29bc12154f}{
-static bool {\bfseries Judge\_\-Has\_\-Overlay} (std::vector$<$ MCParticle $\ast$ $>$ input)}
-\label{classToolSet_1_1CMC_a257af2810ec961f3e1a71f29bc12154f}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a0cdd75e73a26f294c140f9cf2ed196ea}{
-static bool {\bfseries Judge\_\-All\_\-FS} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a0cdd75e73a26f294c140f9cf2ed196ea}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_ae5e3cc992d63d6efb8030bdb170b87d1}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-Particle} (bool($\ast$Judge)(MCParticle $\ast$), std::vector$<$ MCParticle $\ast$ $>$ AllMC)}
-\label{classToolSet_1_1CMC_ae5e3cc992d63d6efb8030bdb170b87d1}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_aec3000cf58c5ef65b62938decced8303}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MCParticle} (LCCollection $\ast$AllMC)}
-\label{classToolSet_1_1CMC_aec3000cf58c5ef65b62938decced8303}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a899d324f086d12abb75db9d87798ed91}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-HardScattering\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
-\label{classToolSet_1_1CMC_a899d324f086d12abb75db9d87798ed91}
-
-\item 
+static bool \hyperlink{classToolSet_1_1CMC_af28ed4c00c5b936aa0660253bd4af35b}{Judge\_\-HardScattering\_\-Next\_\-FS} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Judge\_\-HardScattering\_\-Next\_\-FS : is the first level decay of the hard-\/scattering states. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a20029373a30ff4642dfbe5ac879ee0ff}{Judge\_\-HardScattering\_\-Next\_\-Next\_\-FS} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Judge\_\-HardScattering\_\-Next\_\-Next\_\-FS : is the second level decay of the hard-\/scattering states. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a839156529c555e8d0484286295288604}{Judge\_\-OnlyPythiaShowering\_\-FS} (MCParticle $\ast$input, LCRelationNavigator $\ast$\&relation=\_\-nav\_\-MC\_\-to\_\-RC)
+\begin{DoxyCompactList}\small\item\em Judge\_\-OnlyPythiaShowering\_\-FS : is the pythia stable final states, but directly contribute to ReconstructedParticle. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a47f5a5aff7196a77a729c703ffed1ce7}{Judge\_\-PythiaShowering\_\-FS} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Judge\_\-PythiaShowering\_\-FS : is the pythia statble final states. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a6c340bf257a238e9f68cd251b50599cd}{Judge\_\-PythiaShowering\_\-All} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Judge\_\-PythiaShowering\_\-All : is generated by Pythia. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a158579bb5adfcfa9e0b4bbaba7ee3229}{Judge\_\-OnlyDetectorSimulating\_\-FS} (MCParticle $\ast$input, LCRelationNavigator $\ast$\&relation=\_\-nav\_\-MC\_\-to\_\-RC)
+\begin{DoxyCompactList}\small\item\em Judge\_\-OnlyDetectorSimulating\_\-FS : is generated in simulation and don't have daughter. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_afee9479237283cf64d769fb1b1a361ae}{Judge\_\-DetectorSimulating\_\-FS} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Judge\_\-DetectorSimulating\_\-FS : is the final states which will contribute to the ReconstructedParticle, not including the overlay. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a7230e73142fa3a3a5b2952f11556022c}{Judge\_\-Overlay\_\-FS} (MCParticle $\ast$input, LCRelationNavigator $\ast$\&relation=\_\-nav\_\-MC\_\-to\_\-RC)
+\begin{DoxyCompactList}\small\item\em Judge\_\-Overlay\_\-FS : is overlay and don't have daughter. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a257af2810ec961f3e1a71f29bc12154f}{Judge\_\-Has\_\-Overlay} (std::vector$<$ MCParticle $\ast$ $>$ input)
+\begin{DoxyCompactList}\small\item\em Judge\_\-Has\_\-Overlay : has overlay particle in this vector. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_ad5ee7a4ddd73dca280d23d5656ac106d}{Judge\_\-All\_\-FS} (MCParticle $\ast$input, LCRelationNavigator $\ast$\&relation=\_\-nav\_\-MC\_\-to\_\-RC)
+\begin{DoxyCompactList}\small\item\em Judge\_\-All\_\-FS : all the final states which will contribute to the ReconstructedParticle, including the overlay. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_ae5e3cc992d63d6efb8030bdb170b87d1}{Get\_\-Particle} (bool($\ast$Judge)(MCParticle $\ast$), std::vector$<$ MCParticle $\ast$ $>$ AllMC)
+\begin{DoxyCompactList}\small\item\em Get\_\-Particle : get a special kind of MCParticle, depending on the input function. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_aec3000cf58c5ef65b62938decced8303}{Get\_\-MCParticle} (LCCollection $\ast$AllMC)
+\begin{DoxyCompactList}\small\item\em Get\_\-MCParticle : get all MCParticles into a vector from the LCCollection MCParticle. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a899d324f086d12abb75db9d87798ed91}{Get\_\-MC\_\-HardScattering\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-HardScattering\_\-FS. \item\end{DoxyCompactList}\item 
 \hypertarget{classToolSet_1_1CMC_a321f55fa02ad6ed18931bc906b2e19ee}{
 static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-PythiaShowering\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
 \label{classToolSet_1_1CMC_a321f55fa02ad6ed18931bc906b2e19ee}
@@ -396,7 +359,7 @@ static bool {\bfseries IsInCone} (MCParticle $\ast$lep, MCParticle $\ast$pfo, fl
 
 
 \subsection{Detailed Description}
-: functions for MCParticles 
+: functions for MCParticles in this class, FS -\/$>$ final states, means 1 the particle will contribute to the ReconstructedParticle or 2 not decay any more (not reach the detector or not detectable PythiaShowering -\/$>$ the parton shower generated by the pythia (or maybe other generator e.g. Herwig.) DetectorSimulating -\/$>$ the particle generated in the detector simulation 
 
 \subsection{Member Function Documentation}
 \hypertarget{classToolSet_1_1CMC_ad1b2172aaacc40d4f5971492a5d1a0f5}{
@@ -739,6 +702,32 @@ Get\_\-DaughtersPID : daughter's PDG code.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a899d324f086d12abb75db9d87798ed91}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-HardScattering\_\-FS@{Get\_\-MC\_\-HardScattering\_\-FS}}
+\index{Get\_\-MC\_\-HardScattering\_\-FS@{Get\_\-MC\_\-HardScattering\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-HardScattering\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MC\_\-HardScattering\_\-FS (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a899d324f086d12abb75db9d87798ed91}
+
+
+Get\_\-MC\_\-HardScattering\_\-FS. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_aec3000cf58c5ef65b62938decced8303}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MCParticle@{Get\_\-MCParticle}}
+\index{Get\_\-MCParticle@{Get\_\-MCParticle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MCParticle}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MCParticle (LCCollection $\ast$ {\em AllMC})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_aec3000cf58c5ef65b62938decced8303}
+
+
+Get\_\-MCParticle : get all MCParticles into a vector from the LCCollection MCParticle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em AllMC}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \hypertarget{classToolSet_1_1CMC_a67ab1d51b7fd0f98cfa19be5381e961a}{
 \index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-Parents\_\-Number@{Get\_\-Parents\_\-Number}}
 \index{Get\_\-Parents\_\-Number@{Get\_\-Parents\_\-Number}!ToolSet::CMC@{ToolSet::CMC}}
@@ -765,6 +754,48 @@ Get\_\-ParentsPID : parents PDG code.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_ae5e3cc992d63d6efb8030bdb170b87d1}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-Particle@{Get\_\-Particle}}
+\index{Get\_\-Particle@{Get\_\-Particle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-Particle}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-Particle (bool($\ast$)(MCParticle $\ast$) {\em Judge}, \/  std::vector$<$ MCParticle $\ast$ $>$ {\em AllMC})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ae5e3cc992d63d6efb8030bdb170b87d1}
+
+
+Get\_\-Particle : get a special kind of MCParticle, depending on the input function. \begin{DoxyRemark}{Remarks}
+functions for get special particle vector
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em Judge}]: a judge function that provided before, in order to use all functions, you have to set default Navigator first. \item[{\em AllMC}]: a vector of MCParticle$\ast$\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_ad5ee7a4ddd73dca280d23d5656ac106d}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-All\_\-FS@{Judge\_\-All\_\-FS}}
+\index{Judge\_\-All\_\-FS@{Judge\_\-All\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-All\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-All\_\-FS (MCParticle $\ast$ {\em input}, \/  LCRelationNavigator $\ast$\& {\em relation} = {\ttfamily \_\-nav\_\-MC\_\-to\_\-RC})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ad5ee7a4ddd73dca280d23d5656ac106d}
+
+
+Judge\_\-All\_\-FS : all the final states which will contribute to the ReconstructedParticle, including the overlay. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_afee9479237283cf64d769fb1b1a361ae}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-DetectorSimulating\_\-FS@{Judge\_\-DetectorSimulating\_\-FS}}
+\index{Judge\_\-DetectorSimulating\_\-FS@{Judge\_\-DetectorSimulating\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-DetectorSimulating\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-DetectorSimulating\_\-FS (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_afee9479237283cf64d769fb1b1a361ae}
+
+
+Judge\_\-DetectorSimulating\_\-FS : is the final states which will contribute to the ReconstructedParticle, not including the overlay. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \hypertarget{classToolSet_1_1CMC_ad09856f709fff7320c382efd26a408e9}{
 \index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-GrandParents\_\-Are\_\-Beam@{Judge\_\-GrandParents\_\-Are\_\-Beam}}
 \index{Judge\_\-GrandParents\_\-Are\_\-Beam@{Judge\_\-GrandParents\_\-Are\_\-Beam}!ToolSet::CMC@{ToolSet::CMC}}
@@ -788,6 +819,45 @@ Judge\_\-GrandParents\_\-Are\_\-Beam : whether its grand parents are initial bea
 
 
 Judge\_\-HardScattering\_\-FS : is the hard-\/scattering states (including ISR photon). 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_af28ed4c00c5b936aa0660253bd4af35b}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-HardScattering\_\-Next\_\-FS@{Judge\_\-HardScattering\_\-Next\_\-FS}}
+\index{Judge\_\-HardScattering\_\-Next\_\-FS@{Judge\_\-HardScattering\_\-Next\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-HardScattering\_\-Next\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-HardScattering\_\-Next\_\-FS (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_af28ed4c00c5b936aa0660253bd4af35b}
+
+
+Judge\_\-HardScattering\_\-Next\_\-FS : is the first level decay of the hard-\/scattering states. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a20029373a30ff4642dfbe5ac879ee0ff}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-HardScattering\_\-Next\_\-Next\_\-FS@{Judge\_\-HardScattering\_\-Next\_\-Next\_\-FS}}
+\index{Judge\_\-HardScattering\_\-Next\_\-Next\_\-FS@{Judge\_\-HardScattering\_\-Next\_\-Next\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-HardScattering\_\-Next\_\-Next\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-HardScattering\_\-Next\_\-Next\_\-FS (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a20029373a30ff4642dfbe5ac879ee0ff}
+
+
+Judge\_\-HardScattering\_\-Next\_\-Next\_\-FS : is the second level decay of the hard-\/scattering states. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a257af2810ec961f3e1a71f29bc12154f}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-Has\_\-Overlay@{Judge\_\-Has\_\-Overlay}}
+\index{Judge\_\-Has\_\-Overlay@{Judge\_\-Has\_\-Overlay}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-Has\_\-Overlay}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-Has\_\-Overlay (std::vector$<$ MCParticle $\ast$ $>$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a257af2810ec961f3e1a71f29bc12154f}
+
+
+Judge\_\-Has\_\-Overlay : has overlay particle in this vector. 
 \begin{DoxyParams}{Parameters}
 \item[{\em input}]\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -832,6 +902,45 @@ Judge\_\-Is\_\-IS\_\-Photon : is the ISR photon.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a158579bb5adfcfa9e0b4bbaba7ee3229}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-OnlyDetectorSimulating\_\-FS@{Judge\_\-OnlyDetectorSimulating\_\-FS}}
+\index{Judge\_\-OnlyDetectorSimulating\_\-FS@{Judge\_\-OnlyDetectorSimulating\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-OnlyDetectorSimulating\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-OnlyDetectorSimulating\_\-FS (MCParticle $\ast$ {\em input}, \/  LCRelationNavigator $\ast$\& {\em relation} = {\ttfamily \_\-nav\_\-MC\_\-to\_\-RC})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a158579bb5adfcfa9e0b4bbaba7ee3229}
+
+
+Judge\_\-OnlyDetectorSimulating\_\-FS : is generated in simulation and don't have daughter. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a839156529c555e8d0484286295288604}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-OnlyPythiaShowering\_\-FS@{Judge\_\-OnlyPythiaShowering\_\-FS}}
+\index{Judge\_\-OnlyPythiaShowering\_\-FS@{Judge\_\-OnlyPythiaShowering\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-OnlyPythiaShowering\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-OnlyPythiaShowering\_\-FS (MCParticle $\ast$ {\em input}, \/  LCRelationNavigator $\ast$\& {\em relation} = {\ttfamily \_\-nav\_\-MC\_\-to\_\-RC})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a839156529c555e8d0484286295288604}
+
+
+Judge\_\-OnlyPythiaShowering\_\-FS : is the pythia stable final states, but directly contribute to ReconstructedParticle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a7230e73142fa3a3a5b2952f11556022c}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-Overlay\_\-FS@{Judge\_\-Overlay\_\-FS}}
+\index{Judge\_\-Overlay\_\-FS@{Judge\_\-Overlay\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-Overlay\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-Overlay\_\-FS (MCParticle $\ast$ {\em input}, \/  LCRelationNavigator $\ast$\& {\em relation} = {\ttfamily \_\-nav\_\-MC\_\-to\_\-RC})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a7230e73142fa3a3a5b2952f11556022c}
+
+
+Judge\_\-Overlay\_\-FS : is overlay and don't have daughter. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \hypertarget{classToolSet_1_1CMC_a5ccf3aedd3c942ac6644748abaaf70fe}{
 \index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-Parents\_\-Are\_\-Beam@{Judge\_\-Parents\_\-Are\_\-Beam}}
 \index{Judge\_\-Parents\_\-Are\_\-Beam@{Judge\_\-Parents\_\-Are\_\-Beam}!ToolSet::CMC@{ToolSet::CMC}}
@@ -842,6 +951,32 @@ Judge\_\-Is\_\-IS\_\-Photon : is the ISR photon.
 Judge\_\-Parents\_\-Are\_\-Beam : whether its parents are initial beam (i.e. the input is the ISR or the beam after ISR)
 
 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a6c340bf257a238e9f68cd251b50599cd}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-PythiaShowering\_\-All@{Judge\_\-PythiaShowering\_\-All}}
+\index{Judge\_\-PythiaShowering\_\-All@{Judge\_\-PythiaShowering\_\-All}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-PythiaShowering\_\-All}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-PythiaShowering\_\-All (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a6c340bf257a238e9f68cd251b50599cd}
+
+
+Judge\_\-PythiaShowering\_\-All : is generated by Pythia. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a47f5a5aff7196a77a729c703ffed1ce7}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-PythiaShowering\_\-FS@{Judge\_\-PythiaShowering\_\-FS}}
+\index{Judge\_\-PythiaShowering\_\-FS@{Judge\_\-PythiaShowering\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-PythiaShowering\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-PythiaShowering\_\-FS (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a47f5a5aff7196a77a729c703ffed1ce7}
+
+
+Judge\_\-PythiaShowering\_\-FS : is the pythia statble final states. 
 \begin{DoxyParams}{Parameters}
 \item[{\em input}]\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -919,6 +1054,16 @@ Set\_\-Beam\_\-Cross\_\-Angle : changing beam crossing angle, default is 0.007 N
 Get\_\-Collider\_\-Energy : changing the collider energy, default is 500 GeV Notice: when using the CRC::InVisible(), it also will load the value from here. \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_ab933f8f5cbebde554dcce60f086bf480}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC@{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC}}
+\index{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC@{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC}]{\setlength{\rightskip}{0pt plus 5cm}static void ToolSet::CMC::Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC (LCRelationNavigator $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ab933f8f5cbebde554dcce60f086bf480}
+
+
+Set\_\-Nav\_\-MC\_\-to\_\-RC : set default Navigator for MC to ReconstructedParticle, important for particle classification. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
 \hypertarget{classToolSet_1_1CMC_a3ebc24c0c160ba37054b294059f09d96}{
 \index{ToolSet::CMC@{ToolSet::CMC}!Status\_\-Beam\_\-Energy@{Status\_\-Beam\_\-Energy}}
 \index{Status\_\-Beam\_\-Energy@{Status\_\-Beam\_\-Energy}!ToolSet::CMC@{ToolSet::CMC}}
