@@ -46,7 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <h1>ToolSet::CMC Class Reference</h1><!-- doxytag: class="ToolSet::CMC" -->
-<p>: functions for MCParticles in this class, FS -&gt; final states, means 1 the particle will contribute to the ReconstructedParticle or 2 not decay any more (not reach the detector or not detectable  
+<p>: functions for MCParticles  
 <a href="#_details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="CMC_8h_source.html">CMC.h</a>&gt;</code></p>
@@ -58,6 +58,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Collider_Energy : changing the collider energy, default is 500 GeV Notice: when using the CRC::InVisible(), it also will load the value from here.  <a href="#a2b939b1fd1e396eb5764c512903fe229"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a6d72918adb583b9dcaee3c0c9166f6cb">Set_Beam_Cross_Angle</a> (float input)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set_Beam_Cross_Angle : changing beam crossing angle, default is 0.007 Notice: when using the CRC::InVisible(), it also will load the value from here.  <a href="#a6d72918adb583b9dcaee3c0c9166f6cb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a9a095ed39d8742369489455db3b1b641">Set_Detectable_Angle</a> (float input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set_Detectable_Angle : set a rough detectable angle for detector, detault is 0.996, means larger than this angle, the particle will go into the pipe.  <a href="#a9a095ed39d8742369489455db3b1b641"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ab933f8f5cbebde554dcce60f086bf480">Set_Nav_From_MC_To_RC</a> (LCRelationNavigator *input)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set_Nav_MC_to_RC : set default Navigator for MC to ReconstructedParticle, important for particle classification.  <a href="#ab933f8f5cbebde554dcce60f086bf480"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a7143149e3db8c1e5055498c8aba88182">Get_Collider_Energy</a> ()</td></tr>
@@ -66,10 +68,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Beam_Energy : show the energy for initial beam after having the detector simulation.  <a href="#afaf6f983eee33318bcaf7923cde7266e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aab8dca236c78fffe1b63bac50583090a">Get_Beam_Cross_Angle</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Beam_Cross_Angle : get the collider crossing angle.  <a href="#aab8dca236c78fffe1b63bac50583090a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa16ba4a9f89c0ee01f8c7e2078d18d6"></a><!-- doxytag: member="ToolSet::CMC::Clear" ref="aaa16ba4a9f89c0ee01f8c7e2078d18d6" args="()" -->
+static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aaa16ba4a9f89c0ee01f8c7e2078d18d6">Clear</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Clear : all pointers generated in the heap will be deleted. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ab30c29f999f2b3dd1c85ed68636f2281">NewParticle</a> (float px, float py, float pz, float E, MCParticle *test)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NewParticle : generate a new MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer.  <a href="#ab30c29f999f2b3dd1c85ed68636f2281"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a5bd1a7515135570ef348bd77d1d26933">NewParticle</a> (TLorentzVector &amp;p, MCParticle *test)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NewParticle : generate a new MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer.  <a href="#a5bd1a7515135570ef348bd77d1d26933"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#af2758c1110b4a2d0708a62465a1ad82d">NewParticle</a> (TLorentzVector &amp;p, int pdg, float charge, MCParticle *test)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">NewParticle : generate a new MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer.  <a href="#af2758c1110b4a2d0708a62465a1ad82d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ad1b2172aaacc40d4f5971492a5d1a0f5">Add</a> (const MCParticle *MC1, const MCParticle *MC2)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Add : add four momentum of two MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer.  <a href="#ad1b2172aaacc40d4f5971492a5d1a0f5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aa597db31bacbc37cbc16da5bfe2b1d9a">Minus</a> (const MCParticle *MC1, const MCParticle *MC2)</td></tr>
@@ -120,8 +127,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memTemplParams" colspan="2">template&lt;typename TPhi &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aa1667ca515e4b26ca43755fd8d2e30bd">Cal_Acoplanarity</a> (TPhi MC, TPhi Ref)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_Acoplanarity : calculate acoplanarity acoplan = pi - |phi|.  <a href="#aa1667ca515e4b26ca43755fd8d2e30bd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a3d0ff5af967b32efbc5907174b64348f">Cal_IsolationAngle</a> (MCParticle *MC, std::vector&lt; MCParticle * &gt; Ref, float minimal_energy_in_the_cone=1, float minimal_angle_from_input=2)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cal_IsolationAngle : calculate minimal isolation angle.  <a href="#a3d0ff5af967b32efbc5907174b64348f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a67ab1d51b7fd0f98cfa19be5381e961a">Get_Parents_Number</a> (MCParticle *input)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">functions for get basic particle properties  <a href="#a67ab1d51b7fd0f98cfa19be5381e961a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a44a3b5e5df7effa4ed170151cd63b706">Get_Daughters_Number</a> (MCParticle *input)</td></tr>
@@ -218,71 +223,78 @@ static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>Status_Is_Char
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_PythiaShowering_All : is generated by Pythia.  <a href="#a6c340bf257a238e9f68cd251b50599cd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a158579bb5adfcfa9e0b4bbaba7ee3229">Judge_OnlyDetectorSimulating_FS</a> (MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_OnlyDetectorSimulating_FS : is generated in simulation and don't have daughter.  <a href="#a158579bb5adfcfa9e0b4bbaba7ee3229"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#afee9479237283cf64d769fb1b1a361ae">Judge_DetectorSimulating_FS</a> (MCParticle *input)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_DetectorSimulating_FS : is the final states which will contribute to the ReconstructedParticle, not including the overlay.  <a href="#afee9479237283cf64d769fb1b1a361ae"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a15a940ad524f57e93daa4c23a54c5992">Judge_DetectorSimulating_FS</a> (MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_DetectorSimulating_FS : is the final states which will contribute to the ReconstructedParticle, not including the overlay.  <a href="#a15a940ad524f57e93daa4c23a54c5992"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a7230e73142fa3a3a5b2952f11556022c">Judge_Overlay_FS</a> (MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_Overlay_FS : is overlay and don't have daughter.  <a href="#a7230e73142fa3a3a5b2952f11556022c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a257af2810ec961f3e1a71f29bc12154f">Judge_Has_Overlay</a> (std::vector&lt; MCParticle * &gt; input)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_Has_Overlay : has overlay particle in this vector.  <a href="#a257af2810ec961f3e1a71f29bc12154f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ad5ee7a4ddd73dca280d23d5656ac106d">Judge_All_FS</a> (MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Judge_All_FS : all the final states which will contribute to the ReconstructedParticle, including the overlay.  <a href="#ad5ee7a4ddd73dca280d23d5656ac106d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a63e419bc0a7ce9d4573476d8432e84cb">Judge_IsInCone</a> (MCParticle *input1, MCParticle *input2, float angle_cut)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">IsInCone : judge whether having particles in the cone of the input particle.  <a href="#a63e419bc0a7ce9d4573476d8432e84cb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ae5e3cc992d63d6efb8030bdb170b87d1">Get_Particle</a> (bool(*Judge)(MCParticle *), std::vector&lt; MCParticle * &gt; AllMC)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Particle : get a special kind of MCParticle, depending on the input function.  <a href="#ae5e3cc992d63d6efb8030bdb170b87d1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">functions for get special particle vector.  <a href="#ae5e3cc992d63d6efb8030bdb170b87d1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aec3000cf58c5ef65b62938decced8303">Get_MCParticle</a> (LCCollection *AllMC)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MCParticle : get all MCParticles into a vector from the LCCollection MCParticle.  <a href="#aec3000cf58c5ef65b62938decced8303"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a899d324f086d12abb75db9d87798ed91">Get_MC_HardScattering_FS</a> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_HardScattering_FS.  <a href="#a899d324f086d12abb75db9d87798ed91"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a321f55fa02ad6ed18931bc906b2e19ee"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_PythiaShowering_FS" ref="a321f55fa02ad6ed18931bc906b2e19ee" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_PythiaShowering_FS</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea4e69e23c45ca6ac4674ee90d56fc1c"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_OnlyPythiaShowering_FS" ref="aea4e69e23c45ca6ac4674ee90d56fc1c" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_OnlyPythiaShowering_FS</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0a81c6e40cc44cecfe9947be99783d4"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_DetectorSimulating_FS" ref="af0a81c6e40cc44cecfe9947be99783d4" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_DetectorSimulating_FS</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a766e7761a6db662243c7490a615c380e"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_OnlyDetectorSimulating_FS" ref="a766e7761a6db662243c7490a615c380e" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_OnlyDetectorSimulating_FS</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0174dfbf7511f9fa827d9fff33aabc8b"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_Overlay_FS" ref="a0174dfbf7511f9fa827d9fff33aabc8b" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_Overlay_FS</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a826b4fcc4ae58b18ceec544fb5abf563"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_All_FS" ref="a826b4fcc4ae58b18ceec544fb5abf563" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_All_FS</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96c8f9998df8b19c84b0f45271195ef9"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_PythiaShowering_All" ref="a96c8f9998df8b19c84b0f45271195ef9" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_PythiaShowering_All</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8581240b2a8d474e851c3c1ed256fada"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_DetectorSimulating_All" ref="a8581240b2a8d474e851c3c1ed256fada" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_DetectorSimulating_All</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4bf55a4d64eeec4762f87ee7de91f585"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_Overlay_All" ref="a4bf55a4d64eeec4762f87ee7de91f585" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_Overlay_All</b> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a38ef7e0f75f14714d4636ca70c1b717c"></a><!-- doxytag: member="ToolSet::CMC::MCToPythiaShowering" ref="a38ef7e0f75f14714d4636ca70c1b717c" args="(MCParticle *input)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>MCToPythiaShowering</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfd54e8274a8994f4cc0a531a028cd01"></a><!-- doxytag: member="ToolSet::CMC::MCToHardScattering" ref="adfd54e8274a8994f4cc0a531a028cd01" args="(MCParticle *input)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>MCToHardScattering</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf41aa5efde937a3e21fa3b24323d570"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_HardScattering_Sort" ref="abf41aa5efde937a3e21fa3b24323d570" args="(std::vector&lt; MCParticle * &gt; MCs, std::vector&lt; MCParticle * &gt; &amp;ISRlepton, std::vector&lt; MCParticle * &gt; &amp;ISRphoton, std::vector&lt; MCParticle * &gt; &amp;ObjetctParticle)" -->
-static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MC_HardScattering_Sort</b> (std::vector&lt; MCParticle * &gt; MCs, std::vector&lt; MCParticle * &gt; &amp;ISRlepton, std::vector&lt; MCParticle * &gt; &amp;ISRphoton, std::vector&lt; MCParticle * &gt; &amp;ObjetctParticle)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0595ad7853b51cfc631547665a3cb63e"></a><!-- doxytag: member="ToolSet::CMC::Get_MCParticleType" ref="a0595ad7853b51cfc631547665a3cb63e" args="(std::vector&lt; MCParticle * &gt; MCs, signed int PDG)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MCParticleType</b> (std::vector&lt; MCParticle * &gt; MCs, signed int PDG)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a83c548d4fa19b657194f055f5084db"></a><!-- doxytag: member="ToolSet::CMC::Get_MCParticleType_Abs" ref="a8a83c548d4fa19b657194f055f5084db" args="(std::vector&lt; MCParticle * &gt; MCs, signed int PDG)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MCParticleType_Abs</b> (std::vector&lt; MCParticle * &gt; MCs, signed int PDG)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a186078318b357a23930ab6b61c8d9494"></a><!-- doxytag: member="ToolSet::CMC::Get_MCParticleType" ref="a186078318b357a23930ab6b61c8d9494" args="(std::vector&lt; MCParticle * &gt; MCs, std::string PDG)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_MCParticleType</b> (std::vector&lt; MCParticle * &gt; MCs, std::string PDG)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa16a7d3c1cbd3e1d25cf885b25d561ec"></a><!-- doxytag: member="ToolSet::CMC::Get_DecayChannel" ref="aa16a7d3c1cbd3e1d25cf885b25d561ec" args="(MCParticle *input)" -->
-static float&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_DecayChannel</b> (MCParticle *input)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd7611ff7cc945f5d198c0c0ba0b50c2"></a><!-- doxytag: member="ToolSet::CMC::Remove_Duplication" ref="acd7611ff7cc945f5d198c0c0ba0b50c2" args="(std::vector&lt; MCParticle * &gt; &amp;MCs)" -->
-static void&nbsp;</td><td class="memItemRight" valign="bottom"><b>Remove_Duplication</b> (std::vector&lt; MCParticle * &gt; &amp;MCs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac483834b1710a1c4797f3b55f8f2336b"></a><!-- doxytag: member="ToolSet::CMC::Pass_DetectorAngle" ref="ac483834b1710a1c4797f3b55f8f2336b" args="(std::vector&lt; MCParticle * &gt; &amp;MCs)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Pass_DetectorAngle</b> (std::vector&lt; MCParticle * &gt; &amp;MCs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37d3453a48a49082beb6f65827fc94b4"></a><!-- doxytag: member="ToolSet::CMC::Get_Visible" ref="a37d3453a48a49082beb6f65827fc94b4" args="(std::vector&lt; MCParticle * &gt; in)" -->
-static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_Visible</b> (std::vector&lt; MCParticle * &gt; in)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89441427db18fc75e777966d5ac169b7"></a><!-- doxytag: member="ToolSet::CMC::Get_InVisible" ref="a89441427db18fc75e777966d5ac169b7" args="(std::vector&lt; MCParticle * &gt; in)" -->
-static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_InVisible</b> (std::vector&lt; MCParticle * &gt; in)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0754f20765709b34841b3c3aec8c7e51"></a><!-- doxytag: member="ToolSet::CMC::Get_Visible_To_Lorentz" ref="a0754f20765709b34841b3c3aec8c7e51" args="(std::vector&lt; MCParticle * &gt; in)" -->
-static TLorentzVector&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_Visible_To_Lorentz</b> (std::vector&lt; MCParticle * &gt; in)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab44cceb872950622551735a97a23bd4d"></a><!-- doxytag: member="ToolSet::CMC::Get_InVisible_To_Lorentz" ref="ab44cceb872950622551735a97a23bd4d" args="(std::vector&lt; MCParticle * &gt; in)" -->
-static TLorentzVector&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_InVisible_To_Lorentz</b> (std::vector&lt; MCParticle * &gt; in)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7da55fa17ab746930f3a04eeb3014ef"></a><!-- doxytag: member="ToolSet::CMC::Get_Isolated" ref="af7da55fa17ab746930f3a04eeb3014ef" args="(std::vector&lt; MCParticle * &gt; input, std::vector&lt; MCParticle * &gt; all, std::vector&lt; MCParticle * &gt; left)" -->
-static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>Get_Isolated</b> (std::vector&lt; MCParticle * &gt; input, std::vector&lt; MCParticle * &gt; all, std::vector&lt; MCParticle * &gt; left)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4594f7a35f5db952f142626100ced91f"></a><!-- doxytag: member="ToolSet::CMC::IsInCone" ref="a4594f7a35f5db952f142626100ced91f" args="(MCParticle *lep, MCParticle *pfo, float angle_cut)" -->
-static bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>IsInCone</b> (MCParticle *lep, MCParticle *pfo, float angle_cut)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_HardScattering_FS : get all HardScattering particles.  <a href="#a899d324f086d12abb75db9d87798ed91"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a321f55fa02ad6ed18931bc906b2e19ee">Get_MC_PythiaShowering_FS</a> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_PythiaShowering_FS : get all PythiaShowering particles.  <a href="#a321f55fa02ad6ed18931bc906b2e19ee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aea4e69e23c45ca6ac4674ee90d56fc1c">Get_MC_OnlyPythiaShowering_FS</a> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_OnlyPythiaShowering_FS : get all OnlyPythiaShowering particles.  <a href="#aea4e69e23c45ca6ac4674ee90d56fc1c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#af0a81c6e40cc44cecfe9947be99783d4">Get_MC_DetectorSimulating_FS</a> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_DetectorSimulating_FS : get DetectorSimulating particles.  <a href="#af0a81c6e40cc44cecfe9947be99783d4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a766e7761a6db662243c7490a615c380e">Get_MC_OnlyDetectorSimulating_FS</a> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_OnlyDetectorSimulating_FS : get onlyDetectorSimulating particles.  <a href="#a766e7761a6db662243c7490a615c380e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a0174dfbf7511f9fa827d9fff33aabc8b">Get_MC_Overlay_FS</a> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_Overlay_FS ： get overlay particles.  <a href="#a0174dfbf7511f9fa827d9fff33aabc8b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a826b4fcc4ae58b18ceec544fb5abf563">Get_MC_All_FS</a> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_All_FS : get all final states.  <a href="#a826b4fcc4ae58b18ceec544fb5abf563"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a96c8f9998df8b19c84b0f45271195ef9">Get_MC_PythiaShowering_All</a> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_PythiaShowering_All : get all particles generated in parton showering.  <a href="#a96c8f9998df8b19c84b0f45271195ef9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a8581240b2a8d474e851c3c1ed256fada">Get_MC_DetectorSimulating_All</a> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_DetectorSimulating_All : get all particles generated in DetectorSimulating.  <a href="#a8581240b2a8d474e851c3c1ed256fada"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a4bf55a4d64eeec4762f87ee7de91f585">Get_MC_Overlay_All</a> (std::vector&lt; MCParticle * &gt; MCs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_Overlay_All : get all particles in the overlay.  <a href="#a4bf55a4d64eeec4762f87ee7de91f585"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a90ef4f7069e375c606a3469d13ed3109">Get_MC_To_PythiaShowering</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_To_PythiaShowering : giving a particle in the detector simulation, finding its related pythia stable particle.  <a href="#a90ef4f7069e375c606a3469d13ed3109"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a756210f61bb929e423d1372989ad0358">Get_MC_To_HardScattering</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_To_HardScattering : giving a particle in the parton showering or detector simulation, finding its related hard scattering particle.  <a href="#a756210f61bb929e423d1372989ad0358"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#abf41aa5efde937a3e21fa3b24323d570">Get_MC_HardScattering_Sort</a> (std::vector&lt; MCParticle * &gt; MCs, std::vector&lt; MCParticle * &gt; &amp;ISRlepton, std::vector&lt; MCParticle * &gt; &amp;ISRphoton, std::vector&lt; MCParticle * &gt; &amp;ObjetctParticle)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MC_HardScattering_Sort : classify input HardScattering MCParticles by their pdg.  <a href="#abf41aa5efde937a3e21fa3b24323d570"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a0595ad7853b51cfc631547665a3cb63e">Get_MCParticleType</a> (std::vector&lt; MCParticle * &gt; MCs, signed int PDG)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MCParticleType : get a special type particle among the give vectors, use the signed pdg code.  <a href="#a0595ad7853b51cfc631547665a3cb63e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a8a83c548d4fa19b657194f055f5084db">Get_MCParticleType_Abs</a> (std::vector&lt; MCParticle * &gt; MCs, signed int PDG)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MCParticleType_Abs : get a special type particle among the give vectors, use the absolute value of PDG.  <a href="#a8a83c548d4fa19b657194f055f5084db"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a186078318b357a23930ab6b61c8d9494">Get_MCParticleType</a> (std::vector&lt; MCParticle * &gt; MCs, std::string PDG)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MCParticleType : get a special type particle among the given vectors, use the name of particle.  <a href="#a186078318b357a23930ab6b61c8d9494"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ac1523c9e38e6453d4980145012bdc75b">Get_MCParticle_Without_Type</a> (std::vector&lt; MCParticle * &gt; MCs, std::string PDG)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_MCParticle_Without_Type : get particles not contain a special type,.  <a href="#ac1523c9e38e6453d4980145012bdc75b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#aa16a7d3c1cbd3e1d25cf885b25d561ec">Get_DecayChannel</a> (MCParticle *input)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_DecayChannel : give the decay channel of the input particle.  <a href="#aa16a7d3c1cbd3e1d25cf885b25d561ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a92dc2c0c2bfdaa05ebeebeaf90d4a50a">Get_In_DetectorAngle</a> (std::vector&lt; MCParticle * &gt; &amp;MCs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_In_DetectorAngle : get particles in the detector region.  <a href="#a92dc2c0c2bfdaa05ebeebeaf90d4a50a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a11f6123da1b7a670fc9f22de496affb8">Get_Sum</a> (std::vector&lt; MCParticle * &gt; in)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Sum : get sum of the input particles.  <a href="#a11f6123da1b7a670fc9f22de496affb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a78794985a367cc765ffca587136c5a6c">Get_Visible</a> (std::vector&lt; MCParticle * &gt; in)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Visible : get visible particles, i.e.  <a href="#a78794985a367cc765ffca587136c5a6c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static MCParticle *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a89441427db18fc75e777966d5ac169b7">Get_InVisible</a> (std::vector&lt; MCParticle * &gt; in)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_InVisible : get invisible particle, i.e.  <a href="#a89441427db18fc75e777966d5ac169b7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static TLorentzVector&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a05e74f0cd1f7ceac70fa8d2e38d3a2ab">Get_Sum_To_Lorentz</a> (std::vector&lt; MCParticle * &gt; in)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Sum_To_Lorentz : get sum of input particles, return four momentum.  <a href="#a05e74f0cd1f7ceac70fa8d2e38d3a2ab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static TLorentzVector&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#ab44cceb872950622551735a97a23bd4d">Get_InVisible_To_Lorentz</a> (std::vector&lt; MCParticle * &gt; in)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_InVisible_To_Lorentz : get invisible, return four momentum.  <a href="#ab44cceb872950622551735a97a23bd4d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a721fbac55172fef2776b1637d55de936">Get_InCone</a> (MCParticle *input, std::vector&lt; MCParticle * &gt; &amp;all, float cone_size)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_InCone : get the particles in the cone.  <a href="#a721fbac55172fef2776b1637d55de936"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static std::vector&lt; MCParticle * &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a21929017024c827e522e120616bd6bed">Get_Isolated</a> (std::vector&lt; MCParticle * &gt; input, std::vector&lt; MCParticle * &gt; all, std::vector&lt; MCParticle * &gt; outside_cone, float cone_size)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_Isolated : get isolated particle.  <a href="#a21929017024c827e522e120616bd6bed"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToolSet_1_1CMC.html#a507837bc0dd0238a8b44f0855e647b0c">Get_IsolationAngle</a> (MCParticle *MC, std::vector&lt; MCParticle * &gt; Ref, float minimal_energy_in_the_cone=1, float minimal_angle_from_input=2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get_IsolationAngle : get minimal isolation angle.  <a href="#a507837bc0dd0238a8b44f0855e647b0c"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>: functions for MCParticles in this class, FS -&gt; final states, means 1 the particle will contribute to the ReconstructedParticle or 2 not decay any more (not reach the detector or not detectable </p>
+<p>: functions for MCParticles </p>
+<p>in this class, FS -&gt; final states, means 1 the particle will contribute to the ReconstructedParticle or 2 not decay any more (not reach the detector or not detectable</p>
 <p>PythiaShowering -&gt; the parton shower generated by the pythia (or maybe other generator e.g. Herwig.) DetectorSimulating -&gt; the particle generated in the detector simulation </p>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ad1b2172aaacc40d4f5971492a5d1a0f5"></a><!-- doxytag: member="ToolSet::CMC::Add" ref="ad1b2172aaacc40d4f5971492a5d1a0f5" args="(const MCParticle *MC1, const MCParticle *MC2)" -->
@@ -455,8 +467,6 @@ template&lt;typename TAngle &gt; </div>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Referenced by <a class="el" href="CMC_8h_source.html#l00433">Cal_IsolationAngle()</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ab77fa5dd46a12ac8887776724261f72b"></a><!-- doxytag: member="ToolSet::CMC::Cal_Azimuth" ref="ab77fa5dd46a12ac8887776724261f72b" args="(TPhi MC, TPhi Ref)" -->
@@ -617,58 +627,7 @@ template&lt;typename TTheta &gt; </div>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Referenced by <a class="el" href="CMC_8h_source.html#l00215">Compare_as_Angle()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3d0ff5af967b32efbc5907174b64348f"></a><!-- doxytag: member="ToolSet::CMC::Cal_IsolationAngle" ref="a3d0ff5af967b32efbc5907174b64348f" args="(MCParticle *MC, std::vector&lt; MCParticle * &gt; Ref, float minimal_energy_in_the_cone=1, float minimal_angle_from_input=2)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static float ToolSet::CMC::Cal_IsolationAngle </td>
-          <td>(</td>
-          <td class="paramtype">MCParticle *&nbsp;</td>
-          <td class="paramname"> <em>MC</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
-          <td class="paramname"> <em>Ref</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&nbsp;</td>
-          <td class="paramname"> <em>minimal_energy_in_the_cone</em> = <code>1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&nbsp;</td>
-          <td class="paramname"> <em>minimal_angle_from_input</em> = <code>2</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [inline, static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Cal_IsolationAngle : calculate minimal isolation angle. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>Ref</em>&nbsp;</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-<p>References <a class="el" href="CMC_8h_source.html#l00365">Cal_Angle_Deg()</a>, and <a class="el" href="CMC_8h_source.html#l00229">Compare_as_Pair()</a>.</p>
+<p>Referenced by <a class="el" href="CRC_8h_source.html#l00088">ToolSet::CRC::Compare_as_Angle()</a>, and <a class="el" href="CMC_8h_source.html#l00251">Compare_as_Angle()</a>.</p>
 
 </div>
 </div>
@@ -891,7 +850,7 @@ template&lt;typename TVect &gt; </div>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>References <a class="el" href="CMC_8h_source.html#l00316">Cal_CosTheta()</a>.</p>
+<p>References <a class="el" href="CMC_8h_source.html#l00352">Cal_CosTheta()</a>.</p>
 
 </div>
 </div>
@@ -966,8 +925,6 @@ template&lt;typename TVect &gt; </div>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-<p>Referenced by <a class="el" href="CMC_8h_source.html#l00433">Cal_IsolationAngle()</a>.</p>
 
 </div>
 </div>
@@ -1114,6 +1071,341 @@ template&lt;typename TVect &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="aa16a7d3c1cbd3e1d25cf885b25d561ec"></a><!-- doxytag: member="ToolSet::CMC::Get_DecayChannel" ref="aa16a7d3c1cbd3e1d25cf885b25d561ec" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Get_DecayChannel </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_DecayChannel : give the decay channel of the input particle. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>: a self defined decay channel number, check the source code for details. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a92dc2c0c2bfdaa05ebeebeaf90d4a50a"></a><!-- doxytag: member="ToolSet::CMC::Get_In_DetectorAngle" ref="a92dc2c0c2bfdaa05ebeebeaf90d4a50a" args="(std::vector&lt; MCParticle * &gt; &amp;MCs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_In_DetectorAngle </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_In_DetectorAngle : get particles in the detector region. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a721fbac55172fef2776b1637d55de936"></a><!-- doxytag: member="ToolSet::CMC::Get_InCone" ref="a721fbac55172fef2776b1637d55de936" args="(MCParticle *input, std::vector&lt; MCParticle * &gt; &amp;all, float cone_size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_InCone </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>all</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>cone_size</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_InCone : get the particles in the cone. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>all</em>&nbsp;</td><td>: this argument will be changed to remove the particle in the cone of the input </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>cone_size</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a89441427db18fc75e777966d5ac169b7"></a><!-- doxytag: member="ToolSet::CMC::Get_InVisible" ref="a89441427db18fc75e777966d5ac169b7" args="(std::vector&lt; MCParticle * &gt; in)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static MCParticle* ToolSet::CMC::Get_InVisible </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>in</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_InVisible : get invisible particle, i.e. </p>
+<p>collider - sum of input vector</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>in</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab44cceb872950622551735a97a23bd4d"></a><!-- doxytag: member="ToolSet::CMC::Get_InVisible_To_Lorentz" ref="ab44cceb872950622551735a97a23bd4d" args="(std::vector&lt; MCParticle * &gt; in)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static TLorentzVector ToolSet::CMC::Get_InVisible_To_Lorentz </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>in</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_InVisible_To_Lorentz : get invisible, return four momentum. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>in</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a21929017024c827e522e120616bd6bed"></a><!-- doxytag: member="ToolSet::CMC::Get_Isolated" ref="a21929017024c827e522e120616bd6bed" args="(std::vector&lt; MCParticle * &gt; input, std::vector&lt; MCParticle * &gt; all, std::vector&lt; MCParticle * &gt; outside_cone, float cone_size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_Isolated </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>all</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>outside_cone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>cone_size</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_Isolated : get isolated particle. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>all</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>left</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a507837bc0dd0238a8b44f0855e647b0c"></a><!-- doxytag: member="ToolSet::CMC::Get_IsolationAngle" ref="a507837bc0dd0238a8b44f0855e647b0c" args="(MCParticle *MC, std::vector&lt; MCParticle * &gt; Ref, float minimal_energy_in_the_cone=1, float minimal_angle_from_input=2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ToolSet::CMC::Get_IsolationAngle </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>MC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>Ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>minimal_energy_in_the_cone</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>minimal_angle_from_input</em> = <code>2</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_IsolationAngle : get minimal isolation angle. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MC</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>Ref</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minimal_energy_in_the_cone</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>minimal_angle_from_input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a826b4fcc4ae58b18ceec544fb5abf563"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_All_FS" ref="a826b4fcc4ae58b18ceec544fb5abf563" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MC_All_FS </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_All_FS : get all final states. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8581240b2a8d474e851c3c1ed256fada"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_DetectorSimulating_All" ref="a8581240b2a8d474e851c3c1ed256fada" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MC_DetectorSimulating_All </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_DetectorSimulating_All : get all particles generated in DetectorSimulating. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af0a81c6e40cc44cecfe9947be99783d4"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_DetectorSimulating_FS" ref="af0a81c6e40cc44cecfe9947be99783d4" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MC_DetectorSimulating_FS </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_DetectorSimulating_FS : get DetectorSimulating particles. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a899d324f086d12abb75db9d87798ed91"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_HardScattering_FS" ref="a899d324f086d12abb75db9d87798ed91" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1130,10 +1422,277 @@ template&lt;typename TVect &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Get_MC_HardScattering_FS. </p>
+<p>Get_MC_HardScattering_FS : get all HardScattering particles. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abf41aa5efde937a3e21fa3b24323d570"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_HardScattering_Sort" ref="abf41aa5efde937a3e21fa3b24323d570" args="(std::vector&lt; MCParticle * &gt; MCs, std::vector&lt; MCParticle * &gt; &amp;ISRlepton, std::vector&lt; MCParticle * &gt; &amp;ISRphoton, std::vector&lt; MCParticle * &gt; &amp;ObjetctParticle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ToolSet::CMC::Get_MC_HardScattering_Sort </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>ISRlepton</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>ISRphoton</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>ObjetctParticle</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_HardScattering_Sort : classify input HardScattering MCParticles by their pdg. </p>
+<p>Notice : need to be updated for more powerful function </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ISRlepton</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ISRphoton</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ObjetctParticle</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a766e7761a6db662243c7490a615c380e"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_OnlyDetectorSimulating_FS" ref="a766e7761a6db662243c7490a615c380e" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MC_OnlyDetectorSimulating_FS </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_OnlyDetectorSimulating_FS : get onlyDetectorSimulating particles. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aea4e69e23c45ca6ac4674ee90d56fc1c"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_OnlyPythiaShowering_FS" ref="aea4e69e23c45ca6ac4674ee90d56fc1c" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MC_OnlyPythiaShowering_FS </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_OnlyPythiaShowering_FS : get all OnlyPythiaShowering particles. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4bf55a4d64eeec4762f87ee7de91f585"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_Overlay_All" ref="a4bf55a4d64eeec4762f87ee7de91f585" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MC_Overlay_All </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_Overlay_All : get all particles in the overlay. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0174dfbf7511f9fa827d9fff33aabc8b"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_Overlay_FS" ref="a0174dfbf7511f9fa827d9fff33aabc8b" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MC_Overlay_FS </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_Overlay_FS ： get overlay particles. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a96c8f9998df8b19c84b0f45271195ef9"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_PythiaShowering_All" ref="a96c8f9998df8b19c84b0f45271195ef9" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MC_PythiaShowering_All </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_PythiaShowering_All : get all particles generated in parton showering. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a321f55fa02ad6ed18931bc906b2e19ee"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_PythiaShowering_FS" ref="a321f55fa02ad6ed18931bc906b2e19ee" args="(std::vector&lt; MCParticle * &gt; MCs)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MC_PythiaShowering_FS </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_PythiaShowering_FS : get all PythiaShowering particles. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a756210f61bb929e423d1372989ad0358"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_To_HardScattering" ref="a756210f61bb929e423d1372989ad0358" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MC_To_HardScattering </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_To_HardScattering : giving a particle in the parton showering or detector simulation, finding its related hard scattering particle. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a90ef4f7069e375c606a3469d13ed3109"></a><!-- doxytag: member="ToolSet::CMC::Get_MC_To_PythiaShowering" ref="a90ef4f7069e375c606a3469d13ed3109" args="(MCParticle *input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MC_To_PythiaShowering </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MC_To_PythiaShowering : giving a particle in the detector simulation, finding its related pythia stable particle. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -1161,6 +1720,154 @@ template&lt;typename TVect &gt; </div>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>AllMC</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac1523c9e38e6453d4980145012bdc75b"></a><!-- doxytag: member="ToolSet::CMC::Get_MCParticle_Without_Type" ref="ac1523c9e38e6453d4980145012bdc75b" args="(std::vector&lt; MCParticle * &gt; MCs, std::string PDG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MCParticle_Without_Type </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>PDG</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MCParticle_Without_Type : get particles not contain a special type,. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>PDG</em>&nbsp;</td><td>: currently supporting "quark", "light_quark", "heavy_quark", "lepton", "neutrino"</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a186078318b357a23930ab6b61c8d9494"></a><!-- doxytag: member="ToolSet::CMC::Get_MCParticleType" ref="a186078318b357a23930ab6b61c8d9494" args="(std::vector&lt; MCParticle * &gt; MCs, std::string PDG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MCParticleType </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>PDG</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MCParticleType : get a special type particle among the given vectors, use the name of particle. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>PDG</em>&nbsp;</td><td>: currently supporting "quark", "light_quark", "heavy_quark", "lepton", "neutrino"</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0595ad7853b51cfc631547665a3cb63e"></a><!-- doxytag: member="ToolSet::CMC::Get_MCParticleType" ref="a0595ad7853b51cfc631547665a3cb63e" args="(std::vector&lt; MCParticle * &gt; MCs, signed int PDG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MCParticleType </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">signed int&nbsp;</td>
+          <td class="paramname"> <em>PDG</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MCParticleType : get a special type particle among the give vectors, use the signed pdg code. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>PDG</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8a83c548d4fa19b657194f055f5084db"></a><!-- doxytag: member="ToolSet::CMC::Get_MCParticleType_Abs" ref="a8a83c548d4fa19b657194f055f5084db" args="(std::vector&lt; MCParticle * &gt; MCs, signed int PDG)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_MCParticleType_Abs </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>MCs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">signed int&nbsp;</td>
+          <td class="paramname"> <em>PDG</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_MCParticleType_Abs : get a special type particle among the give vectors, use the absolute value of PDG. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>MCs</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>PDG</em>&nbsp;</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -1248,12 +1955,94 @@ template&lt;typename TVect &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Get_Particle : get a special kind of MCParticle, depending on the input function. </p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>functions for get special particle vector</dd></dl>
+<p>functions for get special particle vector. </p>
+<p>In order to use the following function, you have to Set_Nav_MC_to_RC first Get_Particle : get a special kind of MCParticle, depending on the input function.</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>Judge</em>&nbsp;</td><td>: a judge function that provided before, in order to use all functions, you have to set default Navigator first. </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>AllMC</em>&nbsp;</td><td>: a vector of MCParticle*</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a11f6123da1b7a670fc9f22de496affb8"></a><!-- doxytag: member="ToolSet::CMC::Get_Sum" ref="a11f6123da1b7a670fc9f22de496affb8" args="(std::vector&lt; MCParticle * &gt; in)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static MCParticle* ToolSet::CMC::Get_Sum </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>in</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_Sum : get sum of the input particles. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>in</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a05e74f0cd1f7ceac70fa8d2e38d3a2ab"></a><!-- doxytag: member="ToolSet::CMC::Get_Sum_To_Lorentz" ref="a05e74f0cd1f7ceac70fa8d2e38d3a2ab" args="(std::vector&lt; MCParticle * &gt; in)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static TLorentzVector ToolSet::CMC::Get_Sum_To_Lorentz </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>in</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_Sum_To_Lorentz : get sum of input particles, return four momentum. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>in</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a78794985a367cc765ffca587136c5a6c"></a><!-- doxytag: member="ToolSet::CMC::Get_Visible" ref="a78794985a367cc765ffca587136c5a6c" args="(std::vector&lt; MCParticle * &gt; in)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;MCParticle*&gt; ToolSet::CMC::Get_Visible </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; MCParticle * &gt;&nbsp;</td>
+          <td class="paramname"> <em>in</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get_Visible : get visible particles, i.e. </p>
+<p>remove neutrino and particles out of detector range from the input</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>in</em>&nbsp;</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -1297,7 +2086,7 @@ template&lt;typename TVect &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="afee9479237283cf64d769fb1b1a361ae"></a><!-- doxytag: member="ToolSet::CMC::Judge_DetectorSimulating_FS" ref="afee9479237283cf64d769fb1b1a361ae" args="(MCParticle *input)" -->
+<a class="anchor" id="a15a940ad524f57e93daa4c23a54c5992"></a><!-- doxytag: member="ToolSet::CMC::Judge_DetectorSimulating_FS" ref="a15a940ad524f57e93daa4c23a54c5992" args="(MCParticle *input, LCRelationNavigator *&amp;relation=_nav_MC_to_RC)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1305,9 +2094,18 @@ template&lt;typename TVect &gt; </div>
           <td class="memname">static bool ToolSet::CMC::Judge_DetectorSimulating_FS </td>
           <td>(</td>
           <td class="paramtype">MCParticle *&nbsp;</td>
-          <td class="paramname"> <em>input</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [static]</code></td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LCRelationNavigator *&amp;&nbsp;</td>
+          <td class="paramname"> <em>relation</em> = <code>_nav_MC_to_RC</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -1534,6 +2332,50 @@ template&lt;typename TVect &gt; </div>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a63e419bc0a7ce9d4573476d8432e84cb"></a><!-- doxytag: member="ToolSet::CMC::Judge_IsInCone" ref="a63e419bc0a7ce9d4573476d8432e84cb" args="(MCParticle *input1, MCParticle *input2, float angle_cut)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ToolSet::CMC::Judge_IsInCone </td>
+          <td>(</td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>input2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>angle_cut</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>IsInCone : judge whether having particles in the cone of the input particle. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>lep</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pfo</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>angle_cut</em>&nbsp;</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -1805,6 +2647,57 @@ template&lt;typename TVect &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="af2758c1110b4a2d0708a62465a1ad82d"></a><!-- doxytag: member="ToolSet::CMC::NewParticle" ref="af2758c1110b4a2d0708a62465a1ad82d" args="(TLorentzVector &amp;p, int pdg, float charge, MCParticle *test)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static MCParticle* ToolSet::CMC::NewParticle </td>
+          <td>(</td>
+          <td class="paramtype">TLorentzVector &amp;&nbsp;</td>
+          <td class="paramname"> <em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>pdg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>charge</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MCParticle *&nbsp;</td>
+          <td class="paramname"> <em>test</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>NewParticle : generate a new MCParticle Notice: this will use the "new" keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pdg</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>charge</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>test</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a5bd1a7515135570ef348bd77d1d26933"></a><!-- doxytag: member="ToolSet::CMC::NewParticle" ref="a5bd1a7515135570ef348bd77d1d26933" args="(TLorentzVector &amp;p, MCParticle *test)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1944,6 +2837,32 @@ template&lt;typename TVect &gt; </div>
 
 <p>Get_Collider_Energy : changing the collider energy, default is 500 GeV Notice: when using the CRC::InVisible(), it also will load the value from here. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9a095ed39d8742369489455db3b1b641"></a><!-- doxytag: member="ToolSet::CMC::Set_Detectable_Angle" ref="a9a095ed39d8742369489455db3b1b641" args="(float input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ToolSet::CMC::Set_Detectable_Angle </td>
+          <td>(</td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"> <em>input</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set_Detectable_Angle : set a rough detectable angle for detector, detault is 0.996, means larger than this angle, the particle will go into the pipe. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>input</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2315,7 +3234,7 @@ template&lt;typename TVect &gt; </div>
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on 15 Nov 2018 for ToolSet_ILCSOFT by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on 17 Nov 2018 for ToolSet_ILCSOFT by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

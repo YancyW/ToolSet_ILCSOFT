@@ -10,155 +10,549 @@
 {\ttfamily \#include $<$CRC.h$>$}\subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classToolSet_1_1CRC_a4c6c55db474f94060062b19b63ee6c65}{
-static bool {\bfseries Compare\_\-as\_\-Pair} (const std::pair$<$ float, ReconstructedParticle $\ast$ $>$ \&i, const std::pair$<$ float, ReconstructedParticle $\ast$ $>$ \&j)}
-\label{classToolSet_1_1CRC_a4c6c55db474f94060062b19b63ee6c65}
+\hypertarget{classToolSet_1_1CRC_a7066dead5ad5b69ad7526a48b7b4e2e1}{
+static void \hyperlink{classToolSet_1_1CRC_a7066dead5ad5b69ad7526a48b7b4e2e1}{Clear} ()}
+\label{classToolSet_1_1CRC_a7066dead5ad5b69ad7526a48b7b4e2e1}
 
-\item 
-\hypertarget{classToolSet_1_1CRC_a8d42a63101bab36be0173c2a4e101b7a}{
-static ReconstructedParticle $\ast$ {\bfseries NewParticle} (double px, double py, double pz, double E, ReconstructedParticle $\ast$test)}
-\label{classToolSet_1_1CRC_a8d42a63101bab36be0173c2a4e101b7a}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_ac054a2fae3815f1d4a24c781491f03b2}{
-static ReconstructedParticle $\ast$ {\bfseries NewParticle} (TLorentzVector \&p, ReconstructedParticle $\ast$test)}
-\label{classToolSet_1_1CRC_ac054a2fae3815f1d4a24c781491f03b2}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_abc862ca6ed2bb7b78c4ff26316253dec}{
-static ReconstructedParticle $\ast$ {\bfseries Add} (const ReconstructedParticle $\ast$MC1, const ReconstructedParticle $\ast$MC2)}
-\label{classToolSet_1_1CRC_abc862ca6ed2bb7b78c4ff26316253dec}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_ac3a3e5e99a15fd8b409241d30f779663}{
-static ReconstructedParticle $\ast$ {\bfseries Minus} (const ReconstructedParticle $\ast$MC1, const ReconstructedParticle $\ast$MC2)}
-\label{classToolSet_1_1CRC_ac3a3e5e99a15fd8b409241d30f779663}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a19c6ca3d07dbf23e55127756f63b9020}{
-static ReconstructedParticle $\ast$ {\bfseries Equal} (const ReconstructedParticle $\ast$MC1)}
-\label{classToolSet_1_1CRC_a19c6ca3d07dbf23e55127756f63b9020}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a358ee6636901b5a552783d4fd9dfeec9}{
-static bool {\bfseries Same\_\-Particle} (const ReconstructedParticle $\ast$MC1, const ReconstructedParticle $\ast$MC2)}
-\label{classToolSet_1_1CRC_a358ee6636901b5a552783d4fd9dfeec9}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a989702a8b052f85fdcf83b8094f4be46}{
-static float {\bfseries Cal\_\-IsolationAngle} (ReconstructedParticle $\ast$MC, std::vector$<$ ReconstructedParticle $\ast$ $>$ Ref)}
-\label{classToolSet_1_1CRC_a989702a8b052f85fdcf83b8094f4be46}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a3f2e8fcac0ebafa986567bd8c14f5656}{
-static bool {\bfseries Judge\_\-Is\_\-FromOverlay} (ReconstructedParticle $\ast$in, LCRelationNavigator $\ast$nav)}
-\label{classToolSet_1_1CRC_a3f2e8fcac0ebafa986567bd8c14f5656}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_acc5d3da66cadce82d9981f5b24a1c91a}{
-static std::vector$<$ ReconstructedParticle $\ast$ $>$ {\bfseries Get\_\-POParticle} (LCCollection $\ast$AllPOs)}
-\label{classToolSet_1_1CRC_acc5d3da66cadce82d9981f5b24a1c91a}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_ad8b6c46ab37661892183c313d5c0b3b3}{
-static std::vector$<$ ReconstructedParticle $\ast$ $>$ {\bfseries Get\_\-POParticleType} (std::vector$<$ ReconstructedParticle $\ast$ $>$ POs, int PDG)}
-\label{classToolSet_1_1CRC_ad8b6c46ab37661892183c313d5c0b3b3}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_ad0f9459b95ec7aae88c527b360cbcc3c}{
-static std::vector$<$ ReconstructedParticle $\ast$ $>$ {\bfseries Get\_\-POParticleType\_\-Abs} (std::vector$<$ ReconstructedParticle $\ast$ $>$ POs, int PDG)}
-\label{classToolSet_1_1CRC_ad0f9459b95ec7aae88c527b360cbcc3c}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a6250a525d48e3828cdc6d1544b3f7000}{
-static std::vector$<$ ReconstructedParticle $\ast$ $>$ {\bfseries Get\_\-POParticleType} (std::vector$<$ ReconstructedParticle $\ast$ $>$ POs, std::string PDG)}
-\label{classToolSet_1_1CRC_a6250a525d48e3828cdc6d1544b3f7000}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a96994e73dab779eafcc3d6a0eb7a8d5f}{
-static std::vector$<$ ReconstructedParticle $\ast$ $>$ {\bfseries Get\_\-POParticlePairType} (std::vector$<$ ReconstructedParticle $\ast$ $>$ PFOs, int PDG, int counter\_\-minus, int counter\_\-plus, int counter\_\-pair)}
-\label{classToolSet_1_1CRC_a96994e73dab779eafcc3d6a0eb7a8d5f}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_ab931816f16f8767329774a8309709d3c}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-From\_\-PFO} (ReconstructedParticle $\ast$\&source, LCRelationNavigator $\ast$\&relation)}
-\label{classToolSet_1_1CRC_ab931816f16f8767329774a8309709d3c}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a09c33fa93c99c29e9157bf915625108a}{
-static std::vector$<$ std::vector$<$ MCParticle $\ast$ $>$ $>$ {\bfseries Get\_\-MC\_\-From\_\-PFO\_\-Vec} (std::vector$<$ ReconstructedParticle $\ast$ $>$ \&source, LCRelationNavigator $\ast$\&relation)}
-\label{classToolSet_1_1CRC_a09c33fa93c99c29e9157bf915625108a}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_acab3f644700643fa2b2967365748d0df}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-A\_\-MC\_\-From\_\-PFO\_\-Vec} (std::vector$<$ ReconstructedParticle $\ast$ $>$ \&source, LCRelationNavigator $\ast$\&relation)}
-\label{classToolSet_1_1CRC_acab3f644700643fa2b2967365748d0df}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a1e8af238303782e448edc47f58fb01ab}{
-static std::vector$<$ ReconstructedParticle $\ast$ $>$ {\bfseries Get\_\-PFO\_\-From\_\-MC} (MCParticle $\ast$\&source, LCRelationNavigator $\ast$\&relation)}
-\label{classToolSet_1_1CRC_a1e8af238303782e448edc47f58fb01ab}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_adb838e10bbaaabbcc8bba3b2cf3b67f8}{
-static std::vector$<$ std::vector$<$ ReconstructedParticle $\ast$ $>$ $>$ {\bfseries Get\_\-PFO\_\-From\_\-MC\_\-Vec} (std::vector$<$ MCParticle $\ast$ $>$ \&source, LCRelationNavigator $\ast$\&relation)}
-\label{classToolSet_1_1CRC_adb838e10bbaaabbcc8bba3b2cf3b67f8}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a0b26baca07714b53f86982be73121faa}{
-static std::vector$<$ ReconstructedParticle $\ast$ $>$ {\bfseries Get\_\-A\_\-PFO\_\-From\_\-MC\_\-Vec} (std::vector$<$ MCParticle $\ast$ $>$ \&sourc, LCRelationNavigator $\ast$\&relation)}
-\label{classToolSet_1_1CRC_a0b26baca07714b53f86982be73121faa}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_aa8c717051631a9f7e31097e458c060ad}{
-static std::vector$<$ float $>$ {\bfseries Get\_\-MC\_\-Weight\_\-From\_\-PFO} (ReconstructedParticle $\ast$\&source, LCRelationNavigator $\ast$\&relation)}
-\label{classToolSet_1_1CRC_aa8c717051631a9f7e31097e458c060ad}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_aaaca6d608e731f498833598f0c611b34}{
-static std::vector$<$ std::vector$<$ float $>$ $>$ {\bfseries Get\_\-MC\_\-Weight\_\-From\_\-PFO\_\-Vec} (std::vector$<$ ReconstructedParticle $\ast$ $>$ \&source, LCRelationNavigator $\ast$\&relation)}
-\label{classToolSet_1_1CRC_aaaca6d608e731f498833598f0c611b34}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a384a4d9c72384db38104b6c67b7b6c5d}{
-static std::vector$<$ float $>$ {\bfseries Get\_\-PFO\_\-Weight\_\-From\_\-MC} (MCParticle $\ast$\&source, LCRelationNavigator $\ast$\&relation)}
-\label{classToolSet_1_1CRC_a384a4d9c72384db38104b6c67b7b6c5d}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_acea8182f9deddac046a49604f3fba50b}{
-static std::vector$<$ std::vector$<$ float $>$ $>$ {\bfseries Get\_\-PFO\_\-Weight\_\-From\_\-MC\_\-Vec} (std::vector$<$ MCParticle $\ast$ $>$ \&source, LCRelationNavigator $\ast$\&relation)}
-\label{classToolSet_1_1CRC_acea8182f9deddac046a49604f3fba50b}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_af665bae4e2dea9fbf8f131632ad60986}{
-static ReconstructedParticle $\ast$ {\bfseries Get\_\-Visible} (std::vector$<$ ReconstructedParticle $\ast$ $>$ in)}
-\label{classToolSet_1_1CRC_af665bae4e2dea9fbf8f131632ad60986}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a09784c243bc4cd8cefb18e00a1d8301f}{
-static ReconstructedParticle $\ast$ {\bfseries Get\_\-InVisible} (std::vector$<$ ReconstructedParticle $\ast$ $>$ in)}
-\label{classToolSet_1_1CRC_a09784c243bc4cd8cefb18e00a1d8301f}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a52f73ed2ca6accd9fc43f04d9d3cbbe1}{
-static TLorentzVector {\bfseries Get\_\-Visible\_\-To\_\-Lorentz} (std::vector$<$ ReconstructedParticle $\ast$ $>$ in)}
-\label{classToolSet_1_1CRC_a52f73ed2ca6accd9fc43f04d9d3cbbe1}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_ad244840d5374b1773ed3f822d9411a5d}{
-static TLorentzVector {\bfseries Get\_\-InVisible\_\-To\_\-Lorentz} (std::vector$<$ ReconstructedParticle $\ast$ $>$ in)}
-\label{classToolSet_1_1CRC_ad244840d5374b1773ed3f822d9411a5d}
-
-\item 
-\hypertarget{classToolSet_1_1CRC_a4ebcccc808e546491c383b327bcc029d}{
-static std::vector$<$ ReconstructedParticle $\ast$ $>$ {\bfseries Get\_\-PO\_\-Overlay} (std::vector$<$ ReconstructedParticle $\ast$ $>$ input, LCRelationNavigator $\ast$\&nav)}
-\label{classToolSet_1_1CRC_a4ebcccc808e546491c383b327bcc029d}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Clear : all pointers generated in the heap will be deleted. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CRC_a6ea8c697e4e53eabdce98971a64e38f6}{Compare\_\-as\_\-E} (const ReconstructedParticle $\ast$i, const ReconstructedParticle $\ast$j)
+\begin{DoxyCompactList}\small\item\em Compare\_\-as\_\-E : compare funcion by the energy for MCParticle, equals to $<$ operator. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CRC_aa6f188da873318b014914d2872c1f7d8}{Compare\_\-as\_\-Angle} (const ReconstructedParticle $\ast$i, const ReconstructedParticle $\ast$j)
+\begin{DoxyCompactList}\small\item\em Compare\_\-as\_\-Angle : compare funcion by the costheta for ReconstructedParticle, equals to $<$ operator. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CRC_a4c6c55db474f94060062b19b63ee6c65}{Compare\_\-as\_\-Pair} (const std::pair$<$ float, ReconstructedParticle $\ast$ $>$ \&i, const std::pair$<$ float, ReconstructedParticle $\ast$ $>$ \&j)
+\begin{DoxyCompactList}\small\item\em Compare\_\-as\_\-Pair : compare function by any value paired to ReconstructedParticle$\ast$. \item\end{DoxyCompactList}\item 
+static ReconstructedParticle $\ast$ \hyperlink{classToolSet_1_1CRC_a8d42a63101bab36be0173c2a4e101b7a}{NewParticle} (double px, double py, double pz, double E, ReconstructedParticle $\ast$test)
+\begin{DoxyCompactList}\small\item\em NewParticle : generate a new ReconstructedParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new ReconstructedParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
+static ReconstructedParticle $\ast$ \hyperlink{classToolSet_1_1CRC_ac054a2fae3815f1d4a24c781491f03b2}{NewParticle} (TLorentzVector \&p, ReconstructedParticle $\ast$test)
+\begin{DoxyCompactList}\small\item\em NewParticle : generate a new ReconstructedParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new ReconstructedParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
+static ReconstructedParticle $\ast$ \hyperlink{classToolSet_1_1CRC_adff0245c860e4ad9dc82c7bd95253455}{NewParticle} (TLorentzVector \&p, int pdg, float charge, ReconstructedParticle $\ast$test)
+\begin{DoxyCompactList}\small\item\em NewParticle : generate a new ReconstructedParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new ReconstructedParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
+static ReconstructedParticle $\ast$ \hyperlink{classToolSet_1_1CRC_abc862ca6ed2bb7b78c4ff26316253dec}{Add} (const ReconstructedParticle $\ast$MC1, const ReconstructedParticle $\ast$MC2)
+\begin{DoxyCompactList}\small\item\em Add : add four momentum of two ReconstructedParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new ReconstructedParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
+static ReconstructedParticle $\ast$ \hyperlink{classToolSet_1_1CRC_ac3a3e5e99a15fd8b409241d30f779663}{Minus} (const ReconstructedParticle $\ast$MC1, const ReconstructedParticle $\ast$MC2)
+\begin{DoxyCompactList}\small\item\em Minus : minus four momentum of two ReconstructedParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new ReconstructedParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
+static ReconstructedParticle $\ast$ \hyperlink{classToolSet_1_1CRC_a19c6ca3d07dbf23e55127756f63b9020}{Equal} (const ReconstructedParticle $\ast$MC1)
+\begin{DoxyCompactList}\small\item\em Equal : generate a new ReconstructedParticle equal to the input one This is different from use \char`\"{}=\char`\"{}, \char`\"{}=\char`\"{} will give the pointer address to the new pointer, they are still pointing to the same particle. \item\end{DoxyCompactList}\item 
+static TLorentzVector \hyperlink{classToolSet_1_1CRC_a152788d7b317ba47c0f003fd3c574caa}{Minus\_\-By\_\-Lorentz} (const ReconstructedParticle $\ast$MC1, const ReconstructedParticle $\ast$MC2)
+\begin{DoxyCompactList}\small\item\em Minus\_\-To\_\-Lorentz : minus four momentum of two ReconstructedParticle, return a TLorentzVector of the four momentum. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CRC_a358ee6636901b5a552783d4fd9dfeec9}{Same\_\-Particle} (const ReconstructedParticle $\ast$MC1, const ReconstructedParticle $\ast$MC2)
+\begin{DoxyCompactList}\small\item\em Same\_\-Particle : judge whether particle are same. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CRC_a3f2e8fcac0ebafa986567bd8c14f5656}{Judge\_\-Is\_\-FromOverlay} (ReconstructedParticle $\ast$in, LCRelationNavigator $\ast$nav)
+\begin{DoxyCompactList}\small\item\em Judge\_\-Is\_\-FromOverlay : the max weight MCParticle of this ReconstructedParticle is the overlay particle. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CRC_a28ee046a19ec975f344122b2f8c2f3bf}{Judge\_\-IsInCone} (ReconstructedParticle $\ast$input1, ReconstructedParticle $\ast$input2, float angle\_\-cut)
+\begin{DoxyCompactList}\small\item\em Judge\_\-IsInCone : judge whether having particles in the cone of the input particle. \item\end{DoxyCompactList}\item 
+static std::vector$<$ ReconstructedParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CRC_acc5d3da66cadce82d9981f5b24a1c91a}{Get\_\-POParticle} (LCCollection $\ast$AllPOs)
+\begin{DoxyCompactList}\small\item\em Get\_\-POParticle : get all ReconstructedParticle into a vector from the LCCollection. \item\end{DoxyCompactList}\item 
+static std::vector$<$ ReconstructedParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CRC_ad8b6c46ab37661892183c313d5c0b3b3}{Get\_\-POParticleType} (std::vector$<$ ReconstructedParticle $\ast$ $>$ POs, int PDG)
+\begin{DoxyCompactList}\small\item\em Get\_\-POParticleType : get a special type particle among the give vectors, use the signed pdg code. \item\end{DoxyCompactList}\item 
+static std::vector$<$ ReconstructedParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CRC_ad0f9459b95ec7aae88c527b360cbcc3c}{Get\_\-POParticleType\_\-Abs} (std::vector$<$ ReconstructedParticle $\ast$ $>$ POs, int PDG)
+\begin{DoxyCompactList}\small\item\em Get\_\-POParticleType\_\-Abs : get a special type particle among the give vectors, use the absolute value of PDG. \item\end{DoxyCompactList}\item 
+static std::vector$<$ ReconstructedParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CRC_a6250a525d48e3828cdc6d1544b3f7000}{Get\_\-POParticleType} (std::vector$<$ ReconstructedParticle $\ast$ $>$ POs, std::string PDG)
+\begin{DoxyCompactList}\small\item\em Get\_\-POParticleType : get a special type particle among the given vectors, use the name of particle. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CRC_ab931816f16f8767329774a8309709d3c}{Get\_\-MC\_\-From\_\-PFO} (ReconstructedParticle $\ast$\&source, LCRelationNavigator $\ast$\&relation)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-From\_\-PFO : get corresponding MCParticles, one ReconstructedParticle will correspond to several MCParticles source. \item\end{DoxyCompactList}\item 
+static std::vector$<$ std::vector$<$ MCParticle $\ast$ $>$ $>$ \hyperlink{classToolSet_1_1CRC_a09c33fa93c99c29e9157bf915625108a}{Get\_\-MC\_\-From\_\-PFO\_\-Vec} (std::vector$<$ ReconstructedParticle $\ast$ $>$ \&source, LCRelationNavigator $\ast$\&relation)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-From\_\-PFO\_\-Vec : get corresponding MCParticles from a vector of ReconstructedParticles, one ReconstructedParticle will correspond to several MCParticles source, so return a vector of vector. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CRC_acab3f644700643fa2b2967365748d0df}{Get\_\-A\_\-MC\_\-From\_\-PFO\_\-Vec} (std::vector$<$ ReconstructedParticle $\ast$ $>$ \&source, LCRelationNavigator $\ast$\&relation)
+\begin{DoxyCompactList}\small\item\em Get\_\-A\_\-MC\_\-From\_\-PFO\_\-Vec : get corresponding max weighted MCParticles from a vector of ReconstructedParticles, one ReconstructedParticle will correspond to one max weight MCParticle source, so it's a one-\/to-\/one relation. \item\end{DoxyCompactList}\item 
+static std::vector$<$ ReconstructedParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CRC_a1e8af238303782e448edc47f58fb01ab}{Get\_\-PFO\_\-From\_\-MC} (MCParticle $\ast$\&source, LCRelationNavigator $\ast$\&relation)
+\begin{DoxyCompactList}\small\item\em Get\_\-PFO\_\-From\_\-MC : get corresponding ReconstructedParticle, one MCParticle will correspond to several ReconstructedParticle source. \item\end{DoxyCompactList}\item 
+static std::vector$<$ std::vector$<$ ReconstructedParticle $\ast$ $>$ $>$ \hyperlink{classToolSet_1_1CRC_adb838e10bbaaabbcc8bba3b2cf3b67f8}{Get\_\-PFO\_\-From\_\-MC\_\-Vec} (std::vector$<$ MCParticle $\ast$ $>$ \&source, LCRelationNavigator $\ast$\&relation)
+\begin{DoxyCompactList}\small\item\em Get\_\-PFO\_\-From\_\-MC\_\-Vec : get corresponding ReconstructedParticle from a vector of MCParticles, one MCParticle will correspond to several ReconstructedParticle source, so return a vector of vector. \item\end{DoxyCompactList}\item 
+static std::vector$<$ ReconstructedParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CRC_a0b26baca07714b53f86982be73121faa}{Get\_\-A\_\-PFO\_\-From\_\-MC\_\-Vec} (std::vector$<$ MCParticle $\ast$ $>$ \&sourc, LCRelationNavigator $\ast$\&relation)
+\begin{DoxyCompactList}\small\item\em Get\_\-A\_\-PFO\_\-From\_\-MC\_\-Vec : get corresponding max weighted ReconstructedParticle from a vector of MCParticle, one MCParticle will correspond to one max weight ReconstructedParticle source, so it's a one-\/to-\/one. \item\end{DoxyCompactList}\item 
+static std::vector$<$ float $>$ \hyperlink{classToolSet_1_1CRC_aa8c717051631a9f7e31097e458c060ad}{Get\_\-MC\_\-Weight\_\-From\_\-PFO} (ReconstructedParticle $\ast$\&source, LCRelationNavigator $\ast$\&relation)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-Weight\_\-From\_\-PFO : get corresponding MCParticles wight, one ReconstructedParticle will correspond to several MCParticles source. \item\end{DoxyCompactList}\item 
+static std::vector$<$ std::vector$<$ float $>$ $>$ \hyperlink{classToolSet_1_1CRC_aaaca6d608e731f498833598f0c611b34}{Get\_\-MC\_\-Weight\_\-From\_\-PFO\_\-Vec} (std::vector$<$ ReconstructedParticle $\ast$ $>$ \&source, LCRelationNavigator $\ast$\&relation)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-Weight\_\-From\_\-PFO\_\-Vec : get corresponding MCParticle weights from a vector of ReconstructedParticles, one ReconstructedParticle will correspond to several MCParticles source, so return a vector of vector. \item\end{DoxyCompactList}\item 
+static std::vector$<$ float $>$ \hyperlink{classToolSet_1_1CRC_a384a4d9c72384db38104b6c67b7b6c5d}{Get\_\-PFO\_\-Weight\_\-From\_\-MC} (MCParticle $\ast$\&source, LCRelationNavigator $\ast$\&relation)
+\begin{DoxyCompactList}\small\item\em Get\_\-PFO\_\-Weight\_\-From\_\-MC : get corresponding ReconstructedParticle weight, one MCParticle will correspond to several ReconstructedParticle source. \item\end{DoxyCompactList}\item 
+static std::vector$<$ std::vector$<$ float $>$ $>$ \hyperlink{classToolSet_1_1CRC_acea8182f9deddac046a49604f3fba50b}{Get\_\-PFO\_\-Weight\_\-From\_\-MC\_\-Vec} (std::vector$<$ MCParticle $\ast$ $>$ \&source, LCRelationNavigator $\ast$\&relation)
+\begin{DoxyCompactList}\small\item\em Get\_\-PFO\_\-Weight\_\-From\_\-MC\_\-Vec : get corresponding ReconstructedParticle weights from a vector of MCParticles, one MCParticle will correspond to several ReconstructedParticle source, so return a vector of vector. \item\end{DoxyCompactList}\item 
+static ReconstructedParticle $\ast$ \hyperlink{classToolSet_1_1CRC_a466dba941b8cba920e96f28d2d67af1d}{Get\_\-Sum} (std::vector$<$ ReconstructedParticle $\ast$ $>$ in)
+\begin{DoxyCompactList}\small\item\em Get\_\-Sum : get sum of the input particles. \item\end{DoxyCompactList}\item 
+static ReconstructedParticle $\ast$ \hyperlink{classToolSet_1_1CRC_a09784c243bc4cd8cefb18e00a1d8301f}{Get\_\-InVisible} (std::vector$<$ ReconstructedParticle $\ast$ $>$ in)
+\begin{DoxyCompactList}\small\item\em Get\_\-InVisible : get invisible particle, i.e. \item\end{DoxyCompactList}\item 
+static TLorentzVector \hyperlink{classToolSet_1_1CRC_a590ec4e3b539f84e18eaaf9053236097}{Get\_\-Sum\_\-To\_\-Lorentz} (std::vector$<$ ReconstructedParticle $\ast$ $>$ in)
+\begin{DoxyCompactList}\small\item\em Get\_\-Sum\_\-To\_\-Lorentz : get sum of input particles, return four momentum. \item\end{DoxyCompactList}\item 
+static TLorentzVector \hyperlink{classToolSet_1_1CRC_ad244840d5374b1773ed3f822d9411a5d}{Get\_\-InVisible\_\-To\_\-Lorentz} (std::vector$<$ ReconstructedParticle $\ast$ $>$ in)
+\begin{DoxyCompactList}\small\item\em Get\_\-InVisible\_\-To\_\-Lorentz : get invisible, return four momentum. \item\end{DoxyCompactList}\item 
+static std::vector$<$ ReconstructedParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CRC_a4ebcccc808e546491c383b327bcc029d}{Get\_\-PO\_\-Overlay} (std::vector$<$ ReconstructedParticle $\ast$ $>$ input, LCRelationNavigator $\ast$\&nav)
+\begin{DoxyCompactList}\small\item\em Get\_\-PO\_\-Overlay : get overlay particle. \item\end{DoxyCompactList}\item 
+static std::vector$<$ ReconstructedParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CRC_a336841f7c8474540deb1cd1f119f5cf2}{Get\_\-InCone} (ReconstructedParticle $\ast$input, std::vector$<$ ReconstructedParticle $\ast$ $>$ \&all, float cone\_\-size)
+\begin{DoxyCompactList}\small\item\em Get\_\-InCone : get the particles in the cone. \item\end{DoxyCompactList}\item 
+static std::vector$<$ ReconstructedParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CRC_ae38bc9fed9fc07e1cea7543dca8920c2}{Get\_\-Isolated} (std::vector$<$ ReconstructedParticle $\ast$ $>$ input, std::vector$<$ ReconstructedParticle $\ast$ $>$ all, std::vector$<$ ReconstructedParticle $\ast$ $>$ outside\_\-cone, float cone\_\-size)
+\begin{DoxyCompactList}\small\item\em Get\_\-Isolated : get isolated particle. \item\end{DoxyCompactList}\item 
+static float \hyperlink{classToolSet_1_1CRC_aa04cedd2faab9dc50787a88b0207cc8f}{Get\_\-IsolationAngle} (ReconstructedParticle $\ast$MC, std::vector$<$ ReconstructedParticle $\ast$ $>$ Ref, float minimal\_\-energy\_\-in\_\-the\_\-cone=1, float minimal\_\-angle\_\-from\_\-input=2)
+\begin{DoxyCompactList}\small\item\em Get\_\-IsolationAngle : get minimal isolation angle. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 : functions for ReconstructedParticle 
+
+\subsection{Member Function Documentation}
+\hypertarget{classToolSet_1_1CRC_abc862ca6ed2bb7b78c4ff26316253dec}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Add@{Add}}
+\index{Add@{Add}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}static ReconstructedParticle$\ast$ ToolSet::CRC::Add (const ReconstructedParticle $\ast$ {\em MC1}, \/  const ReconstructedParticle $\ast$ {\em MC2})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_abc862ca6ed2bb7b78c4ff26316253dec}
+
+
+Add : add four momentum of two ReconstructedParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new ReconstructedParticle in the heap, so remember to delete this pointer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MC1}]\item[{\em MC2}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_aa6f188da873318b014914d2872c1f7d8}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Compare\_\-as\_\-Angle@{Compare\_\-as\_\-Angle}}
+\index{Compare\_\-as\_\-Angle@{Compare\_\-as\_\-Angle}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Compare\_\-as\_\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CRC::Compare\_\-as\_\-Angle (const ReconstructedParticle $\ast$ {\em i}, \/  const ReconstructedParticle $\ast$ {\em j})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CRC_aa6f188da873318b014914d2872c1f7d8}
+
+
+Compare\_\-as\_\-Angle : compare funcion by the costheta for ReconstructedParticle, equals to $<$ operator. 
+\begin{DoxyParams}{Parameters}
+\item[{\em i}]\item[{\em j}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References ToolSet::CMC::Cal\_\-CosTheta().\hypertarget{classToolSet_1_1CRC_a6ea8c697e4e53eabdce98971a64e38f6}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Compare\_\-as\_\-E@{Compare\_\-as\_\-E}}
+\index{Compare\_\-as\_\-E@{Compare\_\-as\_\-E}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Compare\_\-as\_\-E}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CRC::Compare\_\-as\_\-E (const ReconstructedParticle $\ast$ {\em i}, \/  const ReconstructedParticle $\ast$ {\em j})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a6ea8c697e4e53eabdce98971a64e38f6}
+
+
+Compare\_\-as\_\-E : compare funcion by the energy for MCParticle, equals to $<$ operator. 
+\begin{DoxyParams}{Parameters}
+\item[{\em i}]\item[{\em j}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a4c6c55db474f94060062b19b63ee6c65}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Compare\_\-as\_\-Pair@{Compare\_\-as\_\-Pair}}
+\index{Compare\_\-as\_\-Pair@{Compare\_\-as\_\-Pair}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Compare\_\-as\_\-Pair}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CRC::Compare\_\-as\_\-Pair (const std::pair$<$ float, ReconstructedParticle $\ast$ $>$ \& {\em i}, \/  const std::pair$<$ float, ReconstructedParticle $\ast$ $>$ \& {\em j})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a4c6c55db474f94060062b19b63ee6c65}
+
+
+Compare\_\-as\_\-Pair : compare function by any value paired to ReconstructedParticle$\ast$. 
+\begin{DoxyParams}{Parameters}
+\item[{\em i}]\item[{\em j}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a19c6ca3d07dbf23e55127756f63b9020}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Equal@{Equal}}
+\index{Equal@{Equal}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Equal}]{\setlength{\rightskip}{0pt plus 5cm}static ReconstructedParticle$\ast$ ToolSet::CRC::Equal (const ReconstructedParticle $\ast$ {\em MC1})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a19c6ca3d07dbf23e55127756f63b9020}
+
+
+Equal : generate a new ReconstructedParticle equal to the input one This is different from use \char`\"{}=\char`\"{}, \char`\"{}=\char`\"{} will give the pointer address to the new pointer, they are still pointing to the same particle. But \char`\"{}equal\char`\"{} will generate a new MCParticle, whose property is the same with the old one. Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new ReconstructedParticle in the heap, so remember to delete this pointer
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em MC1}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_acab3f644700643fa2b2967365748d0df}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-A\_\-MC\_\-From\_\-PFO\_\-Vec@{Get\_\-A\_\-MC\_\-From\_\-PFO\_\-Vec}}
+\index{Get\_\-A\_\-MC\_\-From\_\-PFO\_\-Vec@{Get\_\-A\_\-MC\_\-From\_\-PFO\_\-Vec}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-A\_\-MC\_\-From\_\-PFO\_\-Vec}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CRC::Get\_\-A\_\-MC\_\-From\_\-PFO\_\-Vec (std::vector$<$ ReconstructedParticle $\ast$ $>$ \& {\em source}, \/  LCRelationNavigator $\ast$\& {\em relation})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_acab3f644700643fa2b2967365748d0df}
+
+
+Get\_\-A\_\-MC\_\-From\_\-PFO\_\-Vec : get corresponding max weighted MCParticles from a vector of ReconstructedParticles, one ReconstructedParticle will correspond to one max weight MCParticle source, so it's a one-\/to-\/one relation. 
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em relation}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a0b26baca07714b53f86982be73121faa}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-A\_\-PFO\_\-From\_\-MC\_\-Vec@{Get\_\-A\_\-PFO\_\-From\_\-MC\_\-Vec}}
+\index{Get\_\-A\_\-PFO\_\-From\_\-MC\_\-Vec@{Get\_\-A\_\-PFO\_\-From\_\-MC\_\-Vec}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-A\_\-PFO\_\-From\_\-MC\_\-Vec}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$ReconstructedParticle$\ast$$>$ ToolSet::CRC::Get\_\-A\_\-PFO\_\-From\_\-MC\_\-Vec (std::vector$<$ MCParticle $\ast$ $>$ \& {\em sourc}, \/  LCRelationNavigator $\ast$\& {\em relation})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a0b26baca07714b53f86982be73121faa}
+
+
+Get\_\-A\_\-PFO\_\-From\_\-MC\_\-Vec : get corresponding max weighted ReconstructedParticle from a vector of MCParticle, one MCParticle will correspond to one max weight ReconstructedParticle source, so it's a one-\/to-\/one. 
+\begin{DoxyParams}{Parameters}
+\item[{\em sourc}]\item[{\em relation}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a336841f7c8474540deb1cd1f119f5cf2}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-InCone@{Get\_\-InCone}}
+\index{Get\_\-InCone@{Get\_\-InCone}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-InCone}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$ReconstructedParticle$\ast$$>$ ToolSet::CRC::Get\_\-InCone (ReconstructedParticle $\ast$ {\em input}, \/  std::vector$<$ ReconstructedParticle $\ast$ $>$ \& {\em all}, \/  float {\em cone\_\-size})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a336841f7c8474540deb1cd1f119f5cf2}
+
+
+Get\_\-InCone : get the particles in the cone. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\item[{\em all}]: this argument will be changed to remove the particle in the cone of the input \item[{\em cone\_\-size}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a09784c243bc4cd8cefb18e00a1d8301f}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-InVisible@{Get\_\-InVisible}}
+\index{Get\_\-InVisible@{Get\_\-InVisible}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-InVisible}]{\setlength{\rightskip}{0pt plus 5cm}static ReconstructedParticle$\ast$ ToolSet::CRC::Get\_\-InVisible (std::vector$<$ ReconstructedParticle $\ast$ $>$ {\em in})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a09784c243bc4cd8cefb18e00a1d8301f}
+
+
+Get\_\-InVisible : get invisible particle, i.e. collider -\/ sum of input vector
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em in}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_ad244840d5374b1773ed3f822d9411a5d}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-InVisible\_\-To\_\-Lorentz@{Get\_\-InVisible\_\-To\_\-Lorentz}}
+\index{Get\_\-InVisible\_\-To\_\-Lorentz@{Get\_\-InVisible\_\-To\_\-Lorentz}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-InVisible\_\-To\_\-Lorentz}]{\setlength{\rightskip}{0pt plus 5cm}static TLorentzVector ToolSet::CRC::Get\_\-InVisible\_\-To\_\-Lorentz (std::vector$<$ ReconstructedParticle $\ast$ $>$ {\em in})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_ad244840d5374b1773ed3f822d9411a5d}
+
+
+Get\_\-InVisible\_\-To\_\-Lorentz : get invisible, return four momentum. 
+\begin{DoxyParams}{Parameters}
+\item[{\em in}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_ae38bc9fed9fc07e1cea7543dca8920c2}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-Isolated@{Get\_\-Isolated}}
+\index{Get\_\-Isolated@{Get\_\-Isolated}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-Isolated}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$ReconstructedParticle$\ast$$>$ ToolSet::CRC::Get\_\-Isolated (std::vector$<$ ReconstructedParticle $\ast$ $>$ {\em input}, \/  std::vector$<$ ReconstructedParticle $\ast$ $>$ {\em all}, \/  std::vector$<$ ReconstructedParticle $\ast$ $>$ {\em outside\_\-cone}, \/  float {\em cone\_\-size})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_ae38bc9fed9fc07e1cea7543dca8920c2}
+
+
+Get\_\-Isolated : get isolated particle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\item[{\em all}]\item[{\em outside\_\-cone}]\item[{\em cone\_\-size}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_aa04cedd2faab9dc50787a88b0207cc8f}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-IsolationAngle@{Get\_\-IsolationAngle}}
+\index{Get\_\-IsolationAngle@{Get\_\-IsolationAngle}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-IsolationAngle}]{\setlength{\rightskip}{0pt plus 5cm}static float ToolSet::CRC::Get\_\-IsolationAngle (ReconstructedParticle $\ast$ {\em MC}, \/  std::vector$<$ ReconstructedParticle $\ast$ $>$ {\em Ref}, \/  float {\em minimal\_\-energy\_\-in\_\-the\_\-cone} = {\ttfamily 1}, \/  float {\em minimal\_\-angle\_\-from\_\-input} = {\ttfamily 2})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_aa04cedd2faab9dc50787a88b0207cc8f}
+
+
+Get\_\-IsolationAngle : get minimal isolation angle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\item[{\em Ref}]\item[{\em minimal\_\-energy\_\-in\_\-the\_\-cone}]\item[{\em minimal\_\-angle\_\-from\_\-input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_ab931816f16f8767329774a8309709d3c}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-MC\_\-From\_\-PFO@{Get\_\-MC\_\-From\_\-PFO}}
+\index{Get\_\-MC\_\-From\_\-PFO@{Get\_\-MC\_\-From\_\-PFO}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-MC\_\-From\_\-PFO}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CRC::Get\_\-MC\_\-From\_\-PFO (ReconstructedParticle $\ast$\& {\em source}, \/  LCRelationNavigator $\ast$\& {\em relation})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_ab931816f16f8767329774a8309709d3c}
+
+
+Get\_\-MC\_\-From\_\-PFO : get corresponding MCParticles, one ReconstructedParticle will correspond to several MCParticles source. 
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em relation}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a09c33fa93c99c29e9157bf915625108a}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-MC\_\-From\_\-PFO\_\-Vec@{Get\_\-MC\_\-From\_\-PFO\_\-Vec}}
+\index{Get\_\-MC\_\-From\_\-PFO\_\-Vec@{Get\_\-MC\_\-From\_\-PFO\_\-Vec}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-MC\_\-From\_\-PFO\_\-Vec}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$std::vector$<$MCParticle$\ast$$>$ $>$ ToolSet::CRC::Get\_\-MC\_\-From\_\-PFO\_\-Vec (std::vector$<$ ReconstructedParticle $\ast$ $>$ \& {\em source}, \/  LCRelationNavigator $\ast$\& {\em relation})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a09c33fa93c99c29e9157bf915625108a}
+
+
+Get\_\-MC\_\-From\_\-PFO\_\-Vec : get corresponding MCParticles from a vector of ReconstructedParticles, one ReconstructedParticle will correspond to several MCParticles source, so return a vector of vector. 
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em relation}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_aa8c717051631a9f7e31097e458c060ad}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-MC\_\-Weight\_\-From\_\-PFO@{Get\_\-MC\_\-Weight\_\-From\_\-PFO}}
+\index{Get\_\-MC\_\-Weight\_\-From\_\-PFO@{Get\_\-MC\_\-Weight\_\-From\_\-PFO}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-MC\_\-Weight\_\-From\_\-PFO}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$float$>$ ToolSet::CRC::Get\_\-MC\_\-Weight\_\-From\_\-PFO (ReconstructedParticle $\ast$\& {\em source}, \/  LCRelationNavigator $\ast$\& {\em relation})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_aa8c717051631a9f7e31097e458c060ad}
+
+
+Get\_\-MC\_\-Weight\_\-From\_\-PFO : get corresponding MCParticles wight, one ReconstructedParticle will correspond to several MCParticles source. 
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em relation}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_aaaca6d608e731f498833598f0c611b34}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-MC\_\-Weight\_\-From\_\-PFO\_\-Vec@{Get\_\-MC\_\-Weight\_\-From\_\-PFO\_\-Vec}}
+\index{Get\_\-MC\_\-Weight\_\-From\_\-PFO\_\-Vec@{Get\_\-MC\_\-Weight\_\-From\_\-PFO\_\-Vec}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-MC\_\-Weight\_\-From\_\-PFO\_\-Vec}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$std::vector$<$float$>$ $>$ ToolSet::CRC::Get\_\-MC\_\-Weight\_\-From\_\-PFO\_\-Vec (std::vector$<$ ReconstructedParticle $\ast$ $>$ \& {\em source}, \/  LCRelationNavigator $\ast$\& {\em relation})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_aaaca6d608e731f498833598f0c611b34}
+
+
+Get\_\-MC\_\-Weight\_\-From\_\-PFO\_\-Vec : get corresponding MCParticle weights from a vector of ReconstructedParticles, one ReconstructedParticle will correspond to several MCParticles source, so return a vector of vector. 
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em relation}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a1e8af238303782e448edc47f58fb01ab}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-PFO\_\-From\_\-MC@{Get\_\-PFO\_\-From\_\-MC}}
+\index{Get\_\-PFO\_\-From\_\-MC@{Get\_\-PFO\_\-From\_\-MC}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-PFO\_\-From\_\-MC}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$ReconstructedParticle$\ast$$>$ ToolSet::CRC::Get\_\-PFO\_\-From\_\-MC (MCParticle $\ast$\& {\em source}, \/  LCRelationNavigator $\ast$\& {\em relation})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a1e8af238303782e448edc47f58fb01ab}
+
+
+Get\_\-PFO\_\-From\_\-MC : get corresponding ReconstructedParticle, one MCParticle will correspond to several ReconstructedParticle source. 
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em relation}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_adb838e10bbaaabbcc8bba3b2cf3b67f8}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-PFO\_\-From\_\-MC\_\-Vec@{Get\_\-PFO\_\-From\_\-MC\_\-Vec}}
+\index{Get\_\-PFO\_\-From\_\-MC\_\-Vec@{Get\_\-PFO\_\-From\_\-MC\_\-Vec}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-PFO\_\-From\_\-MC\_\-Vec}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$std::vector$<$ReconstructedParticle$\ast$$>$ $>$ ToolSet::CRC::Get\_\-PFO\_\-From\_\-MC\_\-Vec (std::vector$<$ MCParticle $\ast$ $>$ \& {\em source}, \/  LCRelationNavigator $\ast$\& {\em relation})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_adb838e10bbaaabbcc8bba3b2cf3b67f8}
+
+
+Get\_\-PFO\_\-From\_\-MC\_\-Vec : get corresponding ReconstructedParticle from a vector of MCParticles, one MCParticle will correspond to several ReconstructedParticle source, so return a vector of vector. 
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em relation}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a384a4d9c72384db38104b6c67b7b6c5d}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-PFO\_\-Weight\_\-From\_\-MC@{Get\_\-PFO\_\-Weight\_\-From\_\-MC}}
+\index{Get\_\-PFO\_\-Weight\_\-From\_\-MC@{Get\_\-PFO\_\-Weight\_\-From\_\-MC}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-PFO\_\-Weight\_\-From\_\-MC}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$float$>$ ToolSet::CRC::Get\_\-PFO\_\-Weight\_\-From\_\-MC (MCParticle $\ast$\& {\em source}, \/  LCRelationNavigator $\ast$\& {\em relation})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a384a4d9c72384db38104b6c67b7b6c5d}
+
+
+Get\_\-PFO\_\-Weight\_\-From\_\-MC : get corresponding ReconstructedParticle weight, one MCParticle will correspond to several ReconstructedParticle source. 
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em relation}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_acea8182f9deddac046a49604f3fba50b}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-PFO\_\-Weight\_\-From\_\-MC\_\-Vec@{Get\_\-PFO\_\-Weight\_\-From\_\-MC\_\-Vec}}
+\index{Get\_\-PFO\_\-Weight\_\-From\_\-MC\_\-Vec@{Get\_\-PFO\_\-Weight\_\-From\_\-MC\_\-Vec}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-PFO\_\-Weight\_\-From\_\-MC\_\-Vec}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$std::vector$<$float$>$ $>$ ToolSet::CRC::Get\_\-PFO\_\-Weight\_\-From\_\-MC\_\-Vec (std::vector$<$ MCParticle $\ast$ $>$ \& {\em source}, \/  LCRelationNavigator $\ast$\& {\em relation})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_acea8182f9deddac046a49604f3fba50b}
+
+
+Get\_\-PFO\_\-Weight\_\-From\_\-MC\_\-Vec : get corresponding ReconstructedParticle weights from a vector of MCParticles, one MCParticle will correspond to several ReconstructedParticle source, so return a vector of vector. 
+\begin{DoxyParams}{Parameters}
+\item[{\em source}]\item[{\em relation}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a4ebcccc808e546491c383b327bcc029d}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-PO\_\-Overlay@{Get\_\-PO\_\-Overlay}}
+\index{Get\_\-PO\_\-Overlay@{Get\_\-PO\_\-Overlay}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-PO\_\-Overlay}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$ReconstructedParticle$\ast$$>$ ToolSet::CRC::Get\_\-PO\_\-Overlay (std::vector$<$ ReconstructedParticle $\ast$ $>$ {\em input}, \/  LCRelationNavigator $\ast$\& {\em nav})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a4ebcccc808e546491c383b327bcc029d}
+
+
+Get\_\-PO\_\-Overlay : get overlay particle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\item[{\em nav}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_acc5d3da66cadce82d9981f5b24a1c91a}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-POParticle@{Get\_\-POParticle}}
+\index{Get\_\-POParticle@{Get\_\-POParticle}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-POParticle}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$ReconstructedParticle$\ast$$>$ ToolSet::CRC::Get\_\-POParticle (LCCollection $\ast$ {\em AllPOs})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_acc5d3da66cadce82d9981f5b24a1c91a}
+
+
+Get\_\-POParticle : get all ReconstructedParticle into a vector from the LCCollection. 
+\begin{DoxyParams}{Parameters}
+\item[{\em AllPOs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a6250a525d48e3828cdc6d1544b3f7000}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-POParticleType@{Get\_\-POParticleType}}
+\index{Get\_\-POParticleType@{Get\_\-POParticleType}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-POParticleType}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$ReconstructedParticle$\ast$$>$ ToolSet::CRC::Get\_\-POParticleType (std::vector$<$ ReconstructedParticle $\ast$ $>$ {\em POs}, \/  std::string {\em PDG})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a6250a525d48e3828cdc6d1544b3f7000}
+
+
+Get\_\-POParticleType : get a special type particle among the given vectors, use the name of particle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em POs}]\item[{\em PDG}]: currently supporting \char`\"{}quark\char`\"{}, \char`\"{}light\_\-quark\char`\"{}, \char`\"{}heavy\_\-quark\char`\"{}, \char`\"{}lepton\char`\"{}, \char`\"{}neutrino\char`\"{}\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_ad8b6c46ab37661892183c313d5c0b3b3}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-POParticleType@{Get\_\-POParticleType}}
+\index{Get\_\-POParticleType@{Get\_\-POParticleType}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-POParticleType}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$ReconstructedParticle$\ast$$>$ ToolSet::CRC::Get\_\-POParticleType (std::vector$<$ ReconstructedParticle $\ast$ $>$ {\em POs}, \/  int {\em PDG})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_ad8b6c46ab37661892183c313d5c0b3b3}
+
+
+Get\_\-POParticleType : get a special type particle among the give vectors, use the signed pdg code. 
+\begin{DoxyParams}{Parameters}
+\item[{\em POs}]\item[{\em PDG}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_ad0f9459b95ec7aae88c527b360cbcc3c}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-POParticleType\_\-Abs@{Get\_\-POParticleType\_\-Abs}}
+\index{Get\_\-POParticleType\_\-Abs@{Get\_\-POParticleType\_\-Abs}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-POParticleType\_\-Abs}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$ReconstructedParticle$\ast$$>$ ToolSet::CRC::Get\_\-POParticleType\_\-Abs (std::vector$<$ ReconstructedParticle $\ast$ $>$ {\em POs}, \/  int {\em PDG})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_ad0f9459b95ec7aae88c527b360cbcc3c}
+
+
+Get\_\-POParticleType\_\-Abs : get a special type particle among the give vectors, use the absolute value of PDG. 
+\begin{DoxyParams}{Parameters}
+\item[{\em POs}]\item[{\em PDG}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a466dba941b8cba920e96f28d2d67af1d}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-Sum@{Get\_\-Sum}}
+\index{Get\_\-Sum@{Get\_\-Sum}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}static ReconstructedParticle$\ast$ ToolSet::CRC::Get\_\-Sum (std::vector$<$ ReconstructedParticle $\ast$ $>$ {\em in})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a466dba941b8cba920e96f28d2d67af1d}
+
+
+Get\_\-Sum : get sum of the input particles. 
+\begin{DoxyParams}{Parameters}
+\item[{\em in}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a590ec4e3b539f84e18eaaf9053236097}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Get\_\-Sum\_\-To\_\-Lorentz@{Get\_\-Sum\_\-To\_\-Lorentz}}
+\index{Get\_\-Sum\_\-To\_\-Lorentz@{Get\_\-Sum\_\-To\_\-Lorentz}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Get\_\-Sum\_\-To\_\-Lorentz}]{\setlength{\rightskip}{0pt plus 5cm}static TLorentzVector ToolSet::CRC::Get\_\-Sum\_\-To\_\-Lorentz (std::vector$<$ ReconstructedParticle $\ast$ $>$ {\em in})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a590ec4e3b539f84e18eaaf9053236097}
+
+
+Get\_\-Sum\_\-To\_\-Lorentz : get sum of input particles, return four momentum. 
+\begin{DoxyParams}{Parameters}
+\item[{\em in}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a3f2e8fcac0ebafa986567bd8c14f5656}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Judge\_\-Is\_\-FromOverlay@{Judge\_\-Is\_\-FromOverlay}}
+\index{Judge\_\-Is\_\-FromOverlay@{Judge\_\-Is\_\-FromOverlay}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Judge\_\-Is\_\-FromOverlay}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CRC::Judge\_\-Is\_\-FromOverlay (ReconstructedParticle $\ast$ {\em in}, \/  LCRelationNavigator $\ast$ {\em nav})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a3f2e8fcac0ebafa986567bd8c14f5656}
+
+
+Judge\_\-Is\_\-FromOverlay : the max weight MCParticle of this ReconstructedParticle is the overlay particle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em in}]\item[{\em nav}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a28ee046a19ec975f344122b2f8c2f3bf}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Judge\_\-IsInCone@{Judge\_\-IsInCone}}
+\index{Judge\_\-IsInCone@{Judge\_\-IsInCone}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Judge\_\-IsInCone}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CRC::Judge\_\-IsInCone (ReconstructedParticle $\ast$ {\em input1}, \/  ReconstructedParticle $\ast$ {\em input2}, \/  float {\em angle\_\-cut})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a28ee046a19ec975f344122b2f8c2f3bf}
+
+
+Judge\_\-IsInCone : judge whether having particles in the cone of the input particle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em lep}]\item[{\em pfo}]\item[{\em angle\_\-cut}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_ac3a3e5e99a15fd8b409241d30f779663}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Minus@{Minus}}
+\index{Minus@{Minus}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Minus}]{\setlength{\rightskip}{0pt plus 5cm}static ReconstructedParticle$\ast$ ToolSet::CRC::Minus (const ReconstructedParticle $\ast$ {\em MC1}, \/  const ReconstructedParticle $\ast$ {\em MC2})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_ac3a3e5e99a15fd8b409241d30f779663}
+
+
+Minus : minus four momentum of two ReconstructedParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new ReconstructedParticle in the heap, so remember to delete this pointer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MC1}]\item[{\em MC2}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a152788d7b317ba47c0f003fd3c574caa}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Minus\_\-By\_\-Lorentz@{Minus\_\-By\_\-Lorentz}}
+\index{Minus\_\-By\_\-Lorentz@{Minus\_\-By\_\-Lorentz}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Minus\_\-By\_\-Lorentz}]{\setlength{\rightskip}{0pt plus 5cm}static TLorentzVector ToolSet::CRC::Minus\_\-By\_\-Lorentz (const ReconstructedParticle $\ast$ {\em MC1}, \/  const ReconstructedParticle $\ast$ {\em MC2})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a152788d7b317ba47c0f003fd3c574caa}
+
+
+Minus\_\-To\_\-Lorentz : minus four momentum of two ReconstructedParticle, return a TLorentzVector of the four momentum. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MC1}]\item[{\em MC2}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_adff0245c860e4ad9dc82c7bd95253455}{
+\index{ToolSet::CRC@{ToolSet::CRC}!NewParticle@{NewParticle}}
+\index{NewParticle@{NewParticle}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{NewParticle}]{\setlength{\rightskip}{0pt plus 5cm}static ReconstructedParticle$\ast$ ToolSet::CRC::NewParticle (TLorentzVector \& {\em p}, \/  int {\em pdg}, \/  float {\em charge}, \/  ReconstructedParticle $\ast$ {\em test})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_adff0245c860e4ad9dc82c7bd95253455}
+
+
+NewParticle : generate a new ReconstructedParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new ReconstructedParticle in the heap, so remember to delete this pointer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em p}]\item[{\em pdg}]\item[{\em charge}]\item[{\em test}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_ac054a2fae3815f1d4a24c781491f03b2}{
+\index{ToolSet::CRC@{ToolSet::CRC}!NewParticle@{NewParticle}}
+\index{NewParticle@{NewParticle}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{NewParticle}]{\setlength{\rightskip}{0pt plus 5cm}static ReconstructedParticle$\ast$ ToolSet::CRC::NewParticle (TLorentzVector \& {\em p}, \/  ReconstructedParticle $\ast$ {\em test})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_ac054a2fae3815f1d4a24c781491f03b2}
+
+
+NewParticle : generate a new ReconstructedParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new ReconstructedParticle in the heap, so remember to delete this pointer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em p}]\item[{\em test}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a8d42a63101bab36be0173c2a4e101b7a}{
+\index{ToolSet::CRC@{ToolSet::CRC}!NewParticle@{NewParticle}}
+\index{NewParticle@{NewParticle}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{NewParticle}]{\setlength{\rightskip}{0pt plus 5cm}static ReconstructedParticle$\ast$ ToolSet::CRC::NewParticle (double {\em px}, \/  double {\em py}, \/  double {\em pz}, \/  double {\em E}, \/  ReconstructedParticle $\ast$ {\em test})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a8d42a63101bab36be0173c2a4e101b7a}
+
+
+NewParticle : generate a new ReconstructedParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new ReconstructedParticle in the heap, so remember to delete this pointer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em px}]\item[{\em py}]\item[{\em pz}]\item[{\em E}]\item[{\em test}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CRC_a358ee6636901b5a552783d4fd9dfeec9}{
+\index{ToolSet::CRC@{ToolSet::CRC}!Same\_\-Particle@{Same\_\-Particle}}
+\index{Same\_\-Particle@{Same\_\-Particle}!ToolSet::CRC@{ToolSet::CRC}}
+\subsubsection[{Same\_\-Particle}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CRC::Same\_\-Particle (const ReconstructedParticle $\ast$ {\em MC1}, \/  const ReconstructedParticle $\ast$ {\em MC2})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CRC_a358ee6636901b5a552783d4fd9dfeec9}
+
+
+Same\_\-Particle : judge whether particle are same. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MC1}]\item[{\em MC2}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

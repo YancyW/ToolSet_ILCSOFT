@@ -4,7 +4,7 @@
 }
 
 
-: functions for MCParticles in this class, FS -\/$>$ final states, means 1 the particle will contribute to the ReconstructedParticle or 2 not decay any more (not reach the detector or not detectable  
+: functions for MCParticles  
 
 
 {\ttfamily \#include $<$CMC.h$>$}\subsection*{Static Public Member Functions}
@@ -14,6 +14,8 @@ static void \hyperlink{classToolSet_1_1CMC_a2b939b1fd1e396eb5764c512903fe229}{Se
 \begin{DoxyCompactList}\small\item\em Get\_\-Collider\_\-Energy : changing the collider energy, default is 500 GeV Notice: when using the CRC::InVisible(), it also will load the value from here. \item\end{DoxyCompactList}\item 
 static void \hyperlink{classToolSet_1_1CMC_a6d72918adb583b9dcaee3c0c9166f6cb}{Set\_\-Beam\_\-Cross\_\-Angle} (float input)
 \begin{DoxyCompactList}\small\item\em Set\_\-Beam\_\-Cross\_\-Angle : changing beam crossing angle, default is 0.007 Notice: when using the CRC::InVisible(), it also will load the value from here. \item\end{DoxyCompactList}\item 
+static void \hyperlink{classToolSet_1_1CMC_a9a095ed39d8742369489455db3b1b641}{Set\_\-Detectable\_\-Angle} (float input)
+\begin{DoxyCompactList}\small\item\em Set\_\-Detectable\_\-Angle : set a rough detectable angle for detector, detault is 0.996, means larger than this angle, the particle will go into the pipe. \item\end{DoxyCompactList}\item 
 static void \hyperlink{classToolSet_1_1CMC_ab933f8f5cbebde554dcce60f086bf480}{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC} (LCRelationNavigator $\ast$input)
 \begin{DoxyCompactList}\small\item\em Set\_\-Nav\_\-MC\_\-to\_\-RC : set default Navigator for MC to ReconstructedParticle, important for particle classification. \item\end{DoxyCompactList}\item 
 static float \hyperlink{classToolSet_1_1CMC_a7143149e3db8c1e5055498c8aba88182}{Get\_\-Collider\_\-Energy} ()
@@ -22,9 +24,16 @@ static float \hyperlink{classToolSet_1_1CMC_afaf6f983eee33318bcaf7923cde7266e}{G
 \begin{DoxyCompactList}\small\item\em Get\_\-Beam\_\-Energy : show the energy for initial beam after having the detector simulation. \item\end{DoxyCompactList}\item 
 static float \hyperlink{classToolSet_1_1CMC_aab8dca236c78fffe1b63bac50583090a}{Get\_\-Beam\_\-Cross\_\-Angle} ()
 \begin{DoxyCompactList}\small\item\em Get\_\-Beam\_\-Cross\_\-Angle : get the collider crossing angle. \item\end{DoxyCompactList}\item 
+\hypertarget{classToolSet_1_1CMC_aaa16ba4a9f89c0ee01f8c7e2078d18d6}{
+static void \hyperlink{classToolSet_1_1CMC_aaa16ba4a9f89c0ee01f8c7e2078d18d6}{Clear} ()}
+\label{classToolSet_1_1CMC_aaa16ba4a9f89c0ee01f8c7e2078d18d6}
+
+\begin{DoxyCompactList}\small\item\em Clear : all pointers generated in the heap will be deleted. \item\end{DoxyCompactList}\item 
 static MCParticle $\ast$ \hyperlink{classToolSet_1_1CMC_ab30c29f999f2b3dd1c85ed68636f2281}{NewParticle} (float px, float py, float pz, float E, MCParticle $\ast$test)
 \begin{DoxyCompactList}\small\item\em NewParticle : generate a new MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
 static MCParticle $\ast$ \hyperlink{classToolSet_1_1CMC_a5bd1a7515135570ef348bd77d1d26933}{NewParticle} (TLorentzVector \&p, MCParticle $\ast$test)
+\begin{DoxyCompactList}\small\item\em NewParticle : generate a new MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
+static MCParticle $\ast$ \hyperlink{classToolSet_1_1CMC_af2758c1110b4a2d0708a62465a1ad82d}{NewParticle} (TLorentzVector \&p, int pdg, float charge, MCParticle $\ast$test)
 \begin{DoxyCompactList}\small\item\em NewParticle : generate a new MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
 static MCParticle $\ast$ \hyperlink{classToolSet_1_1CMC_ad1b2172aaacc40d4f5971492a5d1a0f5}{Add} (const MCParticle $\ast$MC1, const MCParticle $\ast$MC2)
 \begin{DoxyCompactList}\small\item\em Add : add four momentum of two MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. \item\end{DoxyCompactList}\item 
@@ -64,8 +73,6 @@ static bool \hyperlink{classToolSet_1_1CMC_a9840196a2fd81836dfc4118e68d7be38}{Co
 \begin{DoxyCompactList}\small\item\em Cal\_\-Azimuth : calculate aximuth anlge to the reference axis. \item\end{DoxyCompactList}\item 
 {\footnotesize template$<$typename TPhi $>$ }\\static float \hyperlink{classToolSet_1_1CMC_aa1667ca515e4b26ca43755fd8d2e30bd}{Cal\_\-Acoplanarity} (TPhi MC, TPhi Ref)
 \begin{DoxyCompactList}\small\item\em Cal\_\-Acoplanarity : calculate acoplanarity acoplan = pi -\/ $|$phi$|$. \item\end{DoxyCompactList}\item 
-static float \hyperlink{classToolSet_1_1CMC_a3d0ff5af967b32efbc5907174b64348f}{Cal\_\-IsolationAngle} (MCParticle $\ast$MC, std::vector$<$ MCParticle $\ast$ $>$ Ref, float minimal\_\-energy\_\-in\_\-the\_\-cone=1, float minimal\_\-angle\_\-from\_\-input=2)
-\begin{DoxyCompactList}\small\item\em Cal\_\-IsolationAngle : calculate minimal isolation angle. \item\end{DoxyCompactList}\item 
 static int \hyperlink{classToolSet_1_1CMC_a67ab1d51b7fd0f98cfa19be5381e961a}{Get\_\-Parents\_\-Number} (MCParticle $\ast$input)
 \begin{DoxyCompactList}\small\item\em functions for get basic particle properties \item\end{DoxyCompactList}\item 
 static int \hyperlink{classToolSet_1_1CMC_a44a3b5e5df7effa4ed170151cd63b706}{Get\_\-Daughters\_\-Number} (MCParticle $\ast$input)
@@ -222,7 +229,7 @@ static bool \hyperlink{classToolSet_1_1CMC_a6c340bf257a238e9f68cd251b50599cd}{Ju
 \begin{DoxyCompactList}\small\item\em Judge\_\-PythiaShowering\_\-All : is generated by Pythia. \item\end{DoxyCompactList}\item 
 static bool \hyperlink{classToolSet_1_1CMC_a158579bb5adfcfa9e0b4bbaba7ee3229}{Judge\_\-OnlyDetectorSimulating\_\-FS} (MCParticle $\ast$input, LCRelationNavigator $\ast$\&relation=\_\-nav\_\-MC\_\-to\_\-RC)
 \begin{DoxyCompactList}\small\item\em Judge\_\-OnlyDetectorSimulating\_\-FS : is generated in simulation and don't have daughter. \item\end{DoxyCompactList}\item 
-static bool \hyperlink{classToolSet_1_1CMC_afee9479237283cf64d769fb1b1a361ae}{Judge\_\-DetectorSimulating\_\-FS} (MCParticle $\ast$input)
+static bool \hyperlink{classToolSet_1_1CMC_a15a940ad524f57e93daa4c23a54c5992}{Judge\_\-DetectorSimulating\_\-FS} (MCParticle $\ast$input, LCRelationNavigator $\ast$\&relation=\_\-nav\_\-MC\_\-to\_\-RC)
 \begin{DoxyCompactList}\small\item\em Judge\_\-DetectorSimulating\_\-FS : is the final states which will contribute to the ReconstructedParticle, not including the overlay. \item\end{DoxyCompactList}\item 
 static bool \hyperlink{classToolSet_1_1CMC_a7230e73142fa3a3a5b2952f11556022c}{Judge\_\-Overlay\_\-FS} (MCParticle $\ast$input, LCRelationNavigator $\ast$\&relation=\_\-nav\_\-MC\_\-to\_\-RC)
 \begin{DoxyCompactList}\small\item\em Judge\_\-Overlay\_\-FS : is overlay and don't have daughter. \item\end{DoxyCompactList}\item 
@@ -230,136 +237,72 @@ static bool \hyperlink{classToolSet_1_1CMC_a257af2810ec961f3e1a71f29bc12154f}{Ju
 \begin{DoxyCompactList}\small\item\em Judge\_\-Has\_\-Overlay : has overlay particle in this vector. \item\end{DoxyCompactList}\item 
 static bool \hyperlink{classToolSet_1_1CMC_ad5ee7a4ddd73dca280d23d5656ac106d}{Judge\_\-All\_\-FS} (MCParticle $\ast$input, LCRelationNavigator $\ast$\&relation=\_\-nav\_\-MC\_\-to\_\-RC)
 \begin{DoxyCompactList}\small\item\em Judge\_\-All\_\-FS : all the final states which will contribute to the ReconstructedParticle, including the overlay. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classToolSet_1_1CMC_a63e419bc0a7ce9d4573476d8432e84cb}{Judge\_\-IsInCone} (MCParticle $\ast$input1, MCParticle $\ast$input2, float angle\_\-cut)
+\begin{DoxyCompactList}\small\item\em IsInCone : judge whether having particles in the cone of the input particle. \item\end{DoxyCompactList}\item 
 static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_ae5e3cc992d63d6efb8030bdb170b87d1}{Get\_\-Particle} (bool($\ast$Judge)(MCParticle $\ast$), std::vector$<$ MCParticle $\ast$ $>$ AllMC)
-\begin{DoxyCompactList}\small\item\em Get\_\-Particle : get a special kind of MCParticle, depending on the input function. \item\end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em functions for get special particle vector. \item\end{DoxyCompactList}\item 
 static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_aec3000cf58c5ef65b62938decced8303}{Get\_\-MCParticle} (LCCollection $\ast$AllMC)
 \begin{DoxyCompactList}\small\item\em Get\_\-MCParticle : get all MCParticles into a vector from the LCCollection MCParticle. \item\end{DoxyCompactList}\item 
 static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a899d324f086d12abb75db9d87798ed91}{Get\_\-MC\_\-HardScattering\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)
-\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-HardScattering\_\-FS. \item\end{DoxyCompactList}\item 
-\hypertarget{classToolSet_1_1CMC_a321f55fa02ad6ed18931bc906b2e19ee}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-PythiaShowering\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
-\label{classToolSet_1_1CMC_a321f55fa02ad6ed18931bc906b2e19ee}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_aea4e69e23c45ca6ac4674ee90d56fc1c}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-OnlyPythiaShowering\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
-\label{classToolSet_1_1CMC_aea4e69e23c45ca6ac4674ee90d56fc1c}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_af0a81c6e40cc44cecfe9947be99783d4}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-DetectorSimulating\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
-\label{classToolSet_1_1CMC_af0a81c6e40cc44cecfe9947be99783d4}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a766e7761a6db662243c7490a615c380e}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-OnlyDetectorSimulating\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
-\label{classToolSet_1_1CMC_a766e7761a6db662243c7490a615c380e}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a0174dfbf7511f9fa827d9fff33aabc8b}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-Overlay\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
-\label{classToolSet_1_1CMC_a0174dfbf7511f9fa827d9fff33aabc8b}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a826b4fcc4ae58b18ceec544fb5abf563}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-All\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
-\label{classToolSet_1_1CMC_a826b4fcc4ae58b18ceec544fb5abf563}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a96c8f9998df8b19c84b0f45271195ef9}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-PythiaShowering\_\-All} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
-\label{classToolSet_1_1CMC_a96c8f9998df8b19c84b0f45271195ef9}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a8581240b2a8d474e851c3c1ed256fada}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-DetectorSimulating\_\-All} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
-\label{classToolSet_1_1CMC_a8581240b2a8d474e851c3c1ed256fada}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a4bf55a4d64eeec4762f87ee7de91f585}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MC\_\-Overlay\_\-All} (std::vector$<$ MCParticle $\ast$ $>$ MCs)}
-\label{classToolSet_1_1CMC_a4bf55a4d64eeec4762f87ee7de91f585}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a38ef7e0f75f14714d4636ca70c1b717c}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries MCToPythiaShowering} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_a38ef7e0f75f14714d4636ca70c1b717c}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_adfd54e8274a8994f4cc0a531a028cd01}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries MCToHardScattering} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_adfd54e8274a8994f4cc0a531a028cd01}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_abf41aa5efde937a3e21fa3b24323d570}{
-static void {\bfseries Get\_\-MC\_\-HardScattering\_\-Sort} (std::vector$<$ MCParticle $\ast$ $>$ MCs, std::vector$<$ MCParticle $\ast$ $>$ \&ISRlepton, std::vector$<$ MCParticle $\ast$ $>$ \&ISRphoton, std::vector$<$ MCParticle $\ast$ $>$ \&ObjetctParticle)}
-\label{classToolSet_1_1CMC_abf41aa5efde937a3e21fa3b24323d570}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a0595ad7853b51cfc631547665a3cb63e}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MCParticleType} (std::vector$<$ MCParticle $\ast$ $>$ MCs, signed int PDG)}
-\label{classToolSet_1_1CMC_a0595ad7853b51cfc631547665a3cb63e}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a8a83c548d4fa19b657194f055f5084db}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MCParticleType\_\-Abs} (std::vector$<$ MCParticle $\ast$ $>$ MCs, signed int PDG)}
-\label{classToolSet_1_1CMC_a8a83c548d4fa19b657194f055f5084db}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a186078318b357a23930ab6b61c8d9494}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-MCParticleType} (std::vector$<$ MCParticle $\ast$ $>$ MCs, std::string PDG)}
-\label{classToolSet_1_1CMC_a186078318b357a23930ab6b61c8d9494}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_aa16a7d3c1cbd3e1d25cf885b25d561ec}{
-static float {\bfseries Get\_\-DecayChannel} (MCParticle $\ast$input)}
-\label{classToolSet_1_1CMC_aa16a7d3c1cbd3e1d25cf885b25d561ec}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_acd7611ff7cc945f5d198c0c0ba0b50c2}{
-static void {\bfseries Remove\_\-Duplication} (std::vector$<$ MCParticle $\ast$ $>$ \&MCs)}
-\label{classToolSet_1_1CMC_acd7611ff7cc945f5d198c0c0ba0b50c2}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_ac483834b1710a1c4797f3b55f8f2336b}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Pass\_\-DetectorAngle} (std::vector$<$ MCParticle $\ast$ $>$ \&MCs)}
-\label{classToolSet_1_1CMC_ac483834b1710a1c4797f3b55f8f2336b}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a37d3453a48a49082beb6f65827fc94b4}{
-static MCParticle $\ast$ {\bfseries Get\_\-Visible} (std::vector$<$ MCParticle $\ast$ $>$ in)}
-\label{classToolSet_1_1CMC_a37d3453a48a49082beb6f65827fc94b4}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a89441427db18fc75e777966d5ac169b7}{
-static MCParticle $\ast$ {\bfseries Get\_\-InVisible} (std::vector$<$ MCParticle $\ast$ $>$ in)}
-\label{classToolSet_1_1CMC_a89441427db18fc75e777966d5ac169b7}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a0754f20765709b34841b3c3aec8c7e51}{
-static TLorentzVector {\bfseries Get\_\-Visible\_\-To\_\-Lorentz} (std::vector$<$ MCParticle $\ast$ $>$ in)}
-\label{classToolSet_1_1CMC_a0754f20765709b34841b3c3aec8c7e51}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_ab44cceb872950622551735a97a23bd4d}{
-static TLorentzVector {\bfseries Get\_\-InVisible\_\-To\_\-Lorentz} (std::vector$<$ MCParticle $\ast$ $>$ in)}
-\label{classToolSet_1_1CMC_ab44cceb872950622551735a97a23bd4d}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_af7da55fa17ab746930f3a04eeb3014ef}{
-static std::vector$<$ MCParticle $\ast$ $>$ {\bfseries Get\_\-Isolated} (std::vector$<$ MCParticle $\ast$ $>$ input, std::vector$<$ MCParticle $\ast$ $>$ all, std::vector$<$ MCParticle $\ast$ $>$ left)}
-\label{classToolSet_1_1CMC_af7da55fa17ab746930f3a04eeb3014ef}
-
-\item 
-\hypertarget{classToolSet_1_1CMC_a4594f7a35f5db952f142626100ced91f}{
-static bool {\bfseries IsInCone} (MCParticle $\ast$lep, MCParticle $\ast$pfo, float angle\_\-cut)}
-\label{classToolSet_1_1CMC_a4594f7a35f5db952f142626100ced91f}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-HardScattering\_\-FS : get all HardScattering particles. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a321f55fa02ad6ed18931bc906b2e19ee}{Get\_\-MC\_\-PythiaShowering\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-PythiaShowering\_\-FS : get all PythiaShowering particles. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_aea4e69e23c45ca6ac4674ee90d56fc1c}{Get\_\-MC\_\-OnlyPythiaShowering\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-OnlyPythiaShowering\_\-FS : get all OnlyPythiaShowering particles. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_af0a81c6e40cc44cecfe9947be99783d4}{Get\_\-MC\_\-DetectorSimulating\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-DetectorSimulating\_\-FS : get DetectorSimulating particles. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a766e7761a6db662243c7490a615c380e}{Get\_\-MC\_\-OnlyDetectorSimulating\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-OnlyDetectorSimulating\_\-FS : get onlyDetectorSimulating particles. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a0174dfbf7511f9fa827d9fff33aabc8b}{Get\_\-MC\_\-Overlay\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-Overlay\_\-FS ： get overlay particles. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a826b4fcc4ae58b18ceec544fb5abf563}{Get\_\-MC\_\-All\_\-FS} (std::vector$<$ MCParticle $\ast$ $>$ MCs)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-All\_\-FS : get all final states. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a96c8f9998df8b19c84b0f45271195ef9}{Get\_\-MC\_\-PythiaShowering\_\-All} (std::vector$<$ MCParticle $\ast$ $>$ MCs)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-PythiaShowering\_\-All : get all particles generated in parton showering. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a8581240b2a8d474e851c3c1ed256fada}{Get\_\-MC\_\-DetectorSimulating\_\-All} (std::vector$<$ MCParticle $\ast$ $>$ MCs)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-DetectorSimulating\_\-All : get all particles generated in DetectorSimulating. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a4bf55a4d64eeec4762f87ee7de91f585}{Get\_\-MC\_\-Overlay\_\-All} (std::vector$<$ MCParticle $\ast$ $>$ MCs)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-Overlay\_\-All : get all particles in the overlay. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a90ef4f7069e375c606a3469d13ed3109}{Get\_\-MC\_\-To\_\-PythiaShowering} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-To\_\-PythiaShowering : giving a particle in the detector simulation, finding its related pythia stable particle. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a756210f61bb929e423d1372989ad0358}{Get\_\-MC\_\-To\_\-HardScattering} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-To\_\-HardScattering : giving a particle in the parton showering or detector simulation, finding its related hard scattering particle. \item\end{DoxyCompactList}\item 
+static void \hyperlink{classToolSet_1_1CMC_abf41aa5efde937a3e21fa3b24323d570}{Get\_\-MC\_\-HardScattering\_\-Sort} (std::vector$<$ MCParticle $\ast$ $>$ MCs, std::vector$<$ MCParticle $\ast$ $>$ \&ISRlepton, std::vector$<$ MCParticle $\ast$ $>$ \&ISRphoton, std::vector$<$ MCParticle $\ast$ $>$ \&ObjetctParticle)
+\begin{DoxyCompactList}\small\item\em Get\_\-MC\_\-HardScattering\_\-Sort : classify input HardScattering MCParticles by their pdg. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a0595ad7853b51cfc631547665a3cb63e}{Get\_\-MCParticleType} (std::vector$<$ MCParticle $\ast$ $>$ MCs, signed int PDG)
+\begin{DoxyCompactList}\small\item\em Get\_\-MCParticleType : get a special type particle among the give vectors, use the signed pdg code. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a8a83c548d4fa19b657194f055f5084db}{Get\_\-MCParticleType\_\-Abs} (std::vector$<$ MCParticle $\ast$ $>$ MCs, signed int PDG)
+\begin{DoxyCompactList}\small\item\em Get\_\-MCParticleType\_\-Abs : get a special type particle among the give vectors, use the absolute value of PDG. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a186078318b357a23930ab6b61c8d9494}{Get\_\-MCParticleType} (std::vector$<$ MCParticle $\ast$ $>$ MCs, std::string PDG)
+\begin{DoxyCompactList}\small\item\em Get\_\-MCParticleType : get a special type particle among the given vectors, use the name of particle. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_ac1523c9e38e6453d4980145012bdc75b}{Get\_\-MCParticle\_\-Without\_\-Type} (std::vector$<$ MCParticle $\ast$ $>$ MCs, std::string PDG)
+\begin{DoxyCompactList}\small\item\em Get\_\-MCParticle\_\-Without\_\-Type : get particles not contain a special type,. \item\end{DoxyCompactList}\item 
+static float \hyperlink{classToolSet_1_1CMC_aa16a7d3c1cbd3e1d25cf885b25d561ec}{Get\_\-DecayChannel} (MCParticle $\ast$input)
+\begin{DoxyCompactList}\small\item\em Get\_\-DecayChannel : give the decay channel of the input particle. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a92dc2c0c2bfdaa05ebeebeaf90d4a50a}{Get\_\-In\_\-DetectorAngle} (std::vector$<$ MCParticle $\ast$ $>$ \&MCs)
+\begin{DoxyCompactList}\small\item\em Get\_\-In\_\-DetectorAngle : get particles in the detector region. \item\end{DoxyCompactList}\item 
+static MCParticle $\ast$ \hyperlink{classToolSet_1_1CMC_a11f6123da1b7a670fc9f22de496affb8}{Get\_\-Sum} (std::vector$<$ MCParticle $\ast$ $>$ in)
+\begin{DoxyCompactList}\small\item\em Get\_\-Sum : get sum of the input particles. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a78794985a367cc765ffca587136c5a6c}{Get\_\-Visible} (std::vector$<$ MCParticle $\ast$ $>$ in)
+\begin{DoxyCompactList}\small\item\em Get\_\-Visible : get visible particles, i.e. \item\end{DoxyCompactList}\item 
+static MCParticle $\ast$ \hyperlink{classToolSet_1_1CMC_a89441427db18fc75e777966d5ac169b7}{Get\_\-InVisible} (std::vector$<$ MCParticle $\ast$ $>$ in)
+\begin{DoxyCompactList}\small\item\em Get\_\-InVisible : get invisible particle, i.e. \item\end{DoxyCompactList}\item 
+static TLorentzVector \hyperlink{classToolSet_1_1CMC_a05e74f0cd1f7ceac70fa8d2e38d3a2ab}{Get\_\-Sum\_\-To\_\-Lorentz} (std::vector$<$ MCParticle $\ast$ $>$ in)
+\begin{DoxyCompactList}\small\item\em Get\_\-Sum\_\-To\_\-Lorentz : get sum of input particles, return four momentum. \item\end{DoxyCompactList}\item 
+static TLorentzVector \hyperlink{classToolSet_1_1CMC_ab44cceb872950622551735a97a23bd4d}{Get\_\-InVisible\_\-To\_\-Lorentz} (std::vector$<$ MCParticle $\ast$ $>$ in)
+\begin{DoxyCompactList}\small\item\em Get\_\-InVisible\_\-To\_\-Lorentz : get invisible, return four momentum. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a721fbac55172fef2776b1637d55de936}{Get\_\-InCone} (MCParticle $\ast$input, std::vector$<$ MCParticle $\ast$ $>$ \&all, float cone\_\-size)
+\begin{DoxyCompactList}\small\item\em Get\_\-InCone : get the particles in the cone. \item\end{DoxyCompactList}\item 
+static std::vector$<$ MCParticle $\ast$ $>$ \hyperlink{classToolSet_1_1CMC_a21929017024c827e522e120616bd6bed}{Get\_\-Isolated} (std::vector$<$ MCParticle $\ast$ $>$ input, std::vector$<$ MCParticle $\ast$ $>$ all, std::vector$<$ MCParticle $\ast$ $>$ outside\_\-cone, float cone\_\-size)
+\begin{DoxyCompactList}\small\item\em Get\_\-Isolated : get isolated particle. \item\end{DoxyCompactList}\item 
+static float \hyperlink{classToolSet_1_1CMC_a507837bc0dd0238a8b44f0855e647b0c}{Get\_\-IsolationAngle} (MCParticle $\ast$MC, std::vector$<$ MCParticle $\ast$ $>$ Ref, float minimal\_\-energy\_\-in\_\-the\_\-cone=1, float minimal\_\-angle\_\-from\_\-input=2)
+\begin{DoxyCompactList}\small\item\em Get\_\-IsolationAngle : get minimal isolation angle. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-: functions for MCParticles in this class, FS -\/$>$ final states, means 1 the particle will contribute to the ReconstructedParticle or 2 not decay any more (not reach the detector or not detectable PythiaShowering -\/$>$ the parton shower generated by the pythia (or maybe other generator e.g. Herwig.) DetectorSimulating -\/$>$ the particle generated in the detector simulation 
+: functions for MCParticles in this class, FS -\/$>$ final states, means 1 the particle will contribute to the ReconstructedParticle or 2 not decay any more (not reach the detector or not detectable
+
+PythiaShowering -\/$>$ the parton shower generated by the pythia (or maybe other generator e.g. Herwig.) DetectorSimulating -\/$>$ the particle generated in the detector simulation 
 
 \subsection{Member Function Documentation}
 \hypertarget{classToolSet_1_1CMC_ad1b2172aaacc40d4f5971492a5d1a0f5}{
@@ -423,9 +366,7 @@ Cal\_\-Angle\_\-Deg : calculate the angle of degree with acos to the reference a
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-
-
-Referenced by Cal\_\-IsolationAngle().\hypertarget{classToolSet_1_1CMC_ab77fa5dd46a12ac8887776724261f72b}{
+\hypertarget{classToolSet_1_1CMC_ab77fa5dd46a12ac8887776724261f72b}{
 \index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-Azimuth@{Cal\_\-Azimuth}}
 \index{Cal\_\-Azimuth@{Cal\_\-Azimuth}!ToolSet::CMC@{ToolSet::CMC}}
 \subsubsection[{Cal\_\-Azimuth}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TPhi $>$ static float ToolSet::CMC::Cal\_\-Azimuth (TPhi {\em MC}, \/  TPhi {\em Ref})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
@@ -491,22 +432,7 @@ Cal\_\-CosTheta : calculate costheta.
 \end{DoxyReturn}
 
 
-Referenced by Compare\_\-as\_\-Angle().\hypertarget{classToolSet_1_1CMC_a3d0ff5af967b32efbc5907174b64348f}{
-\index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-IsolationAngle@{Cal\_\-IsolationAngle}}
-\index{Cal\_\-IsolationAngle@{Cal\_\-IsolationAngle}!ToolSet::CMC@{ToolSet::CMC}}
-\subsubsection[{Cal\_\-IsolationAngle}]{\setlength{\rightskip}{0pt plus 5cm}static float ToolSet::CMC::Cal\_\-IsolationAngle (MCParticle $\ast$ {\em MC}, \/  std::vector$<$ MCParticle $\ast$ $>$ {\em Ref}, \/  float {\em minimal\_\-energy\_\-in\_\-the\_\-cone} = {\ttfamily 1}, \/  float {\em minimal\_\-angle\_\-from\_\-input} = {\ttfamily 2})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
-\label{classToolSet_1_1CMC_a3d0ff5af967b32efbc5907174b64348f}
-
-
-Cal\_\-IsolationAngle : calculate minimal isolation angle. 
-\begin{DoxyParams}{Parameters}
-\item[{\em MC}]\item[{\em Ref}]\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-
-
-References Cal\_\-Angle\_\-Deg(), and Compare\_\-as\_\-Pair().\hypertarget{classToolSet_1_1CMC_acbada53a8416ca460d7aa07453610dc2}{
+Referenced by ToolSet::CRC::Compare\_\-as\_\-Angle(), and Compare\_\-as\_\-Angle().\hypertarget{classToolSet_1_1CMC_acbada53a8416ca460d7aa07453610dc2}{
 \index{ToolSet::CMC@{ToolSet::CMC}!Cal\_\-Mag@{Cal\_\-Mag}}
 \index{Cal\_\-Mag@{Cal\_\-Mag}!ToolSet::CMC@{ToolSet::CMC}}
 \subsubsection[{Cal\_\-Mag}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename TMag $>$ static float ToolSet::CMC::Cal\_\-Mag (TMag {\em MC})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
@@ -627,9 +553,7 @@ Compare\_\-as\_\-Pair : compare function by any value paired to MCParticle$\ast$
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-
-
-Referenced by Cal\_\-IsolationAngle().\hypertarget{classToolSet_1_1CMC_a29838e430204b6f0d6e5cdf8a669f615}{
+\hypertarget{classToolSet_1_1CMC_a29838e430204b6f0d6e5cdf8a669f615}{
 \index{ToolSet::CMC@{ToolSet::CMC}!Equal@{Equal}}
 \index{Equal@{Equal}!ToolSet::CMC@{ToolSet::CMC}}
 \subsubsection[{Equal}]{\setlength{\rightskip}{0pt plus 5cm}static MCParticle$\ast$ ToolSet::CMC::Equal (const MCParticle $\ast$ {\em MC1})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
@@ -702,6 +626,138 @@ Get\_\-DaughtersPID : daughter's PDG code.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_aa16a7d3c1cbd3e1d25cf885b25d561ec}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-DecayChannel@{Get\_\-DecayChannel}}
+\index{Get\_\-DecayChannel@{Get\_\-DecayChannel}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-DecayChannel}]{\setlength{\rightskip}{0pt plus 5cm}static float ToolSet::CMC::Get\_\-DecayChannel (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_aa16a7d3c1cbd3e1d25cf885b25d561ec}
+
+
+Get\_\-DecayChannel : give the decay channel of the input particle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+: a self defined decay channel number, check the source code for details. 
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a92dc2c0c2bfdaa05ebeebeaf90d4a50a}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-In\_\-DetectorAngle@{Get\_\-In\_\-DetectorAngle}}
+\index{Get\_\-In\_\-DetectorAngle@{Get\_\-In\_\-DetectorAngle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-In\_\-DetectorAngle}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-In\_\-DetectorAngle (std::vector$<$ MCParticle $\ast$ $>$ \& {\em MCs})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a92dc2c0c2bfdaa05ebeebeaf90d4a50a}
+
+
+Get\_\-In\_\-DetectorAngle : get particles in the detector region. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a721fbac55172fef2776b1637d55de936}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-InCone@{Get\_\-InCone}}
+\index{Get\_\-InCone@{Get\_\-InCone}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-InCone}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-InCone (MCParticle $\ast$ {\em input}, \/  std::vector$<$ MCParticle $\ast$ $>$ \& {\em all}, \/  float {\em cone\_\-size})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a721fbac55172fef2776b1637d55de936}
+
+
+Get\_\-InCone : get the particles in the cone. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\item[{\em all}]: this argument will be changed to remove the particle in the cone of the input \item[{\em cone\_\-size}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a89441427db18fc75e777966d5ac169b7}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-InVisible@{Get\_\-InVisible}}
+\index{Get\_\-InVisible@{Get\_\-InVisible}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-InVisible}]{\setlength{\rightskip}{0pt plus 5cm}static MCParticle$\ast$ ToolSet::CMC::Get\_\-InVisible (std::vector$<$ MCParticle $\ast$ $>$ {\em in})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a89441427db18fc75e777966d5ac169b7}
+
+
+Get\_\-InVisible : get invisible particle, i.e. collider -\/ sum of input vector
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em in}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_ab44cceb872950622551735a97a23bd4d}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-InVisible\_\-To\_\-Lorentz@{Get\_\-InVisible\_\-To\_\-Lorentz}}
+\index{Get\_\-InVisible\_\-To\_\-Lorentz@{Get\_\-InVisible\_\-To\_\-Lorentz}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-InVisible\_\-To\_\-Lorentz}]{\setlength{\rightskip}{0pt plus 5cm}static TLorentzVector ToolSet::CMC::Get\_\-InVisible\_\-To\_\-Lorentz (std::vector$<$ MCParticle $\ast$ $>$ {\em in})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ab44cceb872950622551735a97a23bd4d}
+
+
+Get\_\-InVisible\_\-To\_\-Lorentz : get invisible, return four momentum. 
+\begin{DoxyParams}{Parameters}
+\item[{\em in}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a21929017024c827e522e120616bd6bed}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-Isolated@{Get\_\-Isolated}}
+\index{Get\_\-Isolated@{Get\_\-Isolated}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-Isolated}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-Isolated (std::vector$<$ MCParticle $\ast$ $>$ {\em input}, \/  std::vector$<$ MCParticle $\ast$ $>$ {\em all}, \/  std::vector$<$ MCParticle $\ast$ $>$ {\em outside\_\-cone}, \/  float {\em cone\_\-size})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a21929017024c827e522e120616bd6bed}
+
+
+Get\_\-Isolated : get isolated particle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\item[{\em all}]\item[{\em left}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a507837bc0dd0238a8b44f0855e647b0c}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-IsolationAngle@{Get\_\-IsolationAngle}}
+\index{Get\_\-IsolationAngle@{Get\_\-IsolationAngle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-IsolationAngle}]{\setlength{\rightskip}{0pt plus 5cm}static float ToolSet::CMC::Get\_\-IsolationAngle (MCParticle $\ast$ {\em MC}, \/  std::vector$<$ MCParticle $\ast$ $>$ {\em Ref}, \/  float {\em minimal\_\-energy\_\-in\_\-the\_\-cone} = {\ttfamily 1}, \/  float {\em minimal\_\-angle\_\-from\_\-input} = {\ttfamily 2})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a507837bc0dd0238a8b44f0855e647b0c}
+
+
+Get\_\-IsolationAngle : get minimal isolation angle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MC}]\item[{\em Ref}]\item[{\em minimal\_\-energy\_\-in\_\-the\_\-cone}]\item[{\em minimal\_\-angle\_\-from\_\-input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a826b4fcc4ae58b18ceec544fb5abf563}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-All\_\-FS@{Get\_\-MC\_\-All\_\-FS}}
+\index{Get\_\-MC\_\-All\_\-FS@{Get\_\-MC\_\-All\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-All\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MC\_\-All\_\-FS (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a826b4fcc4ae58b18ceec544fb5abf563}
+
+
+Get\_\-MC\_\-All\_\-FS : get all final states. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a8581240b2a8d474e851c3c1ed256fada}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-DetectorSimulating\_\-All@{Get\_\-MC\_\-DetectorSimulating\_\-All}}
+\index{Get\_\-MC\_\-DetectorSimulating\_\-All@{Get\_\-MC\_\-DetectorSimulating\_\-All}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-DetectorSimulating\_\-All}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MC\_\-DetectorSimulating\_\-All (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a8581240b2a8d474e851c3c1ed256fada}
+
+
+Get\_\-MC\_\-DetectorSimulating\_\-All : get all particles generated in DetectorSimulating. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_af0a81c6e40cc44cecfe9947be99783d4}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-DetectorSimulating\_\-FS@{Get\_\-MC\_\-DetectorSimulating\_\-FS}}
+\index{Get\_\-MC\_\-DetectorSimulating\_\-FS@{Get\_\-MC\_\-DetectorSimulating\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-DetectorSimulating\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MC\_\-DetectorSimulating\_\-FS (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_af0a81c6e40cc44cecfe9947be99783d4}
+
+
+Get\_\-MC\_\-DetectorSimulating\_\-FS : get DetectorSimulating particles. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \hypertarget{classToolSet_1_1CMC_a899d324f086d12abb75db9d87798ed91}{
 \index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-HardScattering\_\-FS@{Get\_\-MC\_\-HardScattering\_\-FS}}
 \index{Get\_\-MC\_\-HardScattering\_\-FS@{Get\_\-MC\_\-HardScattering\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
@@ -709,9 +765,123 @@ Get\_\-DaughtersPID : daughter's PDG code.
 \label{classToolSet_1_1CMC_a899d324f086d12abb75db9d87798ed91}
 
 
-Get\_\-MC\_\-HardScattering\_\-FS. 
+Get\_\-MC\_\-HardScattering\_\-FS : get all HardScattering particles. 
 \begin{DoxyParams}{Parameters}
 \item[{\em MCs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_abf41aa5efde937a3e21fa3b24323d570}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-HardScattering\_\-Sort@{Get\_\-MC\_\-HardScattering\_\-Sort}}
+\index{Get\_\-MC\_\-HardScattering\_\-Sort@{Get\_\-MC\_\-HardScattering\_\-Sort}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-HardScattering\_\-Sort}]{\setlength{\rightskip}{0pt plus 5cm}static void ToolSet::CMC::Get\_\-MC\_\-HardScattering\_\-Sort (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs}, \/  std::vector$<$ MCParticle $\ast$ $>$ \& {\em ISRlepton}, \/  std::vector$<$ MCParticle $\ast$ $>$ \& {\em ISRphoton}, \/  std::vector$<$ MCParticle $\ast$ $>$ \& {\em ObjetctParticle})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_abf41aa5efde937a3e21fa3b24323d570}
+
+
+Get\_\-MC\_\-HardScattering\_\-Sort : classify input HardScattering MCParticles by their pdg. Notice : need to be updated for more powerful function 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\item[{\em ISRlepton}]\item[{\em ISRphoton}]\item[{\em ObjetctParticle}]\end{DoxyParams}
+\hypertarget{classToolSet_1_1CMC_a766e7761a6db662243c7490a615c380e}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-OnlyDetectorSimulating\_\-FS@{Get\_\-MC\_\-OnlyDetectorSimulating\_\-FS}}
+\index{Get\_\-MC\_\-OnlyDetectorSimulating\_\-FS@{Get\_\-MC\_\-OnlyDetectorSimulating\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-OnlyDetectorSimulating\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MC\_\-OnlyDetectorSimulating\_\-FS (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a766e7761a6db662243c7490a615c380e}
+
+
+Get\_\-MC\_\-OnlyDetectorSimulating\_\-FS : get onlyDetectorSimulating particles. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_aea4e69e23c45ca6ac4674ee90d56fc1c}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-OnlyPythiaShowering\_\-FS@{Get\_\-MC\_\-OnlyPythiaShowering\_\-FS}}
+\index{Get\_\-MC\_\-OnlyPythiaShowering\_\-FS@{Get\_\-MC\_\-OnlyPythiaShowering\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-OnlyPythiaShowering\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MC\_\-OnlyPythiaShowering\_\-FS (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_aea4e69e23c45ca6ac4674ee90d56fc1c}
+
+
+Get\_\-MC\_\-OnlyPythiaShowering\_\-FS : get all OnlyPythiaShowering particles. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a4bf55a4d64eeec4762f87ee7de91f585}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-Overlay\_\-All@{Get\_\-MC\_\-Overlay\_\-All}}
+\index{Get\_\-MC\_\-Overlay\_\-All@{Get\_\-MC\_\-Overlay\_\-All}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-Overlay\_\-All}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MC\_\-Overlay\_\-All (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a4bf55a4d64eeec4762f87ee7de91f585}
+
+
+Get\_\-MC\_\-Overlay\_\-All : get all particles in the overlay. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a0174dfbf7511f9fa827d9fff33aabc8b}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-Overlay\_\-FS@{Get\_\-MC\_\-Overlay\_\-FS}}
+\index{Get\_\-MC\_\-Overlay\_\-FS@{Get\_\-MC\_\-Overlay\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-Overlay\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MC\_\-Overlay\_\-FS (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a0174dfbf7511f9fa827d9fff33aabc8b}
+
+
+Get\_\-MC\_\-Overlay\_\-FS ： get overlay particles. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a96c8f9998df8b19c84b0f45271195ef9}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-PythiaShowering\_\-All@{Get\_\-MC\_\-PythiaShowering\_\-All}}
+\index{Get\_\-MC\_\-PythiaShowering\_\-All@{Get\_\-MC\_\-PythiaShowering\_\-All}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-PythiaShowering\_\-All}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MC\_\-PythiaShowering\_\-All (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a96c8f9998df8b19c84b0f45271195ef9}
+
+
+Get\_\-MC\_\-PythiaShowering\_\-All : get all particles generated in parton showering. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a321f55fa02ad6ed18931bc906b2e19ee}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-PythiaShowering\_\-FS@{Get\_\-MC\_\-PythiaShowering\_\-FS}}
+\index{Get\_\-MC\_\-PythiaShowering\_\-FS@{Get\_\-MC\_\-PythiaShowering\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-PythiaShowering\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MC\_\-PythiaShowering\_\-FS (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a321f55fa02ad6ed18931bc906b2e19ee}
+
+
+Get\_\-MC\_\-PythiaShowering\_\-FS : get all PythiaShowering particles. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a756210f61bb929e423d1372989ad0358}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-To\_\-HardScattering@{Get\_\-MC\_\-To\_\-HardScattering}}
+\index{Get\_\-MC\_\-To\_\-HardScattering@{Get\_\-MC\_\-To\_\-HardScattering}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-To\_\-HardScattering}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MC\_\-To\_\-HardScattering (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a756210f61bb929e423d1372989ad0358}
+
+
+Get\_\-MC\_\-To\_\-HardScattering : giving a particle in the parton showering or detector simulation, finding its related hard scattering particle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a90ef4f7069e375c606a3469d13ed3109}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MC\_\-To\_\-PythiaShowering@{Get\_\-MC\_\-To\_\-PythiaShowering}}
+\index{Get\_\-MC\_\-To\_\-PythiaShowering@{Get\_\-MC\_\-To\_\-PythiaShowering}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MC\_\-To\_\-PythiaShowering}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MC\_\-To\_\-PythiaShowering (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a90ef4f7069e375c606a3469d13ed3109}
+
+
+Get\_\-MC\_\-To\_\-PythiaShowering : giving a particle in the detector simulation, finding its related pythia stable particle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
@@ -725,6 +895,58 @@ Get\_\-MC\_\-HardScattering\_\-FS.
 Get\_\-MCParticle : get all MCParticles into a vector from the LCCollection MCParticle. 
 \begin{DoxyParams}{Parameters}
 \item[{\em AllMC}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_ac1523c9e38e6453d4980145012bdc75b}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MCParticle\_\-Without\_\-Type@{Get\_\-MCParticle\_\-Without\_\-Type}}
+\index{Get\_\-MCParticle\_\-Without\_\-Type@{Get\_\-MCParticle\_\-Without\_\-Type}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MCParticle\_\-Without\_\-Type}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MCParticle\_\-Without\_\-Type (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs}, \/  std::string {\em PDG})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_ac1523c9e38e6453d4980145012bdc75b}
+
+
+Get\_\-MCParticle\_\-Without\_\-Type : get particles not contain a special type,. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\item[{\em PDG}]: currently supporting \char`\"{}quark\char`\"{}, \char`\"{}light\_\-quark\char`\"{}, \char`\"{}heavy\_\-quark\char`\"{}, \char`\"{}lepton\char`\"{}, \char`\"{}neutrino\char`\"{}\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a186078318b357a23930ab6b61c8d9494}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MCParticleType@{Get\_\-MCParticleType}}
+\index{Get\_\-MCParticleType@{Get\_\-MCParticleType}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MCParticleType}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MCParticleType (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs}, \/  std::string {\em PDG})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a186078318b357a23930ab6b61c8d9494}
+
+
+Get\_\-MCParticleType : get a special type particle among the given vectors, use the name of particle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\item[{\em PDG}]: currently supporting \char`\"{}quark\char`\"{}, \char`\"{}light\_\-quark\char`\"{}, \char`\"{}heavy\_\-quark\char`\"{}, \char`\"{}lepton\char`\"{}, \char`\"{}neutrino\char`\"{}\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a0595ad7853b51cfc631547665a3cb63e}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MCParticleType@{Get\_\-MCParticleType}}
+\index{Get\_\-MCParticleType@{Get\_\-MCParticleType}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MCParticleType}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MCParticleType (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs}, \/  signed int {\em PDG})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a0595ad7853b51cfc631547665a3cb63e}
+
+
+Get\_\-MCParticleType : get a special type particle among the give vectors, use the signed pdg code. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\item[{\em PDG}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a8a83c548d4fa19b657194f055f5084db}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-MCParticleType\_\-Abs@{Get\_\-MCParticleType\_\-Abs}}
+\index{Get\_\-MCParticleType\_\-Abs@{Get\_\-MCParticleType\_\-Abs}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-MCParticleType\_\-Abs}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-MCParticleType\_\-Abs (std::vector$<$ MCParticle $\ast$ $>$ {\em MCs}, \/  signed int {\em PDG})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a8a83c548d4fa19b657194f055f5084db}
+
+
+Get\_\-MCParticleType\_\-Abs : get a special type particle among the give vectors, use the absolute value of PDG. 
+\begin{DoxyParams}{Parameters}
+\item[{\em MCs}]\item[{\em PDG}]\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
@@ -761,12 +983,52 @@ Get\_\-ParentsPID : parents PDG code.
 \label{classToolSet_1_1CMC_ae5e3cc992d63d6efb8030bdb170b87d1}
 
 
-Get\_\-Particle : get a special kind of MCParticle, depending on the input function. \begin{DoxyRemark}{Remarks}
-functions for get special particle vector
-\end{DoxyRemark}
+functions for get special particle vector. In order to use the following function, you have to Set\_\-Nav\_\-MC\_\-to\_\-RC first Get\_\-Particle : get a special kind of MCParticle, depending on the input function.
+
 
 \begin{DoxyParams}{Parameters}
 \item[{\em Judge}]: a judge function that provided before, in order to use all functions, you have to set default Navigator first. \item[{\em AllMC}]: a vector of MCParticle$\ast$\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a11f6123da1b7a670fc9f22de496affb8}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-Sum@{Get\_\-Sum}}
+\index{Get\_\-Sum@{Get\_\-Sum}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}static MCParticle$\ast$ ToolSet::CMC::Get\_\-Sum (std::vector$<$ MCParticle $\ast$ $>$ {\em in})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a11f6123da1b7a670fc9f22de496affb8}
+
+
+Get\_\-Sum : get sum of the input particles. 
+\begin{DoxyParams}{Parameters}
+\item[{\em in}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a05e74f0cd1f7ceac70fa8d2e38d3a2ab}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-Sum\_\-To\_\-Lorentz@{Get\_\-Sum\_\-To\_\-Lorentz}}
+\index{Get\_\-Sum\_\-To\_\-Lorentz@{Get\_\-Sum\_\-To\_\-Lorentz}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-Sum\_\-To\_\-Lorentz}]{\setlength{\rightskip}{0pt plus 5cm}static TLorentzVector ToolSet::CMC::Get\_\-Sum\_\-To\_\-Lorentz (std::vector$<$ MCParticle $\ast$ $>$ {\em in})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a05e74f0cd1f7ceac70fa8d2e38d3a2ab}
+
+
+Get\_\-Sum\_\-To\_\-Lorentz : get sum of input particles, return four momentum. 
+\begin{DoxyParams}{Parameters}
+\item[{\em in}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a78794985a367cc765ffca587136c5a6c}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Get\_\-Visible@{Get\_\-Visible}}
+\index{Get\_\-Visible@{Get\_\-Visible}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Get\_\-Visible}]{\setlength{\rightskip}{0pt plus 5cm}static std::vector$<$MCParticle$\ast$$>$ ToolSet::CMC::Get\_\-Visible (std::vector$<$ MCParticle $\ast$ $>$ {\em in})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a78794985a367cc765ffca587136c5a6c}
+
+
+Get\_\-Visible : get visible particles, i.e. remove neutrino and particles out of detector range from the input
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em in}]\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
@@ -783,11 +1045,11 @@ Judge\_\-All\_\-FS : all the final states which will contribute to the Reconstru
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\hypertarget{classToolSet_1_1CMC_afee9479237283cf64d769fb1b1a361ae}{
+\hypertarget{classToolSet_1_1CMC_a15a940ad524f57e93daa4c23a54c5992}{
 \index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-DetectorSimulating\_\-FS@{Judge\_\-DetectorSimulating\_\-FS}}
 \index{Judge\_\-DetectorSimulating\_\-FS@{Judge\_\-DetectorSimulating\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
-\subsubsection[{Judge\_\-DetectorSimulating\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-DetectorSimulating\_\-FS (MCParticle $\ast$ {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
-\label{classToolSet_1_1CMC_afee9479237283cf64d769fb1b1a361ae}
+\subsubsection[{Judge\_\-DetectorSimulating\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-DetectorSimulating\_\-FS (MCParticle $\ast$ {\em input}, \/  LCRelationNavigator $\ast$\& {\em relation} = {\ttfamily \_\-nav\_\-MC\_\-to\_\-RC})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a15a940ad524f57e93daa4c23a54c5992}
 
 
 Judge\_\-DetectorSimulating\_\-FS : is the final states which will contribute to the ReconstructedParticle, not including the overlay. 
@@ -902,6 +1164,19 @@ Judge\_\-Is\_\-IS\_\-Photon : is the ISR photon.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a63e419bc0a7ce9d4573476d8432e84cb}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-IsInCone@{Judge\_\-IsInCone}}
+\index{Judge\_\-IsInCone@{Judge\_\-IsInCone}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Judge\_\-IsInCone}]{\setlength{\rightskip}{0pt plus 5cm}static bool ToolSet::CMC::Judge\_\-IsInCone (MCParticle $\ast$ {\em input1}, \/  MCParticle $\ast$ {\em input2}, \/  float {\em angle\_\-cut})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a63e419bc0a7ce9d4573476d8432e84cb}
+
+
+IsInCone : judge whether having particles in the cone of the input particle. 
+\begin{DoxyParams}{Parameters}
+\item[{\em lep}]\item[{\em pfo}]\item[{\em angle\_\-cut}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \hypertarget{classToolSet_1_1CMC_a158579bb5adfcfa9e0b4bbaba7ee3229}{
 \index{ToolSet::CMC@{ToolSet::CMC}!Judge\_\-OnlyDetectorSimulating\_\-FS@{Judge\_\-OnlyDetectorSimulating\_\-FS}}
 \index{Judge\_\-OnlyDetectorSimulating\_\-FS@{Judge\_\-OnlyDetectorSimulating\_\-FS}!ToolSet::CMC@{ToolSet::CMC}}
@@ -1008,6 +1283,19 @@ Minus\_\-To\_\-Lorentz : minus four momentum of two MCParticle, return a TLorent
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_af2758c1110b4a2d0708a62465a1ad82d}{
+\index{ToolSet::CMC@{ToolSet::CMC}!NewParticle@{NewParticle}}
+\index{NewParticle@{NewParticle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{NewParticle}]{\setlength{\rightskip}{0pt plus 5cm}static MCParticle$\ast$ ToolSet::CMC::NewParticle (TLorentzVector \& {\em p}, \/  int {\em pdg}, \/  float {\em charge}, \/  MCParticle $\ast$ {\em test})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_af2758c1110b4a2d0708a62465a1ad82d}
+
+
+NewParticle : generate a new MCParticle Notice: this will use the \char`\"{}new\char`\"{} keyword, and generate a new MCParticle in the heap, so remember to delete this pointer. 
+\begin{DoxyParams}{Parameters}
+\item[{\em p}]\item[{\em pdg}]\item[{\em charge}]\item[{\em test}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \hypertarget{classToolSet_1_1CMC_a5bd1a7515135570ef348bd77d1d26933}{
 \index{ToolSet::CMC@{ToolSet::CMC}!NewParticle@{NewParticle}}
 \index{NewParticle@{NewParticle}!ToolSet::CMC@{ToolSet::CMC}}
@@ -1054,6 +1342,16 @@ Set\_\-Beam\_\-Cross\_\-Angle : changing beam crossing angle, default is 0.007 N
 Get\_\-Collider\_\-Energy : changing the collider energy, default is 500 GeV Notice: when using the CRC::InVisible(), it also will load the value from here. \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\hypertarget{classToolSet_1_1CMC_a9a095ed39d8742369489455db3b1b641}{
+\index{ToolSet::CMC@{ToolSet::CMC}!Set\_\-Detectable\_\-Angle@{Set\_\-Detectable\_\-Angle}}
+\index{Set\_\-Detectable\_\-Angle@{Set\_\-Detectable\_\-Angle}!ToolSet::CMC@{ToolSet::CMC}}
+\subsubsection[{Set\_\-Detectable\_\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}static void ToolSet::CMC::Set\_\-Detectable\_\-Angle (float {\em input})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classToolSet_1_1CMC_a9a095ed39d8742369489455db3b1b641}
+
+
+Set\_\-Detectable\_\-Angle : set a rough detectable angle for detector, detault is 0.996, means larger than this angle, the particle will go into the pipe. 
+\begin{DoxyParams}{Parameters}
+\item[{\em input}]\end{DoxyParams}
 \hypertarget{classToolSet_1_1CMC_ab933f8f5cbebde554dcce60f086bf480}{
 \index{ToolSet::CMC@{ToolSet::CMC}!Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC@{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC}}
 \index{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC@{Set\_\-Nav\_\-From\_\-MC\_\-To\_\-RC}!ToolSet::CMC@{ToolSet::CMC}}

@@ -76,90 +76,87 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035 <span class="keyword">namespace </span>ToolSet{
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037         ReconstructedParticle&amp; operator+(<span class="keyword">const</span> ReconstructedParticle&amp; MC1,<span class="keyword">const</span> ReconstructedParticle&amp; MC2);
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039         ReconstructedParticle&amp; operator-(<span class="keyword">const</span> ReconstructedParticle&amp; MC1,<span class="keyword">const</span> ReconstructedParticle&amp; MC2);
-<a name="l00040"></a>00040 
-<a name="l00044"></a><a class="code" href="classToolSet_1_1CRC.html">00044</a>         <span class="keyword">class </span><a class="code" href="classToolSet_1_1CRC.html" title=": functions for ReconstructedParticle">CRC</a>{
-<a name="l00045"></a>00045                 <span class="keyword">public</span> :
-<a name="l00046"></a>00046                         <span class="keyword">static</span> <span class="keywordtype">bool</span> Compare_as_Pair(<span class="keyword">const</span> std::pair&lt;float,ReconstructedParticle*&gt; &amp;i, <span class="keyword">const</span> std::pair&lt;float,ReconstructedParticle*&gt; &amp;j){
-<a name="l00047"></a>00047                                 <span class="keywordflow">return</span> ((i.first) &lt; (j.first));
-<a name="l00048"></a>00048                         }
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050                         <span class="keyword">static</span> ReconstructedParticle* NewParticle(<span class="keywordtype">double</span> px, <span class="keywordtype">double</span> py, <span class="keywordtype">double</span> pz, <span class="keywordtype">double</span> E, ReconstructedParticle* test);
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052                         <span class="keyword">static</span> ReconstructedParticle* NewParticle(TLorentzVector &amp;p, ReconstructedParticle* test);
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054                         <span class="keyword">static</span> ReconstructedParticle* Add(<span class="keyword">const</span> ReconstructedParticle* MC1,<span class="keyword">const</span> ReconstructedParticle* MC2);
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056                         <span class="keyword">static</span> ReconstructedParticle* Minus(<span class="keyword">const</span> ReconstructedParticle* MC1,<span class="keyword">const</span> ReconstructedParticle* MC2);
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058                         <span class="keyword">static</span> ReconstructedParticle* Equal(<span class="keyword">const</span> ReconstructedParticle* MC1) ;
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060                         <span class="keyword">static</span> <span class="keywordtype">bool</span> Same_Particle(<span class="keyword">const</span> ReconstructedParticle* MC1,<span class="keyword">const</span> ReconstructedParticle* MC2);
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064                         <span class="keyword">static</span> <span class="keywordtype">float</span> Cal_IsolationAngle(ReconstructedParticle* MC, std::vector&lt;ReconstructedParticle*&gt; Ref){
-<a name="l00065"></a>00065                                 std::vector&lt;std::pair&lt;float,ReconstructedParticle*&gt; &gt;Ref_angle;
-<a name="l00066"></a>00066                                 <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0;i&lt;Ref.size();i++){
-<a name="l00067"></a>00067                                         std::pair&lt;float,ReconstructedParticle*&gt; pair_tmp = std::make_pair(<a class="code" href="classToolSet_1_1CMC.html#a58389b8e6c06afb39377d6d078e5616f" title="Cal_Angle_Deg : calculate the angle of degree with acos to the reference axis.">CMC::Cal_Angle_Deg</a>(MC,Ref[i]),Ref[i]);
-<a name="l00068"></a>00068                                         Ref_angle.push_back(pair_tmp);
-<a name="l00069"></a>00069                                 }
-<a name="l00070"></a>00070                                 std::sort(Ref_angle.begin(),Ref_angle.end(),Compare_as_Pair);
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072                                 <span class="keywordtype">float</span> sum_energy=0;
-<a name="l00073"></a>00073                                 <span class="keywordtype">float</span> angle=0;
-<a name="l00074"></a>00074                                 <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0;i&lt;Ref_angle.size();i++){
-<a name="l00075"></a>00075                                         sum_energy = sum_energy + Ref_angle[i].second-&gt;getEnergy();
-<a name="l00076"></a>00076                                         <span class="keywordflow">if</span>(sum_energy&gt;1){
-<a name="l00077"></a>00077                                                 <span class="keywordflow">return</span>(angle);
-<a name="l00078"></a>00078                                         }
-<a name="l00079"></a>00079                                         <span class="keywordflow">else</span>{
-<a name="l00080"></a>00080                                                 angle=Ref_angle[i].first;
-<a name="l00081"></a>00081                                         }
-<a name="l00082"></a>00082                                 }
-<a name="l00083"></a>00083                                 <span class="keywordflow">return</span>(180);
-<a name="l00084"></a>00084                         }
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086                         <span class="comment">//get status</span>
-<a name="l00087"></a>00087                         <span class="keyword">static</span> <span class="keywordtype">bool</span>                   Judge_Is_FromOverlay(ReconstructedParticle* in, LCRelationNavigator* nav);
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089                         <span class="comment">//get special particle into a vector </span>
-<a name="l00090"></a>00090                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; Get_POParticle(LCCollection* AllPOs) ;
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; Get_POParticleType(std::vector&lt;ReconstructedParticle*&gt; POs,<span class="keywordtype">int</span> PDG) ;
-<a name="l00093"></a>00093                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; Get_POParticleType_Abs(std::vector&lt;ReconstructedParticle*&gt; POs,<span class="keywordtype">int</span> PDG) ;
-<a name="l00094"></a>00094                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; Get_POParticleType(std::vector&lt;ReconstructedParticle*&gt; POs,std::string PDG) ;
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; Get_POParticlePairType( std::vector&lt;ReconstructedParticle*&gt; PFOs,<span class="keywordtype">int</span> PDG, <span class="keywordtype">int</span> counter_minus, <span class="keywordtype">int</span> counter_plus, <span class="keywordtype">int</span> counter_pair) ;
-<a name="l00097"></a>00097 
-<a name="l00098"></a>00098                         <span class="comment">// get particle from Link</span>
-<a name="l00099"></a>00099                         <span class="keyword">static</span> std::vector&lt;MCParticle*&gt;                          Get_MC_From_PFO(ReconstructedParticle* &amp;source, LCRelationNavigator* &amp;relation);
-<a name="l00100"></a>00100                         <span class="keyword">static</span> std::vector&lt;std::vector&lt;MCParticle*&gt; &gt;            Get_MC_From_PFO_Vec(std::vector&lt;ReconstructedParticle*&gt; &amp;source, LCRelationNavigator* &amp;relation);
-<a name="l00101"></a>00101                         <span class="keyword">static</span> std::vector&lt;MCParticle*&gt;                          Get_A_MC_From_PFO_Vec(std::vector&lt;ReconstructedParticle*&gt; &amp;source, LCRelationNavigator* &amp;relation);
-<a name="l00102"></a>00102                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt;               Get_PFO_From_MC(MCParticle* &amp;source, LCRelationNavigator* &amp;relation);
-<a name="l00103"></a>00103                         <span class="keyword">static</span> std::vector&lt;std::vector&lt;ReconstructedParticle*&gt; &gt; Get_PFO_From_MC_Vec(std::vector&lt;MCParticle*&gt; &amp;source, LCRelationNavigator* &amp;relation);
-<a name="l00104"></a>00104                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt;               Get_A_PFO_From_MC_Vec(std::vector&lt;MCParticle*&gt; &amp;sourc, LCRelationNavigator* &amp;relation);
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106                         <span class="comment">// get weight from Link</span>
-<a name="l00107"></a>00107                         <span class="keyword">static</span> std::vector&lt;float&gt;               Get_MC_Weight_From_PFO(ReconstructedParticle* &amp;source, LCRelationNavigator* &amp;relation);
-<a name="l00108"></a>00108                         <span class="keyword">static</span> std::vector&lt;std::vector&lt;float&gt; &gt; Get_MC_Weight_From_PFO_Vec(std::vector&lt;ReconstructedParticle*&gt; &amp;source, LCRelationNavigator* &amp;relation);
-<a name="l00109"></a>00109                         <span class="keyword">static</span> std::vector&lt;float&gt;               Get_PFO_Weight_From_MC(MCParticle* &amp;source, LCRelationNavigator* &amp;relation);
-<a name="l00110"></a>00110                         <span class="keyword">static</span> std::vector&lt;std::vector&lt;float&gt; &gt; Get_PFO_Weight_From_MC_Vec(std::vector&lt;MCParticle*&gt; &amp;source, LCRelationNavigator* &amp;relation);
-<a name="l00111"></a>00111 
-<a name="l00112"></a>00112                         <span class="comment">// get visible/in visible</span>
-<a name="l00113"></a>00113                         <span class="keyword">static</span> ReconstructedParticle* Get_Visible(std::vector&lt;ReconstructedParticle*&gt; in);
-<a name="l00114"></a>00114                         <span class="keyword">static</span> ReconstructedParticle* Get_InVisible(std::vector&lt;ReconstructedParticle*&gt; in);
-<a name="l00115"></a>00115                         <span class="keyword">static</span> TLorentzVector         Get_Visible_To_Lorentz(std::vector&lt;ReconstructedParticle*&gt; in);
-<a name="l00116"></a>00116                         <span class="keyword">static</span> TLorentzVector         Get_InVisible_To_Lorentz(std::vector&lt;ReconstructedParticle*&gt; in);
-<a name="l00117"></a>00117 
+<a name="l00045"></a>00045         ReconstructedParticle&amp; operator+(<span class="keyword">const</span> ReconstructedParticle&amp; MC1,<span class="keyword">const</span> ReconstructedParticle&amp; MC2);
+<a name="l00046"></a>00046 
+<a name="l00055"></a>00055         ReconstructedParticle&amp; operator-(<span class="keyword">const</span> ReconstructedParticle&amp; MC1,<span class="keyword">const</span> ReconstructedParticle&amp; MC2);
+<a name="l00056"></a>00056 
+<a name="l00060"></a><a class="code" href="classToolSet_1_1CRC.html">00060</a>         <span class="keyword">class </span><a class="code" href="classToolSet_1_1CRC.html" title=": functions for ReconstructedParticle">CRC</a>{
+<a name="l00061"></a>00061                 <span class="keyword">private</span>:
+<a name="l00062"></a>00062                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; _new_particles;
+<a name="l00063"></a>00063                 <span class="keyword">public</span> :
+<a name="l00067"></a>00067                         <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classToolSet_1_1CRC.html#a7066dead5ad5b69ad7526a48b7b4e2e1" title="Clear : all pointers generated in the heap will be deleted.">Clear</a>();
+<a name="l00076"></a><a class="code" href="classToolSet_1_1CRC.html#a6ea8c697e4e53eabdce98971a64e38f6">00076</a>                         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classToolSet_1_1CRC.html#a6ea8c697e4e53eabdce98971a64e38f6" title="Compare_as_E : compare funcion by the energy for MCParticle, equals to &amp;lt; operator...">Compare_as_E</a>(<span class="keyword">const</span> ReconstructedParticle* i, <span class="keyword">const</span> ReconstructedParticle* j){
+<a name="l00077"></a>00077                                 <span class="keywordflow">return</span> (i-&gt;getEnergy()&gt;j-&gt;getEnergy());
+<a name="l00078"></a>00078                         }
+<a name="l00079"></a>00079 
+<a name="l00088"></a><a class="code" href="classToolSet_1_1CRC.html#aa6f188da873318b014914d2872c1f7d8">00088</a>                         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classToolSet_1_1CRC.html#aa6f188da873318b014914d2872c1f7d8" title="Compare_as_Angle : compare funcion by the costheta for ReconstructedParticle, equals...">Compare_as_Angle</a>(<span class="keyword">const</span> ReconstructedParticle* i, <span class="keyword">const</span> ReconstructedParticle* j){
+<a name="l00089"></a>00089                                 <span class="keywordtype">float</span> cos_i=<a class="code" href="classToolSet_1_1CMC.html#a7142700aa3c1b586b976e9d71301c7bc" title="Cal_CosTheta : calculate costheta.">CMC::Cal_CosTheta</a>(i);
+<a name="l00090"></a>00090                                 <span class="keywordtype">float</span> cos_j=<a class="code" href="classToolSet_1_1CMC.html#a7142700aa3c1b586b976e9d71301c7bc" title="Cal_CosTheta : calculate costheta.">CMC::Cal_CosTheta</a>(j);
+<a name="l00091"></a>00091                                 <span class="keywordflow">return</span> (cos_i  &gt; cos_j);
+<a name="l00092"></a>00092                         }
+<a name="l00101"></a><a class="code" href="classToolSet_1_1CRC.html#a4c6c55db474f94060062b19b63ee6c65">00101</a>                         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classToolSet_1_1CRC.html#a4c6c55db474f94060062b19b63ee6c65" title="Compare_as_Pair : compare function by any value paired to ReconstructedParticle*...">Compare_as_Pair</a>(<span class="keyword">const</span> std::pair&lt;float,ReconstructedParticle*&gt; &amp;i, <span class="keyword">const</span> std::pair&lt;float,ReconstructedParticle*&gt; &amp;j){
+<a name="l00102"></a>00102                                 <span class="keywordflow">return</span> ((i.first) &lt; (j.first));
+<a name="l00103"></a>00103                         }
+<a name="l00104"></a>00104 
+<a name="l00117"></a>00117                         <span class="keyword">static</span> ReconstructedParticle* <a class="code" href="classToolSet_1_1CRC.html#a8d42a63101bab36be0173c2a4e101b7a" title="NewParticle : generate a new ReconstructedParticle Notice: this will use the &amp;quot;new&amp;quot;...">NewParticle</a>(<span class="keywordtype">double</span> px, <span class="keywordtype">double</span> py, <span class="keywordtype">double</span> pz, <span class="keywordtype">double</span> E, ReconstructedParticle* test);
 <a name="l00118"></a>00118 
-<a name="l00119"></a>00119                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; Get_PO_Overlay(std::vector&lt;ReconstructedParticle*&gt; input, LCRelationNavigator* &amp;nav);
-<a name="l00120"></a>00120 
-<a name="l00121"></a>00121         };
-<a name="l00122"></a>00122 }
-<a name="l00123"></a>00123 <span class="preprocessor">#endif</span>
+<a name="l00128"></a>00128                         <span class="keyword">static</span> ReconstructedParticle* <a class="code" href="classToolSet_1_1CRC.html#a8d42a63101bab36be0173c2a4e101b7a" title="NewParticle : generate a new ReconstructedParticle Notice: this will use the &amp;quot;new&amp;quot;...">NewParticle</a>(TLorentzVector &amp;p, ReconstructedParticle* test);
+<a name="l00129"></a>00129 
+<a name="l00141"></a>00141                         <span class="keyword">static</span> ReconstructedParticle* <a class="code" href="classToolSet_1_1CRC.html#a8d42a63101bab36be0173c2a4e101b7a" title="NewParticle : generate a new ReconstructedParticle Notice: this will use the &amp;quot;new&amp;quot;...">NewParticle</a>(TLorentzVector &amp;p, <span class="keywordtype">int</span> pdg, <span class="keywordtype">float</span> charge, ReconstructedParticle* test);
+<a name="l00142"></a>00142 
+<a name="l00152"></a>00152                         <span class="keyword">static</span> ReconstructedParticle* <a class="code" href="classToolSet_1_1CRC.html#abc862ca6ed2bb7b78c4ff26316253dec" title="Add : add four momentum of two ReconstructedParticle Notice: this will use the &amp;quot;new&amp;quot;...">Add</a>(<span class="keyword">const</span> ReconstructedParticle* MC1,<span class="keyword">const</span> ReconstructedParticle* MC2);
+<a name="l00153"></a>00153 
+<a name="l00163"></a>00163                         <span class="keyword">static</span> ReconstructedParticle* <a class="code" href="classToolSet_1_1CRC.html#ac3a3e5e99a15fd8b409241d30f779663" title="Minus : minus four momentum of two ReconstructedParticle Notice: this will use the...">Minus</a>(<span class="keyword">const</span> ReconstructedParticle* MC1,<span class="keyword">const</span> ReconstructedParticle* MC2);
+<a name="l00164"></a>00164 
+<a name="l00175"></a>00175                         <span class="keyword">static</span> ReconstructedParticle* <a class="code" href="classToolSet_1_1CRC.html#a19c6ca3d07dbf23e55127756f63b9020" title="Equal : generate a new ReconstructedParticle equal to the input one This is different...">Equal</a>(<span class="keyword">const</span> ReconstructedParticle* MC1) ;
+<a name="l00176"></a>00176 
+<a name="l00185"></a>00185                         <span class="keyword">static</span> TLorentzVector  <a class="code" href="classToolSet_1_1CRC.html#a152788d7b317ba47c0f003fd3c574caa" title="Minus_To_Lorentz : minus four momentum of two ReconstructedParticle, return a TLorentzVector...">Minus_By_Lorentz</a>(<span class="keyword">const</span> ReconstructedParticle* MC1, <span class="keyword">const</span> ReconstructedParticle* MC2) ;
+<a name="l00186"></a>00186 
+<a name="l00195"></a>00195                         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classToolSet_1_1CRC.html#a358ee6636901b5a552783d4fd9dfeec9" title="Same_Particle : judge whether particle are same.">Same_Particle</a>(<span class="keyword">const</span> ReconstructedParticle* MC1,<span class="keyword">const</span> ReconstructedParticle* MC2);
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197 
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199                         <span class="comment">//get status</span>
+<a name="l00208"></a>00208 <span class="comment"></span>                        <span class="keyword">static</span> <span class="keywordtype">bool</span>                   <a class="code" href="classToolSet_1_1CRC.html#a3f2e8fcac0ebafa986567bd8c14f5656" title="Judge_Is_FromOverlay : the max weight MCParticle of this ReconstructedParticle is...">Judge_Is_FromOverlay</a>(ReconstructedParticle* in, LCRelationNavigator* nav);
+<a name="l00218"></a>00218                         <span class="keyword">static</span> <span class="keywordtype">bool</span>                     <a class="code" href="classToolSet_1_1CRC.html#a28ee046a19ec975f344122b2f8c2f3bf" title="Judge_IsInCone : judge whether having particles in the cone of the input particle...">Judge_IsInCone</a>( ReconstructedParticle* input1, ReconstructedParticle* input2, <span class="keywordtype">float</span> angle_cut) ;
+<a name="l00219"></a>00219 
+<a name="l00220"></a>00220                         <span class="comment">//get special particle into a vector </span>
+<a name="l00228"></a>00228 <span class="comment"></span>                        <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; <a class="code" href="classToolSet_1_1CRC.html#acc5d3da66cadce82d9981f5b24a1c91a" title="Get_POParticle : get all ReconstructedParticle into a vector from the LCCollection...">Get_POParticle</a>(LCCollection* AllPOs) ;
+<a name="l00229"></a>00229 
+<a name="l00238"></a>00238                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; <a class="code" href="classToolSet_1_1CRC.html#ad8b6c46ab37661892183c313d5c0b3b3" title="Get_POParticleType : get a special type particle among the give vectors, use the...">Get_POParticleType</a>(std::vector&lt;ReconstructedParticle*&gt; POs,<span class="keywordtype">int</span> PDG) ;
+<a name="l00247"></a>00247                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; <a class="code" href="classToolSet_1_1CRC.html#ad0f9459b95ec7aae88c527b360cbcc3c" title="Get_POParticleType_Abs : get a special type particle among the give vectors, use...">Get_POParticleType_Abs</a>(std::vector&lt;ReconstructedParticle*&gt; POs,<span class="keywordtype">int</span> PDG) ;
+<a name="l00256"></a>00256                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; <a class="code" href="classToolSet_1_1CRC.html#ad8b6c46ab37661892183c313d5c0b3b3" title="Get_POParticleType : get a special type particle among the give vectors, use the...">Get_POParticleType</a>(std::vector&lt;ReconstructedParticle*&gt; POs,std::string PDG) ;
+<a name="l00257"></a>00257 
+<a name="l00258"></a>00258                         <span class="comment">// get particle from Link</span>
+<a name="l00267"></a>00267 <span class="comment"></span>                        <span class="keyword">static</span> std::vector&lt;MCParticle*&gt;                          <a class="code" href="classToolSet_1_1CRC.html#ab931816f16f8767329774a8309709d3c" title="Get_MC_From_PFO : get corresponding MCParticles, one ReconstructedParticle will correspond...">Get_MC_From_PFO</a>(ReconstructedParticle* &amp;source, LCRelationNavigator* &amp;relation);
+<a name="l00276"></a>00276                         <span class="keyword">static</span> std::vector&lt;std::vector&lt;MCParticle*&gt; &gt;            <a class="code" href="classToolSet_1_1CRC.html#a09c33fa93c99c29e9157bf915625108a" title="Get_MC_From_PFO_Vec : get corresponding MCParticles from a vector of ReconstructedParticles...">Get_MC_From_PFO_Vec</a>(std::vector&lt;ReconstructedParticle*&gt; &amp;source, LCRelationNavigator* &amp;relation);
+<a name="l00286"></a>00286                         <span class="keyword">static</span> std::vector&lt;MCParticle*&gt;                          <a class="code" href="classToolSet_1_1CRC.html#acab3f644700643fa2b2967365748d0df" title="Get_A_MC_From_PFO_Vec : get corresponding max weighted MCParticles from a vector...">Get_A_MC_From_PFO_Vec</a>(std::vector&lt;ReconstructedParticle*&gt; &amp;source, LCRelationNavigator* &amp;relation);
+<a name="l00295"></a>00295                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt;               <a class="code" href="classToolSet_1_1CRC.html#a1e8af238303782e448edc47f58fb01ab" title="Get_PFO_From_MC : get corresponding ReconstructedParticle, one MCParticle will correspond...">Get_PFO_From_MC</a>(MCParticle* &amp;source, LCRelationNavigator* &amp;relation);
+<a name="l00304"></a>00304                         <span class="keyword">static</span> std::vector&lt;std::vector&lt;ReconstructedParticle*&gt; &gt; <a class="code" href="classToolSet_1_1CRC.html#adb838e10bbaaabbcc8bba3b2cf3b67f8" title="Get_PFO_From_MC_Vec : get corresponding ReconstructedParticle from a vector of MCParticles...">Get_PFO_From_MC_Vec</a>(std::vector&lt;MCParticle*&gt; &amp;source, LCRelationNavigator* &amp;relation);
+<a name="l00313"></a>00313                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt;               <a class="code" href="classToolSet_1_1CRC.html#a0b26baca07714b53f86982be73121faa" title="Get_A_PFO_From_MC_Vec : get corresponding max weighted ReconstructedParticle from...">Get_A_PFO_From_MC_Vec</a>(std::vector&lt;MCParticle*&gt; &amp;sourc, LCRelationNavigator* &amp;relation);
+<a name="l00314"></a>00314 
+<a name="l00315"></a>00315                         <span class="comment">// get weight from Link</span>
+<a name="l00324"></a>00324 <span class="comment"></span>                        <span class="keyword">static</span> std::vector&lt;float&gt;               <a class="code" href="classToolSet_1_1CRC.html#aa8c717051631a9f7e31097e458c060ad" title="Get_MC_Weight_From_PFO : get corresponding MCParticles wight, one ReconstructedParticle...">Get_MC_Weight_From_PFO</a>(ReconstructedParticle* &amp;source, LCRelationNavigator* &amp;relation);
+<a name="l00333"></a>00333                         <span class="keyword">static</span> std::vector&lt;std::vector&lt;float&gt; &gt; <a class="code" href="classToolSet_1_1CRC.html#aaaca6d608e731f498833598f0c611b34" title="Get_MC_Weight_From_PFO_Vec : get corresponding MCParticle weights from a vector of...">Get_MC_Weight_From_PFO_Vec</a>(std::vector&lt;ReconstructedParticle*&gt; &amp;source, LCRelationNavigator* &amp;relation);
+<a name="l00342"></a>00342                         <span class="keyword">static</span> std::vector&lt;float&gt;               <a class="code" href="classToolSet_1_1CRC.html#a384a4d9c72384db38104b6c67b7b6c5d" title="Get_PFO_Weight_From_MC : get corresponding ReconstructedParticle weight, one MCParticle...">Get_PFO_Weight_From_MC</a>(MCParticle* &amp;source, LCRelationNavigator* &amp;relation);
+<a name="l00351"></a>00351                         <span class="keyword">static</span> std::vector&lt;std::vector&lt;float&gt; &gt; <a class="code" href="classToolSet_1_1CRC.html#acea8182f9deddac046a49604f3fba50b" title="Get_PFO_Weight_From_MC_Vec : get corresponding ReconstructedParticle weights from...">Get_PFO_Weight_From_MC_Vec</a>(std::vector&lt;MCParticle*&gt; &amp;source, LCRelationNavigator* &amp;relation);
+<a name="l00352"></a>00352 
+<a name="l00353"></a>00353                         <span class="comment">// get visible/in visible</span>
+<a name="l00361"></a>00361 <span class="comment"></span>                        <span class="keyword">static</span> ReconstructedParticle* <a class="code" href="classToolSet_1_1CRC.html#a466dba941b8cba920e96f28d2d67af1d" title="Get_Sum : get sum of the input particles.">Get_Sum</a>(std::vector&lt;ReconstructedParticle*&gt; in);
+<a name="l00369"></a>00369                         <span class="keyword">static</span> ReconstructedParticle* <a class="code" href="classToolSet_1_1CRC.html#a09784c243bc4cd8cefb18e00a1d8301f" title="Get_InVisible : get invisible particle, i.e.">Get_InVisible</a>(std::vector&lt;ReconstructedParticle*&gt; in);
+<a name="l00377"></a>00377                         <span class="keyword">static</span> TLorentzVector         <a class="code" href="classToolSet_1_1CRC.html#a590ec4e3b539f84e18eaaf9053236097" title="Get_Sum_To_Lorentz : get sum of input particles, return four momentum.">Get_Sum_To_Lorentz</a>(std::vector&lt;ReconstructedParticle*&gt; in);
+<a name="l00385"></a>00385                         <span class="keyword">static</span> TLorentzVector         <a class="code" href="classToolSet_1_1CRC.html#ad244840d5374b1773ed3f822d9411a5d" title="Get_InVisible_To_Lorentz : get invisible, return four momentum.">Get_InVisible_To_Lorentz</a>(std::vector&lt;ReconstructedParticle*&gt; in);
+<a name="l00386"></a>00386 
+<a name="l00387"></a>00387 
+<a name="l00396"></a>00396                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; <a class="code" href="classToolSet_1_1CRC.html#a4ebcccc808e546491c383b327bcc029d" title="Get_PO_Overlay : get overlay particle.">Get_PO_Overlay</a>(std::vector&lt;ReconstructedParticle*&gt; input, LCRelationNavigator* &amp;nav);
+<a name="l00406"></a>00406                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; <a class="code" href="classToolSet_1_1CRC.html#a336841f7c8474540deb1cd1f119f5cf2" title="Get_InCone : get the particles in the cone.">Get_InCone</a>(ReconstructedParticle* input,std::vector&lt;ReconstructedParticle*&gt; &amp;all, <span class="keywordtype">float</span> cone_size) ;
+<a name="l00417"></a>00417                         <span class="keyword">static</span> std::vector&lt;ReconstructedParticle*&gt; <a class="code" href="classToolSet_1_1CRC.html#ae38bc9fed9fc07e1cea7543dca8920c2" title="Get_Isolated : get isolated particle.">Get_Isolated</a>(std::vector&lt;ReconstructedParticle*&gt; input,std::vector&lt;ReconstructedParticle*&gt; all, std::vector&lt;ReconstructedParticle*&gt; outside_cone, <span class="keywordtype">float</span> cone_size) ;
+<a name="l00428"></a>00428                         <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="classToolSet_1_1CRC.html#aa04cedd2faab9dc50787a88b0207cc8f" title="Get_IsolationAngle : get minimal isolation angle.">Get_IsolationAngle</a>(ReconstructedParticle* MC, std::vector&lt;ReconstructedParticle*&gt; Ref, <span class="keywordtype">float</span> minimal_energy_in_the_cone=1, <span class="keywordtype">float</span> minimal_angle_from_input=2 );
+<a name="l00429"></a>00429 
+<a name="l00430"></a>00430 
+<a name="l00431"></a>00431         };
+<a name="l00432"></a>00432 }
+<a name="l00433"></a>00433 <span class="preprocessor">#endif</span>
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -175,7 +172,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on 15 Nov 2018 for ToolSet_ILCSOFT by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on 17 Nov 2018 for ToolSet_ILCSOFT by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
